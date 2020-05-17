@@ -38,6 +38,6 @@ table tr:hover {
     background: #35363A;
 }
 
-text {
+.mermaid text {
   fill: #fff;
 }
