@@ -557,6 +557,7 @@ body {
 }
 .mermaid {
   text-align: center;
+  color: #dedede;
 }
 table {
   width: 100%;
