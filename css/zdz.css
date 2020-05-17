@@ -38,6 +38,9 @@ table tr:hover {
     background: #35363A;
 }
 
+.mermaid {
+  width: 100%; /*表格宽度*/
+}
 .mermaid text {
   fill: #fff;
 }
