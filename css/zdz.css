@@ -37,3 +37,7 @@ table tbody tr:nth-child(2n):hover{
 table tr:hover {
     background: #35363A;
 }
+
+text {
+  fill: #fff;
+}
