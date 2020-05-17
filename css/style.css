@@ -1630,8 +1630,12 @@ code {
 }
 .highlight td.gutter {
   text-align: right;
-  opacity: 0.2;
   border: 1 solid #c9cacc;
+  border-bottom: 1 solid #c9cacc;
+}
+.highlight td {
+  border: 1 solid #c9cacc;
+  border-bottom: 1 solid #c9cacc;
 }
 .highlight .line {
   height: 22px;
