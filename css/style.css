@@ -1098,12 +1098,6 @@ article .content h2:before {
   font-weight: bold;
   font-size: 1.2rem;
 }
-article .content table,
-article .content th,
-article .content td {
-  border: 1px solid #c9cacc;
-  border-bottom: 1px solid #c9cacc;
-}
 article .content img,
 article .content video {
   display: block;
@@ -1590,6 +1584,7 @@ code {
   background: #212326;
   font-family: "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 4px;
+  table: , width;
 }
 .highlight figcaption {
   margin: -5px 0 5px;
@@ -1636,12 +1631,7 @@ code {
   border: none;
   background: none;
 }
-.highlight table,
-.highlight th,
-.highlight td {
-  border: 1px solid #c9cacc;
-  border-bottom: 1px solid #c9cacc;
-}
+.highlight : auto,
 .highlight td.gutter {
   text-align: right;
   opacity: 0.2;
