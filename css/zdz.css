@@ -45,3 +45,7 @@ table tr:hover {
 .mermaid text {
   fill: #fff;
 }
+
+.highlight html tr, .highlight html td{
+  border: 1px solid #232323; /*内部边框样式*/
+}
