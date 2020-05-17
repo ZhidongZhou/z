@@ -1633,9 +1633,11 @@ code {
   border: 1 solid #c9cacc;
   border-bottom: 1 solid #c9cacc;
 }
+.highlight table,
+.highlight th,
 .highlight td {
-  border: 1 solid #c9cacc;
-  border-bottom: 1 solid #c9cacc;
+  border: 1px solid #c9cacc;
+  border-bottom: 1px solid #c9cacc;
 }
 .highlight .line {
   height: 22px;
