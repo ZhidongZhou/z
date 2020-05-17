@@ -474,6 +474,11 @@ body {
   min-height: 100%;
   overflow-wrap: break-word;
 }
+.content table,
+.content th,
+.content td {
+  border-bottom: 1px solid #c9cacc;
+}
 .content p {
   hyphens: auto;
   -moz-hyphens: auto;
@@ -1630,14 +1635,7 @@ code {
 }
 .highlight td.gutter {
   text-align: right;
-  border: 1 solid #c9cacc;
-  border-bottom: 1 solid #c9cacc;
-}
-.highlight table,
-.highlight th,
-.highlight td {
-  border: 1px solid #c9cacc;
-  border-bottom: 1px solid #c9cacc;
+  opacity: 0.2;
 }
 .highlight .line {
   height: 22px;
