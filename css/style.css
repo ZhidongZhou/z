@@ -559,6 +559,9 @@ body {
   text-align: center;
   color: #dedede;
 }
+.mermaid .gird .tick {
+  color: #dedede;
+}
 table {
   width: 100%;
   border-collapse: collapse;
