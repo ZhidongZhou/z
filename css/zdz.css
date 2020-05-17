@@ -29,6 +29,11 @@ table tbody tr:nth-child(2n) {
   /*隔行变色*/
     background: #232323
 }
+
+table tbody tr:nth-child(2n):hover{
+  background: #35363A;
+}
+
 table tr:hover {
     background: #35363A;
 }
