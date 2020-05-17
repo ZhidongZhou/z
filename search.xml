@@ -240,7 +240,7 @@
       <link href="/zdz.io/2020/05/10/%E8%82%A0%E9%95%9C%E8%85%B9%E7%97%9B/"/>
       <url>/zdz.io/2020/05/10/%E8%82%A0%E9%95%9C%E8%85%B9%E7%97%9B/</url>
       
-        <content type="html"><![CDATA[<hr><p>This is a dialogue between the patinet, Ms. Wang and the specialist Daniel Anderson</p><table><thead><tr><th>ID</th><th>Original</th><th>Translated</th></tr></thead><tbody><tr><td>E1</td><td></td><td></td></tr><tr><td>M1</td><td></td><td></td></tr><tr><td>E2</td><td></td><td></td></tr><tr><td>M2</td><td></td><td></td></tr><tr><td>E3</td><td></td><td></td></tr><tr><td>M3</td><td></td><td></td></tr><tr><td>E4</td><td></td><td></td></tr><tr><td>M4</td><td></td><td></td></tr><tr><td>E5</td><td></td><td></td></tr><tr><td>M5</td><td></td><td></td></tr><tr><td>E6</td><td></td><td></td></tr><tr><td>M6</td><td></td><td></td></tr></tbody></table><hr>]]></content>
+        <content type="html"><![CDATA[<hr><p>This is a dialogue between the patinet, Ms. Wang and the specialist Daniel Anderson</p><table><thead><tr><th>ID</th><th>Original</th><th>Translated</th></tr></thead><tbody><tr><td>E1</td><td></td><td></td></tr><tr><td>M1</td><td></td><td></td></tr><tr><td>E2</td><td></td><td></td></tr><tr><td>M2</td><td></td><td></td></tr><tr><td>E3</td><td></td><td></td></tr><tr><td>M3</td><td></td><td></td></tr><tr><td>E4</td><td></td><td></td></tr><tr><td>M4</td><td></td><td></td></tr><tr><td>E5</td><td></td><td></td></tr><tr><td>M5</td><td></td><td></td></tr><tr><td>E6</td><td></td><td></td></tr><tr><td>M6</td><td></td><td></td></tr></tbody></table><hr><p>graph TD<br>A[Hard] –&gt;|Text| B(Round)<br>B –&gt; C{Decision}<br>C –&gt;|One| D[Result 1]<br>C –&gt;|Two| E[Result 2]</p>]]></content>
       
       
       <categories>
