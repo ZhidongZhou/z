@@ -555,10 +555,6 @@ h6 a:hover {
 }
 .mermaid {
   text-align: center;
-  color: #dedede;
-}
-.mermaid .gird .tick {
-  color: #dedede;
 }
 table {
   width: 100%;
@@ -1502,12 +1498,12 @@ article .content .caption {
   content: ")";
 }
 .highlight {
-  background: #1b181b;
-  color: #ab9bab;
+  background: #20201d;
+  color: #a6a28c;
 }
 .highlight .code .comment,
 .highlight .code .quote {
-  color: #9e8f9e;
+  color: #999580;
 }
 .highlight .code .variable,
 .highlight .code .template-variable,
@@ -1518,7 +1514,7 @@ article .content .caption {
 .highlight .code .link,
 .highlight .code .selector-id,
 .highlight .code .selector-class {
-  color: #ca402b;
+  color: #d73737;
 }
 .highlight .code .number,
 .highlight .code .meta,
@@ -1527,20 +1523,20 @@ article .content .caption {
 .highlight .code .literal,
 .highlight .code .type,
 .highlight .code .params {
-  color: #a65926;
+  color: #b65611;
 }
 .highlight .code .string,
 .highlight .code .symbol,
 .highlight .code .bullet {
-  color: #918b3b;
+  color: #60ac39;
 }
 .highlight .code .title,
 .highlight .code .section {
-  color: #516aec;
+  color: #6684e1;
 }
 .highlight .code .keyword,
 .highlight .code .selector-tag {
-  color: #7b59c0;
+  color: #b854d4;
 }
 .highlight .code .emphasis {
   font-style: italic;
