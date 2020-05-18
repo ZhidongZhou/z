@@ -50,3 +50,7 @@ table tr:hover {
 .mermaid #mermaid-1589761895059 text.titleText {
   fill: #fff;
 }
+
+.mermaid #mermaid-1589762190176 .titleText {
+  fill: #fff;
+}
