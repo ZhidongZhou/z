@@ -46,6 +46,6 @@ table tr:hover {
   fill: #fff;
 }
 
-.highlight.html tr, .highlight html td{
+.highlight.html table tbody tr, .highlight html table tbody td{
   border: 1px solid #232323; /*内部边框样式*/
 }
