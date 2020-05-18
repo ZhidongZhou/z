@@ -10,7 +10,7 @@ table {
 
 table th,table td {
   height: 35px; /*统一每一行的默认高度*/
-  border: 1px solid #dedede; /*内部边框样式*/
+  border-bottom: 1px solid #dedede; /*内部边框样式*/
   padding: 0 10px; /*内边距*/
 }
 table th {
@@ -44,8 +44,4 @@ table tr:hover {
 }
 .mermaid text {
   fill: #fff;
-}
-
-.highlight.html table tbody tr, .highlight html table tbody td{
-  border: 1px solid #232323; /*内部边框样式*/
 }
