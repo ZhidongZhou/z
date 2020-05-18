@@ -553,6 +553,16 @@ h6 a:hover {
 .max-width {
   max-width: 48rem;
 }
+.mermaid {
+  width: 100%; /*表格宽度*/
+  max-width: 65rem;
+  text-align: center;
+  fill: #fff;
+  background-color: #233;
+}
+#mermaid-1589764462422 .titleText {
+  fill: #fff;
+}
 table {
   width: 100%;
   border-collapse: collapse;
