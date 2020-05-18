@@ -39,11 +39,22 @@ table tr:hover {
     background: #35363A;
 }
 
+
+text {
+  fill: #fff
+}
 .mermaid {
   width: 100%; /*表格宽度*/
   max-width: 65rem;
+  text-align: center;
+  fill: #fff;
+  background-color: #233;
 }
 .mermaid text {
+  fill: #fff;
+}
+
+.mermaid .titleText {
   fill: #fff;
 }
 

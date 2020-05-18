@@ -553,10 +553,6 @@ h6 a:hover {
 .max-width {
   max-width: 48rem;
 }
-.mermaid {
-  text-align: center;
-  fill: #fff;
-}
 table {
   width: 100%;
   border-collapse: collapse;
