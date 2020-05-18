@@ -1,0 +1,7 @@
+#hexo robots.txt
+User-agent: *
+
+
+Sitemap: https://zhidongzhou.github.io/zdz.io/search.xml
+Sitemap: https://zhidongzhou.github.io/zdz.io/sitemap.xml
+Sitemap: https://zhidongzhou.github.io/zdz.io/baidusitemap.xml
