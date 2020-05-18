@@ -236,6 +236,33 @@
 <h3 id="重点"><a href="#重点" class="headerlink" title="重点:"></a>重点:</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Fair work <span class="string">Australia:</span> (公平工作委员会)</span><br><span class="line">picked SB my <span class="string">Sth:</span> (挑剔某人某事)</span><br><span class="line">western <span class="string">customers:</span> (洋客人)</span><br><span class="line"><span class="string">Mock:</span> (嘲弄)</span><br><span class="line">Called SB <span class="string">Names:</span> (辱骂)</span><br><span class="line">Nagging at <span class="string">SB:</span> (唠唠叨叨)</span><br><span class="line"><span class="string">Cyberbullying:</span> (网络霸凌)</span><br><span class="line">Left <span class="string">Hook:</span> (左勾拳)</span><br><span class="line">Upper <span class="string">Cut:</span> (上勾拳)</span><br><span class="line"><span class="string">Slander:</span> (口头诽谤)</span><br><span class="line"><span class="string">Defamation:</span> (书面诽谤)</span><br><span class="line">Look <span class="string">Down:</span> (看低某人)</span><br><span class="line"><span class="keyword">short</span>-<span class="string">changed:</span> (少找零钱)</span><br></pre></td></tr></table></figure>
   </div>
 
+  <!-- 大赏 -->
+   <!-- 这里留了一个打赏功能开关-->
+    <!-- 添加捐赠图标 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+        <span class="donate_txt">
+           ↑<br>
+           如果觉得不错,就稍稍给个鼓励吧~ <!--这个值配置在主题的._config.yml中-->
+        </span>
+        <br>
+      </div>  
+    <div id="donate_guide" class="donate_bar center hidden" >
+        <!-- 支付宝打赏图案 -->
+        <img src="/images/Alipay.jpg" alt="支付宝打赏">
+        <!-- 微信打赏图案 -->
+        <img src="/images/WeChatpay.jpg" alt="微信打赏">
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+<!-- 添加捐赠图标 -->
+  
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
    <div>Posts Contains: <span class="post-count">1.1k</span> Words</div>
    <!-- <div>Reading Time: <span class="post-count">4</span>Min's</div> -->
