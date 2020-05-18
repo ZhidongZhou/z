@@ -43,13 +43,13 @@ table tr:hover {
 text {
   fill: #fff
 }
-.mermaid {
+/* .mermaid { */
   /* width: 100%; 表格宽度 */
   /* max-width: 65rem; */
   /* text-align: center; */
   /* fill: #fff; */
   /* background-color: #233; */
-}
+/* } */
 .mermaid text {
   fill: #fff;
 }
