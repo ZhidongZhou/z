@@ -32,7 +32,7 @@ table tbody tr:nth-child(2n) {
 }
 
 table tbody tr:nth-child(2n):hover{
-  background: #35363A;
+    background: #35363A;
 }
 
 table tr:hover {
