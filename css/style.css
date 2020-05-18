@@ -469,10 +469,15 @@ body {
 }
 .content {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   min-height: 100%;
-  overflow-wrap: break-word;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
 }
 p {
   hyphens: auto;
