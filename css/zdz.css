@@ -47,6 +47,6 @@ table tr:hover {
   fill: #fff;
 }
 
-.tltleText { 
+text.tltleText, text.task1-text { 
   fill: #fff;
 }
