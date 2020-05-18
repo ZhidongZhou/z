@@ -52,12 +52,9 @@ text {
 /* } */
 .mermaid text {
   fill: #fff;
-}
-
-.mermaid .titleText {
-  fill: #fff;
-}
-
-text.tltleText, text.task1-text { 
-  fill: #fff;
+  text-align: center;
+  max-width: 65rem;
+  width: 100%; /*表格宽度*/
+  text-align: center;
+  background-color: #223;
 }
