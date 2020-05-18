@@ -555,6 +555,10 @@ h6 a:hover {
 }
 .mermaid {
   text-align: center;
+  color: #fff;
+}
+.mermaid .titleText {
+  color: #fff;
 }
 table {
   width: 100%;
