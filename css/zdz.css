@@ -57,7 +57,7 @@ text {
   width: 100%; /*表格宽度*/
   text-align: center;
   background-color: #223;
-  max-height: 300px;
+  /* max-height: 300px; */
 }
 .mermaid text {
   fill: #fff;
