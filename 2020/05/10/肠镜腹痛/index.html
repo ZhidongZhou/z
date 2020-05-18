@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="This is a dialogue between the patinet, Ms. Wang and the Specialist_专家 Daniel Anderson    ID Original Translated    E1 Good Morning Mr Wang, How are you today? I am doctor Daniel Anderson. 早上好王女士，我还是">
+    <meta name="description" content="This is a dialogue between the patinet, Ms. Wang and the Specialist Daniel Anderson    ID Original Translated    E1 Good Morning Mr Wang, How are you today? I am doctor Daniel Anderson. 早上好王女士，我还是 Da">
 <meta property="og:type" content="article">
 <meta property="og:title" content="肠镜腹痛">
 <meta property="og:url" content="https://zhidongzhou.github.io/zdz.io/2020/05/10/%E8%82%A0%E9%95%9C%E8%85%B9%E7%97%9B/index.html">
 <meta property="og:site_name" content="zdz">
-<meta property="og:description" content="This is a dialogue between the patinet, Ms. Wang and the Specialist_专家 Daniel Anderson    ID Original Translated    E1 Good Morning Mr Wang, How are you today? I am doctor Daniel Anderson. 早上好王女士，我还是">
+<meta property="og:description" content="This is a dialogue between the patinet, Ms. Wang and the Specialist Daniel Anderson    ID Original Translated    E1 Good Morning Mr Wang, How are you today? I am doctor Daniel Anderson. 早上好王女士，我还是 Da">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-09T21:10:13.000Z">
-<meta property="article:modified_time" content="2020-05-18T06:10:59.128Z">
+<meta property="article:modified_time" content="2020-05-18T06:19:40.937Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="CCL">
 <meta name="twitter:card" content="summary">
@@ -157,7 +157,7 @@
 
   <div class="content" itemprop="articleBody">
     <hr>
-<p>This is a dialogue between the patinet, Ms. Wang and the Specialist_专家 Daniel Anderson</p>
+<p>This is a dialogue between the patinet, Ms. Wang and the Specialist Daniel Anderson</p>
 <table>
 <thead>
 <tr>
@@ -232,23 +232,28 @@
 <p>拓展： </p>
 <pre class="mermaid">classDiagram
 graph TD
-    GP_全科医师 <--> Pathology_病理师
-    GP_全科医师:  in Clinics 
-    GP_全科医师:  Medical Centre_中心s
-    Pathology_病理师:  Lab
-    Pathology_病理师:  Imaging Centre_中心
-    Pathology_病理师:  Hospitals
-    GP_全科医师 <--> Specialist_专家(专家)
-    Specialist_专家:  in Clinics (诊所)
-    Specialist_专家:  in Medical Centre_中心s (医疗中心)
-    Specialist_专家:  in Hospitals (医院)
-    Pathology_病理师 --> Specialist_专家
-    GP_全科医师 --> Pharmacy_药房
-    Specialist_专家 --> Pharmacy_药房
-    Specialist_专家 --> Centre_中心
-    Pathology_病理师 --> Centre_中心
-    Centre_中心: Community Healty Service Centre_中心
-    Centre_中心: Rehabilitation Centre_中心</--></--></pre>
+    GP <--> Pathology
+    GP:  全科医师
+    GP:  Clinics (诊所)
+    GP:  Medical Centre (医疗中心)
+    Pathology： 病理师
+    Pathology:  Lab (实验室)
+    Pathology:  Medical Imaging Centre (医学影像中心)
+    Pathology:  Hospitals (医院)I
+    GP <--> Specialist(专家)
+    Specialist： 专家
+    Specialist:  Clinics (诊所)
+    Specialist:  Medical Centre (医疗中心)
+    Specialist:  Hospitals (医院)
+    Pathology --> Specialist
+    GP --> Pharmacy
+    Specialist --> Pharmacy
+    Pharmacy: 药房
+    Specialist --> Centre
+    Pathology --> Centre
+    Centre: Community Healty Service Centre (社区卫生服务中心)
+    Centre: Rehabilitation Centre (康复中心)
+    Centre: 中心</--></--></pre>
 
   </div>
 </article>
