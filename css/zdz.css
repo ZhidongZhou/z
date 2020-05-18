@@ -43,7 +43,7 @@ table tr:hover {
   width: 100%; /*表格宽度*/
   max-width: 65rem;
 }
-.mermaid text {
+.mermaid text, .titleText {
   fill: #fff;
 }
   #mermaid-1589762256499 .titleText{
