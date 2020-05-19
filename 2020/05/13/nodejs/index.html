@@ -9,7 +9,7 @@
     <meta name="description" content="Node.js 简介 简单的说 Node.js 就是运行在服务端的 JavaScript。 Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。 Node.js是一个事件驱动I&#x2F;O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。  作者为 MacOS 用户，Windows读者请绕行 使用 brew">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js — 服务端 JavaScript 环境">
-<meta property="og:url" content="https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/index.html">
+<meta property="og:url" content="https://zhidongzhou.github.io/z/2020/05/13/nodejs/index.html">
 <meta property="og:site_name" content="相·遇">
 <meta property="og:description" content="Node.js 简介 简单的说 Node.js 就是运行在服务端的 JavaScript。 Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。 Node.js是一个事件驱动I&#x2F;O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。  作者为 MacOS 用户，Windows读者请绕行 使用 brew">
 <meta property="og:locale" content="en_US">
@@ -25,17 +25,17 @@
     
         
           
-              <link rel="shortcut icon" href="/z.io/images/favicon.ico">
+              <link rel="shortcut icon" href="/z/images/favicon.ico">
           
         
         
           
-            <link rel="icon" type="image/png" href="/z.io/images/favicon-192x192.png" sizes="192x192">
+            <link rel="icon" type="image/png" href="/z/images/favicon-192x192.png" sizes="192x192">
           
         
         
           
-            <link rel="apple-touch-icon" sizes="180x180" href="/z.io/images/apple-touch-icon.png">
+            <link rel="apple-touch-icon" sizes="180x180" href="/z/images/apple-touch-icon.png">
           
         
     
@@ -43,19 +43,19 @@
     <title>Node.js — 服务端 JavaScript 环境</title>
     <!-- styles -->
     
-<link rel="stylesheet" href="/z.io/css/style.css">
+<link rel="stylesheet" href="/z/css/style.css">
 
-    <link rel="stylesheet" href="/z.io/css/zdz.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="/z/css/zdz.css" media="screen" type="text/css">
     <!-- persian styles -->
     
       
-<link rel="stylesheet" href="/z.io/css/rtl.css">
+<link rel="stylesheet" href="/z/css/rtl.css">
 
     
     <!-- rss -->
     
     
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/z.io/atom.xml" title="相·遇" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/z/atom.xml" title="相·遇" type="application/atom+xml">
 </head>
 
 <body class="max-width mx-auto px3 ltr">
@@ -68,17 +68,17 @@
     <span id="nav">
       <ul>
          
-          <li><a href="/z.io/">Home</a></li>
+          <li><a href="/z/">Home</a></li>
          
-          <li><a href="/z.io/about/">About</a></li>
+          <li><a href="/z/about/">About</a></li>
          
-          <li><a href="/z.io/archives/">Posts</a></li>
+          <li><a href="/z/archives/">Posts</a></li>
          
-          <li><a href="/z.io/search/">Search</a></li>
+          <li><a href="/z/search/">Search</a></li>
          
-          <li><a href="/z.io/tags/">Tags</a></li>
+          <li><a href="/z/tags/">Tags</a></li>
          
-          <li><a href="/z.io/categories/">Categories</a></li>
+          <li><a href="/z/categories/">Categories</a></li>
         
       </ul>
     </span>
@@ -86,10 +86,10 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/z.io/2020/05/14/terminal-email/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        <li><a class="icon" href="/z/2020/05/14/terminal-email/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
         
-        <li><a class="icon" href="/z.io/2020/05/12/php-browser-detection/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/z/2020/05/12/php-browser-detection/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -102,17 +102,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&text=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&is_video=false&description=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Node.js — 服务端 JavaScript 环境&body=Check out this article: https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&name=Node.js — 服务端 JavaScript 环境&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&t=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://zhidongzhou.github.io/z/2020/05/13/nodejs/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&text=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&is_video=false&description=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Node.js — 服务端 JavaScript 环境&body=Check out this article: https://zhidongzhou.github.io/z/2020/05/13/nodejs/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&name=Node.js — 服务端 JavaScript 环境&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&t=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -150,14 +150,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/z.io/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/">网站开发</a>
+        <a class="category-link" href="/z/categories/%E7%BD%91%E7%AB%99%E5%BC%80%E5%8F%91/">网站开发</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/z.io/tags/node-js/" rel="tag">node.js</a>
+        <a class="tag-link" href="/z/tags/node-js/" rel="tag">node.js</a>
     </div>
 
 
@@ -240,17 +240,17 @@
     <div id="nav-footer" style="display: none">
       <ul>
          
-          <li><a href="/z.io/">Home</a></li>
+          <li><a href="/z/">Home</a></li>
          
-          <li><a href="/z.io/about/">About</a></li>
+          <li><a href="/z/about/">About</a></li>
          
-          <li><a href="/z.io/archives/">Posts</a></li>
+          <li><a href="/z/archives/">Posts</a></li>
          
-          <li><a href="/z.io/search/">Search</a></li>
+          <li><a href="/z/search/">Search</a></li>
          
-          <li><a href="/z.io/tags/">Tags</a></li>
+          <li><a href="/z/tags/">Tags</a></li>
          
-          <li><a href="/z.io/categories/">Categories</a></li>
+          <li><a href="/z/categories/">Categories</a></li>
         
       </ul>
     </div>
@@ -261,17 +261,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&text=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&is_video=false&description=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Node.js — 服务端 JavaScript 环境&body=Check out this article: https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&name=Node.js — 服务端 JavaScript 环境&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://zhidongzhou.github.io/z.io/2020/05/13/nodejs/&t=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://zhidongzhou.github.io/z/2020/05/13/nodejs/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&text=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&is_video=false&description=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Node.js — 服务端 JavaScript 环境&body=Check out this article: https://zhidongzhou.github.io/z/2020/05/13/nodejs/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&title=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&name=Node.js — 服务端 JavaScript 环境&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://zhidongzhou.github.io/z/2020/05/13/nodejs/&t=Node.js — 服务端 JavaScript 环境" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -314,17 +314,17 @@
     <nav>
       <ul>
          
-          <li><a href="/z.io/">Home</a></li>
+          <li><a href="/z/">Home</a></li>
          
-          <li><a href="/z.io/about/">About</a></li>
+          <li><a href="/z/about/">About</a></li>
          
-          <li><a href="/z.io/archives/">Posts</a></li>
+          <li><a href="/z/archives/">Posts</a></li>
          
-          <li><a href="/z.io/search/">Search</a></li>
+          <li><a href="/z/search/">Search</a></li>
          
-          <li><a href="/z.io/tags/">Tags</a></li>
+          <li><a href="/z/tags/">Tags</a></li>
          
-          <li><a href="/z.io/categories/">Categories</a></li>
+          <li><a href="/z/categories/">Categories</a></li>
         
       </ul>
     </nav>
@@ -333,23 +333,23 @@
     </div>
     <!-- styles -->
 
-<link rel="stylesheet" href="/z.io/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/z/lib/font-awesome/css/all.min.css">
 
 
-<link rel="stylesheet" href="/z.io/lib/justified-gallery/css/justifiedGallery.min.css">
+<link rel="stylesheet" href="/z/lib/justified-gallery/css/justifiedGallery.min.css">
 
 
     <!-- jquery -->
 
-<script src="/z.io/lib/jquery/jquery.min.js"></script>
+<script src="/z/lib/jquery/jquery.min.js"></script>
 
 
-<script src="/z.io/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/z/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
 
 <!-- clipboard -->
 
   
-<script src="/z.io/lib/clipboard/clipboard.min.js"></script>
+<script src="/z/lib/clipboard/clipboard.min.js"></script>
 
   <script type="text/javascript">
   $(function() {
@@ -372,7 +372,7 @@
   </script>
 
 
-<script src="/z.io/js/main.js"></script>
+<script src="/z/js/main.js"></script>
 
 <!-- search -->
 
