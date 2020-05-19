@@ -265,6 +265,211 @@
     
     
     <entry>
+      <title>Convert .webp — 格式转换</title>
+      <link href="/zdz.io/2020/05/15/convert-webp/"/>
+      <url>/zdz.io/2020/05/15/convert-webp/</url>
+      
+        <content type="html"><![CDATA[<p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p><p><strong>1. 转换为: <code>.jpg</code></strong></p><p>dwebp 文件名.webp -o 文件名.jpg</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/demo.convert.gif" alt></p><p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p><p>dwebp 文件名.webp -o 文件名.png</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> hack </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MacOS </tag>
+            
+            <tag> terminal_trick </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Mac Dock Optimization  — 程序坞优化</title>
+      <link href="/zdz.io/2020/05/15/mac-terminaltricks/"/>
+      <url>/zdz.io/2020/05/15/mac-terminaltricks/</url>
+      
+        <content type="html"><![CDATA[<p><strong>1. finder中显示当前路径:</strong></p><p>首先打开 Terminal</p><p>defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder</p><p>关闭路径显示， 只将 <code>YES</code> 改为 <code>NO</code>。</p><p><strong>2. dock 中添加空白位置:</strong></p><p>defaults write com.apple.dock persistent-apps -array-add ‘{tile-data={}; tile-type=”spacer-tile”;}’<br>killall Dock</p><p><em>$ <code>kill Dock</code>, ‘ <strong>D</strong> ’ 要大写。</em></p><p>建议取消在dock设置中取消Mignificant 可以无限添加， 删除只需手动拖出dock, 或长按选择删除 — (见下图)。</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/demo_dock.gif" alt></p><p><strong>3. dock 动画提速:</strong></p><p># 快<br>defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock<br># 超快<br>defaults write com.apple.dock autohide-time-modifier -float 0.12;killall Dock<br># 还原<br>defaults delete com.apple.dock autohide-time-modifier;killall Dock</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/demo_fast_dock.gif" alt="dock_speed"></p><p><strong>4. 播放(Star War)星战:</strong></p><p>telnet towel.blinkenlights.nl</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/starwar.gif" alt></p><p><strong>5. 修改默认截图前缀:</strong></p><p>defaults write com.apple.screencapture name “自定义项目”</p><blockquote><p>References</p><p>1. <a href="http://www.snazzylabs.com/five-advanced-tricks-for-mac-users/" target="_blank" rel="noopener">5 Tricks for Advanced Mac Users</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> hack </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MacOS </tag>
+            
+            <tag> terminal_trick </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Email via Terminal — 163邮箱</title>
+      <link href="/zdz.io/2020/05/14/terminal-email/"/>
+      <url>/zdz.io/2020/05/14/terminal-email/</url>
+      
+        <content type="html"><![CDATA[<p><strong>打开 <code>Terminal</code> 终端</strong></p><p>连接163邮箱</p><p>telnet smtp.163.com 25</p><p><strong>登陆前，需要用 <code>helo</code> 和 <code>elho</code> 向服务器进行验证</strong></p><p>helo smtp.163.com</p><p>返回： 250 OK</p><p>elho smtp.163.com</p><p>返回：250 OK</p><pre><code>250-mail250-PIPELINING250-AUTH LOGIN PLAIN 250-AUTH=LOGIN PLAIN250-coremail *********(略)***********250-STARTTLS250 8BITMIME</code></pre><p><strong>登陆: <code>auth login</code></strong></p><p>auth login</p><p>返回的： 334 dXNlcm5hbWU6， 就是问你要加密过的 username 用户名。</p><p><strong>用户名:</strong></p><p>(例)你的用户名是： helloworld ⇢ BASE64译码得到 ⇢ aGVsbG93b3JsZA==</p><p><em>可以使用 BASE64 在线译码： <a href="https://www.base64encode.org/" target="_blank" rel="noopener">https://www.base64encode.org/</a></em></p><p>返回的： 334 UGFzc3dvcmQ6， 就是问你要加密过的 Password 用户名。</p><p><strong>密码:</strong></p><p>由于163.com 要求自行开启授权（如下图）， 授权后你的登陆密码也将由(16位的)<code>客户端授权密码</code>替换。</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/%E6%8E%88%E6%9D%83-1024x570.png" alt></p><p>Tips: 纠结于IMAP / POP3 的可以参考下图</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/imapVpop3.gif" alt></p><p><strong>发件人邮箱</strong></p><p>from mail: <a href="mailto:&#x79;&#111;&#117;&#114;&#101;&#109;&#97;&#105;&#x6c;&#64;&#x31;&#54;&#x33;&#46;&#99;&#111;&#109;">&#x79;&#111;&#117;&#114;&#101;&#109;&#97;&#105;&#x6c;&#64;&#x31;&#54;&#x33;&#46;&#99;&#111;&#109;</a></p><p>返回：250 Mail OK</p><p><strong>收件人邮箱</strong></p><p>rcpt to: &lt;receiveremail@???.com&gt;</p><p>返回：250 Mail OK</p><p><strong>登陆失败 500 Error: bad syntax</strong></p><p>1. 检查 <code>from mail: &lt;&gt;</code> &amp; <code>rcptmail: &lt;&gt;</code> 的格式， 主要空格</p><p>2. 检查 hostname (不确定是否与500 Error 相关, 不过网上大量方法指向 hostname)</p><p>hostname</p><p><strong>应该返回: 127.0.0.1</strong></p><p><strong>如果不是 127.0.0.1</strong></p><p>Mac： 命令行输入: <code>hostname 127.0.0.1</code> ， 进行改写。</p><p>hostname: 127.0.0.1</p><p>或 Windows 对比修改 <code>/etc/hosts</code> , 将开通为 127.0.0.1 改为：</p><p>127.0.0.1 localhost.localdomain localhost</p><p><strong>编写邮件内容:</strong></p><p><strong>编写邮件 <code>data</code></strong></p><p>data</p><p>返回： 354 End data with <CR><LF>.<CR><LF></LF></CR></LF></CR></p><p><strong>**邮件主题</strong> <code>subject:</code>**</p><p>subject: 主题</p><p><strong>**编辑邮件内容</strong>：‘两次回车’**</p><p><strong>输入： <code>.</code> (英文句号) + 回车 完成并发送邮件</strong></p><p>返回： 250 Mail Ok 表示成功</p><p><strong>554 DT:SPM</strong></p><p>常见错误： 554 DT:SPM 163 smtp4,HNxpCgBX5yrd6LxemSLDBA–.113S6 1589439356,please see <a href="http://mail.163.com/help/help\_spam\_16.htm?ip=124.188.99.158&amp;hostid=smtp4&amp;time=1589439356" target="_blank" rel="noopener">http://mail.163.com/help/help\_spam\_16.htm?ip=124.188.99.158&amp;hostid=smtp4&amp;time=1589439356</a></p><p>554 DT:SPM 发送的邮件内容包含了未被许可的信息，或被系统识别为垃圾邮件。请检查是否有用户发送病毒或者垃圾邮件；</p><p>错误原因：网易反垃圾邮件级别</p><ul><li>“低级”为：不做用户级过滤；</li><li>“中级”为：如果“发件人(From)”不在自己的[通讯录]和[白名单]里，并且“收件人(To)”和“抄送人(Cc)”不包括自己的地址，则认为是[垃圾邮件]；</li><li>“高级”为：如果邮件的“发件人(From)”地址不在自己的[通讯录]和[白名单]列表里，则认为来信是[垃圾邮件]。请谨慎选择此级别。</li></ul><p><strong>解决： 554 DT:SPM</strong></p><p>在输入： <code>DATA</code> 之后 要外加： <code>FROM: youremail@163.com</code> &amp; <code>TO: reciver@???.com</code>，<code>CC: youremail@163.com</code> 最后注意<code>subject:</code> 不要用: test 或 hello</p><blockquote><p>References</p><p>1. <a href="https://blog.csdn.net/archer119/article/details/64942220" target="_blank" rel="noopener">163邮箱报错: 535 Error: authentication failed</a><br>2. <a href="https://dl.icewarp.com/online_help/6057.htm" target="_blank" rel="noopener">Interpretation of 5xx errors in Icewarp SMTP</a><br>3. <a href="https://www.jianshu.com/p/39c2a81ef582" target="_blank" rel="noopener">python发送简单邮件</a><br>4. <a href="https://blog.csdn.net/yakson/article/details/7917511" target="_blank" rel="noopener">javax.mail.MessagingException: 500 Error: bad syntax已解决</a><br>5. <a href="https://blog.csdn.net/Hughnes/article/details/52070878" target="_blank" rel="noopener">邮箱不可用 550 User has no permission</a><br>6. <a href="https://blog.csdn.net/CSUstudent007/article/details/90728471" target="_blank" rel="noopener">邮箱不可用 550 User has no permission(JavaMail登不进邮件系统)</a><br>7. <a href="https://www.cnblogs.com/qyf404/p/4943387.html" target="_blank" rel="noopener">学习linux之用mail命令发邮件</a><br>8. <a href="https://qastack.cn/apple/22921/how-can-i-send-email-through-a-terminal-window" target="_blank" rel="noopener">如何通过终端窗口发送电子邮件？</a><br>9. <a href="http://help.163.com/09/1224/14/5RAB4VK500753VB8.html?servCode=6010330" target="_blank" rel="noopener">企业退信的常见问题？</a><br>10. <a href="https://blog.csdn.net/dtwangquan/article/details/21626623" target="_blank" rel="noopener">linux 系统在终端中用SMTP协议发邮件</a><br>11. <a href="https://ubuntu-mate.community/t/problems-with-mail/15653" target="_blank" rel="noopener">Problems with mail</a><br>12. <a href="https://my.oschina.net/u/4387790/blog/3599915" target="_blank" rel="noopener">命令行发送SMTP协议邮件（163邮箱）</a><br>13. <a href="https://mail.163.com/mailhelp/antispam.htm" target="_blank" rel="noopener">网易反垃圾邮件</a><br>14. <a href="https://blog.csdn.net/weixin_41789943/article/details/82348946" target="_blank" rel="noopener">python 的smtplib 的坑 554 DT:SPM 163 smtp12</a>  </p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> hack </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Node.js — 服务端 JavaScript 环境</title>
+      <link href="/zdz.io/2020/05/13/nodejs/"/>
+      <url>/zdz.io/2020/05/13/nodejs/</url>
+      
+        <content type="html"><![CDATA[<p><strong>Node.js 简介</strong></p><p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p><p>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。</p><p>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p><ol><li>作者为 MacOS 用户，Windows读者请绕行</li><li>使用 brew 进行安装</li><li>配合 IDE: Visual Studio Code</li></ol><p><strong>安装:</strong></p><p>brew install node</p><p><strong>版本查看:</strong></p><p>node -v</p><p><strong>运行</strong></p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C.gif" alt></p><p>直接从terminal中运行 $node</p><p>$ node<br>&gt; console.log(‘你好世界’);</p><p><strong>写一个入门 Function</strong></p><p>// hello.js<br>// grab function 获取  –greeting &amp; –user flag 对应值<br>const grab = flag =&gt; {<br>  let indexAfterFlag = process.argv.indexOf(flag) + 1;<br>  return process.argv[indexAfterFlag];<br>};</p><p>const greeting = grab(“–greeting”);<br>const user = grab(“–user”);</p><p>console.log(<code>${greeting} ${user}</code>);</p><p><em>建议在 vscode 中操作</em></p><p>文件写好后可以运行了</p><p>node hello.js –user ‘Darren’ –greeting ‘Morning’</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/hello-1.gif" alt></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PHP入门 [2] — 获取浏览信息器信息</title>
+      <link href="/zdz.io/2020/05/12/php-browser-detection/"/>
+      <url>/zdz.io/2020/05/12/php-browser-detection/</url>
+      
+        <content type="html"><![CDATA[<p>通过PHP实现简易单一功能服务页面 [2] — 获取浏览者 • 浏览器详细信息</p><p><a href="https://yumtaro.com/sfphp/detect.php" target="_blank" rel="noopener">查看效果</a></p><p>代码通用， 复制 detect.php &amp; bd.php 两个文件 ⇢ 文件名1.php &amp; 文件名2.php 即可。</p><p><strong>detect.php</strong> :</p><!DOCTYPE html><html>  <head>    <meta charset="UTF-8">    <title>浏览者信息检测</title>        <style type="text/css">    body {        margin: 0;        padding: 0;        background: #232323;    }<pre><code>#main-content {    margin: 30px;    text-align: center;    color: #ccc;}#main-content h1 {    font: 40px Arial, Helvetica,        color: #ccc;}#main-content p {    font: 24px &quot;Time New Roman&quot;,        color: #ffffff;        text-align: left;        margin: 0;         padding: 0;}#main-content p strong {    font-size: 70px;    color: #ffffff;}    &lt;/style&gt;</code></pre>  <meta name="generator" content="Hexo 4.2.1"></head>  <body>    <div id="main-content">      <h1>浏览者信息检测</h1><?phprequire_once('bd.php');$bd = new broDetect();$bd->detect();?><pre><code>&lt;!\-\- 时区 --&gt;&lt;?php date\_default\_timezone_set(&quot;Australia/Melbourne&quot;); ?&gt;&lt;!\-\- 时间格式 --&gt;&lt;h3&gt;请求时间 (墨尔本时间): &lt;?php echo date(&apos;j / F / Y — l, g:ia&apos;, $\_SERVER\[&apos;REQUEST\_TIME&apos;\]); ?&gt;&lt;/h3&gt;&lt;h3&gt;请求方法: &lt;?php echo $\_SERVER\[&apos;REQUEST\_METHOD&apos;\]; ?&gt;&lt;/h3&gt;&lt;br /&gt;&lt;h3&gt;当前路径: &lt;?php echo $\_SERVER\[&apos;REQUEST\_URI&apos;\]; ?&gt;&lt;/h3&gt;&lt;br /&gt; &lt;h3&gt;是否使用 HTTPS ？： &lt;?php if(isset($_SERVER\[&apos;HTTPS&apos;\])) {echo &apos;是&apos;; } else {echo &apos;否&apos;;} ?&gt;&lt;/h3&gt;&lt;br /&gt;&lt;h3&gt;您的IP地址为:&lt;a name=&quot;important&quot;&gt; &lt;?php echo $\_SERVER\[&apos;REMOTE\_ADDR&apos;\]; ?&gt;&lt;/a&gt;&lt;/h3&gt;&lt;h3&gt;您所用端口为: &lt;?php echo $\_SERVER\[&apos;REMOTE\_PORT&apos;\]; ?&gt;&lt;/h3&gt;&lt;!\-\- 检测系统 --&gt;&lt;h3&gt;您所用系统为: &lt;?php echo $bd-&gt;platform; ?&gt;&lt;/h3&gt;&lt;h3&gt;您所用浏览器为: &lt;?php echo $bd-&gt;browser_name; ?&gt;&lt;/h3&gt;&lt;!\-\- 屏幕大小 --&gt;&lt;h3&gt;您当前屏幕宽度为: &lt;span id=&quot;ww&quot;&gt; &lt;/span&gt;&lt;/h3&gt;&lt;h3&gt;您当前屏幕高度为: &lt;span id=&quot;wh&quot;&gt; &lt;/span&gt;&lt;/h3&gt;</code></pre><p>&lt;!-- 用js替换屏幕宽高的值 –&gt;</p><script>  var width = window.innerWidth ||   document.documentElement.clientWidth ||   document.body.clientWidth ||   document.body.offsetWidth;  var height = window.innerHeight ||   document.documentElement.clientHeight ||   document.body.clientHeight ||   document.body.offsetHeight;  document.getElementById("ww").innerHTML = width + "像素";  document.getElementById("wh").innerHTML = height + "像素";</script>  <pre><code>&lt;/div&gt;</code></pre>  </body></html><p><strong>bd.php</strong> :</p><?phpclass broDetect {  public $user_agent;  public $platform;  public $browser_name;  public function __construct() {    $this->set\_user\_agent();    $this->reset();  }  public function set\_user\_agent() {    if(isset($\_SERVER\['HTTP\_USER_AGENT'\])) {      $this->user\_agent = $\_SERVER\['HTTP\_USER\_AGENT'\];    } else {      $this->user_agent = '';    }  }  public function reset() {    $this->platform = 'Unknown';    $this->browser_name = 'Unknown';  }  public function detect() {    $this->detect_platform();    $this->detect_browser();    return array($this->platform, $this->browser_name);  }  public function detect_platform() {    if(preg\_match('/linux/i', $this->user\_agent)) {      $this->platform = 'Linux';    } elseif(preg\_match('/macintosh|mac os/i', $this->user\_agent)) {      $this->platform = 'Mac';    } elseif(preg\_match('/windows|win32/i', $this->user\_agent)) {      $this->platform = 'Windows';    }  }  public function detect_browser() {    if(preg\_match('/MSIE/i', $this->user\_agent)) {      $this->browser_name = '微软 Internet Explorer';    } elseif(preg\_match('/Firefox/i', $this->user\_agent)) {      $this->browser_name = '火狐 Firefox';    } elseif(preg\_match('/Chrome/i', $this->user\_agent)) {      $this->browser_name = '谷歌 Chrome';    } elseif(preg\_match('/Safari/i', $this->user\_agent)) {      $this->browser_name = '苹果 Safari';    } elseif(preg\_match('/Opera/i', $this->user\_agent)) {      $this->browser_name = 'Opera';    } elseif(preg\_match('/Netscape/i', $this->user\_agent)) {      $this->browser_name = 'Netscape';    }  }}?><blockquote><p>Reference</p><p>1. <a href="https://browsersize.com/" target="_blank" rel="noopener">https://browsersize.com</a><br>2. <a href="https://github.com/GaretJax/phpbrowscap/wiki/QuickStart" target="_blank" rel="noopener">Browser Capabilities PHP Project</a></p></blockquote></style></head></html>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> php </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PHP入门 [1] — 获取IP地址</title>
+      <link href="/zdz.io/2020/05/12/phpshowip/"/>
+      <url>/zdz.io/2020/05/12/phpshowip/</url>
+      
+        <content type="html"><![CDATA[<p>通过PHP实现简易单一功能服务页面 [1] —— 获取浏览者 IP 地址</p><p>代码通用， 复制 ip.php 粘贴到⇢ 文件名.php 即可。</p><p>&lt;!-- ip.php –&gt;<br><!DOCTYPE html></p><html><head>    <meta charset="UTF-8">    <title>What Is My IP?</title>    <style type="text/css">    body {        margin: 0;        padding: 0;        background: #232323;    }<pre><code>#main-content {    margin: 30px;    text-align: center;    color: #ccc;}#main-content h1 {    font: 40px Arial, Helvetica,        color: #ccc;}#main-content p {    font: 24px &quot;Time New Roman&quot;,        color: #ffffff;}#main-content p strong {    font-size: 70px;    color: #ffffff;}&lt;/style&gt;</code></pre><meta name="generator" content="Hexo 4.2.1"></head><body>    <?php<p>// returns first forwarded IP match it finds<br>function forwarded_ip() {<br>  $keys = array(<br>    ‘HTTP_X_FORWARDED_FOR’,<br>    ‘HTTP_X_FORWARDED’,<br>    ‘HTTP_FORWARDED_FOR’,<br>    ‘HTTP_FORWARDED’,<br>    ‘HTTP_CLIENT_IP’,<br>    ‘HTTP_X_CLUSTER_CLIENT_IP’,<br>  );</p><p>  foreach($keys as $key) {<br>    if(isset($_SERVER[$key])) {<br>      $ip_array = explode(‘,’, $_SERVER[$key]);<br>      foreach($ip_array as $ip) {<br>        $ip = trim($ip);<br>        if(validate_ip($ip)) {<br>          return $ip;<br>        }<br>      }<br>    }<br>  }<br>  return ‘’;<br>}</p><p>function validate_ip($ip) {<br>  if(filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {<br>    return false;<br>  } else {<br>    return true;<br>  }<br>}</p><p>$remote_ip = $_SERVER[‘REMOTE_ADDR’];<br>$forwarded_ip = forwarded_ip();</p><p>?&gt;<br>    <div id="main-content"><br>        <h1>What Is My IP?</h1></p><pre><code>    &lt;p&gt;The request came from:&lt;br /&gt;        &lt;strong&gt;&lt;?php echo $remote_ip; ?&gt;&lt;/strong&gt;    &lt;/p&gt;    &lt;?php if($forwarded_ip != &apos;&apos;) { ?&gt;    &lt;p&gt;The request was forwarded for:&lt;br /&gt;        &lt;strong&gt;&lt;?php echo $forwarded_ip; ?&gt;&lt;/strong&gt;    &lt;/p&gt;    &lt;?php } ?&gt;&lt;/div&gt;</code></pre></body></html></style></head></html>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网站开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> php </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Tactile Indicator 引路钉</title>
+      <link href="/zdz.io/2020/05/11/tactile-indicator/"/>
+      <url>/zdz.io/2020/05/11/tactile-indicator/</url>
+      
+        <content type="html"><![CDATA[<p><em>通常你不会选择主动去认识对自己‘无关痛痒’的东西。</em></p><p><a href="#important">直接看重点</a></p><p><strong>絮絮叨叨：</strong></p><p>盲道，在城市中每天都有机会见到或踩过。</p><p>2017年，20出头的我在南澳大学(<a href="https://www.unisa.edu.au/" target="_blank" rel="noopener">UniSA</a>)读本科，当时真在读一门叫：工作健康与安全管理原则 —— Work Health and Safety Management Principles (<a href="https://online.unisa.edu.au/courses/163862" target="_blank" rel="noopener">BUSS 1053</a>) 的必修课；当时在为这门课的课题作业做Research的过程中突然需要把盲道上凸起的钉子作为一个引用放到作业中。 记得当时恰好在图书馆， 问了身边的同学大家都不知道， 莫说英文，我们甚至想不出这东西的中文怎么说都想不出。最后跑去问图书管理员、保安、保洁最后也是一无所获。 其实并不奇怪， 人们不会选择主动去认识对自己来说‘无关痛痒’的东西。Anyhow, 最后我还是通过Google Image找到了答案：</p><p><strong>盲道</strong>： <strong>Tactile Ground Surface Indicator</strong></p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/image-removebg.png" alt></p><p><em>postscript: 盲道是 1965 年在日本发明的</em></p><p><strong>盲道钉</strong>： <strong>Tactile Indicator</strong></p><p>触觉 Tactile + 指示物 Indicator</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/%E7%9B%B2%E9%81%93%E9%92%89.png" alt></p><p><em>其实还有很多其他的组合和叫法， 不过鉴于 Blind 这个词偏贬义， 其他的就 ⌘+Delete 掉了。</em></p><hr><p>除了盲道， 楼梯的阶梯(台阶)上也会经常用上这种指示钉， 我擅自将其翻译为:</p><p><strong>防滑梯面：</strong> Non-Slip Stair Treads 或者 Anti-Slip Stair Treads</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/stair_white.png" alt></p><p>还有他的好兄弟:</p><p><strong>防滑梯角： Anti-Slip Nosings</strong></p><p>Stair Nosing: 楼梯踏级的<em><strong>前缘</strong></em>, 保护<strong>梯阶突沿</strong>的金属<strong><em>护沿</em></strong> (确实和鼻子嗅(闻)的 Nosing是一样的</p><p>所以当时的我都在作业¨水¨了什么？ 当然是，将防滑的Step Nosings包裹在Step Edges， 上下楼梯则不易滑倒， 从而安全喽。</p><hr><blockquote><p>References</p><p>1. <a href="https://ncc.abcb.gov.au/ncc-online/NCC/2019/NCC-2019-Volume-Two/Part-39-Safe-Movement-And-Access/Part-391-Stairway-And-Ramp-Construction/Appropriate-Performance-Requirements?inlineLink={499D0C91-2B81-4F25-A6AC-9C3ACD0407A0}" target="_blank" rel="noopener">Stairway and Ramp Construction</a><br>2. <a href="https://poddtoppen.se/podcast/1099551615/ux-coffee-%E8%AE%BE%E8%AE%A1%E5%92%96/72%E4%BA%92%E8%81%94%E7%BD%91%E4%B8%8A%E7%9A%84%E7%9B%B2%E9%81%93" target="_blank" rel="noopener">互联网上的盲道</a><br>3. <a href="http://www.stair-nosing.co.uk/fibreglass_anti_slip_step_edge.htm" target="_blank" rel="noopener">Non - Slip Fibreglass Step Edges</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 求知欲 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>RMIT 大楼外墙上的奇怪装置</title>
+      <link href="/zdz.io/2020/05/11/whatsthis/"/>
+      <url>/zdz.io/2020/05/11/whatsthis/</url>
+      
+        <content type="html"><![CDATA[<p><em>即便搜索有引擎，难敌术业有专精</em></p><p><a href="#important">直接看重点</a></p><p><a href="https://en.wikipedia.org/wiki/RMIT_University" target="_blank" rel="noopener">RMIT大学</a> 周边随处可见的奇怪装置， 一直好奇， 上课路上经常和伙伴们吹水说这是不是学校开发的人脸识别系统的原型。</p><p>Again， 在我谷哥Image的帮助下， 我证实了自己吹水时的不着边际。</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/rmit.png" alt></p><p><strong>**地铁/</strong>隧道<strong>**监测棱镜</strong> Right-Angled Prism。</p><p>约合人民币 <em>¥150 — ¥200</em> 一个</p><p><strong>直角棱镜：</strong></p><hr><p>利用临界角特性，高效地内部全反射入射光。简单的讲这个棱镜是一个光学玻璃，用来反射电磁信号。</p><p><strong>测绘 Land Surveying</strong>：</p><p>这货的是用来测绘的，在澳洲你可时常会见到路上有人架着这样一个仪器在做测量 。</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/%E5%85%A8%E7%AB%99%E4%BB%AA.png" alt></p><p>—— <em>全站仪</em></p><p><strong>且薪酬颇高：</strong></p><p>测绘师在澳洲前景很不错，<a href="https://www.seek.com.au/" target="_blank" rel="noopener">seek.com.au</a> 上随便一搜都是月薪$5000+澳元的职位， 不过职业评估审核前提要就读3-4年工程专业学士学位 + 雅思6炸。</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/Land_Surveying-1024x683.jpg" alt></p><p>言归正传，所以我们看到的奇怪装置只是整个<strong><strong>检测系统</strong></strong> (见下图) 的冰山一角。</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/%E6%A3%80%E6%B5%8B%E4%BB%AA%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C.png" alt></p><p>其实，由于铁路线路在运营过程中受列车运行和自然因素的影响，路基沉降、高寒地区线路冻胀、轨道板位移等。</p><p>该系统包括：光电发射、接收装置和反射装置、主控单元、激光器、位置敏感元件。</p><p>激光器的发射且接收来自所述位置敏感元件的位移信</p><p>反射装置，由直角棱镜构成</p><ol><li>第一反射装置安装成使其斜边沿所述竖直方向</li><li>第二反射装置安装成使其斜边沿所述铁轨延伸方向</li></ol><p>我喜欢不懂装懂， 也清楚的知道自己不懂， 毕竟自己非工科出身，不懂工程专业， 即便我有搜索引擎。</p><hr><blockquote><p>References</p><p>1. <a href="http://www.njhq.com.cn/post/910.html" target="_blank" rel="noopener">徕卡GeoMoS CH自动化监测系统在深圳地铁1号线西乡站的应用</a><br>2. <a href="https://v.qq.com/x/page/r0393d5ywfs.html" target="_blank" rel="noopener">徕卡地铁隧道断面监测系统V2.0</a></p></blockquote><hr>]]></content>
+      
+      
+      <categories>
+          
+          <category> 求知欲 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>NATTI &amp; CCL 澳洲翻译课程</title>
+      <link href="/zdz.io/2020/05/10/natticcl/"/>
+      <url>/zdz.io/2020/05/10/natticcl/</url>
+      
+        <content type="html"><![CDATA[<p><em>NATTI 是一个翻译认证机构， 而CCL则是这个机构颁发的一个资格认证。</em></p><p>(NATTI 是 CCL 的‘爸爸’）</p><p><a href="#important">直接看重点</a></p><p><a href="https://www.naati.com.au/" target="_blank" rel="noopener">NATTI</a> 澳大利亚全国翻译认证机构 —— (National Accreditation Authority for Translators and Interpreters).</p><blockquote><p>改革： 自30/JUN/2018，NATTI 取消了“内部考试”。</p><p>交钱去读NAATI认证的校内课程（approved course）已经不能被作为取得认证的 ‘捷径’了。  </p><p>所以CCL自2018年就诞生喽。</p></blockquote><p>⇢ 参加外部考试的人数是4333人，获得认证的有1255人，通过率仅29%；</p><p>⇢ 参加内部考试的人数是5431人，获得认证的有5155人，通过率达95%</p><p><em>—— 2016-2017 Financial Year</em></p><p>以下测试均由NAATI提供， 可用来获取5分移民加分， 其中CCL是最简单的。</p><ol><li>NAATI 社区语言认证考试（CCL考试） </li><li>NAATI 笔译员认证考试（Certified Translator，原三级笔译考试） </li><li>NAATI  口译员认证考试（Certified Interpreter，原三级口译考试） </li><li>NAATI 准口译员认证考试（Certified Provisional Interpreter，原二级口译考试）</li></ol><p><a href="https://www.naati.com.au/services/ccl" target="_blank" rel="noopener">CCL</a> 社区语言资格认证 —— (Credentialed Community Language).</p><blockquote><p><strong>只</strong>有<strong>口译</strong>没有笔译</p><p>CCL考试只有口译， 并且<strong>有别与二级口译</strong>（certified provisional interpreter）&amp; <strong>三级口译(</strong>certified interpreter）， CCL 仅涵盖<strong>二级口译</strong>中的核心 (实务) 部分。</p></blockquote><p><strong>CCL Test v Certification Test</strong></p><ul><li>翻译认证 - NATTI Certification Test: 可以从事NAATI翻译工作 + 5分 CCL Point</li><li>社区语言资格认证 - NATTI CCL Test: 5分 CCL Point <strong>ONLY</strong></li></ul><hr><p><strong>对比</strong></p><p><strong>NATTI</strong><br>CCL Test<br><strong>社区语言资格认证</strong></p><p><strong>NATTI</strong><br>Certification Test<br><strong>翻译认证</strong></p><p><strong>报考前提</strong></p><p>NULL 不需要上课</p><p>必须参加：<br>NATTI 认可的培训 +<br><a href="https://www.naati.com.au/information-guides/candidate-information/ethical-candidate-information/" target="_blank" rel="noopener">职业道德考试</a> +<br><a href="https://www.naati.com.au/information-guides/candidate-information/intercultural-candidate-information/" target="_blank" rel="noopener">文化考试</a></p><p><strong>考试形式</strong></p><p>2篇录音</p><p>一篇电话翻译+<br>两篇真是场景翻译</p><p><strong>结果认证</strong></p><p>快： 4-8周<br>通过提交即刻获取5分</p><p>慢： 3个月左右</p><hr><p><em>二者均属于： ‘外部’考试。</em></p><blockquote><p>CCL 就是用来获取 ⇢ 5分移民加分的</p><p><em>不可以用来从事翻译工作。</em></p></blockquote><hr><p><strong>下面开始敲重点</strong></p><ul><li>CCL 考试<strong>不需要 (不强制) 参加培训课程</strong></li><li>$800 澳元：目前CCL考试报名费 $800 刀</li><li>21天： 考试前21天之内将不能更换考场和时间</li><li>3年有效期： 目前CCL有效期过期重考。</li><li>5分移民加分： <em>NATTI通过CCL测试评估你的英语能力是否达标 (标：Community Level), 通过测试便可获得CCL资格证书，并有5分移民加分，可以简称 CCL Point.</em></li><li>与PTE&amp;IELTES无关： 考生不需要预先通过语言能力测试</li><li>CCL资格证书， 不可以用来从事翻译工作</li><li>口译ONLY: CCL 只考口译</li><li>考试范围： 医疗、法律、社区服务、移民、教育、社会安全、金融、住房、商业、保险、就业、雇佣、房产、公共事务、消费者事务</li><li>考试事宜： 不可以带任何笔记，电子设备入场， 考试过程中可以记笔记。</li><li>考试形式： 对对话录音进行， 中译英 &amp; 英译中</li><li>2*300: 考试内容为 2篇对话录音, 每个对话在300字左右，每句长度不超过35字</li><li>2名考官： 考试评分以两名考官给出的分数决定。</li><li>澳洲考点：<ol><li>墨尔</li><li>阿德莱德</li><li>悉尼</li><li>珀斯</li><li>布里斯班</li><li>堪培拉</li><li>霍巴特</li></ol></li></ul><hr><blockquote><p><strong>References:</strong></p><p>1. <em><a href="https://zhuanlan.zhihu.com/p/58104920" target="_blank" rel="noopener">CCL备考：关于CCL你需要了解的所有知识 CCL常见15问</a></em><br>2. <a href="https://www.zhihu.com/question/322103480/answer/666259217" target="_blank" rel="noopener">CCL报名、CCL考试时间 、CCL考试费用、CCL更改考点、CCL评分机制、CCL成绩有效期是什么？</a><br>3. <a href="https://www.naati.com.au/services/ccl/" target="_blank" rel="noopener">Credentialed Community Language (CCL)</a><br>4. <a href="https://zhuanlan.zhihu.com/p/71210234" target="_blank" rel="noopener">CCL到底是什么！通过率高吗？</a><br>5. <a href="https://www.51ccl.com.au/" target="_blank" rel="noopener">NAATI CCL考试常见Q &amp; A</a><br>6. <a href="https://www.aoweibang.com/view/34944881/" target="_blank" rel="noopener">对于翻译课程，NATTI &amp; CCL傻傻分不清楚？</a></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 澳洲留学 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>黑民大赦</title>
       <link href="/zdz.io/2020/05/10/%E9%BB%91%E6%B0%91%E5%A4%A7%E8%B5%A6/"/>
       <url>/zdz.io/2020/05/10/%E9%BB%91%E6%B0%91%E5%A4%A7%E8%B5%A6/</url>
