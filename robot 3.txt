@@ -1,7 +1,0 @@
-#hexo robots.txt
-User-agent: *
-
-
-Sitemap: https://elegantme.cn/search.xml
-Sitemap: https://elegantme.cn/sitemap.xml
-Sitemap: https://elegantme.cn/baidusitemap.xml
