@@ -269,7 +269,7 @@
       <link href="/2020/05/15/convert-webp/"/>
       <url>/2020/05/15/convert-webp/</url>
       
-        <content type="html"><![CDATA[<p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p><p><strong>1. 转换为: <code>.jpg</code></strong></p><p>dwebp 文件名.webp -o 文件名.jpg</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/demo.convert.gif" alt></p><p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p><p>dwebp 文件名.webp -o 文件名.png</p>]]></content>
+        <content type="html"><![CDATA[<p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p><p><strong>1. 转换为: <code>.jpg</code></strong></p><p>dwebp 文件名.webp -o 文件名.jpg</p><p><img src="/2020/05/15/convert-webp/%7Bdemo_convert.gif" alt></p><p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p><p>dwebp 文件名.webp -o 文件名.png</p>]]></content>
       
       
       <categories>
