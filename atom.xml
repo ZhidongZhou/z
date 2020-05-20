@@ -378,12 +378,12 @@
   
   <entry>
     <title>Convert.webp格式转换</title>
-    <link href="https://yumtaro.com/2020/05/15/Convert-webp%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
-    <id>https://yumtaro.com/2020/05/15/Convert-webp%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/</id>
+    <link href="https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
+    <id>https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/</id>
     <published>2020-05-15T13:41:47.000Z</published>
-    <updated>2020-05-20T01:55:16.008Z</updated>
+    <updated>2020-05-20T01:55:49.846Z</updated>
     
-    <content type="html"><![CDATA[<p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p><p><strong>1. 转换为: <code>.jpg</code></strong></p><p>dwebp 文件名.webp -o 文件名.jpg</p><p><img src="/2020/05/15/Convert-webp%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/demo_convert.gif" alt></p><p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p><p>dwebp 文件名.webp -o 文件名.png</p>]]></content>
+    <content type="html"><![CDATA[<p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p><p><strong>1. 转换为: <code>.jpg</code></strong></p><p>dwebp 文件名.webp -o 文件名.jpg</p><p><img src="/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/demo_convert.gif" alt></p><p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p><p>dwebp 文件名.webp -o 文件名.png</p>]]></content>
     
     <summary type="html">
     
