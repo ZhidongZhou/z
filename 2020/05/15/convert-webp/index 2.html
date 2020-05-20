@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。 1. 转换为: .jpg dwebp 文件名.webp -o 文件名.jpg  2. 转换为: .png (换汤不换药) dwebp 文件名.webp -o 文件名.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Convert .webp — 格式转换">
+<meta property="og:url" content="https://zhidongzhou.github.io/z/2020/05/15/convert-webp/index.html">
+<meta property="og:site_name" content="相·遇">
+<meta property="og:description" content="通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。 1. 转换为: .jpg dwebp 文件名.webp -o 文件名.jpg  2. 转换为: .png (换汤不换药) dwebp 文件名.webp -o 文件名.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://www.yumtaro.com/wp-content/uploads/2020/05/demo.convert.gif">
+<meta property="article:published_time" content="2020-05-15T13:41:47.000Z">
+<meta property="article:modified_time" content="2020-05-19T16:30:42.856Z">
+<meta property="article:author" content="Darren Z">
+<meta property="article:tag" content="MacOS">
+<meta property="article:tag" content="terminal_trick">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.yumtaro.com/wp-content/uploads/2020/05/demo.convert.gif">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/z/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/z/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/z/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Convert .webp — 格式转换</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/z/css/style.css">
+
+    <link rel="stylesheet" href="/z/css/zdz.css" media="screen" type="text/css">
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/z/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/z/atom.xml" title="相·遇" type="application/atom+xml">
+</head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/z/">Home</a></li>
+         
+          <li><a href="/z/about/">About</a></li>
+         
+          <li><a href="/z/archives/">Posts</a></li>
+         
+          <li><a href="/z/search/">Search</a></li>
+         
+          <li><a href="/z/tags/">Tags</a></li>
+         
+          <li><a href="/z/categories/">Categories</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/z/2020/05/16/%E7%94%B7%E5%A5%B3%E6%9C%8B%E5%8F%8B/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/z/2020/05/15/mac-terminaltricks/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&text=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&is_video=false&description=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Convert .webp — 格式转换&body=Check out this article: https://zhidongzhou.github.io/z/2020/05/15/convert-webp/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&name=Convert .webp — 格式转换&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&t=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Convert .webp — 格式转换
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">相·遇</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-05-15T13:41:47.000Z" itemprop="datePublished">15-05-2020</time>
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/z/categories/hack/">hack</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/z/tags/MacOS/" rel="tag">MacOS</a>, <a class="tag-link" href="/z/tags/terminal-trick/" rel="tag">terminal_trick</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p>
+<p><strong>1. 转换为: <code>.jpg</code></strong></p>
+<p>dwebp 文件名.webp -o 文件名.jpg</p>
+<p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/demo.convert.gif" alt></p>
+<p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p>
+<p>dwebp 文件名.webp -o 文件名.png</p>
+
+  </div>
+   <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
+   <div>Posts Contains: <span class="post-count">54</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">1</span>Min's</div> -->
+     <!-- 打赏 -->
+     <!-- 打赏功能开关-->
+      <!-- 添加捐赠图标 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <div>👉🏻<a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏">🧧</a>👈🏻</div>
+        <span class="donate_txt">
+           👆🏻<br>
+           • 打赏小周 • <!--这个值配置在主题的._config.yml中-->
+        </span>
+        <br>
+      </div>  
+    <div id="donate_guide" class="donate_bar center hidden" >
+        <!-- 支付宝打赏图案 -->
+        <!-- <img src="./images/WeChatpay.jpg" alt="支付宝打赏"> -->
+        <!-- 微信打赏图案 -->
+        <img src="https://zhidongzhou.github.io/z/images/weChatPay.jpg" alt="微信打赏">
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+<!-- 添加捐赠图标 -->
+    
+</article>
+<div>
+    <div class="blog-post-comments">
+        <div id="disqus_thread">
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+        </div>
+    </div>
+
+</div>
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/z/">Home</a></li>
+         
+          <li><a href="/z/about/">About</a></li>
+         
+          <li><a href="/z/archives/">Posts</a></li>
+         
+          <li><a href="/z/search/">Search</a></li>
+         
+          <li><a href="/z/tags/">Tags</a></li>
+         
+          <li><a href="/z/categories/">Categories</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&text=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&is_video=false&description=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Convert .webp — 格式转换&body=Check out this article: https://zhidongzhou.github.io/z/2020/05/15/convert-webp/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&title=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&name=Convert .webp — 格式转换&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://zhidongzhou.github.io/z/2020/05/15/convert-webp/&t=Convert .webp — 格式转换" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div>
+    
+      <script src='https://unpkg.com/mermaid@8.4.2/dist/mermaid.min.js'></script>
+      <script>
+        if (window.mermaid) {
+          mermaid.initialize({
+            theme: 'default',
+            "flowchart": {
+              curve: 'basis'
+          }
+          });
+        }
+      </script>
+    
+  </div>
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020
+    Darren Z
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/z/">Home</a></li>
+         
+          <li><a href="/z/about/">About</a></li>
+         
+          <li><a href="/z/archives/">Posts</a></li>
+         
+          <li><a href="/z/search/">Search</a></li>
+         
+          <li><a href="/z/tags/">Tags</a></li>
+         
+          <li><a href="/z/categories/">Categories</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+    </div>
+    <!-- styles -->
+
+<link rel="stylesheet" href="/z/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/z/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+    <!-- jquery -->
+
+<script src="/z/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/z/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/z/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/z/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+    <script type="text/javascript">
+        var disqus_shortname = 'https-zhidongzhou-github-io-zdz-io';
+
+        (function(){
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        }());
+    </script>
+
+
+</body>
+</html>
