@@ -378,12 +378,12 @@
   
   <entry>
     <title>Convert.webp 文件格式转换</title>
-    <link href="https://yumtaro.com/2020/05/15/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
-    <id>https://yumtaro.com/2020/05/15/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/</id>
+    <link href="https://yumtaro.com/2020/05/15/Convert.webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
+    <id>https://yumtaro.com/2020/05/15/Convert.webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/</id>
     <published>2020-05-15T13:41:47.000Z</published>
-    <updated>2020-05-20T02:01:42.471Z</updated>
+    <updated>2020-05-20T02:50:03.413Z</updated>
     
-    <content type="html"><![CDATA[<p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p><p><strong>1. 转换为: <code>.jpg</code></strong></p><p>dwebp 文件名.webp -o 文件名.jpg</p><p><img src="/2020/05/15/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/demo_convert.gif" alt></p><p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p><p>dwebp 文件名.webp -o 文件名.png</p>]]></content>
+    <content type="html"><![CDATA[<p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p><p><strong>1. 转换为: <code>.jpg</code></strong></p><p>dwebp 文件名.webp -o 文件名.jpg</p><p><img src="/2020/05/15/Convert.webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/demo_convert.gif" alt></p><p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p><p>dwebp 文件名.webp -o 文件名.png</p>]]></content>
     
     <summary type="html">
     
@@ -406,13 +406,13 @@
   </entry>
   
   <entry>
-    <title>Mac Dock Optimization  — 程序坞优化</title>
-    <link href="https://yumtaro.com/2020/05/15/mac-terminaltricks/"/>
-    <id>https://yumtaro.com/2020/05/15/mac-terminaltricks/</id>
+    <title>MacOS Dock Optimization 程序坞优化</title>
+    <link href="https://yumtaro.com/2020/05/15/MacOS%20Dock%20Optimization%20%E7%A8%8B%E5%BA%8F%E5%9D%9E%E4%BC%98%E5%8C%96/"/>
+    <id>https://yumtaro.com/2020/05/15/MacOS%20Dock%20Optimization%20%E7%A8%8B%E5%BA%8F%E5%9D%9E%E4%BC%98%E5%8C%96/</id>
     <published>2020-05-14T23:43:39.000Z</published>
-    <updated>2020-05-19T16:30:42.852Z</updated>
+    <updated>2020-05-20T02:55:34.829Z</updated>
     
-    <content type="html"><![CDATA[<p><strong>1. finder中显示当前路径:</strong></p><p>首先打开 Terminal</p><p>defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder</p><p>关闭路径显示， 只将 <code>YES</code> 改为 <code>NO</code>。</p><p><strong>2. dock 中添加空白位置:</strong></p><p>defaults write com.apple.dock persistent-apps -array-add ‘{tile-data={}; tile-type=”spacer-tile”;}’<br>killall Dock</p><p><em>$ <code>kill Dock</code>, ‘ <strong>D</strong> ’ 要大写。</em></p><p>建议取消在dock设置中取消Mignificant 可以无限添加， 删除只需手动拖出dock, 或长按选择删除 — (见下图)。</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/demo_dock.gif" alt></p><p><strong>3. dock 动画提速:</strong></p><p># 快<br>defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock<br># 超快<br>defaults write com.apple.dock autohide-time-modifier -float 0.12;killall Dock<br># 还原<br>defaults delete com.apple.dock autohide-time-modifier;killall Dock</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/demo_fast_dock.gif" alt="dock_speed"></p><p><strong>4. 播放(Star War)星战:</strong></p><p>telnet towel.blinkenlights.nl</p><p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/starwar.gif" alt></p><p><strong>5. 修改默认截图前缀:</strong></p><p>defaults write com.apple.screencapture name “自定义项目”</p><blockquote><p>References</p><p>1. <a href="http://www.snazzylabs.com/five-advanced-tricks-for-mac-users/" target="_blank" rel="noopener">5 Tricks for Advanced Mac Users</a></p></blockquote>]]></content>
+    <content type="html"><![CDATA[<p><strong>1. finder中显示当前路径:</strong></p><p>首先打开 Terminal</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder</span><br></pre></td></tr></table></figure><p>关闭路径显示， 只将 <code>YES</code> 改为 <code>NO</code>。</p><p><strong>2. dock 中添加空白位置:</strong></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.dock persistent-apps -array-add <span class="string">'&#123;tile-data=&#123;&#125;; tile-type="spacer-tile";&#125;'</span></span><br><span class="line"><span class="comment"># 需要重置</span></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure><p><em>$ <code>kill Dock</code>, ‘ <strong>D</strong> ’ 要大写。</em></p><p>建议取消在dock设置中取消Mignificant 可以无限添加， 删除只需手动拖出dock, 或长按选择删除 — (见下图)。</p><p><img src="/2020/05/15/MacOS%20Dock%20Optimization%20%E7%A8%8B%E5%BA%8F%E5%9D%9E%E4%BC%98%E5%8C%96/demo_dock.gif" alt="Add Blank Element to Dock"></p><p><strong>3. Dock 动画提速 (提速包括其他窗口动画):</strong></p><pre><code class="Bash"><span class="comment"># 快</span>defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock<span class="comment"># 超快</span>defaults write com.apple.dock autohide-time-modifier -<span class="built_in">float</span> 0.12;killall Dock<span class="comment"># 还原</span>defaults delete com.apple.dock autohide-time-modifier;killall Dock</code></pre><p><img src="/2020/05/15/MacOS%20Dock%20Optimization%20%E7%A8%8B%E5%BA%8F%E5%9D%9E%E4%BC%98%E5%8C%96/demo_fast_dock.gif" alt="Speed Up Dock Animation"></p><p><strong>4. 播放(Star War)星战:</strong></p><p>telnet towel.blinkenlights.nl</p><p><img src="/2020/05/15/MacOS%20Dock%20Optimization%20%E7%A8%8B%E5%BA%8F%E5%9D%9E%E4%BC%98%E5%8C%96/starwar.gif" alt="Starwar In Terminal"></p><p><strong>5. 修改默认截图前缀:</strong></p><p>defaults write com.apple.screencapture name “自定义项目”</p><hr><blockquote><p>References<br>1. <a href="http://www.snazzylabs.com/five-advanced-tricks-for-mac-users/" target="_blank" rel="noopener">5 Tricks for Advanced Mac Users</a></p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -420,18 +420,16 @@
       
         &lt;p&gt;&lt;strong&gt;1. finder中显示当前路径:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;首先打开 Terminal&lt;/p&gt;
-&lt;p&gt;defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class
       
     
     </summary>
     
     
-      <category term="hack" scheme="https://yumtaro.com/categories/hack/"/>
+      <category term="执迷终端" scheme="https://yumtaro.com/categories/%E6%89%A7%E8%BF%B7%E7%BB%88%E7%AB%AF/"/>
     
     
-      <category term="MacOS" scheme="https://yumtaro.com/tags/MacOS/"/>
-    
-      <category term="terminal_trick" scheme="https://yumtaro.com/tags/terminal-trick/"/>
+      <category term="MacOS Tips" scheme="https://yumtaro.com/tags/MacOS-Tips/"/>
     
   </entry>
   
