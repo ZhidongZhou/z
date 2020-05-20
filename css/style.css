@@ -1276,8 +1276,10 @@ article .content .caption {
     text-align: left;
   }
 }
-.blog-post-comments {
-  margin-top: 4rem;
+#valine_container .vwrap .vheader .vinput,
+#valine_container .vwrap .vedit #veditor {
+  font-weight: 500;
+  font-family: "Fira Code", 'Noto Sans SC', sans-serif, monospace;
 }
 #footer {
   position: absolute;
