@@ -6,20 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。 1. 转换为: .jpg dwebp 文件名.webp -o 文件名.jpg  2. 转换为: .png (换汤不换药) dwebp 文件名.webp -o 文件名.png">
+    <meta name="description" content="My name is Darren. Darren Zhou. I currently study Master of IT in Melbourne. I&#39;d like to share some interesting and useful stuff with you. I&#39;d like to share something more practical and interesting wi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Convert.webp格式转换">
-<meta property="og:url" content="https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/index.html">
+<meta property="og:title" content="Convert.webp 文件格式转换">
+<meta property="og:url" content="https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/index.html">
 <meta property="og:site_name" content="相·遇">
-<meta property="og:description" content="通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。 1. 转换为: .jpg dwebp 文件名.webp -o 文件名.jpg  2. 转换为: .png (换汤不换药) dwebp 文件名.webp -o 文件名.png">
+<meta property="og:description" content="My name is Darren. Darren Zhou. I currently study Master of IT in Melbourne. I&#39;d like to share some interesting and useful stuff with you. I&#39;d like to share something more practical and interesting wi">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/demo_convert.gif">
-<meta property="article:published_time" content="2020-05-15T13:41:47.000Z">
-<meta property="article:modified_time" content="2020-05-20T01:55:49.846Z">
+<meta property="article:published_time" content="2020-05-20T01:58:09.000Z">
+<meta property="article:modified_time" content="2020-05-20T01:58:48.313Z">
 <meta property="article:author" content="Darren Z">
-<meta property="article:tag" content="MacOS Tips">
+<meta property="article:tag" content="MacOS">
+<meta property="article:tag" content=" php">
+<meta property="article:tag" content=" 网站开发">
+<meta property="article:tag" content=" 微信小程序">
+<meta property="article:tag" content=" Python">
+<meta property="article:tag" content=" Node.js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/demo_convert.gif">
     
     
         
@@ -39,7 +42,7 @@
         
     
     <!-- title -->
-    <title>Convert.webp格式转换</title>
+    <title>Convert.webp 文件格式转换</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -85,10 +88,8 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/05/16/%E7%94%B7%E5%A5%B3%E6%9C%8B%E5%8F%8B/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        
-        <li><a class="icon" href="/2020/05/15/mac-terminaltricks/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/05/20/CCL%E8%AF%8D%E6%B1%87/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -101,17 +102,17 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&text=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&is_video=false&description=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Convert.webp格式转换&body=Check out this article: https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&name=Convert.webp格式转换&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&t=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&text=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&is_video=false&description=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Convert.webp 文件格式转换&body=Check out this article: https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&name=Convert.webp 文件格式转换&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&t=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -128,7 +129,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        Convert.webp格式转换
+        Convert.webp 文件格式转换
     </h1>
 
 
@@ -140,41 +141,25 @@
       
     <div class="postdate">
       
-        <time datetime="2020-05-15T13:41:47.000Z" itemprop="datePublished">15-05-2020</time>
+        <time datetime="2020-05-20T01:58:09.000Z" itemprop="datePublished">20-05-2020</time>
         
       
     </div>
 
 
       
-    <div class="article-category">
-        <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/%E6%89%A7%E8%BF%B7%E7%BB%88%E7%AB%AF/">执迷终端</a>
-    </div>
-
 
       
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/MacOS-Tips/" rel="tag">MacOS Tips</a>
-    </div>
-
 
     </div>
   </header>
   
 
   <div class="content" itemprop="articleBody">
-    <p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p>
-<p><strong>1. 转换为: <code>.jpg</code></strong></p>
-<p>dwebp 文件名.webp -o 文件名.jpg</p>
-<p><img src="/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/demo_convert.gif" alt></p>
-<p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p>
-<p>dwebp 文件名.webp -o 文件名.png</p>
-
+    
   </div>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">54</span> Words</div>
+   <div>Posts Contains: <span class="post-count">0</span> Words</div>
    <!-- <div>Reading Time: <span class="post-count">1</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
@@ -241,17 +226,17 @@
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&text=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&is_video=false&description=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Convert.webp格式转换&body=Check out this article: https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&name=Convert.webp格式转换&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/2020/05/15/%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&t=Convert.webp格式转换" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&text=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&is_video=false&description=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Convert.webp 文件格式转换&body=Check out this article: https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&title=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&name=Convert.webp 文件格式转换&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/&t=Convert.webp 文件格式转换" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
