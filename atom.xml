@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yumtaro.com/"/>
-  <updated>2020-05-20T01:58:48.313Z</updated>
+  <updated>2020-05-19T15:40:17.682Z</updated>
   <id>https://yumtaro.com/</id>
   
   <author>
@@ -15,21 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Convert.webp 文件格式转换</title>
-    <link href="https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
-    <id>https://yumtaro.com/2020/05/20/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/</id>
-    <published>2020-05-20T01:58:09.000Z</published>
-    <updated>2020-05-20T01:58:48.313Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>CCL词汇</title>
@@ -388,6 +373,35 @@
     
     
       <category term="CCL" scheme="https://yumtaro.com/tags/CCL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Convert.webp 文件格式转换</title>
+    <link href="https://yumtaro.com/2020/05/15/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
+    <id>https://yumtaro.com/2020/05/15/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/</id>
+    <published>2020-05-15T13:41:47.000Z</published>
+    <updated>2020-05-20T02:01:42.471Z</updated>
+    
+    <content type="html"><![CDATA[<p>通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。</p><p><strong>1. 转换为: <code>.jpg</code></strong></p><p>dwebp 文件名.webp -o 文件名.jpg</p><p><img src="/2020/05/15/Convert-webp%20%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/demo_convert.gif" alt></p><p><strong>2. 转换为: <code>.png</code> (换汤不换药)</strong></p><p>dwebp 文件名.webp -o 文件名.png</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;通过 Mac Terminal 将 .webp 格式的图片转换为 .jpg 或 .png 格式。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 转换为: &lt;code&gt;.jpg&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;dwebp 文件名.webp -o 文件名.jpg&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="执迷终端" scheme="https://yumtaro.com/categories/%E6%89%A7%E8%BF%B7%E7%BB%88%E7%AB%AF/"/>
+    
+    
+      <category term="MacOS Tips" scheme="https://yumtaro.com/tags/MacOS-Tips/"/>
     
   </entry>
   
