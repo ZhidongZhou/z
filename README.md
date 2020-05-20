@@ -18,12 +18,14 @@
 
 3. [20/May/2020]
   - 更换valine评论系统
+  - 增加阅览计数
+  
 
 ## :mag: Todo | 代办
 
 - [x] 评论系统
-- [ ]日历功能 
-- [ ]帖子预览图
+- [ ] 日历功能 
+- [ ] 帖子预览图
 
 
 ## :sweet_potato: Site | 网站
@@ -36,7 +38,7 @@
 ## :electric_plug: Author | 作者
 
 - 昵称: Darren Z
-- 描述: 想把自己培养成技术型宅男，宅和男已经具备，就差技术了→\_→
+<!-- - 描述: 想把自己培养成技术型宅男，宅和男已经具备，就差技术了→\_→ -->
 - 地址：墨尔本 (Mel, Australia)
 - 状态: Master of IT <sup>[May-2020]</sup>
 - 专业: Cybersecurity

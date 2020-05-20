@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://www.yumtaro.com/wp-content/uploads/2020/05/%E6%8E%88%E6%9D%83-1024x570.png">
 <meta property="og:image" content="https://www.yumtaro.com/wp-content/uploads/2020/05/imapVpop3.gif">
 <meta property="article:published_time" content="2020-05-14T04:43:48.000Z">
-<meta property="article:modified_time" content="2020-05-19T16:30:42.851Z">
+<meta property="article:modified_time" content="2020-05-20T09:59:59.446Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="MacOS">
 <meta property="article:tag" content=" php">
@@ -161,7 +161,7 @@
             <i class="fa fa-eye"></i>
             </span>
             
-            <span class="post-meta-item-text">阅读次数</span>
+            <span class="post-meta-item-text">Hits</span>
             <span class="leancloud-visitors-count"></span>
         </span>
     </div>
@@ -207,7 +207,7 @@
 <p>Tips: 纠结于IMAP / POP3 的可以参考下图</p>
 <p><img src="https://www.yumtaro.com/wp-content/uploads/2020/05/imapVpop3.gif" alt></p>
 <p><strong>发件人邮箱</strong></p>
-<p>from mail: <a href="mailto:&#121;&#111;&#x75;&#114;&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#109;">&#121;&#111;&#x75;&#114;&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#x31;&#x36;&#51;&#46;&#99;&#x6f;&#109;</a></p>
+<p>from mail: <a href="mailto:&#x79;&#111;&#117;&#114;&#x65;&#x6d;&#97;&#x69;&#x6c;&#64;&#49;&#x36;&#51;&#46;&#99;&#111;&#109;">&#x79;&#111;&#117;&#114;&#x65;&#x6d;&#97;&#x69;&#x6c;&#64;&#49;&#x36;&#51;&#46;&#99;&#111;&#109;</a></p>
 <p>返回：250 Mail OK</p>
 <p><strong>收件人邮箱</strong></p>
 <p>rcpt to: &lt;receiveremail@???.com&gt;</p>
@@ -242,14 +242,27 @@
 </ul>
 <p><strong>解决： 554 DT:SPM</strong></p>
 <p>在输入： <code>DATA</code> 之后 要外加： <code>FROM: youremail@163.com</code> &amp; <code>TO: reciver@???.com</code>，<code>CC: youremail@163.com</code> 最后注意<code>subject:</code> 不要用: test 或 hello</p>
-<blockquote>
-<p>References</p>
-<p>1. <a href="https://blog.csdn.net/archer119/article/details/64942220" target="_blank" rel="noopener">163邮箱报错: 535 Error: authentication failed</a><br>2. <a href="https://dl.icewarp.com/online_help/6057.htm" target="_blank" rel="noopener">Interpretation of 5xx errors in Icewarp SMTP</a><br>3. <a href="https://www.jianshu.com/p/39c2a81ef582" target="_blank" rel="noopener">python发送简单邮件</a><br>4. <a href="https://blog.csdn.net/yakson/article/details/7917511" target="_blank" rel="noopener">javax.mail.MessagingException: 500 Error: bad syntax已解决</a><br>5. <a href="https://blog.csdn.net/Hughnes/article/details/52070878" target="_blank" rel="noopener">邮箱不可用 550 User has no permission</a><br>6. <a href="https://blog.csdn.net/CSUstudent007/article/details/90728471" target="_blank" rel="noopener">邮箱不可用 550 User has no permission(JavaMail登不进邮件系统)</a><br>7. <a href="https://www.cnblogs.com/qyf404/p/4943387.html" target="_blank" rel="noopener">学习linux之用mail命令发邮件</a><br>8. <a href="https://qastack.cn/apple/22921/how-can-i-send-email-through-a-terminal-window" target="_blank" rel="noopener">如何通过终端窗口发送电子邮件？</a><br>9. <a href="http://help.163.com/09/1224/14/5RAB4VK500753VB8.html?servCode=6010330" target="_blank" rel="noopener">企业退信的常见问题？</a><br>10. <a href="https://blog.csdn.net/dtwangquan/article/details/21626623" target="_blank" rel="noopener">linux 系统在终端中用SMTP协议发邮件</a><br>11. <a href="https://ubuntu-mate.community/t/problems-with-mail/15653" target="_blank" rel="noopener">Problems with mail</a><br>12. <a href="https://my.oschina.net/u/4387790/blog/3599915" target="_blank" rel="noopener">命令行发送SMTP协议邮件（163邮箱）</a><br>13. <a href="https://mail.163.com/mailhelp/antispam.htm" target="_blank" rel="noopener">网易反垃圾邮件</a><br>14. <a href="https://blog.csdn.net/weixin_41789943/article/details/82348946" target="_blank" rel="noopener">python 的smtplib 的坑 554 DT:SPM 163 smtp12</a>  </p>
-</blockquote>
+<p><strong>References</strong></p>
+<ol>
+<li><a href="https://blog.csdn.net/archer119/article/details/64942220" target="_blank" rel="noopener">163邮箱报错: 535 Error: authentication failed</a>  </li>
+<li><a href="https://dl.icewarp.com/online_help/6057.htm" target="_blank" rel="noopener">Interpretation of 5xx errors in Icewarp SMTP</a>  </li>
+<li><a href="https://www.jianshu.com/p/39c2a81ef582" target="_blank" rel="noopener">python发送简单邮件</a>  </li>
+<li><a href="https://blog.csdn.net/yakson/article/details/7917511" target="_blank" rel="noopener">javax.mail.MessagingException: 500 Error: bad syntax已解决</a>  </li>
+<li><a href="https://blog.csdn.net/Hughnes/article/details/52070878" target="_blank" rel="noopener">邮箱不可用 550 User has no permission</a>  </li>
+<li><a href="https://blog.csdn.net/CSUstudent007/article/details/90728471" target="_blank" rel="noopener">邮箱不可用 550 User has no permission(JavaMail登不进邮件系统)</a>  </li>
+<li><a href="https://www.cnblogs.com/qyf404/p/4943387.html" target="_blank" rel="noopener">学习linux之用mail命令发邮件</a>  </li>
+<li><a href="https://qastack.cn/apple/22921/how-can-i-send-email-through-a-terminal-window" target="_blank" rel="noopener">如何通过终端窗口发送电子邮件？</a>  </li>
+<li><a href="http://help.163.com/09/1224/14/5RAB4VK500753VB8.html?servCode=6010330" target="_blank" rel="noopener">企业退信的常见问题？</a>  </li>
+<li><a href="https://blog.csdn.net/dtwangquan/article/details/21626623" target="_blank" rel="noopener">linux 系统在终端中用SMTP协议发邮件</a>  </li>
+<li><a href="https://ubuntu-mate.community/t/problems-with-mail/15653" target="_blank" rel="noopener">Problems with mail</a>  </li>
+<li><a href="https://my.oschina.net/u/4387790/blog/3599915" target="_blank" rel="noopener">命令行发送SMTP协议邮件（163邮箱）</a>  </li>
+<li><a href="https://mail.163.com/mailhelp/antispam.htm" target="_blank" rel="noopener">网易反垃圾邮件</a>  </li>
+<li><a href="https://blog.csdn.net/weixin_41789943/article/details/82348946" target="_blank" rel="noopener">python 的smtplib 的坑 554 DT:SPM 163 smtp12</a>  </li>
+</ol>
 
   </div>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">801</span> Words</div>
+   <div>Posts Contains: <span class="post-count">795</span> Words</div>
    <!-- <div>Reading Time: <span class="post-count">3</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
@@ -258,7 +271,7 @@
     <div id="donate_board" class="donate_bar center">
         <div>👉🏻<a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏">🧧</a>👈🏻</div>
         <span class="donate_txt">
-           👆🏻<br>
+           ↑<br>
            • 打赏小周 • <!--这个值配置在主题的._config.yml中-->
         </span>
         <br>
