@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/contact-trashed/index.html</loc>
-    
-    <lastmod>2020-05-19T16:30:42.861Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yumtaro.com/contact/index.html</loc>
     
     <lastmod>2020-05-19T16:30:42.861Z</lastmod>
@@ -44,9 +37,9 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/2020/05/13/nodejs/</loc>
+    <loc>https://yumtaro.com/contact-trashed/index.html</loc>
     
-    <lastmod>2020-05-19T16:30:42.851Z</lastmod>
+    <lastmod>2020-05-19T16:30:42.861Z</lastmod>
     
   </url>
   
@@ -58,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/2020/05/12/php-browser-detection/</loc>
+    <loc>https://yumtaro.com/2020/05/13/nodejs/</loc>
     
     <lastmod>2020-05-19T16:30:42.851Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://yumtaro.com/2020/05/11/tactile-indicator/</loc>
+    <loc>https://yumtaro.com/2020/05/12/php-browser-detection/</loc>
     
     <lastmod>2020-05-19T16:30:42.851Z</lastmod>
     
@@ -80,6 +73,13 @@
   
   <url>
     <loc>https://yumtaro.com/2020/05/14/terminal-email/</loc>
+    
+    <lastmod>2020-05-19T16:30:42.851Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/2020/05/11/tactile-indicator/</loc>
     
     <lastmod>2020-05-19T16:30:42.851Z</lastmod>
     
