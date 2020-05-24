@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="通过PHP实现简易单一功能服务页面 [1] —— 获取浏览者 IP 地址 代码通用， 复制 ip.php 粘贴到⇢ 文件名.php 即可。 &lt;!-- ip.php –&gt;             What Is My IP?          body {         margin: 0;         padding: 0;         background: #232323">
+    <meta name="description" content="&#96;&#96; ffmpeg -i 输入文件名.文件后缀 -map 0:a:0 -b:a 96k 输出文件名.mp3 Reference: fastest way to convert any audio file to low bitrate? ffmpeg Documentation Is there a way to convert audio files in Mac OS X or the com">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP入门 [1] — 获取IP地址">
-<meta property="og:url" content="https://yumtaro.com/2020/05/12/phpshowip/index.html">
+<meta property="og:title" content="Convert MP3">
+<meta property="og:url" content="https://yumtaro.com/2020/05/24/Convert-MP3/index.html">
 <meta property="og:site_name" content="相·遇">
-<meta property="og:description" content="通过PHP实现简易单一功能服务页面 [1] —— 获取浏览者 IP 地址 代码通用， 复制 ip.php 粘贴到⇢ 文件名.php 即可。 &lt;!-- ip.php –&gt;             What Is My IP?          body {         margin: 0;         padding: 0;         background: #232323">
+<meta property="og:description" content="&#96;&#96; ffmpeg -i 输入文件名.文件后缀 -map 0:a:0 -b:a 96k 输出文件名.mp3 Reference: fastest way to convert any audio file to low bitrate? ffmpeg Documentation Is there a way to convert audio files in Mac OS X or the com">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-12T04:21:10.000Z">
-<meta property="article:modified_time" content="2020-05-21T05:57:47.127Z">
+<meta property="article:published_time" content="2020-05-24T12:53:37.000Z">
+<meta property="article:modified_time" content="2020-05-24T13:09:20.565Z">
 <meta property="article:author" content="Darren Z">
-<meta property="article:tag" content="PHP">
+<meta property="article:tag" content="MacOS">
 <meta name="twitter:card" content="summary">
     
     
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>PHP入门 [1] — 获取IP地址</title>
+    <title>Convert MP3</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -84,10 +84,8 @@
     <span id="actions">
       <ul>
         
-        <li><a class="icon" href="/2020/05/12/php-browser-detection/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
         
-        
-        <li><a class="icon" href="/2020/05/11/RMIT%E5%A4%A7%E6%A5%BC%E5%A4%96%E5%A2%99%E4%B8%8A%E7%9A%84%E5%A5%87%E6%80%AA%E8%A3%85%E7%BD%AE/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        <li><a class="icon" href="/2020/05/24/CCL%E8%85%B0%E7%97%9B%E5%A4%8D%E8%AF%8A/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
         <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
         <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
@@ -100,22 +98,22 @@
     <br/>
     <div id="share" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/2020/05/12/phpshowip/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/2020/05/12/phpshowip/&text=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/2020/05/12/phpshowip/&is_video=false&description=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=PHP入门 [1] — 获取IP地址&body=Check out this article: https://yumtaro.com/2020/05/12/phpshowip/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/2020/05/12/phpshowip/&name=PHP入门 [1] — 获取IP地址&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/2020/05/12/phpshowip/&t=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/2020/05/24/Convert-MP3/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/2020/05/24/Convert-MP3/&text=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/2020/05/24/Convert-MP3/&is_video=false&description=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Convert MP3&body=Check out this article: https://yumtaro.com/2020/05/24/Convert-MP3/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/2020/05/24/Convert-MP3/&name=Convert MP3&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/2020/05/24/Convert-MP3/&t=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.</span> <span class="toc-text">Reference:</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -127,7 +125,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        PHP入门 [1] — 获取IP地址
+        Convert MP3
     </h1>
 
 
@@ -139,7 +137,7 @@
       
     <div class="postdate">
       
-        <time datetime="2020-05-12T04:21:10.000Z" itemprop="datePublished">12-05-2020</time>
+        <time datetime="2020-05-24T12:53:37.000Z" itemprop="datePublished">24-05-2020</time>
         
       
     </div>
@@ -148,7 +146,7 @@
       <!-- 访问计算 -->
       
     <div class="article-tag">
-        <span id="/2020/05/12/phpshowip/" class="leancloud_visitors" data-flag-title="PHP入门 [1] — 获取IP地址">                    
+        <span id="/2020/05/24/Convert-MP3/" class="leancloud_visitors" data-flag-title="Convert MP3">                    
             <span class="post-meta-item-icon">
             <i class="fa fa-eye"></i>
             </span>
@@ -161,14 +159,14 @@
       
     <div class="article-category">
         <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/IT/">IT</a> › <a class="category-link" href="/categories/IT/Web/">Web</a> › <a class="category-link" href="/categories/IT/Web/PHP/">PHP</a>
+        <a class="category-link" href="/categories/IT/">IT</a> › <a class="category-link" href="/categories/IT/OS/">OS</a> › <a class="category-link" href="/categories/IT/OS/Terminal/">Terminal</a>
     </div>
 
 
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link" href="/tags/PHP/" rel="tag">PHP</a>
+        <a class="tag-link" href="/tags/MacOS/" rel="tag">MacOS</a>
     </div>
 
 
@@ -179,71 +177,20 @@
   <div class="content" itemprop="articleBody">
     <!-- 必须显示toc -->
     <hr>
-    <!-- <div id='toc'></div> -->
-    <p>通过PHP实现简易单一功能服务页面 [1] —— 获取浏览者 IP 地址</p>
-<p>代码通用， 复制 ip.php 粘贴到⇢ 文件名.php 即可。</p>
-<p>&lt;!-- ip.php –&gt;<br><!DOCTYPE html></p>
-<html>
+    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.</span> <span class="toc-text">Reference:</span></a></li></ol></div> -->
+    <p>``</p>
+<p><code>ffmpeg -i 输入文件名.文件后缀 -map 0:a:0 -b:a 96k 输出文件名.mp3</code></p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ol>
+<li><a href="https://superuser.com/questions/552817/fastest-way-to-convert-any-audio-file-to-low-bitrate" target="_blank" rel="noopener">fastest way to convert any audio file to low bitrate?</a></li>
+<li><a href="https://ffmpeg.org/ffmpeg.html" target="_blank" rel="noopener">ffmpeg Documentation</a></li>
+<li><a href="https://apple.stackexchange.com/questions/26099/is-there-a-way-to-convert-audio-files-in-mac-os-x-or-the-command-line-without-us" target="_blank" rel="noopener">Is there a way to convert audio files in Mac OS X or the command line without using iTunes?</a></li>
+</ol>
 
-<head>
-    <meta charset="UTF-8">
-    <title>What Is My IP?</title>
-    <style type="text/css">
-    body {
-        margin: 0;
-        padding: 0;
-        background: #232323;
-    }
-
-<pre><code>#main-content {
-    margin: 30px;
-    text-align: center;
-    color: #ccc;
-}
-
-#main-content h1 {
-    font: 40px Arial, Helvetica,
-        color: #ccc;
-}
-
-#main-content p {
-    font: 24px &quot;Time New Roman&quot;,
-        color: #ffffff;
-}
-
-#main-content p strong {
-    font-size: 70px;
-    color: #ffffff;
-}
-&lt;/style&gt;</code></pre><meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="相·遇" type="application/atom+xml">
-</head>
-
-<body>
-    <?php
-
-<p>// returns first forwarded IP match it finds<br>function forwarded_ip() {<br>  $keys = array(<br>    ‘HTTP_X_FORWARDED_FOR’,<br>    ‘HTTP_X_FORWARDED’,<br>    ‘HTTP_FORWARDED_FOR’,<br>    ‘HTTP_FORWARDED’,<br>    ‘HTTP_CLIENT_IP’,<br>    ‘HTTP_X_CLUSTER_CLIENT_IP’,<br>  );</p>
-<p>  foreach($keys as $key) {<br>    if(isset($_SERVER[$key])) {<br>      $ip_array = explode(‘,’, $_SERVER[$key]);<br>      foreach($ip_array as $ip) {<br>        $ip = trim($ip);<br>        if(validate_ip($ip)) {<br>          return $ip;<br>        }<br>      }<br>    }<br>  }<br>  return ‘’;<br>}</p>
-<p>function validate_ip($ip) {<br>  if(filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) === false) {<br>    return false;<br>  } else {<br>    return true;<br>  }<br>}</p>
-<p>$remote_ip = $_SERVER[‘REMOTE_ADDR’];<br>$forwarded_ip = forwarded_ip();</p>
-<p>?&gt;<br>    <div id="main-content"><br>        <h1>What Is My IP?</h1></p>
-<pre><code>    &lt;p&gt;The request came from:&lt;br /&gt;
-        &lt;strong&gt;&lt;?php echo $remote_ip; ?&gt;&lt;/strong&gt;
-    &lt;/p&gt;
-
-    &lt;?php if($forwarded_ip != &apos;&apos;) { ?&gt;
-    &lt;p&gt;The request was forwarded for:&lt;br /&gt;
-        &lt;strong&gt;&lt;?php echo $forwarded_ip; ?&gt;&lt;/strong&gt;
-    &lt;/p&gt;
-    &lt;?php } ?&gt;
-
-&lt;/div&gt;</code></pre></body>
-
-</html></style></head></html>
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">98</span> Words</div>
+   <div>Posts Contains: <span class="post-count">56</span> Words</div>
    <!-- <div>Reading Time: <span class="post-count">1</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
@@ -329,22 +276,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.</span> <span class="toc-text">Reference:</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/2020/05/12/phpshowip/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/2020/05/12/phpshowip/&text=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/2020/05/12/phpshowip/&is_video=false&description=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=PHP入门 [1] — 获取IP地址&body=Check out this article: https://yumtaro.com/2020/05/12/phpshowip/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/2020/05/12/phpshowip/&title=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/2020/05/12/phpshowip/&name=PHP入门 [1] — 获取IP地址&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/2020/05/12/phpshowip/&t=PHP入门 [1] — 获取IP地址" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/2020/05/24/Convert-MP3/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/2020/05/24/Convert-MP3/&text=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/2020/05/24/Convert-MP3/&is_video=false&description=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Convert MP3&body=Check out this article: https://yumtaro.com/2020/05/24/Convert-MP3/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/2020/05/24/Convert-MP3/&title=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/2020/05/24/Convert-MP3/&name=Convert MP3&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/2020/05/24/Convert-MP3/&t=Convert MP3" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
