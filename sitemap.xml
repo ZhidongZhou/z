@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://yumtaro.com/2020/05/24/CCL%E5%AE%B6%E5%BA%AD%E6%9A%B4%E5%8A%9B/</loc>
+    <loc>https://yumtaro.com/2020/05/21/python%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</loc>
     
-    <lastmod>2020-05-24T14:45:47.646Z</lastmod>
+    <lastmod>2020-05-24T14:51:54.712Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/2020/05/25/testingssssss/</loc>
+    
+    <lastmod>2020-05-24T14:51:25.842Z</lastmod>
     
   </url>
   
@@ -26,27 +33,6 @@
     <loc>https://yumtaro.com/2020/05/24/CCL%E7%BB%8F%E6%B5%8E%E8%88%B1%E7%97%87/</loc>
     
     <lastmod>2020-05-24T14:40:38.136Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/20/hexo/</loc>
-    
-    <lastmod>2020-05-24T13:12:21.555Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/24/Convert-MP3/</loc>
-    
-    <lastmod>2020-05-24T13:09:20.565Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/24/Convert-MP3/</loc>
-    
-    <lastmod>2020-05-24T13:09:20.565Z</lastmod>
     
   </url>
   
@@ -117,20 +103,6 @@
     <loc>https://yumtaro.com/2020/05/17/CCL%E8%85%B0%E7%96%BC%E5%BC%80%E8%8D%AF/</loc>
     
     <lastmod>2020-05-23T05:34:46.103Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/20/new%20article/</loc>
-    
-    <lastmod>2020-05-23T05:34:37.931Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/20/dekopon/</loc>
-    
-    <lastmod>2020-05-23T05:33:01.746Z</lastmod>
     
   </url>
   
@@ -317,13 +289,6 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/2020/05/21/python%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</loc>
-    
-    <lastmod>2020-05-21T14:31:31.867Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://yumtaro.com/2020/05/14/Sent%20Email%20from%20@163%20via%20Terminal%20/</loc>
     
     <lastmod>2020-05-21T13:33:10.871Z</lastmod>
@@ -341,48 +306,6 @@
     <loc>https://yumtaro.com/2020/05/15/MacOS%20Dock%20Optimization%20%E7%A8%8B%E5%BA%8F%E5%9D%9E%E4%BC%98%E5%8C%96/</loc>
     
     <lastmod>2020-05-21T13:29:03.536Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/20/convert-icon/</loc>
-    
-    <lastmod>2020-05-21T12:53:04.617Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/12/php-browser-detection/</loc>
-    
-    <lastmod>2020-05-21T12:51:53.465Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/12/phpshowip/</loc>
-    
-    <lastmod>2020-05-21T05:57:47.127Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/20/hello-world/</loc>
-    
-    <lastmod>2020-05-21T05:51:21.307Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/13/nodejs/</loc>
-    
-    <lastmod>2020-05-21T05:50:10.736Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/2020/05/20/PHP%E6%97%B6%E9%97%B4/</loc>
-    
-    <lastmod>2020-05-21T05:39:48.935Z</lastmod>
     
   </url>
   
