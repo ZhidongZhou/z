@@ -33,7 +33,7 @@
     
     
     <entry>
-      <title>Convert MP3</title>
+      <title>Reduce .mp3 Size 文件缩小</title>
       <link href="/archives/b47257b6.html"/>
       <url>/archives/b47257b6.html</url>
       
@@ -644,6 +644,35 @@
     
     
     <entry>
+      <title>Convert .icon 格式转换</title>
+      <link href="/archives/c4ccb63c.html"/>
+      <url>/archives/c4ccb63c.html</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>安装 imagemagick</p><p>$ brew install imagemagick</p><p>$ mv 文件名.png ~/desktop</p><p>$ cd ~/desktop</p><p>Convert:</p><p>$ convert -background transparent “文件名.png” -define icon:auto-resize=16,24,32,48,64,72,96,128,256 “文件名.ico”</p><p>更改图片大小 (例： 192 x 192)</p><p>convert 文件名.ico -resize 192x192 新文件名.png</p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><p>1.<a href="http://www.imagemagick.org/Usage/resize/" target="_blank" rel="noopener">ImageMagick v6 Examples – Resize or Scaling (General Techniques)</a><br>2.<a href="https://askubuntu.com/questions/867567/convert-jpg-or-png-to-ico-using-terminal-and-back" target="_blank" rel="noopener">Convert .JPG or .PNG to .ICO using terminal and back</a><br>3.<a href="https://stackoverflow.com/questions/3185677/converting-gifs-pngs-and-jpgs-to-ico-files-using-imagemagick" target="_blank" rel="noopener">Converting GIF’s, PNG’s and JPG’s to .ICO files using Imagemagick</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> OS </category>
+          
+          <category> Terminal </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MacOS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CCL老无所养</title>
       <link href="/archives/291bd4ce.html"/>
       <url>/archives/291bd4ce.html</url>
@@ -876,7 +905,7 @@
     
     
     <entry>
-      <title>webp 文件格式转换</title>
+      <title>Conert .webp 格式转换</title>
       <link href="/archives/2cf68918.html"/>
       <url>/archives/2cf68918.html</url>
       

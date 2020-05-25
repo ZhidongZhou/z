@@ -47,11 +47,11 @@
   </entry>
   
   <entry>
-    <title>Convert MP3</title>
+    <title>Reduce .mp3 Size 文件缩小</title>
     <link href="https://yumtaro.com/archives/b47257b6.html"/>
     <id>https://yumtaro.com/archives/b47257b6.html</id>
     <published>2020-05-24T12:53:37.000Z</published>
-    <updated>2020-05-25T17:48:31.642Z</updated>
+    <updated>2020-05-25T18:32:43.145Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><br><br><p><code>ffmpeg -i 输入文件名.文件后缀 -map 0:a:0 -b:a 96k 输出文件名.mp3</code></p><br><br><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ol><li><a href="https://superuser.com/questions/552817/fastest-way-to-convert-any-audio-file-to-low-bitrate" target="_blank" rel="noopener">fastest way to convert any audio file to low bitrate?</a></li><li><a href="https://ffmpeg.org/ffmpeg.html" target="_blank" rel="noopener">ffmpeg Documentation</a></li><li><a href="https://apple.stackexchange.com/questions/26099/is-there-a-way-to-convert-audio-files-in-mac-os-x-or-the-command-line-without-us" target="_blank" rel="noopener">Is there a way to convert audio files in Mac OS X or the command line without using iTunes?</a></li></ol>]]></content>
     
