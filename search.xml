@@ -33,6 +33,35 @@
     
     
     <entry>
+      <title>Convert MP3</title>
+      <link href="/2020/05/24/Convert-MP3/"/>
+      <url>/2020/05/24/Convert-MP3/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>``</p><p><code>ffmpeg -i 输入文件名.文件后缀 -map 0:a:0 -b:a 96k 输出文件名.mp3</code></p><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ol><li><a href="https://superuser.com/questions/552817/fastest-way-to-convert-any-audio-file-to-low-bitrate" target="_blank" rel="noopener">fastest way to convert any audio file to low bitrate?</a></li><li><a href="https://ffmpeg.org/ffmpeg.html" target="_blank" rel="noopener">ffmpeg Documentation</a></li><li><a href="https://apple.stackexchange.com/questions/26099/is-there-a-way-to-convert-audio-files-in-mac-os-x-or-the-command-line-without-us" target="_blank" rel="noopener">Is there a way to convert audio files in Mac OS X or the command line without using iTunes?</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> IT </category>
+          
+          <category> OS </category>
+          
+          <category> Terminal </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MacOS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CCL腰痛复诊</title>
       <link href="/2020/05/24/CCL%E8%85%B0%E7%97%9B%E5%A4%8D%E8%AF%8A/"/>
       <url>/2020/05/24/CCL%E8%85%B0%E7%97%9B%E5%A4%8D%E8%AF%8A/</url>
