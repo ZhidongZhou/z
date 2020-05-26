@@ -41,10 +41,34 @@ table tr:hover {
 
 
 strong{
-  color: rgba(206,145,120,1)
+  color: rgba(197,134,192,1)
 }
 
 em{
+  color: rgba(86,156,214,1)
+}
+
+pink{
+  color: rgba(212, 128, 170, 1)
+}
+
+purple{
+  color: rgba(197,134,192,1)
+}
+
+red{
+  color: rgba(194,86,81,1)
+}
+
+green{
+  color: #ccffb6
+}
+
+brown{
+  color: rgba(206,145,120,1)
+}
+
+yellow{
   color: rgba(234,199,128, 1)
 }
 
