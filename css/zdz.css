@@ -40,6 +40,10 @@ table tr:hover {
 }
 
 
+strong{
+  color: rgba(212, 128, 170, 1);
+}
+
 text {
   fill: #fff
 }
