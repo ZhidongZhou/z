@@ -41,7 +41,11 @@ table tr:hover {
 
 
 strong{
-  color: rgba(212, 128, 170, 1);
+  color: rgba(206,145,120,1)
+}
+
+em{
+  color: rgba(234,199,128, 1)
 }
 
 text {
