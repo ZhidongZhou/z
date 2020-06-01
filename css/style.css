@@ -885,7 +885,7 @@ table {
 }
 #header-post #toc .toc-level-3:before {
   color: $darken(#ccc, 20%);
-  content: "✦";
+  content: "☆";
 }
 #header-post #toc .toc-level-4 {
   color: #2bbc8a;
@@ -893,7 +893,7 @@ table {
 }
 #header-post #toc .toc-level-4:before {
   color: $darken(#ccc, 40%);
-  content: "☆";
+  content: "✦";
 }
 #header-post #toc .toc-level-5 {
   display: none;
@@ -1182,7 +1182,7 @@ article .content blockquote {
   margin: 1rem 10px;
   padding: 0.5em 10px;
   background: inherit;
-  color: #ccffb6;
+  color: #c586c0;
   quotes: "\201C" "\201D" "\2018" "\2019";
   font-weight: bold;
 }
@@ -1191,7 +1191,7 @@ article .content blockquote p {
 }
 article .content blockquote:before {
   margin-right: 0.25em;
-  color: #ccffb6;
+  color: #c586c0;
   content: "\201C";
   vertical-align: -0.4em;
   font-size: 2em;

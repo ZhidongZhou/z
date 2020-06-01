@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://yumtaro.com/archives/8e0d5c7e.html/%E6%8E%88%E6%9D%83.png">
 <meta property="og:image" content="https://yumtaro.com/archives/8e0d5c7e.html/imapVpop3.gif">
 <meta property="article:published_time" content="2020-05-14T04:43:48.000Z">
-<meta property="article:modified_time" content="2020-05-25T17:48:31.648Z">
+<meta property="article:modified_time" content="2020-05-31T12:42:40.265Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="MacOS">
 <meta name="twitter:card" content="summary">
@@ -199,9 +199,9 @@
 
 
 <h4 id="4-登陆-auth-login"><a href="#4-登陆-auth-login" class="headerlink" title="4. 登陆: auth login"></a>4. 登陆: <code>auth login</code></h4><p><code>auth login</code></p>
-<p><em>返回的： 334 dXNlcm5hbWU6</em> : <strong>就是问你要 <u>加密</u> 过的 username 用户名。</strong></p>
+<p><em>返回的： 334 dXNlcm5hbWU6</em> : <strong>就是问你要 <udl>加密</udl> 过的 username 用户名。</strong></p>
 <h5 id="4-1-用户名"><a href="#4-1-用户名" class="headerlink" title="4.1. 用户名:"></a>4.1. 用户名:</h5><blockquote>
-<p>(例): 你的用户名是： helloworld ⇢通过⇢ <strong><u>BASE64译码</u></strong> ⇢你将得到⇢ <code>aGVsbG93b3JsZA==</code></p>
+<p>(例): 你的用户名是： helloworld ⇢通过⇢ <strong><udl>BASE64译码</udl></strong> ⇢你将得到⇢ <code>aGVsbG93b3JsZA==</code></p>
 <blockquote>
 <p><em>BASE64 在线译码： <a href="https://www.base64encode.org/" target="_blank" rel="noopener">https://www.base64encode.org/</a></em></p>
 </blockquote>
@@ -218,14 +218,14 @@
 </blockquote>
 <p><img src="/archives/8e0d5c7e.html/imapVpop3.gif" alt="imap V pop3"></p>
 <blockquote>
-<p>成功获取<u>授权</u>后，您将得到<em>(16位的)</em> <code>客户端授权密码</code>， 此后这个<code>客户端授权密码</code>将代替你原本的163登陆密码当你使用 imap / pop3 进行邮箱登陆。</p>
+<p>成功获取<udl>授权</udl>后，您将得到<em>(16位的)</em> <code>客户端授权密码</code>， 此后这个<code>客户端授权密码</code>将代替你原本的163登陆密码当你使用 imap / pop3 进行邮箱登陆。</p>
 </blockquote>
 <blockquote>
-<p>⚠️ 你同样需要再次使用 <strong><u>BASE64译码</u></strong> ⇢对⇢ <code>客户端授权密码</code> 进行译码。</p>
+<p>⚠️ 你同样需要再次使用 <strong><udl>BASE64译码</udl></strong> ⇢对⇢ <code>客户端授权密码</code> 进行译码。</p>
 </blockquote>
 <br>
 
-<h2 id="开始发邮件"><a href="#开始发邮件" class="headerlink" title="开始发邮件"></a>开始发邮件</h2><h4 id="1-发件人邮箱"><a href="#1-发件人邮箱" class="headerlink" title="1. 发件人邮箱"></a>1. 发件人邮箱</h4><p><code>from mail: <a href="mailto:&#x79;&#111;&#x75;&#x72;&#x65;&#109;&#97;&#x69;&#x6c;&#x40;&#49;&#54;&#51;&#46;&#x63;&#x6f;&#x6d;">&#x79;&#111;&#x75;&#x72;&#x65;&#109;&#97;&#x69;&#x6c;&#x40;&#49;&#54;&#51;&#46;&#x63;&#x6f;&#x6d;</a></code></p>
+<h2 id="开始发邮件"><a href="#开始发邮件" class="headerlink" title="开始发邮件"></a>开始发邮件</h2><h4 id="1-发件人邮箱"><a href="#1-发件人邮箱" class="headerlink" title="1. 发件人邮箱"></a>1. 发件人邮箱</h4><p><code>from mail: <a href="mailto:&#121;&#x6f;&#117;&#x72;&#101;&#x6d;&#x61;&#105;&#108;&#64;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;">&#121;&#x6f;&#117;&#x72;&#101;&#x6d;&#x61;&#105;&#108;&#64;&#49;&#x36;&#51;&#x2e;&#99;&#x6f;&#109;</a></code></p>
 <p><em>返回：250 Mail OK</em></p>
 <blockquote>
 <p>⚠️ <code>from mail</code>， 空格必须要加。</p>
@@ -243,7 +243,7 @@
 <p><em>返回： 354 End data with <CR><LF>.<CR><LF></LF></CR></LF></CR></em></p>
 <br>
 
-<h5 id="3-2-邮件主题"><a href="#3-2-邮件主题" class="headerlink" title="3.2. 邮件主题"></a>3.2. 邮件主题</h5><p><u>输入 subject: +加+ 两次回车</u></p>
+<h5 id="3-2-邮件主题"><a href="#3-2-邮件主题" class="headerlink" title="3.2. 邮件主题"></a>3.2. 邮件主题</h5><p><udl>输入 subject: +加+ 两次回车</udl></p>
 <p><code>subject:</code> + <code>⏎</code> + <code>⏎</code></p>
 <blockquote>
 <p>⚠️ 最后注意<code>subject:</code> 后面不要用(接): test 或 hello, 会被视为 垃圾邮件 (554 DT:SPM)</p>

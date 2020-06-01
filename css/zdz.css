@@ -68,12 +68,18 @@ brown{
   color: rgba(206,145,120,1)
 }
 
-yellow{
+y{
   color: rgba(234,199,128, 1)
 }
 
 blue{
   color: rgba(86,156,214,1)
+}
+
+udl{
+  color: rgba(86,156,214,1);
+  text-decoration: underline;
+  font-style: italic;
 }
 
 text {
