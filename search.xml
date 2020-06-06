@@ -4,20 +4,7 @@
   
     
     <entry>
-      <title>CCL逃逸伪险</title>
-      <link href="/archives/bcef6100.html/"/>
-      <url>/archives/bcef6100.html/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>WE短文写作模版</title>
+      <title>WE短文写作</title>
       <link href="/archives/87a28704.html/"/>
       <url>/archives/87a28704.html/</url>
       
@@ -265,6 +252,37 @@
         <tags>
             
             <tag> PTE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>逃逸伪险</title>
+      <link href="/archives/bcef6100.html/"/>
+      <url>/archives/bcef6100.html/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script>        <div id="aplayer-rEBLcapF" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-rEBLcapF"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "CCL逃逸伪险",              author: "SIIT",              url: "/assets/ccl/CCL逃逸伪险.mp3",              pic: "/images/siit.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><hr><p>Mr Li, a mandarin speaking man, is calling his car insurer AAMI to make a claim.</p><hr><table><thead><tr><th>ID</th><th>Original</th><th>Translated</th></tr></thead><tbody><tr><td>E1</td><td>Thanks for calling AAMI Insurance, this is Jennifer. How can I help you today?</td><td>23</td></tr><tr><td>M1</td><td>你好，我刚刚出了车祸，现在打来咨询下出车祸以后我要做些什么。</td><td>Hello, I just had an accident. I’m calling to ask what I should do next.</td></tr><tr><td>E2</td><td>Sure, please tell me your name, and where did you have the accident? Do you need me to call an ambulance for you?</td><td>23</td></tr><tr><td>M2</td><td>不用了，谢谢。我叫李航，我是在 Eastwood 这里发生的车祸，我的车头已 经被撞的面目全非。我的车是全保，而且车祸不是我的责任，我现在需要交 多少垫底费啊？</td><td>No, thanks. My name is Li Hang and I just had an accident in the Eastwood area. The nose of my car has been completely smashed in. I’ve got comprehensive insurance and I was not at fault. How much excess do I need to pay?</td></tr><tr><td>E3</td><td>Ok, don’t worry. Please tell me the make of your vehicle and the policy number. As for the excess, that depends on the type of policy you have and the condition of your vehicle after the accident.</td><td>37</td></tr><tr><td>M3</td><td>我的车是一辆白色丰田车，保单号是：AU538896. 我的保险是在一个中国人 的中介那边购买的。那个人跟我说，全保只需要在车祸时交个垫底费就可以 了。</td><td>It is a white Toyota and my policy number is AU538896. I purchased this policy through a Chinese agent. He told me that with comprehensive insurance, I just need to pay an excess fee if an accident happens.</td></tr><tr><td>E4</td><td>Ok. Give me a second; let me check your policy number. Mr Li, I am sorry to tell you that, maybe your agent has tricked you or there might be some misunderstanding between you and your agent. The policy you have purchased is third party property insurance.</td><td>47</td></tr><tr><td>M4</td><td>什么是第 3 方财产保险？能给我解释下这两者有什么不同吗？我当时也没多 想，我想说我开车技术那么好，怎么可能出车祸啊。再说我车这么贵，谁敢 撞啊？</td><td>What is the third party property insurance? Could you explain the differences to me, please? I didn’t think much at that time as I thought it was impossible for a good driver like me to have an accident. Also I thought nobody dared to crash into my expensive car.</td></tr><tr><td>E5</td><td>Sure. Comprehensive insurance covers all the damage for your vehicle regardless which party is liable; however, third party insurance only covers the damage you cause to another vehicle.</td><td>28</td></tr><tr><td>M5</td><td>什么？也就是说，对于我的车造成的损坏，我全部要自己承担吗？我被那个中介骗了吗？太可恶了！</td><td>What? Are you saying that I will have to pay for all the damage to my car out of my own pocket? I got cheated by the agent? That’s so terrible!</td></tr><tr><td>E6</td><td>I am afraid that is the case Sir. But please calm down. If you have the registration number of the other car who crashed into you, maybe you still have some hope to get compensation from them.</td><td>37</td></tr><tr><td>M6</td><td>可问题是，我没看见是谁撞的我。显然那人是肇事逃逸了！</td><td>But the problem is I didn’t see who crashed into me! It was obviously a hit and run!</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> 学习笔记 </category>
+          
+          <category> NAATI </category>
+          
+          <category> CCL </category>
+          
+          <category> Insurance </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CCL </tag>
             
         </tags>
       
