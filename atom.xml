@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yumtaro.com/"/>
-  <updated>2020-06-07T07:42:33.728Z</updated>
+  <updated>2020-06-07T11:48:19.314Z</updated>
   <id>https://yumtaro.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>images 玩转图片</title>
+    <title>images 图片批量转换 &amp; 其他小技巧</title>
     <link href="https://yumtaro.com/archives/e38d0d4f.html/"/>
     <id>https://yumtaro.com/archives/e38d0d4f.html/</id>
     <published>2020-06-07T06:30:09.000Z</published>
-    <updated>2020-06-07T07:42:33.728Z</updated>
+    <updated>2020-06-07T11:48:19.314Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><blockquote><p>多格式通用 .png .jpg .jpeg &amp; .icon, etc,.</p></blockquote><h2 id="修改图片像素大小"><a href="#修改图片像素大小" class="headerlink" title="修改图片像素大小"></a>修改图片像素大小</h2><p><code>convert 文件名.jpg -resize 380x278 新文件名.jpg</code></p><h2 id="转为黑白图片"><a href="#转为黑白图片" class="headerlink" title="转为黑白图片"></a>转为黑白图片</h2><p><code>convert 文件名.jpg -monochrome 新文件名.jpg</code></p><h2 id="转为灰色图片"><a href="#转为灰色图片" class="headerlink" title="转为灰色图片"></a>转为灰色图片</h2><p><code>convert 文件名.jpg -colorspace Gray 新文件名.jpg</code></p><h2 id="转为4张不同灰色图片"><a href="#转为4张不同灰色图片" class="headerlink" title="转为4张不同灰色图片"></a>转为4张不同灰色图片</h2><p><code>convert 文件名.png -separate 新文件名.jpg</code></p><h2 id="Batch-Processing-将所有-png-转为-jpg"><a href="#Batch-Processing-将所有-png-转为-jpg" class="headerlink" title="Batch Processing 将所有 .png 转为: .jpg:"></a>Batch Processing 将所有 .png 转为: .jpg:</h2><p><code>for i in *.png ; do convert &quot;$i&quot; &quot;${i%.*}.jpg&quot; ; done</code></p><p>OR</p><p><code>ls -1 *.png | xargs -n 1 bash -c &#39;convert &quot;$0&quot; &quot;${0%.*}.jpg&quot;&#39;</code></p><p>OR</p><p><code>mogrify -format jpg *.png</code></p><p>OR 同时删除原文件</p><p><code>mogrify -format jpg *.png &amp;&amp; rm *.png</code></p><p>OR 同时删除原文件</p><p><code>find . -iname &#39;*.png&#39; | while read i; do mogrify -format jpg &quot;$i&quot; &amp;&amp; rm &quot;$i&quot;; echo &quot;Converted $i to ${i%.*}.jpg&quot;; done</code></p><p>OR 同时删除原文件</p><p><code>for i in *.png; do mogrify -format jpg &quot;$i&quot; &amp;&amp; rm &quot;$i&quot;; echo &quot;$i converted to ${i%.*}.jpg&quot;; done</code></p><br/>]]></content>
     
