@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="多格式通用 .png .jpg .jpeg &amp; .icon, etc,.  修改图片像素大小convert 文件名.jpg -resize 380x278 新文件名.jpg 转为黑白图片convert 文件名.jpg -monochrome 新文件名.jpg 转为灰色图片convert 文件名.jpg -colorspace Gray 新文件名.jpg 转为4张不同灰色图片convert">
 <meta property="og:type" content="article">
-<meta property="og:title" content="images 图片批量转换 &amp; 其他小技巧">
+<meta property="og:title" content="命令行玩转格式转换">
 <meta property="og:url" content="https://yumtaro.com/archives/e38d0d4f.html/index.html">
 <meta property="og:site_name" content="相·遇">
 <meta property="og:description" content="多格式通用 .png .jpg .jpeg &amp; .icon, etc,.  修改图片像素大小convert 文件名.jpg -resize 380x278 新文件名.jpg 转为黑白图片convert 文件名.jpg -monochrome 新文件名.jpg 转为灰色图片convert 文件名.jpg -colorspace Gray 新文件名.jpg 转为4张不同灰色图片convert">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-07T06:30:09.000Z">
-<meta property="article:modified_time" content="2020-06-07T11:48:19.314Z">
+<meta property="article:modified_time" content="2020-06-09T13:31:16.431Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="MacOS">
 <meta name="twitter:card" content="summary">
@@ -37,7 +37,7 @@
         
     
     <!-- title -->
-    <title>images 图片批量转换 &amp; 其他小技巧</title>
+    <title>命令行玩转格式转换</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -101,21 +101,21 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/archives/e38d0d4f.html/" target="_blank" rel="noopener"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/archives/e38d0d4f.html/&text=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/e38d0d4f.html/&is_video=false&description=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=images 图片批量转换 &amp; 其他小技巧&body=Check out this article: https://yumtaro.com/archives/e38d0d4f.html/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/e38d0d4f.html/&name=images 图片批量转换 &amp; 其他小技巧&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/e38d0d4f.html/&t=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/archives/e38d0d4f.html/&text=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/e38d0d4f.html/&is_video=false&description=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=命令行玩转格式转换&body=Check out this article: https://yumtaro.com/archives/e38d0d4f.html/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/e38d0d4f.html/&name=命令行玩转格式转换&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/e38d0d4f.html/&t=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改图片像素大小"><span class="toc-number">1.</span> <span class="toc-text">修改图片像素大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为黑白图片"><span class="toc-number">2.</span> <span class="toc-text">转为黑白图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为灰色图片"><span class="toc-number">3.</span> <span class="toc-text">转为灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为4张不同灰色图片"><span class="toc-number">4.</span> <span class="toc-text">转为4张不同灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Batch-Processing-将所有-png-转为-jpg"><span class="toc-number">5.</span> <span class="toc-text">Batch Processing 将所有 .png 转为: .jpg:</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改图片像素大小"><span class="toc-number">1.</span> <span class="toc-text">修改图片像素大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为黑白图片"><span class="toc-number">2.</span> <span class="toc-text">转为黑白图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为灰色图片"><span class="toc-number">3.</span> <span class="toc-text">转为灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为4张不同灰色图片"><span class="toc-number">4.</span> <span class="toc-text">转为4张不同灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转-pdf-为-jpg"><span class="toc-number">5.</span> <span class="toc-text">转 .pdf 为 .jpg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Batch-Processing-将所有-png-转为-jpg"><span class="toc-number">6.</span> <span class="toc-text">Batch Processing 将所有 .png 转为: .jpg:</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -127,7 +127,7 @@
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        images 图片批量转换 &amp; 其他小技巧
+        命令行玩转格式转换
     </h1>
 
 
@@ -148,7 +148,7 @@
       <!-- 访问计算 -->
       
     <div class="article-tag">
-        <span id="/archives/e38d0d4f.html/" class="leancloud_visitors" data-flag-title="images 图片批量转换 & 其他小技巧">                    
+        <span id="/archives/e38d0d4f.html/" class="leancloud_visitors" data-flag-title="命令行玩转格式转换">                    
             <span class="post-meta-item-icon">
             <i class="fa fa-eye"></i>
             </span>
@@ -179,7 +179,7 @@
   <div class="content" itemprop="articleBody">
     <!-- 必须显示toc -->
     <hr>
-    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改图片像素大小"><span class="toc-number">1.</span> <span class="toc-text">修改图片像素大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为黑白图片"><span class="toc-number">2.</span> <span class="toc-text">转为黑白图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为灰色图片"><span class="toc-number">3.</span> <span class="toc-text">转为灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为4张不同灰色图片"><span class="toc-number">4.</span> <span class="toc-text">转为4张不同灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Batch-Processing-将所有-png-转为-jpg"><span class="toc-number">5.</span> <span class="toc-text">Batch Processing 将所有 .png 转为: .jpg:</span></a></li></ol></div> -->
+    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改图片像素大小"><span class="toc-number">1.</span> <span class="toc-text">修改图片像素大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为黑白图片"><span class="toc-number">2.</span> <span class="toc-text">转为黑白图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为灰色图片"><span class="toc-number">3.</span> <span class="toc-text">转为灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为4张不同灰色图片"><span class="toc-number">4.</span> <span class="toc-text">转为4张不同灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转-pdf-为-jpg"><span class="toc-number">5.</span> <span class="toc-text">转 .pdf 为 .jpg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Batch-Processing-将所有-png-转为-jpg"><span class="toc-number">6.</span> <span class="toc-text">Batch Processing 将所有 .png 转为: .jpg:</span></a></li></ol></div> -->
     <blockquote>
 <p>多格式通用 .png .jpg .jpeg &amp; .icon, etc,.</p>
 </blockquote>
@@ -187,16 +187,19 @@
 <h2 id="转为黑白图片"><a href="#转为黑白图片" class="headerlink" title="转为黑白图片"></a>转为黑白图片</h2><p><code>convert 文件名.jpg -monochrome 新文件名.jpg</code></p>
 <h2 id="转为灰色图片"><a href="#转为灰色图片" class="headerlink" title="转为灰色图片"></a>转为灰色图片</h2><p><code>convert 文件名.jpg -colorspace Gray 新文件名.jpg</code></p>
 <h2 id="转为4张不同灰色图片"><a href="#转为4张不同灰色图片" class="headerlink" title="转为4张不同灰色图片"></a>转为4张不同灰色图片</h2><p><code>convert 文件名.png -separate 新文件名.jpg</code></p>
+<h2 id="转-pdf-为-jpg"><a href="#转-pdf-为-jpg" class="headerlink" title="转 .pdf 为 .jpg"></a>转 .pdf 为 .jpg</h2><p><strong>正常.jpg</strong><br><code>sips -s format jpeg 文件名.pdf --out 新文件名.jpg</code></p>
+<p><strong>透明背景</strong></p>
+<p><code>sips -s format png 文件名.pdf --out 新文件名.png</code></p>
 <h2 id="Batch-Processing-将所有-png-转为-jpg"><a href="#Batch-Processing-将所有-png-转为-jpg" class="headerlink" title="Batch Processing 将所有 .png 转为: .jpg:"></a>Batch Processing 将所有 .png 转为: .jpg:</h2><p><code>for i in *.png ; do convert &quot;$i&quot; &quot;${i%.*}.jpg&quot; ; done</code></p>
-<p>OR</p>
+<p><strong>OR</strong></p>
 <p><code>ls -1 *.png | xargs -n 1 bash -c &#39;convert &quot;$0&quot; &quot;${0%.*}.jpg&quot;&#39;</code></p>
-<p>OR</p>
+<p><strong>OR</strong></p>
 <p><code>mogrify -format jpg *.png</code></p>
-<p>OR 同时删除原文件</p>
+<p><strong>OR 同时删除原文件</strong></p>
 <p><code>mogrify -format jpg *.png &amp;&amp; rm *.png</code></p>
-<p>OR 同时删除原文件</p>
+<p><strong>OR 同时删除原文件</strong></p>
 <p><code>find . -iname &#39;*.png&#39; | while read i; do mogrify -format jpg &quot;$i&quot; &amp;&amp; rm &quot;$i&quot;; echo &quot;Converted $i to ${i%.*}.jpg&quot;; done</code></p>
-<p>OR 同时删除原文件</p>
+<p><strong>OR 同时删除原文件</strong></p>
 <p><code>for i in *.png; do mogrify -format jpg &quot;$i&quot; &amp;&amp; rm &quot;$i&quot;; echo &quot;$i converted to ${i%.*}.jpg&quot;; done</code></p>
 <br/>
 
@@ -204,7 +207,7 @@
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">221</span> Words</div>
+   <div>Posts Contains: <span class="post-count">259</span> Words</div>
    <!-- <div>Reading Time: <span class="post-count">1</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
@@ -290,22 +293,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改图片像素大小"><span class="toc-number">1.</span> <span class="toc-text">修改图片像素大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为黑白图片"><span class="toc-number">2.</span> <span class="toc-text">转为黑白图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为灰色图片"><span class="toc-number">3.</span> <span class="toc-text">转为灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为4张不同灰色图片"><span class="toc-number">4.</span> <span class="toc-text">转为4张不同灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Batch-Processing-将所有-png-转为-jpg"><span class="toc-number">5.</span> <span class="toc-text">Batch Processing 将所有 .png 转为: .jpg:</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改图片像素大小"><span class="toc-number">1.</span> <span class="toc-text">修改图片像素大小</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为黑白图片"><span class="toc-number">2.</span> <span class="toc-text">转为黑白图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为灰色图片"><span class="toc-number">3.</span> <span class="toc-text">转为灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转为4张不同灰色图片"><span class="toc-number">4.</span> <span class="toc-text">转为4张不同灰色图片</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#转-pdf-为-jpg"><span class="toc-number">5.</span> <span class="toc-text">转 .pdf 为 .jpg</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Batch-Processing-将所有-png-转为-jpg"><span class="toc-number">6.</span> <span class="toc-text">Batch Processing 将所有 .png 转为: .jpg:</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/archives/e38d0d4f.html/" target="_blank" rel="noopener"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/archives/e38d0d4f.html/&text=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/e38d0d4f.html/&is_video=false&description=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=images 图片批量转换 &amp; 其他小技巧&body=Check out this article: https://yumtaro.com/archives/e38d0d4f.html/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/e38d0d4f.html/&name=images 图片批量转换 &amp; 其他小技巧&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/e38d0d4f.html/&t=images 图片批量转换 &amp; 其他小技巧" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=https://yumtaro.com/archives/e38d0d4f.html/&text=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/e38d0d4f.html/&is_video=false&description=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=命令行玩转格式转换&body=Check out this article: https://yumtaro.com/archives/e38d0d4f.html/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=https://yumtaro.com/archives/e38d0d4f.html/&title=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/e38d0d4f.html/&name=命令行玩转格式转换&description=" target="_blank" rel="noopener"><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/e38d0d4f.html/&t=命令行玩转格式转换" target="_blank" rel="noopener"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
