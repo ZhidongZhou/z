@@ -82,6 +82,12 @@ udl{
   font-style: italic;
 }
 
+dudl{
+  font-style: italic;
+  color: rgba(234,199,128, 1);
+  border-bottom: thin rgba(234,199,128, 1) dotted;
+}
+
 text {
   fill: #fff
 }
