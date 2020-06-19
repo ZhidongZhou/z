@@ -416,12 +416,7 @@ body dt {
   font-weight: bold;
 }
 body table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
   font-size: 12px;
-  overflow: auto;
-  display: block;
 }
 body th {
   padding: 8px;
@@ -592,11 +587,6 @@ body {
 }
 .max-width {
   max-width: 48rem;
-}
-table {
-  width: 100%;
-  font-size: 12px;
-  overflow: auto;
 }
 @media (max-width: 480px) {
   .px3 {
@@ -1615,6 +1605,7 @@ pre code {
   border: none;
 }
 code {
+  display: block;
   padding: 0 5px;
   border: 1px dotted #666;
   border-radius: 2px;
@@ -1623,6 +1614,7 @@ code {
   color: #81e6e6;
 }
 .highlight {
+  display: block;
   overflow-x: auto;
   margin: 1rem 0;
   padding: 10px 15px;
