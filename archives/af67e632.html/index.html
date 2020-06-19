@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1. finder中显示当前路径: 首先打开 Terminal 1defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder  关闭路径显示， 只需改 YES 为 NO。   2. dock 中添加空白位置: 123defaults write com.apple.dock persiste">
+    <meta name="description" content="1. finder中显示当前路径: 首先打开 Terminal defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder  关闭路径显示， 只需改 YES 为 NO。   2. dock 中添加空白位置: defaults write com.apple.dock persistent-a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dock Optimization 程序坞优化">
 <meta property="og:url" content="https://yumtaro.com/archives/af67e632.html/index.html">
 <meta property="og:site_name" content="相·遇">
-<meta property="og:description" content="1. finder中显示当前路径: 首先打开 Terminal 1defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder  关闭路径显示， 只需改 YES 为 NO。   2. dock 中添加空白位置: 123defaults write com.apple.dock persiste">
+<meta property="og:description" content="1. finder中显示当前路径: 首先打开 Terminal defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder  关闭路径显示， 只需改 YES 为 NO。   2. dock 中添加空白位置: defaults write com.apple.dock persistent-a">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yumtaro.com/assets/images/demo_dock.gif">
 <meta property="og:image" content="https://yumtaro.com/assets/images/demo_fast_dock.gif">
@@ -188,13 +188,13 @@
 
 <p><strong>1. finder中显示当前路径:</strong></p>
 <p>首先打开 Terminal</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder</span><br></pre></td></tr></table></figure>
 
 <p>关闭路径显示， 只需改 <code>YES</code> 为 <code>NO</code>。</p>
 <br>
 
 <p><strong>2. dock 中添加空白位置:</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.dock persistent-apps -array-add <span class="string">'&#123;tile-data=&#123;&#125;; tile-type="spacer-tile";&#125;'</span></span><br><span class="line"><span class="comment"># 需要重置</span></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock persistent-apps -array-add <span class="string">'&#123;tile-data=&#123;&#125;; tile-type="spacer-tile";&#125;'</span></span><br><span class="line"><span class="comment"># 需要重置</span></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
 
 <p><em>$ <code>kill Dock</code>, ‘ <strong>D</strong> ’ 要大写。</em></p>
 <p>建议取消在dock设置中取消Mignificant 可以无限添加， 删除只需手动拖出dock, 或长按选择删除 — (见下图)。</p>
