@@ -4,21 +4,30 @@ table {
     /* margin: 15px auto; 外边距*/
     /* border-collapse: collapse; /* 使用单一线条的边框 */
     border-radius: 4px;
-    width: 100%; /* 总宽 */
+    /* width: 100%; 总宽 */
     border-collapse: collapse;
-    text-align: left;
-    overflow: auto;
-    table-layout: fixed;
     empty-cells: show; /*单元格无内容依旧绘制边框*/
-    display: inline-block;
+    display: block;
 }
 
 table th, td {
   height: 35px; /*统一每一行的默认高度*/
   border-right: 1px solid #232323; /*内部边框样式*/
   /* border-left: 1px solid #dedede; 内部边框样式 */
-  padding: 0 10px; /*内边距*/
 }
+
+/* Highlight Line-number */
+/* td.gutter {
+  text-align: left;
+  width: 0%;
+  margin-right: 20px;
+} */
+
+/* Highlight Code */
+/* td.code {
+  width: 95%;
+} */
+
 table th {
     text-align: center !important; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
     font-weight: bold; /*加粗*/

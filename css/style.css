@@ -430,6 +430,7 @@ body th {
 body td {
   padding: 0 8px;
   border-bottom: none;
+  align-content: center;
 }
 @font-face {
   font-style: normal;
@@ -1622,7 +1623,6 @@ code {
   background: #212326;
   font-family: "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 4px;
-  table: , width;
 }
 .highlight figcaption {
   margin: -5px 0 5px;
@@ -1669,9 +1669,8 @@ code {
   border: none;
   background: none;
 }
-.highlight : auto,
 .highlight td.gutter {
-  text-align: right;
+  text-align: left;
   opacity: 0.2;
 }
 .highlight .line {
