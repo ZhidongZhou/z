@@ -511,19 +511,19 @@ body {
 .right {
   float: right;
 }
-.right p {
+p {
   hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
   -webkit-hyphens: auto;
 }
-.right code {
+code {
   hyphens: manual;
   -moz-hyphens: manual;
   -ms-hyphens: manual;
   -webkit-hyphens: manual;
 }
-.right a {
+a {
   color: #c9cacc;
   text-decoration: none;
   background-image: linear-gradient(transparent, transparent 5px, #c9cacc 5px, #c9cacc);
@@ -531,44 +531,44 @@ body {
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
-.right a:hover {
+a:hover {
   background-image: linear-gradient(transparent, transparent 4px, #2bbc8a 4px, #2bbc8a);
 }
-.right a.icon {
+a.icon {
   background: none;
 }
-.right a.icon:hover {
+a.icon:hover {
   color: #2bbc8a;
 }
-.right h1 a,
-.right .h1 a,
-.right h2 a,
-.right h3 a,
-.right h4 a,
-.right h5 a,
-.right h6 a {
+h1 a,
+.h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
   background: none;
   color: inherit;
   text-decoration: none;
 }
-.right h1 a:hover,
-.right .h1 a:hover,
-.right h2 a:hover,
-.right h3 a:hover,
-.right h4 a:hover,
-.right h5 a:hover,
-.right h6 a:hover {
+h1 a:hover,
+.h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
   background-image: linear-gradient(transparent, transparent 6px, #2bbc8a 6px, #2bbc8a);
   background-position: bottom;
   background-size: 100% 6px;
   background-repeat: repeat-x;
 }
-.right h6 a {
+h6 a {
   background: none;
   color: inherit;
   text-decoration: none;
 }
-.right h6 a:hover {
+h6 a:hover {
   background-image: linear-gradient(transparent, transparent 6px, #2bbc8a 6px, #2bbc8a);
   background-position: bottom;
   background-size: 100% 6px;
@@ -1622,6 +1622,7 @@ code {
   background: #212326;
   font-family: "Menlo", "Meslo LG", monospace;
   -webkit-border-radius: 4px;
+  table: , width;
 }
 .highlight figcaption {
   margin: -5px 0 5px;
@@ -1668,6 +1669,7 @@ code {
   border: none;
   background: none;
 }
+.highlight : auto,
 .highlight td.gutter {
   text-align: right;
   opacity: 0.2;
