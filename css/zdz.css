@@ -10,6 +10,7 @@ table {
     overflow: auto;
     table-layout: fixed;
     empty-cells: show; /*单元格无内容依旧绘制边框*/
+    display: inline-block;
 }
 
 table th, td {
