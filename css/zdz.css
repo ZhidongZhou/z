@@ -31,7 +31,7 @@ table th, td {
 table th {
     text-align: center !important; /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
     font-weight: bold; /*加粗*/
-    background: #272727; /*背景色*/
+    background: #232323; /*标题背景色*/
     white-space: nowrap; /*表头内容强制在一行显示*/
 }
 table td:nth-child(1) {
@@ -45,11 +45,11 @@ table tbody tr:nth-child(2n) {
 }
 
 table tbody tr:nth-child(2n):hover{
-    background: #35363A;
+    background: #1d1f21;
 }
 
 table tr:hover {
-    background: #35363A;
+    background: #1d1f21;
 }
 
 
