@@ -52,7 +52,6 @@ table tr:hover {
     background: #1d1f21;
 }
 
-
 strong{
   color: rgba(197,134,192,1)
 }
@@ -87,6 +86,10 @@ y{
 
 blue{
   color: rgba(86,156,214,1)
+}
+
+h{
+  color: #5DB88D
 }
 
 udl{
@@ -126,6 +129,11 @@ text {
 
 .mermaid rect {
   fill: #1D1F21
+}
+
+/* timeline section text */
+tspan {
+  fill: #fff
 }
 
 /* 按钮 */
