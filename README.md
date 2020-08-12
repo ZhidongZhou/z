@@ -68,7 +68,7 @@ $ git push
 <!-- 1. 博文写好之后，先在本地阅览，阅览无误之后在再发布 -->
 <!-- 4. 博客优化美化工作，首先应部署在本地，本地确认无 bug 后，再发布到外网 -->
 <!-- 1. 博客与该 README 文件处于不定时更新中 -->
-- All materials contained in this blog site are intended solely for reference and educational puropses, and may not be reproduced, republished, distributed, transmitted, displayed, broadcast or otherwise exploited in any manner.
+All materials contained in this blog site are intended solely for reference and educational puropses, and may not be reproduced, republished, distributed, transmitted, displayed, broadcast or otherwise exploited in any manner.
 
 ## :email: Contact | 联系我
 
