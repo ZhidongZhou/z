@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="1. finder中显示当前路径: 首先打开 Terminal defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder  关闭路径显示， 只需改 YES 为 NO。   2. dock 中添加空白位置: defaults write com.apple.dock persistent-a">
+    <meta name="description" content="1. Finder中显示当前路径:首先打开 Terminal defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder  关闭路径显示， 只需改 YES 为 NO。   2. Dock 中添加空白位置defaults write com.apple.dock persistent-apps">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dock Optimization 程序坞优化">
 <meta property="og:url" content="https://yumtaro.com/archives/af67e632.html/index.html">
 <meta property="og:site_name" content="相遇">
-<meta property="og:description" content="1. finder中显示当前路径: 首先打开 Terminal defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder  关闭路径显示， 只需改 YES 为 NO。   2. dock 中添加空白位置: defaults write com.apple.dock persistent-a">
+<meta property="og:description" content="1. Finder中显示当前路径:首先打开 Terminal defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder  关闭路径显示， 只需改 YES 为 NO。   2. Dock 中添加空白位置defaults write com.apple.dock persistent-apps">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://yumtaro.com/assets/images/demo_dock.gif">
 <meta property="og:image" content="https://yumtaro.com/assets/images/demo_fast_dock.gif">
 <meta property="og:image" content="https://yumtaro.com/assets/images/starwar.gif">
 <meta property="article:published_time" content="2020-05-14T23:43:39.000Z">
-<meta property="article:modified_time" content="2020-07-04T12:36:21.631Z">
+<meta property="article:modified_time" content="2020-08-16T21:56:17.497Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="MacOS">
 <meta name="twitter:card" content="summary">
@@ -119,7 +119,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.</span> <span class="toc-text">Reference</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Finder中显示当前路径"><span class="toc-number">1.</span> <span class="toc-text">1. Finder中显示当前路径:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Dock-中添加空白位置"><span class="toc-number">2.</span> <span class="toc-text">2. Dock 中添加空白位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Dock-动画提速-提速包括其他窗口动画"><span class="toc-number">3.</span> <span class="toc-text">3. Dock 动画提速 (提速包括其他窗口动画)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使不活动的图标进入半透明状态："><span class="toc-number">4.</span> <span class="toc-text">4. 使不活动的图标进入半透明状态：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bonus-播放-Star-War-星战"><span class="toc-number">5.</span> <span class="toc-text">Bonus. 播放(Star War)星战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference:</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -183,37 +183,36 @@
   <div class="content" itemprop="articleBody">
     <!-- 必须显示toc -->
     <hr>
-    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.</span> <span class="toc-text">Reference</span></a></li></ol></div> -->
+    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Finder中显示当前路径"><span class="toc-number">1.</span> <span class="toc-text">1. Finder中显示当前路径:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Dock-中添加空白位置"><span class="toc-number">2.</span> <span class="toc-text">2. Dock 中添加空白位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Dock-动画提速-提速包括其他窗口动画"><span class="toc-number">3.</span> <span class="toc-text">3. Dock 动画提速 (提速包括其他窗口动画)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使不活动的图标进入半透明状态："><span class="toc-number">4.</span> <span class="toc-text">4. 使不活动的图标进入半透明状态：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bonus-播放-Star-War-星战"><span class="toc-number">5.</span> <span class="toc-text">Bonus. 播放(Star War)星战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference:</span></a></li></ol></div> -->
     <br>
 
-<p><strong>1. finder中显示当前路径:</strong></p>
-<p>首先打开 Terminal</p>
+<h2 id="1-Finder中显示当前路径"><a href="#1-Finder中显示当前路径" class="headerlink" title="1. Finder中显示当前路径:"></a>1. Finder中显示当前路径:</h2><p>首先打开 Terminal</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES; killall Finder</span><br></pre></td></tr></table></figure>
 
 <p>关闭路径显示， 只需改 <code>YES</code> 为 <code>NO</code>。</p>
 <br>
 
-<p><strong>2. dock 中添加空白位置:</strong></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock persistent-apps -array-add <span class="string">'&#123;tile-data=&#123;&#125;; tile-type="spacer-tile";&#125;'</span></span><br><span class="line"><span class="comment"># 需要重置</span></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
+<h2 id="2-Dock-中添加空白位置"><a href="#2-Dock-中添加空白位置" class="headerlink" title="2. Dock 中添加空白位置"></a>2. Dock 中添加空白位置</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock persistent-apps -array-add <span class="string">'&#123;tile-data=&#123;&#125;; tile-type="spacer-tile";&#125;'</span></span><br><span class="line"><span class="comment"># 需要重置</span></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
 
 <p><em>$ <code>kill Dock</code>, ‘ <strong>D</strong> ’ 要大写。</em></p>
 <p>建议取消在dock设置中取消Mignificant 可以无限添加， 删除只需手动拖出dock, 或长按选择删除 — (见下图)。</p>
 <p><img src="/assets/images/demo_dock.gif" alt="Add Blank Element to Dock"></p>
 <br>
 
-<p><strong>3. Dock 动画提速 (提速包括其他窗口动画):</strong></p>
-<pre><code class="Bash"><span class="comment"># 快</span>
-defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock
-<span class="comment"># 超快</span>
-defaults write com.apple.dock autohide-time-modifier -<span class="built_in">float</span> 0.12;killall Dock
-<span class="comment"># 还原</span>
-defaults delete com.apple.dock autohide-time-modifier;killall Dock
-</code></pre>
+
+<h2 id="3-Dock-动画提速-提速包括其他窗口动画"><a href="#3-Dock-动画提速-提速包括其他窗口动画" class="headerlink" title="3. Dock 动画提速 (提速包括其他窗口动画)"></a>3. Dock 动画提速 (提速包括其他窗口动画)</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 快</span></span><br><span class="line">defaults write com.apple.dock autohide-time-modifier -int 0;killall Dock</span><br><span class="line"><span class="comment"># 超快</span></span><br><span class="line">defaults write com.apple.dock autohide-time-modifier -<span class="built_in">float</span> 0.12;killall Dock</span><br><span class="line"><span class="comment"># 还原</span></span><br><span class="line">defaults delete com.apple.dock autohide-time-modifier;killall Dock</span><br></pre></td></tr></table></figure>
+
 <p><img src="/assets/images/demo_fast_dock.gif" alt="Speed Up Dock Animation"></p>
 <br>
 
-<p><strong>4. 播放(Star War)星战:</strong></p>
-<p>telnet towel.blinkenlights.nl</p>
+
+
+<h2 id="4-使不活动的图标进入半透明状态："><a href="#4-使不活动的图标进入半透明状态：" class="headerlink" title="4. 使不活动的图标进入半透明状态："></a>4. 使不活动的图标进入半透明状态：</h2><p><code>defaults write com.apple.dock showhidden -bool TRUE; killall Dock</code></p>
+<br>
+
+<p><strong>关闭</strong>:</p>
+<p><code>defaults write com.apple.dock showhidden -bool False; killall Dock</code></p>
+<h2 id="Bonus-播放-Star-War-星战"><a href="#Bonus-播放-Star-War-星战" class="headerlink" title="Bonus. 播放(Star War)星战"></a>Bonus. 播放(Star War)星战</h2><p>telnet towel.blinkenlights.nl</p>
 <p><img src="/assets/images/starwar.gif" alt="Starwar In Terminal"></p>
 <br>
 
@@ -222,7 +221,7 @@ defaults delete com.apple.dock autohide-time-modifier;killall Dock
 <br>
 
 
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ol>
 <li><a href="http://www.snazzylabs.com/five-advanced-tricks-for-mac-users/" target="_blank" rel="noopener">5 Tricks for Advanced Mac Users</a></li>
 </ol>
 
@@ -230,7 +229,7 @@ defaults delete com.apple.dock autohide-time-modifier;killall Dock
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">206</span> Words</div>
+   <div>Posts Contains: <span class="post-count">243</span> Words</div>
    <!-- <div>Reading Time: <span class="post-count">1</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
@@ -316,7 +315,7 @@ defaults delete com.apple.dock autohide-time-modifier;killall Dock
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.</span> <span class="toc-text">Reference</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-Finder中显示当前路径"><span class="toc-number">1.</span> <span class="toc-text">1. Finder中显示当前路径:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Dock-中添加空白位置"><span class="toc-number">2.</span> <span class="toc-text">2. Dock 中添加空白位置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Dock-动画提速-提速包括其他窗口动画"><span class="toc-number">3.</span> <span class="toc-text">3. Dock 动画提速 (提速包括其他窗口动画)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使不活动的图标进入半透明状态："><span class="toc-number">4.</span> <span class="toc-text">4. 使不活动的图标进入半透明状态：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bonus-播放-Star-War-星战"><span class="toc-number">5.</span> <span class="toc-text">Bonus. 播放(Star War)星战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">6.</span> <span class="toc-text">Reference:</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
