@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Mathematica 解算法复杂度中的渐进关系渐进关系Big-O: AsymptoticLessEqualBig-Θ: AsymptoticEqualBig-Ω: AsymptoticGreaterEqual 例题：给出：n² + 5n ∈ Θ(g(n))求解：n 的范围    a. n    b. n²    c. 1    d. n &amp; n²  Mathematica 中的渐进关系解">
+    <meta name="description" content="Mathematica 解算法复杂度中的渐进关系渐进关系Big-O: AsymptoticLessEqualBig-Θ: AsymptoticEqualBig-Ω: AsymptoticGreaterEqual 例题：给出：n² + 5n ∈ Θ(g(n))求解：n 的范围    a. n    b. n²    c. 1    d. n &amp; n²  Mathematica 渐进关系解法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mathematica_Asymptotic">
 <meta property="og:url" content="https://yumtaro.com/archives/895d168d.html/index.html">
 <meta property="og:site_name" content="相遇">
-<meta property="og:description" content="Mathematica 解算法复杂度中的渐进关系渐进关系Big-O: AsymptoticLessEqualBig-Θ: AsymptoticEqualBig-Ω: AsymptoticGreaterEqual 例题：给出：n² + 5n ∈ Θ(g(n))求解：n 的范围    a. n    b. n²    c. 1    d. n &amp; n²  Mathematica 中的渐进关系解">
+<meta property="og:description" content="Mathematica 解算法复杂度中的渐进关系渐进关系Big-O: AsymptoticLessEqualBig-Θ: AsymptoticEqualBig-Ω: AsymptoticGreaterEqual 例题：给出：n² + 5n ∈ Θ(g(n))求解：n 的范围    a. n    b. n²    c. 1    d. n &amp; n²  Mathematica 渐进关系解法">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/20200816153506.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/20200816153218.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/20200816153921.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/20200816155911.png">
 <meta property="article:published_time" content="2020-08-17T00:36:19.000Z">
-<meta property="article:modified_time" content="2020-08-17T00:37:34.056Z">
+<meta property="article:modified_time" content="2020-08-17T02:35:01.615Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="MacOS">
 <meta name="twitter:card" content="summary">
@@ -118,7 +118,7 @@
 
     </div>
     <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mathematica-解算法复杂度中的渐进关系"><span class="toc-number">1.</span> <span class="toc-text">Mathematica 解算法复杂度中的渐进关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#渐进关系"><span class="toc-number">1.1.</span> <span class="toc-text">渐进关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题："><span class="toc-number">1.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathematica-中的渐进关系解法"><span class="toc-number">1.3.</span> <span class="toc-text">Mathematica 中的渐进关系解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plot-作图解法："><span class="toc-number">1.4.</span> <span class="toc-text">Plot 作图解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.6.</span> <span class="toc-text">References:</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mathematica-解算法复杂度中的渐进关系"><span class="toc-number">1.</span> <span class="toc-text">Mathematica 解算法复杂度中的渐进关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#渐进关系"><span class="toc-number">1.1.</span> <span class="toc-text">渐进关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题："><span class="toc-number">1.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathematica-渐进关系解法"><span class="toc-number">1.3.</span> <span class="toc-text">Mathematica 渐进关系解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plot-作图解法："><span class="toc-number">1.4.</span> <span class="toc-text">Plot 作图解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.6.</span> <span class="toc-text">Reference:</span></a></li></ol></li></ol>
     </div>
   </span>
 </div>
@@ -182,10 +182,10 @@
   <div class="content" itemprop="articleBody">
     <!-- 必须显示toc -->
     <hr>
-    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mathematica-解算法复杂度中的渐进关系"><span class="toc-number">1.</span> <span class="toc-text">Mathematica 解算法复杂度中的渐进关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#渐进关系"><span class="toc-number">1.1.</span> <span class="toc-text">渐进关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题："><span class="toc-number">1.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathematica-中的渐进关系解法"><span class="toc-number">1.3.</span> <span class="toc-text">Mathematica 中的渐进关系解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plot-作图解法："><span class="toc-number">1.4.</span> <span class="toc-text">Plot 作图解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.6.</span> <span class="toc-text">References:</span></a></li></ol></li></ol></div> -->
+    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mathematica-解算法复杂度中的渐进关系"><span class="toc-number">1.</span> <span class="toc-text">Mathematica 解算法复杂度中的渐进关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#渐进关系"><span class="toc-number">1.1.</span> <span class="toc-text">渐进关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题："><span class="toc-number">1.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathematica-渐进关系解法"><span class="toc-number">1.3.</span> <span class="toc-text">Mathematica 渐进关系解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plot-作图解法："><span class="toc-number">1.4.</span> <span class="toc-text">Plot 作图解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.6.</span> <span class="toc-text">Reference:</span></a></li></ol></li></ol></div> -->
     <h1 id="Mathematica-解算法复杂度中的渐进关系"><a href="#Mathematica-解算法复杂度中的渐进关系" class="headerlink" title="Mathematica 解算法复杂度中的渐进关系"></a>Mathematica 解算法复杂度中的渐进关系</h1><h2 id="渐进关系"><a href="#渐进关系" class="headerlink" title="渐进关系"></a>渐进关系</h2><p>Big-O: AsymptoticLessEqual<br>Big-Θ: AsymptoticEqual<br>Big-Ω: AsymptoticGreaterEqual</p>
 <h2 id="例题："><a href="#例题：" class="headerlink" title="例题："></a>例题：</h2><p>给出：n² + 5n ∈ Θ(g(n))<br>求解：n 的范围<br>    a. n<br>    b. n²<br>    c. 1<br>    d. n &amp; n² </p>
-<h2 id="Mathematica-中的渐进关系解法"><a href="#Mathematica-中的渐进关系解法" class="headerlink" title="Mathematica 中的渐进关系解法"></a>Mathematica 中的渐进关系解法</h2><ol>
+<h2 id="Mathematica-渐进关系解法"><a href="#Mathematica-渐进关系解法" class="headerlink" title="Mathematica 渐进关系解法"></a>Mathematica 渐进关系解法</h2><ol>
 <li>Big-O 解法：<br><code>AsymptoticLessEqual [y^2 + 5 y, y2, y -&gt; \[Infinity]]</code></li>
 </ol>
 <p><img src="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/20200816153506.png" alt="Big-Oh 解法"> </p>
@@ -203,7 +203,9 @@
  PlotLegends -&gt; &quot;Expressions”]</code></p>
 <p>不过用在我们的例题中，显得有些牵强。</p>
 <p><img src="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/20200816155911.png" alt="3D Plot"> </p>
-<h2 id="References"><a href="#References" class="headerlink" title="References:"></a>References:</h2><ol>
+<br>
+
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h2><ol>
 <li><a href="https://reference.wolfram.com/language/ref/AsymptoticEqual.html" target="_blank" rel="noopener">AsymptoticEqual - Wolfram</a></li>
 <li><a href="https://www.wolfram.com/language/12/asymptotics/find-the-computational-complexity.html.zh?footer=lang" target="_blank" rel="noopener">求计算复杂度 - Wolfram</a></li>
 </ol>
@@ -212,7 +214,7 @@
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">241</span> Words</div>
+   <div>Posts Contains: <span class="post-count">239</span> Words</div>
    <!-- <div>Reading Time: <span class="post-count">1</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
@@ -298,7 +300,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mathematica-解算法复杂度中的渐进关系"><span class="toc-number">1.</span> <span class="toc-text">Mathematica 解算法复杂度中的渐进关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#渐进关系"><span class="toc-number">1.1.</span> <span class="toc-text">渐进关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题："><span class="toc-number">1.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathematica-中的渐进关系解法"><span class="toc-number">1.3.</span> <span class="toc-text">Mathematica 中的渐进关系解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plot-作图解法："><span class="toc-number">1.4.</span> <span class="toc-text">Plot 作图解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-number">1.6.</span> <span class="toc-text">References:</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Mathematica-解算法复杂度中的渐进关系"><span class="toc-number">1.</span> <span class="toc-text">Mathematica 解算法复杂度中的渐进关系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#渐进关系"><span class="toc-number">1.1.</span> <span class="toc-text">渐进关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题："><span class="toc-number">1.2.</span> <span class="toc-text">例题：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathematica-渐进关系解法"><span class="toc-number">1.3.</span> <span class="toc-text">Mathematica 渐进关系解法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Plot-作图解法："><span class="toc-number">1.4.</span> <span class="toc-text">Plot 作图解法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结"><span class="toc-number">1.5.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.6.</span> <span class="toc-text">Reference:</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
