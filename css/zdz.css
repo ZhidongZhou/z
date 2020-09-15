@@ -131,6 +131,18 @@ text {
   fill: #1D1F21
 }
 
+.mermaid .titleText{
+  fill: #fff;
+}
+
+#mermaid-1600185403521 .titleText{
+  fill: #fff;
+}
+
+.mermaid-1600185403521 .titleText{
+  fill: #fff;
+}
+
 /* timeline section text */
 tspan {
   fill: #fff
