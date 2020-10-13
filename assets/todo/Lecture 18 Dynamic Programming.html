@@ -1,0 +1,184 @@
+<h2 id="Lecture-18-Dynamic-Programming"><a href="#Lecture-18-Dynamic-Programming" class="headerlink" title="Lecture 18 Dynamic Programming"></a>Lecture 18 Dynamic Programming</h2><p>is an algorithm design technique that is sometimes applicable when we want solve a recurrence relation and the recursion inmvolves overlapping instances.</p>
+<h4 id="Top-down-amp-Bottom-up"><a href="#Top-down-amp-Bottom-up" class="headerlink" title="Top-down &amp; Bottom-up"></a>Top-down &amp; Bottom-up</h4><h4 id="Optimisation-problems"><a href="#Optimisation-problems" class="headerlink" title="Optimisation problems"></a>Optimisation problems</h4><p>allow for clever dynamic programming, <u>lowest cost</u>, or <u>higher profit</u>, subject to some constraints. </p>
+<p>一个问题的最优解是由它的子问题的最优解组成的。</p>
+<h4 id="Coin-Row-Problem-币值最大化问题"><a href="#Coin-Row-Problem-币值最大化问题" class="headerlink" title="Coin-Row Problem 币值最大化问题"></a>Coin-Row Problem 币值最大化问题</h4><p><img src="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/20201001123546.jpg" alt="coin-row"></p>
+<p>V<del>1</del>,V<del>2</del>…V<del>n</del></p>
+<p>S(i-2) + V<del>i</del></p>
+<p><strong>As recurrence relation</strong>: S(i) = max{S(i-1), S(i-2) + V<del>i</del>}</p>
+<p><strong>Base Case</strong>: S(0) = 0 and S(1) = V<del>1</del></p>
+<p><strong>Naive Fibonacci</strong>: Lots of <del>repetition</del> of identical sub-computations.</p>
+<pre><code class="pseudocode">function COINROW(C[1..𝓃])
+    S[0] ← 0
+    S[1] ← C[1]
+    for i ← 2 to 𝓃
+        S[i] ← max{S[i-1], S[i-2] + C[i]}
+    return S[𝓃]</code></pre>
+<table>
+<thead>
+<tr>
+<th>Index</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C</td>
+<td><code>S[0]←0</code></td>
+<td>20</td>
+<td>10</td>
+<td>20</td>
+<td>50</td>
+<td>20</td>
+<td>10</td>
+<td>20</td>
+</tr>
+<tr>
+<td>S</td>
+<td>0</td>
+<td>20</td>
+<td>0+20</td>
+<td>20+20</td>
+<td>20+50</td>
+<td>20+50</td>
+<td>10+70</td>
+<td>70+20</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>20</td>
+<td>20</td>
+<td>40</td>
+<td>70</td>
+<td>70</td>
+<td>80</td>
+<td>90</td>
+</tr>
+</tbody></table>
+<p><code>Time and Space Complexity</code> Coin-Row with Bottom-up Dynamic: <code>O(𝓃)</code></p>
+<blockquote>
+<p>每步只需要看上一步的最优以及上上步的最优，两步之前的不用存了</p>
+<p>优化就是空间 O(1)</p>
+</blockquote>
+<h4 id="Knapsack-Problem-背包问题和记忆功能"><a href="#Knapsack-Problem-背包问题和记忆功能" class="headerlink" title="Knapsack Problem 背包问题和记忆功能"></a>Knapsack Problem 背包问题和记忆功能</h4><p><code>Time &amp; Space Complexity</code> Bottom-up Dynamic Programming <code>θ (n·W)</code></p>
+<p><img src="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/20201001130609.jpg" alt="knaps"></p>
+<p>consider smallest case first, formulate the recurrence relation over 2 parameters.</p>
+<p>K(i, w)…K(n, W).</p>
+<pre><code class="pseudocode">for i ← 0 to 𝓃 do
+    K[i,0] ← 0
+for j  ← 1lto W do
+    k[0,j] ← 0
+for i &lt; 1 to 𝓃 do
+    for j;&lt;-1to W do
+    if j &lt; w𝒾 then
+         K[i-1,J]
+    else
+        K[i,j] ← max(K[i-1, j], K[i-1, j — w𝒾] + v𝒾)
+return K[n, W]</code></pre>
+<p>W = 8</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>V<del>1</del>: 42</td>
+<td>w<del>1</del>: 7</td>
+</tr>
+<tr>
+<td>V<del>2</del>: 12</td>
+<td>w<del>2</del>: 3</td>
+</tr>
+<tr>
+<td>V<del>3</del>: 40</td>
+<td>w<del>3</del>: 4</td>
+</tr>
+<tr>
+<td>V<del>4</del>: 25</td>
+<td>w<del>4</del>: 5</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>𝑖 \ j</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>

@@ -1,0 +1,14 @@
+// Step 2: Set Complexity Values
+Simple Function Count = 5 = 5
+SFC_Weight = 3 = 3
+Average Function Count = 0 = 0
+AFC_Weight = 0 = 0
+Complex Function Count = 2 = 2
+CFC_Weight = 6 = 6
+(Simple Function Count * SFC_Weight) + (Average Function Count * AFC_Weight) + (Complex Function Count * CFC_Weight) = 27
+
+
+// Step 3: Calculate Functional Points
+Function Point = 135 = 135
+VAF = 40 = 40
+Adjusted Function Point = Function Point * (0.65 + 0.01 * VAF)  = 141.75
