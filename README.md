@@ -45,7 +45,7 @@
 - 状态：Master of IT <sup>[May-]</sup>
 - 专业：Cybersecurity
 <!-- - 组织：[OctocatHub](https://octocathub.github.io/) -->
-- 邮箱：[zdz.org@gmail.com](mailto:zdzorg@gmail.com)
+- 邮箱：[zdzinger@gmail.com](mailto:zdzinger@gmail.com)
 
 ## :blue_book: About README | 关于 README 文件
 
