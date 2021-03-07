@@ -31,8 +31,8 @@
 
 ## :sweet_potato: Site | 网站
 
-- 网站名称：相遇
-- 网站描述：Yummy Taro - 香芋 == 相遇
+- 网站名称：ZDZ
+- 网站描述：Darren Zhou's Blog
 <!-- 网站描述：Yummy Taro - 香芋： 既相遇、给香芋、两相娱、两厢愉。 -->
 - 网站地址：<https://yumtaro.com>
 - 网站状态：Active
