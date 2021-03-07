@@ -45,7 +45,7 @@
 - 状态：Master of IT <sup>[May-]</sup>
 - 专业：Cybersecurity
 <!-- - 组织：[OctocatHub](https://octocathub.github.io/) -->
-- 邮箱：[zdzinger@gmail.com](mailto:zdzinger@gmail.com)
+- 邮箱：[zdzorg@163.com](mailto:zdzorg@163.com)
 
 ## :blue_book: About README | 关于 README 文件
 
@@ -72,8 +72,8 @@ All materials contained in this blog site are intended solely for reference and 
 
 ## :email: Contact | 联系我
 
-[![facebook](https://wangchujiang.com/sb/ico/facebook.svg)](https://www.facebook.com/darren.zdz)
-[![email](https://wangchujiang.com/sb/ico/email.svg)](mailto:zdz.org@gmail.com)
+<!-- [![facebook](https://wangchujiang.com/sb/ico/facebook.svg)](https://www.facebook.com/darren.zdz) -->
+[![email](https://wangchujiang.com/sb/ico/email.svg)](mailto:zdzorg@163.com)
 
 <!-- ## :paperclip: License | 协议 -->
 <!-- 本博客采用 [![*](https://)](https://) 许可协议 -->
