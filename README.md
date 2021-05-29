@@ -42,7 +42,7 @@
 - 昵称：Darren Z
 <!-- - 描述：想把自己培养成技术型宅男，宅和男已经具备，就差技术了→\_→ -->
 - 地址：墨尔本 (Mel, Australia)
-- 状态：Master of IT <sup>[May-]</sup>
+- 状态：Master of IT <sup>[2020 - 2021]</sup>
 - 专业：Cybersecurity
 <!-- - 组织：[OctocatHub](https://octocathub.github.io/) -->
 - 邮箱：[zdzorg@163.com](mailto:zdzorg@163.com)
