@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /home/
+Allow: /posts/
+Allow: /about/
+Disallow: /vendors/
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /vendors/
+Disallow: /fancybox/
+Sitemap: https://elegantme.cn/sitemap.xml
+Sitemap: https://elegantme.cn/baidusitemap.xml
+Sitemap: https://elegantme.cn/search.xml

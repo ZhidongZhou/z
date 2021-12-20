@@ -1,0 +1,268 @@
+table {
+  /* max-width: 65em; 表格最大宽度，避免表格过宽 */
+  /* border: 1px solid #dedede; 表格外边框设置 */
+  /* margin: 15px auto; 外边距*/
+  /* /* border-collapse: collapse; 使用单一线条的边框 */
+  border-radius  : 4px;
+  /* width       : 100%; 总宽 */
+  /* border-collapse: collapse; */
+  empty-cells    : show;
+  /*单元格无内容依旧绘制边框*/
+  display        : block;
+}
+
+table th,
+td {
+  height        : 35px;
+  /*统一每一行的默认高度*/
+  /* border-right  : 1px solid #232323; */
+  /*内部边框样式*/
+  /* border-left: 1px solid #dedede; 内部边框样式 */
+}
+
+/* Highlight Line-number */
+/* td.gutter {
+  text-align: left;
+  width: 0%;
+  margin-right: 20px;
+} */
+
+/* Highlight Code */
+/* td.code {
+  width: 95%;
+} */
+
+table th {
+  text-align : center !important;
+  /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
+  font-weight: bold;
+  /*加粗*/
+  background : #232323;
+  /*标题背景色*/
+  white-space: nowrap;
+  /*表头内容强制在一行显示*/
+}
+
+table td:nth-child(1) {
+  /*首列不换行*/
+  white-space: nowrap;
+}
+
+table tbody tr:nth-child(2n) {
+  /*隔行变色*/
+  background: #232323
+}
+
+table tbody tr:nth-child(2n):hover {
+  background: #1d1f21;
+}
+
+table tr:hover {
+  background: #1d1f21;
+}
+
+strong {
+  color: rgba(197, 134, 192, 1)
+}
+
+em {
+  color: rgba(86, 156, 214, 1)
+}
+
+pink {
+  color: rgba(212, 128, 170, 1)
+}
+
+purple {
+  color: rgba(197, 134, 192, 1)
+}
+
+red {
+  color: rgba(194, 86, 81, 1)
+}
+
+green {
+  color: #ccffb6
+}
+
+brown {
+  color: rgba(206, 145, 120, 1)
+}
+
+y {
+  color: rgba(234, 199, 128, 1)
+}
+
+blue {
+  color: rgba(86, 156, 214, 1)
+}
+
+h {
+  color: #5DB88D
+}
+
+udl {
+  color          : rgba(86, 156, 214, 1);
+  text-decoration: underline;
+  font-style     : italic;
+}
+
+dudl {
+  font-style   : italic;
+  color        : rgba(234, 199, 128, 1);
+  border-bottom: thin rgba(234, 199, 128, 1) dotted;
+}
+
+text {
+  fill: #fff
+}
+
+/* .mermaid { */
+/* width: 100%; 表格宽度 */
+/* max-width: 65rem; */
+/* text-align: center; */
+/* fill: #fff; */
+/* background-color: #233; */
+/* } */
+.mermaid {
+  fill            : #fff;
+  text-align      : center;
+  max-width       : 65rem;
+  width           : 100%;
+  /*表格宽度*/
+  text-align      : center;
+  background-color: #223;
+  /* max-height   : 300px; */
+}
+
+.mermaid text {
+  fill: #fff;
+}
+
+.mermaid rect {
+  fill: #1D1F21
+}
+
+.mermaid .titleText {
+  fill: #fff;
+}
+
+#mermaid-1600185403521 .titleText {
+  fill: #fff;
+}
+
+.mermaid-1600185403521 .titleText {
+  fill: #fff;
+}
+
+/* timeline section text */
+tspan {
+  fill: #fff
+}
+
+/* 按钮 */
+
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb==0 {
+    @return hsla(0, 0, 0, $a);
+  }
+
+  @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}
+
+@function hsb-saturate($s, $a) {
+  @if $s==0 {
+    @return 0;
+  }
+
+  @else {
+    @return $s+$a;
+  }
+}
+
+@mixin buttonize($h, $s, $b, $light: 0) {
+
+  $color       : hsb($h, $s, $b);
+  $color-dark  : hsb($h, hsb-saturate($s, 10), $b);
+  $inset-top   : inset 0 1px 0 hsb($h, $s - 20, $b + 10);
+  $inset-bottom: inset 0 -1px 0 hsb($h, hsb-saturate($s, 10), $b - 10);
+  $inset       : inset 0 0 0 1px hsb($h, hsb-saturate($s, - 10), $b);
+
+  background-color: $color;
+  background-image: linear-gradient(to bottom, $color, $color-dark);
+  border          : 1px solid hsb($h, hsb-saturate($s, 20), $b - 20);
+  box-shadow      : $inset-top,
+    $inset-bottom,
+    $inset,
+    0 2px 4px rgba(black, 0.2);
+
+  @if $light==1 {
+    color      : hsb($h, hsb-saturate($s, 40), $b - 40);
+    text-shadow: 0 1px 0 rgba(white, 0.5);
+  }
+
+  @else {
+    color      : white;
+    text-shadow: 0 1px 2px rgba(black, 0.3);
+  }
+
+  &:hover,
+  &:focus {
+    background  : $color-dark;
+    border-color: hsb($h, hsb-saturate($s, 40), $b - 40);
+    box-shadow  : $inset-top,
+      $inset-bottom,
+      $inset;
+  }
+
+  &:active {
+    background: $color-dark;
+    box-shadow: inset 0 2px 3px rgba(black, 0.2);
+  }
+
+  .fa {
+    color      : hsb($h, hsb-saturate($s, 20), $b - 20);
+    text-shadow: 0 1px 0 rgba(white, 0.3);
+  }
+
+}
+
+strong {
+  font-weight: bold;
+}
+
+.button {
+  @include buttonize(0, 0, 95, 1);
+  border-radius : 3px;
+  cursor        : pointer;
+  display       : inline-block;
+  font-family   : Verdana, sans-serif;
+  font-size     : 12px;
+  font-weight   : 400;
+  line-height   : 20px;
+  padding       : 9px 16px 9px;
+  margin        : 16px 0 0 16px;
+  transition    : all 20ms ease-out;
+  vertical-align: top;
+}
+
+.button .fa {
+  float         : left;
+  font-size     : 14px;
+  line-height   : 20px;
+  margin        : -1px 8px 0 -4px;
+  vertical-align: top;
+}
+
+input:disabled{
+  color: green 
+}
+
+article .content blockquote{
+  font-size     : 12px;
+  color: #898E9B;
+}
