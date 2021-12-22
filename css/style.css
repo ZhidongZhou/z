@@ -350,13 +350,13 @@ body h3 {
 body h4 {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  color: #b5cea8;
+  color: #fff;
 }
 body h5,
 body h6 {
   display: inline;
   text-decoration: none;
-  color: #b5cea8;
+  color: #fff;
   font-weight: bold;
   font-size: 0.9rem;
 }
@@ -870,7 +870,7 @@ h6 a:hover {
   font-size: 0.8rem;
 }
 #header-post #toc .toc-level-2:before {
-  color: $darken(#b5cea8, 20%);
+  color: $darken(#fff, 20%);
   content: "★";
 }
 #header-post #toc .toc-level-3 {
@@ -878,7 +878,7 @@ h6 a:hover {
   font-size: 0.7rem;
 }
 #header-post #toc .toc-level-3:before {
-  color: $darken(#b5cea8, 20%);
+  color: $darken(#fff, 20%);
   content: "☆";
 }
 #header-post #toc .toc-level-4 {
@@ -886,7 +886,7 @@ h6 a:hover {
   font-size: 0.6rem;
 }
 #header-post #toc .toc-level-4:before {
-  color: $darken(#b5cea8, 40%);
+  color: $darken(#fff, 40%);
   content: "✦";
 }
 #header-post #toc .toc-level-5 {
@@ -1058,11 +1058,11 @@ h6 a:hover {
   font-size: 0.8rem;
 }
 #footer-post #toc-footer .toc-level-2:before {
-  color: $darken(#b5cea8, 20%);
+  color: $darken(#fff, 20%);
   content: "★";
 }
 #footer-post #toc-footer .toc-level-3 {
-  color: $darken(#b5cea8, 30%);
+  color: $darken(#fff, 30%);
   font-size: 0.7rem;
   line-height: 15px;
 }
@@ -1129,7 +1129,7 @@ article header .meta {
   margin-bottom: 1rem;
 }
 article header .meta * {
-  color: #b5cea8;
+  color: #fff;
   font-size: 0.85rem;
 }
 article header .author {
@@ -1378,7 +1378,7 @@ article .content .caption {
   padding: 4px 7px;
   width: 100%;
   outline: none;
-  border: solid 1px #b5cea8;
+  border: solid 1px #fff;
   border-radius: 5px;
   background-color: #272727;
   color: #c9cacc;
