@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yumtaro.com/archives/f98265f7.html/</loc>
+    
+    <lastmod>2021-12-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/archives/895d168d.html/</loc>
+    
+    <lastmod>2021-12-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yumtaro.com/about/index.html</loc>
     
     <lastmod>2021-12-22</lastmod>
@@ -32,15 +50,6 @@
     <loc>https://yumtaro.com/archives/99feb3ce.html/</loc>
     
     <lastmod>2021-11-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/archives/895d168d.html/</loc>
-    
-    <lastmod>2021-07-27</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -171,7 +180,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/MacTrick/</loc>
+    <loc>https://yumtaro.com/tags/MacOS/</loc>
     <lastmod>2021-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -185,7 +194,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/MacOS/</loc>
+    <loc>https://yumtaro.com/tags/Python/</loc>
     <lastmod>2021-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -229,6 +238,13 @@
   </url>
   
   <url>
+    <loc>https://yumtaro.com/categories/IT/Terminal/</loc>
+    <lastmod>2021-12-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://yumtaro.com/categories/IT/Software/</loc>
     <lastmod>2021-12-22</lastmod>
     <changefreq>weekly</changefreq>
@@ -243,7 +259,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/categories/IT/Terminal/</loc>
+    <loc>https://yumtaro.com/categories/IT/Python/</loc>
     <lastmod>2021-12-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

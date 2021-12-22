@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="在不使用 deepcopy() 的前提下， 实现对 &amp;#123; &amp;#123; 嵌套字典 &amp;#125; &amp;#125; 的深拷贝     为什么要深拷贝?  当添加对拷贝的dictionary进行， 添加、 删除、 等 ···, 修操作的时候， 原字典 与 拷贝的字典 之间会产生 相互影响 (一个改变另一个也会随之改变)。  深拷贝 deepcopy:   上述 相互影响 可通过 deepcop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 实现深拷贝">
+<meta property="og:url" content="https://yumtaro.com/archives/f98265f7.html/index.html">
+<meta property="og:site_name" content="ZDZ">
+<meta property="og:description" content="在不使用 deepcopy() 的前提下， 实现对 &amp;#123; &amp;#123; 嵌套字典 &amp;#125; &amp;#125; 的深拷贝     为什么要深拷贝?  当添加对拷贝的dictionary进行， 添加、 删除、 等 ···, 修操作的时候， 原字典 与 拷贝的字典 之间会产生 相互影响 (一个改变另一个也会随之改变)。  深拷贝 deepcopy:   上述 相互影响 可通过 deepcop">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://yumtaro.com/assets/images/uom_is_ass_dic.jpg">
+<meta property="article:published_time" content="2020-05-21T07:32:35.000Z">
+<meta property="article:modified_time" content="2021-12-22T08:10:06.855Z">
+<meta property="article:author" content="Darren Z">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yumtaro.com/assets/images/uom_is_ass_dic.jpg">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.jpg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg">
+          
+        
+    
+    <!-- title -->
+    <title>python 实现深拷贝</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/css/zdz.css" media="screen" type="text/css">
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ZDZ" type="application/atom+xml">
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Posts</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/search/">🔍</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/archives/d87f7e0c.html/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/archives/2cf68918.html/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/archives/f98265f7.html/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://yumtaro.com/archives/f98265f7.html/&text=python 实现深拷贝"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/f98265f7.html/&is_video=false&description=python 实现深拷贝"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=python 实现深拷贝&body=Check out this article: https://yumtaro.com/archives/f98265f7.html/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/f98265f7.html/&name=python 实现深拷贝&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/f98265f7.html/&t=python 实现深拷贝"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">1.</span> <span class="toc-text">为什么要深拷贝?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D-deepcopy"><span class="toc-number">1.0.1.</span> <span class="toc-text">深拷贝 deepcopy:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D-shallowcopy"><span class="toc-number">1.0.2.</span> <span class="toc-text">浅拷贝: shallowcopy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1-v-%E6%B5%85"><span class="toc-number">1.0.3.</span> <span class="toc-text">深 v 浅</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E5%AD%97%E5%85%B8%E5%8F%AA%E6%9C%89%E4%B8%80%E5%B1%82%E6%97%B6-%E4%BE%8B-1one"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">当字典只有一层时， 例🌰: { 1:&#39;ONE&#39; }</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%82%A3%E4%B9%88%E4%B8%BE%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%AD%97%E5%85%B8%E7%9A%84%E4%BE%8B%E5%AD%90-1-2two"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">那么举一个复杂字典的例子🌰: { 1:{ 2:&#39;TWO&#39; } }</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">2.</span> <span class="toc-text">实现深拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number">3.</span> <span class="toc-text">实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reference"><span class="toc-number">4.</span> <span class="toc-text">Reference:</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        python 实现深拷贝
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ZDZ</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2020-05-21T07:32:35.000Z" itemprop="datePublished">21-05-2020</time>
+        
+      
+    </div>
+
+
+      <!-- 访问计算 -->
+      
+    <div class="article-tag">
+        <span id="/archives/f98265f7.html/" class="leancloud_visitors" data-flag-title="python 实现深拷贝">                    
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+            </span>
+            
+            <span class="post-meta-item-text">Hits</span>
+            <span class="leancloud-visitors-count"></span>
+        </span>
+    </div>
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/IT/">IT</a> › <a class="category-link" href="/categories/IT/Python/">Python</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Python/" rel="tag">Python</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <!-- 必须显示toc -->
+    <hr>
+    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">1.</span> <span class="toc-text">为什么要深拷贝?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D-deepcopy"><span class="toc-number">1.0.1.</span> <span class="toc-text">深拷贝 deepcopy:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D-shallowcopy"><span class="toc-number">1.0.2.</span> <span class="toc-text">浅拷贝: shallowcopy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1-v-%E6%B5%85"><span class="toc-number">1.0.3.</span> <span class="toc-text">深 v 浅</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E5%AD%97%E5%85%B8%E5%8F%AA%E6%9C%89%E4%B8%80%E5%B1%82%E6%97%B6-%E4%BE%8B-1one"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">当字典只有一层时， 例🌰: { 1:&#39;ONE&#39; }</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%82%A3%E4%B9%88%E4%B8%BE%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%AD%97%E5%85%B8%E7%9A%84%E4%BE%8B%E5%AD%90-1-2two"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">那么举一个复杂字典的例子🌰: { 1:{ 2:&#39;TWO&#39; } }</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">2.</span> <span class="toc-text">实现深拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number">3.</span> <span class="toc-text">实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reference"><span class="toc-number">4.</span> <span class="toc-text">Reference:</span></a></li></ol></div> -->
+    <p><br></p>
+<p style="text-align: center; font-size: 18px; ">
+在不使用 <code>deepcopy()</code> 的前提下， 实现对 <code>&#123; &#123; 嵌套字典 &#125; &#125;</code> 的深拷贝
+</p>
+<p><br></p>
+<hr />
+<p><br></p>
+<h2 id="为什么要深拷贝">为什么要深拷贝?</h2>
+<blockquote>
+<p>当添加对拷贝的dictionary进行， 添加、 删除、 等 ···, 修操作的时候， <strong>原字典</strong> 与 <strong>拷贝的字典</strong> 之间会产生 <em>相互影响</em> (一个改变另一个也会随之改变)。</p>
+</blockquote>
+<h4 id="深拷贝-deepcopy">深拷贝 deepcopy:</h4>
+<p><br></p>
+<p><br></p>
+<p>上述 <em>相互影响</em> 可通过 <code>deepcopy()</code> 解决， 由于深拷贝有别于正常逻辑下的普通拷贝和浅拷贝。</p>
+<p><br></p>
+<blockquote>
+<p>深复制: 将原有数据 完整的再复制 , 产生一个 全新独立 的个体。</p>
+</blockquote>
+<p><br> <figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> <span class="keyword">copy</span> <span class="keyword">import</span> deepcopy</span><br><span class="line"><span class="keyword">copy</span>.deepcopy()</span><br></pre></td></tr></table></figure> <br></p>
+<h4 id="浅拷贝-shallowcopy">浅拷贝: shallowcopy</h4>
+<blockquote>
+<p>浅拷贝: 在原有数据上 打上一个标签， 当标签被数据被修改， 原有数据会被改变， 其他的标签也会被改变。</p>
+</blockquote>
+<p><br></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">copy</span></span><br><span class="line"><span class="built_in">copy</span>.<span class="built_in">copy</span>()</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="深-v-浅">深 v 浅</h4>
+<p>两者到底有什么不同？ 这里简单 <udl><代码></udl> 演示一下:</p>
+<h5 id="当字典只有一层时-例-1one">当字典只有一层时， 例🌰: <code>&#123; 1:'ONE' &#125;</code></h5>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="comment"># 原始字典 dict 1</span></span><br><span class="line">d1 = &#123;<span class="number">1</span>:<span class="string">&#x27;ONE&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 普通拷贝</span></span><br><span class="line">d2 = d1</span><br><span class="line"><span class="comment"># 浅拷贝</span></span><br><span class="line">d3 = copy.copy(d1)</span><br><span class="line"><span class="comment"># 深拷贝</span></span><br><span class="line">d4 = copy.deepcopy(d1)</span><br><span class="line"><span class="comment"># 篡改原始数据 &#x27;ONE&#x27; ⇢ &#x27;Null&#x27;</span></span><br><span class="line">d2[<span class="number">1</span>] = <span class="string">&#x27;Null&#x27;</span></span><br><span class="line"><span class="comment"># 篡改后进行结果打印</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;原始字典: &quot;</span> + <span class="built_in">str</span>(d1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;普通拷贝: &quot;</span> + <span class="built_in">str</span>(d2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;浅拷贝: &quot;</span> + <span class="built_in">str</span>(d3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;深拷贝: &quot;</span> +  <span class="built_in">str</span>(d4))</span><br></pre></td></tr></table></figure>
+<p><em>输出:</em></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">原始字典: &#123;<span class="number">1</span>: <span class="string">&#x27;Null&#x27;</span>&#125;  </span><br><span class="line">普通拷贝: &#123;<span class="number">1</span>: <span class="string">&#x27;Null&#x27;</span>&#125; 👈🏻 随原始数据进行变化</span><br><span class="line">浅拷贝: &#123;<span class="number">1</span>: <span class="string">&#x27;ONE&#x27;</span>&#125; 👈🏻 没有被原始数据影响</span><br><span class="line">深拷贝: &#123;<span class="number">1</span>: <span class="string">&#x27;ONE&#x27;</span>&#125; 👈🏻 没有被原始数据影响</span><br></pre></td></tr></table></figure>
+<p>从上可以看出， 普通拷贝 <code>d2 = d1</code> 与 <code>copy()</code> 是有区别的， 普通拷贝在任何情况下都会被原始字典中的变化所改变， 而浅拷贝可以应对简单的字典数据， 然而不足以应对复杂的字典数据。</p>
+<p><br></p>
+<h5 id="那么举一个复杂字典的例子-1-2two">那么举一个复杂字典的例子🌰: <code>&#123; 1:&#123; 2:'TWO' &#125; &#125;</code></h5>
+<p><br></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 原始字典 dict 1</span></span><br><span class="line">d1 = &#123;<span class="number">1</span>:&#123;<span class="number">2</span>:<span class="string">&#x27;TWO&#x27;</span>&#125;&#125;</span><br><span class="line"><span class="comment"># 普通拷贝</span></span><br><span class="line">d2 = d1</span><br><span class="line"><span class="comment"># 浅拷贝</span></span><br><span class="line">d3 = copy.copy(d1)</span><br><span class="line"><span class="comment"># 深拷贝</span></span><br><span class="line">d4 = copy.deepcopy(d1)</span><br><span class="line"><span class="comment"># 篡改原始数据 &#x27;TWO&#x27; ⇢ &#x27;Null&#x27;</span></span><br><span class="line">d2[<span class="number">1</span>][<span class="number">2</span>] = <span class="string">&#x27;Null&#x27;</span></span><br><span class="line"><span class="comment"># 篡改后进行结果打印</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;原始字典: &quot;</span> + <span class="built_in">str</span>(d1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;普通拷贝: &quot;</span> + <span class="built_in">str</span>(d2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;浅拷贝: &quot;</span> + <span class="built_in">str</span>(d3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;深拷贝: &quot;</span> +  <span class="built_in">str</span>(d4))</span><br></pre></td></tr></table></figure>
+<p><em>输出:</em> <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">原始字典: &#123;<span class="number">1</span>: &#123;<span class="number">2</span>: <span class="string">&#x27;Null&#x27;</span>&#125;&#125;</span><br><span class="line">普通拷贝: &#123;<span class="number">1</span>: &#123;<span class="number">2</span>: <span class="string">&#x27;Null&#x27;</span>&#125;&#125; 👈🏻 随原始数据进行变化</span><br><span class="line">浅拷贝: &#123;<span class="number">1</span>: &#123;<span class="number">2</span>: <span class="string">&#x27;Null&#x27;</span>&#125;&#125; 👈🏻 随原始数据进行变化</span><br><span class="line">深拷贝: &#123;<span class="number">1</span>: &#123;<span class="number">2</span>: <span class="string">&#x27;TWO&#x27;</span>&#125;&#125; 👈🏻 没有被原始数据影响</span><br></pre></td></tr></table></figure></p>
+<p>从上可以看出, 当原始字典存在多层嵌套时， 浅拷贝<code>d2 = copy.copy(d1)</code> 和 普通拷贝<code>d2 = d1</code> 均不能保证拷贝数据不受原始数据改变的影响； 从而在这种情况下我们需要使用<code>copy.deepcopy()</code></p>
+<p><br></p>
+<p>然而我们这次的课题是： “在不实用<code>deepcopy()</code>的前提下实现对复杂字典的拷贝，并保证<udl>拷贝数据</udl>与<udl>原始数据</udl>不会<udl><em>相互影响</em></udl>。 所以👇🏻下面言归正传： ”</p>
+<p><br></p>
+<h2 id="实现深拷贝">实现深拷贝</h2>
+<p>其实将 <code>深拷贝</code> 拆分为： <code>浅拷贝</code> + <code>递归</code> 就容易理解多了</p>
+<p>写一个函数, 通过递归 Recursion 来实现:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mydeepcopy</span>(<span class="params">d</span>):</span></span><br><span class="line">  res = &#123;&#125;</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> d:</span><br><span class="line">    <span class="keyword">return</span>&#123;&#125;</span><br><span class="line">  <span class="comment"># </span></span><br><span class="line">  <span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():</span><br><span class="line">    <span class="comment"># 不是字典，直接赋值</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(value, <span class="built_in">dict</span>):</span><br><span class="line">      res[key] = value</span><br><span class="line">    <span class="comment"># 是字典，递归调用 mydeepcopy()</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      res[key] =mydeepcopy(value)</span><br><span class="line">  <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>举例🌰说明: <code>&#123; 1:&#123; 2:&#123; 3:&#123; 4:'Four' &#125; &#125; &#125; &#125;</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">d1 = &#123;<span class="number">1</span>:&#123;<span class="number">2</span>:&#123;<span class="number">3</span>:&#123;<span class="number">4</span>:<span class="string">&#x27;Four&#x27;</span>&#125;&#125;&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mydeepcopy</span>(<span class="params">d</span>):</span></span><br><span class="line">  res = &#123;&#125;</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> d:</span><br><span class="line">    <span class="keyword">return</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> key, value <span class="keyword">in</span> d.items():</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">isinstance</span>(value, <span class="built_in">dict</span>):</span><br><span class="line">      res[key] = value</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      res[key] =mydeepcopy(value)</span><br><span class="line">  <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成拷贝字典d2 </span></span><br><span class="line">d2 = mydeepcopy(d1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># --篡改d1将不影响d2--</span></span><br><span class="line"><span class="comment"># 篡改d1原始字典</span></span><br><span class="line">d1[<span class="number">1</span>][<span class="number">2</span>][<span class="number">3</span>]=<span class="string">&#x27;Null&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 篡改d1后进行结果打印</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1.1原始数据d1: &quot;</span> + <span class="built_in">str</span>(d1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;1.2复制的数据d2: &quot;</span> + <span class="built_in">str</span>(d2))</span><br><span class="line"></span><br><span class="line"><span class="comment"># --篡改d2将不影响d1--</span></span><br><span class="line"><span class="comment"># 篡改d2拷贝的字典</span></span><br><span class="line">d2[<span class="number">1</span>][<span class="number">2</span>][<span class="number">3</span>]=<span class="string">&#x27;Success&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 篡改d2后进行结果打印</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;2.1 原始数据d1: &quot;</span> + <span class="built_in">str</span>(d1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;2.1 复制的数据d2: &quot;</span> + <span class="built_in">str</span>(d2))</span><br></pre></td></tr></table></figure>
+<p><em>输出</em>:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 篡改原始字典d1中的 &#x27;Four&#x27; 为 ⇢ &#x27;Null&#x27;</span></span><br><span class="line"><span class="number">1.1</span> 原始数据d1: &#123;<span class="number">1</span>: &#123;<span class="number">2</span>: &#123;<span class="number">3</span>: <span class="string">&#x27;Null&#x27;</span>&#125;&#125;&#125; 👈🏻 d1被篡改为 <span class="string">&#x27;Null&#x27;</span></span><br><span class="line"><span class="number">1.2</span> 复制的数据d2: &#123;<span class="number">1</span>: &#123;<span class="number">2</span>: &#123;<span class="number">3</span>: &#123;<span class="number">4</span>: <span class="string">&#x27;Four&#x27;</span>&#125;&#125;&#125;&#125; 👈🏻 d2没有被原始数据影响, 保持<span class="string">&#x27;Four&#x27;</span></span><br><span class="line"><span class="comment"># 此时再篡改拷贝字典d2中的 &#x27;Four&#x27; 为 ⇢ &#x27;Success&#x27;</span></span><br><span class="line"><span class="number">2.1</span> 原始数据d1: &#123;<span class="number">1</span>: &#123;<span class="number">2</span>: &#123;<span class="number">3</span>: <span class="string">&#x27;Null&#x27;</span>&#125;&#125;&#125; 👈🏻 d1没有被拷贝数据影响, 保持<span class="string">&#x27;Null&#x27;</span></span><br><span class="line"><span class="number">2.1</span> 复制的数据d2: &#123;<span class="number">1</span>: &#123;<span class="number">2</span>: &#123;<span class="number">3</span>: <span class="string">&#x27;Success&#x27;</span>&#125;&#125;&#125; 👈🏻 d2被篡改为 <span class="string">&#x27;Success&#x27;</span></span><br></pre></td></tr></table></figure>
+<h2 id="实战">实战</h2>
+<p>Cleanup .csv data, and create dic copy that change one copy without changing the other.</p>
+<figure>
+<img src="/assets/images/uom_is_ass_dic.jpg" alt="墨大IS作业" /><figcaption aria-hidden="true">墨大IS作业</figcaption>
+</figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># create dic copy that change one copy without changing the other.</span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> data.keys():</span><br><span class="line">  <span class="keyword">if</span> key <span class="keyword">not</span> <span class="keyword">in</span> dic2.keys():</span><br><span class="line">  string = data[key].copy()</span><br><span class="line">dic2[key] = string</span><br><span class="line"></span><br><span class="line"><span class="comment"># clean invaild fin_year</span></span><br><span class="line"><span class="keyword">for</span> dic <span class="keyword">in</span> dic2:</span><br><span class="line">  <span class="keyword">if</span> <span class="built_in">len</span>(dic2[dic][<span class="string">&#x27;fin_year&#x27;</span>]) != <span class="number">7</span>\</span><br><span class="line"><span class="keyword">or</span> dic2[dic][<span class="string">&#x27;fin_year&#x27;</span>] &lt; <span class="string">&#x27;1997-98&#x27;</span>\</span><br><span class="line"><span class="keyword">or</span> dic2[dic][<span class="string">&#x27;fin_year&#x27;</span>] &gt; <span class="string">&#x27;2011-12&#x27;</span>\</span><br><span class="line"><span class="keyword">or</span> dic2[dic][<span class="string">&#x27;fin_year&#x27;</span>][-<span class="number">2</span>: ]\ !=</span><br><span class="line">  <span class="built_in">str</span>(<span class="built_in">int</span>(dic2[dic][<span class="string">&#x27;fin_year&#x27;</span>][: <span class="number">4</span>]) + <span class="number">1</span>)[<span class="number">2</span>: ]:</span><br><span class="line">  dic2[dic][<span class="string">&#x27;fin_year&#x27;</span>] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># clean invaild area</span></span><br><span class="line"><span class="keyword">if</span> dic2[dic][<span class="string">&#x27;area&#x27;</span>] <span class="keyword">not</span> <span class="keyword">in</span> VALID_AREAS:</span><br><span class="line">  dic2[dic][<span class="string">&#x27;area&#x27;</span>] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># clean invalid expenditure</span></span><br><span class="line"><span class="keyword">if</span> <span class="built_in">len</span>(dic2[dic][<span class="string">&#x27;expenditure&#x27;</span>]) &gt; <span class="number">0</span>:</span><br><span class="line">  <span class="keyword">if</span> dic2[dic][<span class="string">&#x27;expenditure&#x27;</span>][<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> dic2[dic][<span class="string">&#x27;expenditure&#x27;</span>][<span class="number">1</span>: ].isdigit():</span><br><span class="line">  dic2[dic][<span class="string">&#x27;expenditure&#x27;</span>] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> dic2[dic][<span class="string">&#x27;expenditure&#x27;</span>][<span class="number">0</span>] != <span class="string">&#x27;-&#x27;</span>:</span><br><span class="line">  <span class="keyword">if</span> <span class="keyword">not</span> dic2[dic][<span class="string">&#x27;expenditure&#x27;</span>].isdigit():</span><br><span class="line">  dic2[dic][<span class="string">&#x27;expenditure&#x27;</span>] = <span class="literal">None</span></span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">  dic2[dic][<span class="string">&#x27;expenditure&#x27;</span>] = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> dic2</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="reference">Reference:</h2>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/brucewong0516/article/details/89838754">python详解copy浅复制和deepcopy深复制、字典类型的copy以及" = "</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u014259820/article/details/79505688">Python字典的深拷贝实现</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010852680/article/details/77658874">Python如何在dic（字典）里面添加dic（字典） 附dic基础知识</a></li>
+</ol>
+
+  </div>
+    <hr>
+    <br>
+   <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
+   <div>Posts Contains: <span class="post-count">1.5k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">6</span>Min's</div> -->
+     <!-- 打赏 -->
+     <!-- 打赏功能开关-->
+      <!-- 添加捐赠图标 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <div>👉🏻<a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏">🧧</a>👈🏻</div>
+        <span class="donate_txt">
+           ↑<br>
+           • 打赏小周 • <!--这个值配置在主题的._config.yml中-->
+        </span>
+        <br>
+      </div>  
+    <div id="donate_guide" class="donate_bar center hidden" >
+        <!-- 支付宝打赏图案 -->
+        <!-- <img src="./images/WeChatpay.jpg" alt="支付宝打赏"> -->
+        <!-- 微信打赏图案 -->
+        <img src="https://zhidongzhou.github.io/z/images/weChatPay.jpg" alt="微信打赏">
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+<!-- 添加捐赠图标 -->
+    
+</article>
+<div><!-- Valine -->
+
+    <div class="blog-post-comments">
+        <section id="comment">
+            <div id="valine_container" class="valine_thread"></div>
+        </section>
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+        <script>
+            var GUEST_INFO = ['nick', 'mail', 'link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function (item) {
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'true' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                appId: "tPqQzJulKGGdtnC1z2YQUn1W-gzGzoHsz",
+                appKey: "F7c8R6ipy1FgLulcivI5BU0e",
+                placeholder: "Leave Comments · · ·",
+                pageSize: '10',
+                avatar: 'retro',
+                lang: 'en'
+            })
+        </script>
+    </div>
+
+</div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Posts</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/search/">🔍</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">1.</span> <span class="toc-text">为什么要深拷贝?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1%E6%8B%B7%E8%B4%9D-deepcopy"><span class="toc-number">1.0.1.</span> <span class="toc-text">深拷贝 deepcopy:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D-shallowcopy"><span class="toc-number">1.0.2.</span> <span class="toc-text">浅拷贝: shallowcopy</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%B1-v-%E6%B5%85"><span class="toc-number">1.0.3.</span> <span class="toc-text">深 v 浅</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BD%93%E5%AD%97%E5%85%B8%E5%8F%AA%E6%9C%89%E4%B8%80%E5%B1%82%E6%97%B6-%E4%BE%8B-1one"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">当字典只有一层时， 例🌰: { 1:&#39;ONE&#39; }</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%82%A3%E4%B9%88%E4%B8%BE%E4%B8%80%E4%B8%AA%E5%A4%8D%E6%9D%82%E5%AD%97%E5%85%B8%E7%9A%84%E4%BE%8B%E5%AD%90-1-2two"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">那么举一个复杂字典的例子🌰: { 1:{ 2:&#39;TWO&#39; } }</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D"><span class="toc-number">2.</span> <span class="toc-text">实现深拷贝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E6%88%98"><span class="toc-number">3.</span> <span class="toc-text">实战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reference"><span class="toc-number">4.</span> <span class="toc-text">Reference:</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/archives/f98265f7.html/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://yumtaro.com/archives/f98265f7.html/&text=python 实现深拷贝"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/f98265f7.html/&is_video=false&description=python 实现深拷贝"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=python 实现深拷贝&body=Check out this article: https://yumtaro.com/archives/f98265f7.html/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://yumtaro.com/archives/f98265f7.html/&title=python 实现深拷贝"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/f98265f7.html/&name=python 实现深拷贝&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/f98265f7.html/&t=python 实现深拷贝"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div>
+    
+      <script src='https://unpkg.com/mermaid@8.5/dist/mermaid.min.js'></script>
+      <script>
+        if (window.mermaid) {
+          mermaid.initialize({
+            theme: 'default',
+            "flowchart": {
+              curve: 'basis'
+          }
+          });
+        }
+      </script>
+    
+  </div>
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2021
+    Darren Z
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Posts</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/search/">🔍</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
+<!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+
+
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>AV.initialize("tPqQzJulKGGdtnC1z2YQUn1W-gzGzoHsz", "F7c8R6ipy1FgLulcivI5BU0e");</script>
+    <script>
+      function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        var entries = [];
+        var $visitors = $(".leancloud_visitors");
+  
+        $visitors.each(function () {
+          entries.push( $(this).attr("id").trim() );
+        });
+  
+        query.containedIn('url', entries);
+        query.find()
+          .done(function (results) {
+            var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  
+            if (results.length === 0) {
+              $visitors.find(COUNT_CONTAINER_REF).text(0);
+              return;
+            }
+  
+            for (var i = 0; i < results.length; i++) {
+              var item = results[i];
+              var url = item.get('url');
+              var time = item.get('time');
+              var element = document.getElementById(url);
+  
+              $(element).find(COUNT_CONTAINER_REF).text(time);
+            }
+            for(var i = 0; i < entries.length; i++) {
+              var url = entries[i];
+              var element = document.getElementById(url);
+              var countSpan = $(element).find(COUNT_CONTAINER_REF);
+              if( countSpan.text() == '') {
+                countSpan.text(0);
+              }
+            }
+          })
+          .fail(function (object, error) {
+            console.log("Error: " + error.code + " " + error.message);
+          });
+      }
+  
+      function addCount(Counter) {
+        var $visitors = $(".leancloud_visitors");
+        var url = $visitors.attr('id').trim();
+        var title = $visitors.attr('data-flag-title').trim();
+        var query = new AV.Query(Counter);
+  
+        query.equalTo("url", url);
+        query.find({
+          success: function(results) {
+            if (results.length > 0) {
+              var counter = results[0];
+              counter.fetchWhenSave(true);
+              counter.increment("time");
+              counter.save(null, {
+                success: function(counter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                },
+                error: function(counter, error) {
+                  console.log('Failed to save Visitor num, with error message: ' + error.message);
+                }
+              });
+            } else {
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            }
+          },
+          error: function(error) {
+            console.log('Error:' + error.code + " " + error.message);
+          }
+        });
+      }
+  
+      $(function() {
+        var Counter = AV.Object.extend("Counter");
+        if ($('.leancloud_visitors').length == 1) {
+          addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+          showTime(Counter);
+        }
+      });
+    </script>
+  
+
