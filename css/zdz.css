@@ -15,7 +15,7 @@ table th,
 td {
   height        : 35px;
   /*统一每一行的默认高度*/
-  /* border-right  : 1px solid #232323; */
+  /* border-right  : 1px solid #21252B; */
   /*内部边框样式*/
   /* border-left: 1px solid #dedede; 内部边框样式 */
 }
@@ -37,7 +37,7 @@ table th {
   /*内容居中，加上 !important 避免被 Markdown 样式覆盖*/
   font-weight: bold;
   /*加粗*/
-  background : #232323;
+  background : #21252B;
   /*标题背景色*/
   white-space: nowrap;
   /*表头内容强制在一行显示*/
@@ -50,7 +50,7 @@ table td:nth-child(1) {
 
 table tbody tr:nth-child(2n) {
   /*隔行变色*/
-  background: #232323
+  background: #21252B
 }
 
 table tbody tr:nth-child(2n):hover {
@@ -262,7 +262,21 @@ input:disabled{
   color: green 
 }
 
+
 article .content blockquote{
+  position: relative;
+  margin: 1rem 0 1rem 2rem;
+  font-family: "mononoki", "Lato", "Source Han Serif";
+  /* color: #888e9c; */
   font-size     : 12px;
   color: #898E9B;
+}
+
+article .content blockquote::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  height: 100%;
+  width: 0.25rem;
+  background: #428bca;
 }
