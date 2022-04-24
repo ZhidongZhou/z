@@ -857,7 +857,7 @@ h6 a:hover {
   padding-right: 2rem;
   max-width: 20em;
   max-height: calc(95vh - 7rem);
-  text-align: right;
+  text-align: left;
 }
 #header-post #toc a:hover {
   color: #2bbc8a;
@@ -866,11 +866,11 @@ h6 a:hover {
   display: none;
 }
 #header-post #toc .toc-level-2 {
-  color: #2bbc8a;
+  color: #ccc;
   font-size: 0.8rem;
 }
 #header-post #toc .toc-level-2:before {
-  color: $darken(#c9cacc, 20%);
+  color: #ccc;
   content: "#";
 }
 #header-post #toc .toc-level-3 {
