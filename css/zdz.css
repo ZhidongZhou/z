@@ -280,3 +280,10 @@ article .content blockquote::before {
   width: 0.25rem;
   background: #428bca;
 }
+
+
+/* TOC Text Align Right */
+
+#header-post #toc {
+  text-align: left;
+}
