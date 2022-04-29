@@ -1632,7 +1632,7 @@ code {
   margin: -5px 0 5px;
   color: #666;
   font-size: 0.9em;
-  zoom: 1;
+  transform: scale(1);
 }
 .highlight figcaption a {
   float: right;
@@ -1672,6 +1672,9 @@ code {
   padding: 0;
   border: none;
   background: none;
+}
+.highlight table {
+  width: auto;
 }
 .highlight td.gutter {
   text-align: left;
