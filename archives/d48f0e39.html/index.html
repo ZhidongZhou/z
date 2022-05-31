@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205300945045.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205311452078.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-05-31T09:48:16.065Z">
+<meta property="article:modified_time" content="2022-05-31T17:02:51.415Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -122,9 +122,11 @@
     </div>
     <div id="toc">
       <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-text">5.UTXO-based
-Transaction 基于未花费的交易输出的交易</span></a></li></ol> -->
+Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-text">8.Bitcoin Difficulty
+比特币难度参数</span></a></li></ol> -->
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
-Transaction 基于未花费的交易输出的交易</span></a></li></ol>
+Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
+比特币难度参数</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -189,8 +191,9 @@ Transaction 基于未花费的交易输出的交易</span></a></li></ol>
     <!-- 必须显示toc -->
     <hr>
     <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
-Transaction 基于未花费的交易输出的交易</span></a></li></ol></div> -->
-    <!-- # COMP90088 题库 -->
+Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
+比特币难度参数</span></a></li></ol></div> -->
+    <!-- # COMP90088 COMP90088 Cryptocurrencies & decentralised ledgers 加密货币&去中央化的公共帐目 -- 题库 -->
 <h2 id="merkle-trees-默克尔树">1.Merkle Trees 默克尔树</h2>
 <p>蓝色代表 <u>Leaf Node 叶子结点</u>, 红色代表 <span
 style="color:red">Internal Node 内部节点</span></p>
@@ -608,11 +611,11 @@ class="math inline">\(\color{red}{Outputs}\)</span></p>
 <p><span class="math inline">\(\{A:16, B:13, C:1, D:9,
 E:7\}\)</span>:</p>
 <ul>
-<li><p><span class="math inline">\(A = 0+10+2+4 = 16\)</span></p></li>
-<li><p><span class="math inline">\(B = 0+2+11=13\)</span></p></li>
-<li><p><span class="math inline">\(C = 0 +1 = 1\)</span></p></li>
-<li><p><span class="math inline">\(D = 0 + 1+2+5+1=9\)</span></p></li>
-<li><p><span class="math inline">\(E = 5+2=7\)</span></p></li>
+<li><span class="math inline">\(A = 0+10+2+4 = 16\)</span></li>
+<li><span class="math inline">\(B = 0+2+11=13\)</span></li>
+<li><span class="math inline">\(C = 0 +1 = 1\)</span></li>
+<li><span class="math inline">\(D = 0 + 1+2+5+1=9\)</span></li>
+<li><span class="math inline">\(E = 5+2=7\)</span></li>
 </ul>
 </blockquote>
 <p><strong>5.b</strong>: 交易<em>Tx-5</em>之后的 UTXO
@@ -641,11 +644,18 @@ class="math inline">\(10+1+2+2+2+4+11+5+5+1+1+2 = 46\)</span></p>
 <p><strong>5.d</strong>: 以下哪一项可能是有效的交易 6？对于无效的可能性,
 为什么它们是无效的？</p>
 <table>
+<colgroup>
+<col style="width: 6%" />
+<col style="width: 20%" />
+<col style="width: 11%" />
+<col style="width: 61%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th>Tx ID</th>
 <th>Inputs</th>
 <th>Outputs</th>
+<th>Valid/Invalid</th>
 </tr>
 </thead>
 <tbody>
@@ -653,36 +663,235 @@ class="math inline">\(10+1+2+2+2+4+11+5+5+1+1+2 = 46\)</span></p>
 <td>6.1</td>
 <td>5[1]; 5[2]</td>
 <td>2→A; 2→B</td>
+<td>Invalid, 输入: 5[1]中的<code>1</code>小于, 输出:
+2→A中的<code>2</code></td>
 </tr>
 <tr class="even">
 <td>6.2</td>
 <td>4[3]; 2[0]; 5[1]</td>
 <td>15→E;</td>
+<td><em>Valid</em>, 输入:<code>16</code>, 输出: <code>15</code></td>
 </tr>
 <tr class="odd">
 <td>6.3</td>
 <td>1[2]</td>
 <td>25→C;</td>
+<td>Invalid, 1[2] 不存在</td>
 </tr>
 <tr class="even">
 <td>6.4</td>
 <td>4[1];</td>
 <td>11→B;</td>
+<td><em>Valid</em>, 输入<code>11</code>, 输出: <code>11</code></td>
 </tr>
 <tr class="odd">
 <td>6.5</td>
 <td>4[1]; 4[2]</td>
 <td>10→C; 2→D</td>
+<td>Invalid, 4[2] 已经被Tx-5使用</td>
 </tr>
 </tbody>
 </table>
+<p><strong>5.e</strong>: 如果您想<u>激励</u>保持 UTXO
+集大小<u>最小</u>，您是否希望费用基于交易的输入数量、输出数量或两者兼而有之？</p>
+<blockquote>
+<p>给定的交易使用<strong>未花费的交易输出(UTXO)</strong>作为<u>Input
+输入</u>，并为每个<em>Output 输出</em>生成一个新的UTXO。</p>
+<p>那么如果, <u>Input 输入</u>少于<em>Output 输出</em>,
+将生成更多的<strong>未花费的交易输出(UTXO)</strong> (UTXO集更大)。</p>
+<p>反之, 如果更少的<em>Output 输出</em>,
+将会产生更少的<strong>未花费的交易输出(UTXO)</strong> (UTXO集更小)。</p>
+<p>所以我们应该通过对产生新的<em>Output 输出</em>收取手续费,
+以减少<strong>未花费的交易输出(UTXO)</strong>的产出。并且通过折扣策略鼓励更多的<u>Input
+输入</u>。</p>
+</blockquote>
+<h2 id="bitcoin-block-比特币区块">6.Bitcoin Block 比特币区块</h2>
+<p>比特币区块, 有以下内容:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Size (bytes)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Version <code>#</code></td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Previous block hash</td>
+<td>32</td>
+</tr>
+<tr class="odd">
+<td>Merkle Root of transactions</td>
+<td>32</td>
+</tr>
+<tr class="even">
+<td>Timestamp</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>Difficulty</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>Nonce (for proof-of-work)</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><strong>6.a</strong>:
+对于这些内容，它们在实践中从一个块到另一个块的变化频率如何？</p>
+<blockquote>
+<ul>
+<li>首先Version 版本号(<code>#</code>), 很少改变,
+一般只在协议更新的时候改变。</li>
+<li>每个区块都存储 <strong>Previous block hash
+前一个区块的哈希值</strong>,
+可以通过对前一个区块的地址进行哈希得到。</li>
+<li>每个区块下的<u>Tx 交易</u>会被压缩为一个<strong>Merkle Root
+默克尔根</strong>(哈希值, 长度固定位32 bytes)。
+所以每个区块的都不一样。</li>
+<li>每个区块的<strong>Timestamp 时间戳</strong>平均比之前区块的大600 秒
+(比特币每10分钟产出一个新的区块)。</li>
+<li><strong>Difficulty 难度参数</strong>, 每2016个区块改变一次。</li>
+<li>每一个区块的<strong>Nonce 随机数</strong>(Puzzle 谜题)都不同。</li>
+</ul>
+</blockquote>
+<p><strong>6.b</strong>: <strong>Block Header 区块头</strong>大小为
+<span class="math inline">\(4+32+32+4+4+4 = 80
+\  bytes\)</span>。考虑一个在链中存储所有块的客户端。通过前一个块可预测的字段进行智能压缩,
+估计这样可以节省多少空间?</p>
+<blockquote>
+<ul>
+<li>首先我们可以节省<span class="math inline">\(4 \ bytes\)</span>,
+通过省略掉<strong>Version 版本号</strong>(<code>#</code>)。</li>
+<li>通过省略掉<strong>Previous block hash
+前一个区块的哈希值</strong>节省<span class="math inline">\(32 \
+bytes\)</span>, 因为需要时可以通过简单的哈希计算。</li>
+<li>通过简化<strong>Timestamp 时间戳</strong>(仅保留600秒的平均间隔),
+从Unix Time中的节省掉<span class="math inline">\(2 \ bytes\)</span>
+<ul>
+<li>Unix Time: 有32bits, 足够被使用$(2^{32})/(365<em>24</em>60*60)=132
+$年。</li>
+<li>在<code>2147483648</code>:<code>echo "obase=2; 2147483648" |bc</code>:<code>10000000000000000000000000000000</code>
+- <a target="_blank" rel="noopener" href="https://www.unixtimestamp.com/">(GMT+
+0000)2038年1月19日03时14分08秒</a>: 溢出<span class="math inline">\(32 \
+bytes\)</span>，届时Unix时间戳将停止工作。</li>
+<li>由于每个区块平均间隔为600秒, 如果只保留秒(<span
+class="math inline">\(600*2=1200\)</span>),
+<code>echo "obase=2;(120)" |bc</code>:<code>10010110000</code>(11 bits),
+那么只需要存储<span class="math inline">\(2 \ bytes\)</span>而不是<span
+class="math inline">\(4 \ bytes\)</span></li>
+</ul></li>
+<li>通过省略掉<strong>Difficulty 难度参数</strong>节省<span
+class="math inline">\(4 \ bytes\)</span>,
+因为可以通过时间戳计算出难度参数。</li>
+</ul>
+<p>所以总共可以从区块头中节省(<span class="math inline">\(4+32+2+4 = 42
+\ bytes\)</span>)的空间, 优化后每个区块头只占用<span
+class="math inline">\(32 \ bytes\)</span>的空间。</p>
+</blockquote>
+<h2 id="bitcion-script-比特币脚本">7.Bitcion Script 比特币脚本</h2>
+<p><strong>Pay to Public Key Hash</strong> <code>P2PKH</code> &amp;
+<strong>Pay to Public Key</strong> <code>P2PK</code> 的脚本不同</p>
+<p><strong>7.a</strong>: <code>P2PKH</code> &amp; <code>P2PK</code>
+的输出脚本的不同, 给出输入脚本的区别</p>
+<blockquote>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 56%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><code>P2PKH</code></th>
+<th><code>P2PK</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>scriptSig</code> 输入</td>
+<td><code>&lt;sig&gt;</code><br><code>&lt;pubKey&gt;</code></td>
+<td><code>&lt;sig&gt;</code></td>
+</tr>
+<tr class="even">
+<td><code>scriptPubKey</code> 输出</td>
+<td><code>OP_DUP</code><br><code>OP_HASH160</code><br><code>&lt;PubKeyHash&gt;</code><br><code>OP_EQUALVERIFY</code><br><code>OP_CHECKSIG</code></td>
+<td><code>&lt;PubKey&gt;</code><br><code>OP_CHECKSIG</code></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><strong>7.b</strong>: <code>P2PKH</code> 比 <code>P2PK</code>
+更受欢迎。解释为什么<code>P2PKH</code>具有性能和安全优势</p>
+<blockquote>
+<p><strong>性能优势</strong>: <code>P2PKH</code> 使用<span
+class="math inline">\(160 \ bit\)</span>的公钥哈希,
+但<code>P2PK</code>使用<span class="math inline">\(257 \
+bits\)</span>的压缩公钥。 另外虽然<code>P2PKH</code>有<span
+class="math inline">\(4\)</span>个操作符<code>OP</code>,
+而<code>P2PK</code>只有<span class="math inline">\(1\)</span>个,
+但由于每个操作符<code>OP</code>只占用<span class="math inline">\(1 \
+bytes = 8 bits\)</span>,
+那么<code>P2PKH</code>的操作符<code>OP</code>只多占用了<span
+class="math inline">\((4 * 8) - (1 * 8) = 24 \ bits\)</span>。 相比<span
+class="math inline">\(257 - (160+24) = 73 \ bits\)</span>,
+<code>P2PKH</code>仍然节省了<span class="math inline">\(73 \
+bits\)</span>。
+那么<code>P2PK2</code>将有更小的UTXO集合。因此，当目标是最小化 UTXO
+集的大小时，首选<code>P2PKH</code>。这也意味着发件人只需知道公钥的 <span
+class="math inline">\(160 \ bits\)</span>
+的<strong>公钥哈希</strong>即可进行汇款，因此更容易通过 QR
+码等方式将这些地址发布在网站上。</p>
+<p><strong>安全优势</strong>: 公钥哈希,
+可以保证在<code>P2PKH</code>的<code>UTXO</code>没有被使用完之前公钥不易被揭露。
+并且攻击者只很少的时间尝试（例如使用量子计算机）获得公钥。通常在一笔交易被确认钱(6个区块,
+1小时)的时间窗口内, 攻击者无法破解<strong>公钥哈希</strong>。</p>
+</blockquote>
+<h2 id="bitcoin-difficulty-比特币难度参数">8.Bitcoin Difficulty
+比特币难度参数</h2>
+<p><strong>8.1</strong>: 如果网络的<strong>Hash Rate
+哈希速率</strong>(总算力)稳定在<span class="math inline">\(1.65*10^{20}
+\ Hash/second\)</span>, 那么找块的难度是多少?
+将难度表示为在找到一个区块之前的<u>期望</u>的<strong>Mining Trials
+采矿试验</strong>次数。</p>
+<blockquote>
+<p>首先比特币希望将出块间隔稳定在<span class="math inline">\(600 \
+s\)</span>一个。</p>
+<p>那么我们只需要通过<strong>Hash Rate
+哈希速率</strong>乘以<u>期望间隔</u>就能得到期望的哈希操作次数: <span
+class="math inline">\(1.65(10^{20}) * 600 = 9.9(10^{22}) \\ =
+\log_{2}(9.9(10^{22})) \\ \approx 2^{76.4}\)</span></p>
+</blockquote>
+<p><strong>8.2</strong>: 如果难度稳定在<span
+class="math inline">\(2^{75.5}\)</span>, 网络的<strong>Hash Rate
+哈希速率</strong>(总算力)是多少</p>
+<blockquote>
+<p>反算: <span class="math inline">\(\frac{2^{75.5}}{600} \approx
+8.9(10^{19}) \ H/s\)</span></p>
+</blockquote>
+<p><strong>8.3</strong>: 比特币难度参数每两周调整一次, 假设当前难度为
+<span class="math inline">\(2^{74.02}\)</span> 并且在<span
+class="math inline">\(12.5\)</span>天内发现了 <span
+class="math inline">\(2016\)</span>个区块。那么重新计算后会难度参数是多少？</p>
+<blockquote>
+<p>首先每2016块更新一次难度, 那么根据公式: <span
+class="math inline">\(过去难度 * \frac{14天}{过去耗时}\)</span></p>
+<p>我们可以计算: <span class="math inline">\(2^{74.02} * \frac{14}{12.5}
+\approx 2.15(10^{22}) \\ \approx \log_2({2.15(10)^{22})} \\ \approx
+2^{74.18}\)</span></p>
+</blockquote>
 
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">3.6k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">14</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">5k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">20</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
@@ -768,7 +977,8 @@ class="math inline">\(10+1+2+2+2+4+11+5+5+1+1+2 = 46\)</span></p>
 
     <div id="toc-footer" style="display: none">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
-Transaction 基于未花费的交易输出的交易</span></a></li></ol>
+Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
+比特币难度参数</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

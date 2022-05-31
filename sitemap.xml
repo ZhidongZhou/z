@@ -200,13 +200,6 @@
 
   
   <url>
-    <loc>https://yumtaro.com/tags/unimelb/</loc>
-    <lastmod>2022-05-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://yumtaro.com/tags/RMIT/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -221,6 +214,13 @@
   </url>
   
   <url>
+    <loc>https://yumtaro.com/tags/Python/</loc>
+    <lastmod>2022-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://yumtaro.com/tags/PTE/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
@@ -228,7 +228,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/Python/</loc>
+    <loc>https://yumtaro.com/tags/unimelb/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -244,21 +244,14 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/RMIT/</loc>
-    <lastmod>2022-05-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/</loc>
-    <lastmod>2022-05-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://yumtaro.com/categories/IT/</loc>
+    <lastmod>2022-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/RMIT/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -272,14 +265,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/RMIT/BP308/</loc>
-    <lastmod>2022-05-31</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/MIT/</loc>
+    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -287,6 +273,13 @@
   
   <url>
     <loc>https://yumtaro.com/categories/IT/Software/</loc>
+    <lastmod>2022-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/RMIT/BP308/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -301,6 +294,13 @@
   
   <url>
     <loc>https://yumtaro.com/categories/IT/Terminal/</loc>
+    <lastmod>2022-05-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/MIT/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
