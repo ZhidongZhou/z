@@ -421,7 +421,7 @@ body dt {
 }
 body table {
   text-align: left;
-  font-size: 12px;
+  font-size: 14px;
   overflow: auto;
 }
 body th {
@@ -429,7 +429,7 @@ body th {
   border-bottom: 1px dashed #666;
   color: #73c991;
   font-weight: bold;
-  font-size: 13px;
+  font-size: 15px;
 }
 body td {
   padding: 0 8px;
@@ -496,7 +496,7 @@ body {
   color: #c9cacc;
   font-display: swap;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
@@ -1443,7 +1443,7 @@ article .content .caption {
   color: #282c34;
   font-display: swap;
   font-weight: 400;
-  font-size: 11.200000000000001px;
+  font-size: 12.8px;
   font-family: "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;

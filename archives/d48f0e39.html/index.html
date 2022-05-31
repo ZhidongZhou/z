@@ -6,18 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="COMP90088 题库 1.Merkle Trees 默克尔树 蓝色代表 Leaf Node 叶子结点, 红色代表 Internal Node 内部节点 1.a: 需要通过哪些节点证明节点 7 (Node 7)是包含在集合中的? 证明过程中需要重新计算哪些节点?   Inclusion Proof 包含证明  首先证明节点 7被包含在集合中需要通过 Merkle Proof 默克尔证明: 通过节">
+    <meta name="description" content="1.Merkle Trees 默克尔树 蓝色代表 Leaf Node 叶子结点, 红色代表 Internal Node 内部节点 1.a: 需要通过哪些节点证明节点 7 (Node 7)是包含在集合中的? 证明过程中需要重新计算哪些节点?   Inclusion Proof 包含证明  首先证明节点 7被包含在集合中需要通过 Merkle Proof 默克尔证明: 通过节点 7自己 &amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="COMP90088 题库">
 <meta property="og:url" content="https://yumtaro.com/archives/d48f0e39.html/index.html">
 <meta property="og:site_name" content="ZDZ">
-<meta property="og:description" content="COMP90088 题库 1.Merkle Trees 默克尔树 蓝色代表 Leaf Node 叶子结点, 红色代表 Internal Node 内部节点 1.a: 需要通过哪些节点证明节点 7 (Node 7)是包含在集合中的? 证明过程中需要重新计算哪些节点?   Inclusion Proof 包含证明  首先证明节点 7被包含在集合中需要通过 Merkle Proof 默克尔证明: 通过节">
+<meta property="og:description" content="1.Merkle Trees 默克尔树 蓝色代表 Leaf Node 叶子结点, 红色代表 Internal Node 内部节点 1.a: 需要通过哪些节点证明节点 7 (Node 7)是包含在集合中的? 证明过程中需要重新计算哪些节点?   Inclusion Proof 包含证明  首先证明节点 7被包含在集合中需要通过 Merkle Proof 默克尔证明: 通过节点 7自己 &amp;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205281541822.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205300945045.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205311452078.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-05-31T08:36:03.372Z">
+<meta property="article:modified_time" content="2022-05-31T09:15:37.611Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -47,7 +47,7 @@
 <link rel="stylesheet" href="/css/style.css">
 
     <!-- <link rel="stylesheet" href="/css/zdz_light.css" media="screen" type="text/css"> -->
-    <!-- <link rel="stylesheet" href="/css/zdz_dark.css" media="screen" type="text/css"> -->
+    <link rel="stylesheet" href="/css/zdz_dark.css" media="screen" type="text/css">
     <!-- persian styles -->
     
       
@@ -121,10 +121,10 @@
 
     </div>
     <div id="toc">
-      <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#comp90088-%E9%A2%98%E5%BA%93"><span class="toc-text">COMP90088 题库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-text">5.UTXO-based
-Transaction 基于未花费的交易输出的交易</span></a></li></ol></li></ol> -->
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#comp90088-%E9%A2%98%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">COMP90088 题库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">1.3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">1.5.</span> <span class="toc-text">5.UTXO-based
-Transaction 基于未花费的交易输出的交易</span></a></li></ol></li></ol>
+      <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-text">5.UTXO-based
+Transaction 基于未花费的交易输出的交易</span></a></li></ol> -->
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
+Transaction 基于未花费的交易输出的交易</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -188,9 +188,9 @@ Transaction 基于未花费的交易输出的交易</span></a></li></ol></li></o
   <div class="content" itemprop="articleBody">
     <!-- 必须显示toc -->
     <hr>
-    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#comp90088-%E9%A2%98%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">COMP90088 题库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">1.3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">1.5.</span> <span class="toc-text">5.UTXO-based
-Transaction 基于未花费的交易输出的交易</span></a></li></ol></li></ol></div> -->
-    <h1 id="comp90088-题库">COMP90088 题库</h1>
+    <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
+Transaction 基于未花费的交易输出的交易</span></a></li></ol></div> -->
+    <!-- # COMP90088 题库 -->
 <h2 id="merkle-trees-默克尔树">1.Merkle Trees 默克尔树</h2>
 <p>蓝色代表 <u>Leaf Node 叶子结点</u>, 红色代表 <span
 style="color:red">Internal Node 内部节点</span></p>
@@ -767,8 +767,8 @@ class="math inline">\(10+1+2+2+2+4+11+5+5+1+1+2 = 46\)</span></p>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#comp90088-%E9%A2%98%E5%BA%93"><span class="toc-number">1.</span> <span class="toc-text">COMP90088 题库</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">1.2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">1.3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">1.4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">1.5.</span> <span class="toc-text">5.UTXO-based
-Transaction 基于未花费的交易输出的交易</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
+Transaction 基于未花费的交易输出的交易</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
