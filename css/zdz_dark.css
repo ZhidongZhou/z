@@ -291,3 +291,13 @@ article .content blockquote::before {
 #header-post #toc {
   text-align: left;
 }
+
+code {
+  /* color:rgba(234, 199, 128, 1); */
+  color: #d05c41;
+  font-size: 0.9em;
+  border: 1px solid #e6ecf1;
+  border-radius: 0.25rem;
+  padding: 1px 0.25rem;
+  background: #f5f7f9;
+}

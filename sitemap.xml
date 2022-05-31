@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yumtaro.com/archives/d48f0e39.html/</loc>
+    
+    <lastmod>2022-05-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yumtaro.com/archives/bd263e8d.html/</loc>
     
     <lastmod>2022-05-31</lastmod>
@@ -20,15 +29,6 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/archives/d48f0e39.html/</loc>
-    
-    <lastmod>2022-05-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yumtaro.com/archives/d87f7e0c.html/</loc>
     
     <lastmod>2022-05-31</lastmod>
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/archives/5e5dab33.html/</loc>
+    <loc>https://yumtaro.com/archives/99feb3ce.html/</loc>
     
     <lastmod>2022-05-31</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/archives/99feb3ce.html/</loc>
+    <loc>https://yumtaro.com/archives/5e5dab33.html/</loc>
     
     <lastmod>2022-05-31</lastmod>
     
@@ -221,14 +221,14 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/PTE/</loc>
+    <loc>https://yumtaro.com/tags/Python/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/Python/</loc>
+    <loc>https://yumtaro.com/tags/PTE/</loc>
     <lastmod>2022-05-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

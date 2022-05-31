@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205300945045.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205311452078.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-05-31T09:15:37.611Z">
+<meta property="article:modified_time" content="2022-05-31T09:28:34.235Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -473,7 +473,7 @@ class="math inline">\(\color{red}{X}=H(pk_{Mallory})\)</span>).
 <p>如果在<strong>Public Key Hash
 公钥哈希</strong>下收到的比特币被锁定在标准 <code>P2PKH</code> 脚本下。
 那么 Mallory 可以通过 Bob 的钱包使用对应的比特币,
-因为Mallory可以通过P2PKH中ScriptPubKey脚本中OP_EQUALVERIFY的验证。</p>
+因为Mallory可以通过<code>P2PKH</code>中<code>ScriptPubKey</code>脚本中<code>OP_EQUALVERIFY</code>的验证。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">----P2PKH----</span><br><span class="line">--Input ScriptSig--</span><br><span class="line">&lt;sig&gt;</span><br><span class="line">&lt;pubKey&gt; | &lt;- pk(Mallory)</span><br><span class="line">--Output ScriptPubKey-- </span><br><span class="line">OP_DUP</span><br><span class="line">OP_HASH160</span><br><span class="line">&lt;pubkeyHash?&gt;  | &lt;- H(pk(Mallory))=X</span><br><span class="line">OP_EQUALVERIFY | &lt;- 成功通过验证</span><br><span class="line">OP_CHECKSIG</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p><strong>4.e</strong>: 使用<u>Birthday Attack 生日攻击</u>,
