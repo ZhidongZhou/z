@@ -17,8 +17,9 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205300945045.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205311452078.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206011814558.jpg">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206020048691.svg">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-01T10:48:05.287Z">
+<meta property="article:modified_time" content="2022-06-01T17:49:06.912Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -126,12 +127,14 @@
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-text">8.Bitcoin Difficulty
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-text">10.Bitcoin Block
-Arrival Time 比特币区块到达时间</span></a></li></ol> -->
+Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-text">12.Mining Pool Sabotage
+蓄意破坏矿池</span></a></li></ol> -->
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
-Arrival Time 比特币区块到达时间</span></a></li></ol>
+Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
+蓄意破坏矿池</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -199,7 +202,8 @@ Arrival Time 比特币区块到达时间</span></a></li></ol>
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
-Arrival Time 比特币区块到达时间</span></a></li></ol></div> -->
+Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
+蓄意破坏矿池</span></a></li></ol></div> -->
     <!-- # COMP90088 COMP90088 Cryptocurrencies & decentralised ledgers 加密货币&去中央化的公共帐目 -- 题库 -->
 <h2 id="merkle-trees-默克尔树">1.Merkle Trees 默克尔树</h2>
 <p>蓝色代表 <u>Leaf Node 叶子结点</u>, 红色代表 <span
@@ -1078,18 +1082,263 @@ Arrival Time 比特币区块到达时间</h2>
 minutes^{-1}\)</span>。这意味着无论距离上一个区块被发现已经过去了多长时间,
 在任何时刻找到一个区块的平均时间是 <span class="math inline">\(10 \
 minutes\)</span>。</p>
-<p><strong>10.1</strong>: 在接下来的 10
+<p><strong>10.a</strong>: 计算在接下来的 10
 分钟内至少找到一个区块的概率是多少？</p>
 <blockquote>
-
+<p><strong>Probability Mass Function 概率质量函数 (PMF)</strong>： 是<a
+target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/离散随机变量">离散随机变量</a>在各特定取值上的概率。</p>
+<p>首先柏松公式: <span class="math inline">\(Pr(k, t) = \frac{(rt)^{k}
+e^{-rt}}{k!}\)</span></p>
+<ul>
+<li><span class="math inline">\(k\)</span>: 区块数</li>
+<li><span class="math inline">\(t\)</span>: 时间段 = <span
+class="math inline">\(10 \ minutes\)</span></li>
+<li><span class="math inline">\(r\)</span>: 发生率 = <span
+class="math inline">\(0.1 \ minutes^{-1}\)</span></li>
+</ul>
+<p>本题求: 至少找到一个区块的概率, 即<span class="math inline">\(k \geq
+1\)</span>的情况, 所以可以通过<span
+class="math inline">\(1-Pr(k=0,t)\)</span>的情况得到。</p>
+<ul>
+<li><span class="math inline">\(1-Pr(k=0, t=10 \ minutes) =
+\frac{(0.1*10)^{0}e^{-(0.1*10)}}{0!} \\ = 0.632121 \\ \approx
+0.63\)</span></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i2d=true&amp;i=1-PDF%5C%2891%29PoissonDistribution%5C%2891%291%5C%2893%29%5C%2844%29+0%5C%2893%29">Wolframalpha</a>:
+<code>1-PDF[PoissonDistribution[1], 0]</code></li>
+</ul>
+</blockquote>
+<p><strong>10.b</strong>: 计算在接下来的 60 分钟内恰好找到 6
+个区块的概率是多少？</p>
+<blockquote>
+<ul>
+<li><span class="math inline">\(t = 60 \ minutes\)</span></li>
+<li><span class="math inline">\(1-Pr(k=6, t = 60 minutes) =
+\frac{(0.1*60)^{6}e^{-0.1*60}}{6!} \\ =0.160623 \\ \approx
+0.16\)</span></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i2d=true&amp;i=PDF%5C%2891%29PoissonDistribution%5C%2891%296%5C%2893%29%5C%2844%296%5C%2893%29">Wolframalpha</a>:
+<code>PDF[PoissonDistribution[6],6]</code></li>
+</ul>
+</blockquote>
+<p><strong>10.c</strong>: 计算在接下来的 60 分钟内找到 6
+个或更多的概率是多少？</p>
+<blockquote>
+<ul>
+<li><span class="math inline">\(t = 60 \ minutes\)</span></li>
+<li><span class="math inline">\(k \geq 6\)</span>, 排除掉<span
+class="math inline">\(k \leq 5\)</span>的情况, 即<span
+class="math inline">\(1 - \sum_{k=0}^{5}(Pr(k, t=60 \ minutes)) \\ =
+0.55432 \\ \approx 0.55\)</span></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i=1-Sum%5BPDF%5BPoissonDistribution%5B6%5D%2C+k%5D%2C%7Bk%2C0%2C5%7D%5D">Wolframalpha</a>:
+<code>1-Sum[PDF[PoissonDistribution[6], k],&#123;k,0,5&#125;]</code></li>
+</ul>
+</blockquote>
+<p><strong>10.d</strong>: 等待找到下一个区块的<em>Median
+中位</em>时间是多少？那么找到6个区块的<em>Median
+中位</em>时间又是多少？</p>
+<p>换一种说法: 要求概率是<span class="math inline">\(50\%\)</span>, 对于
+<span class="math inline">\(t\)</span> 的值，您在<span
+class="math inline">\(t\)</span>分钟内找到至少一个块<span
+class="math inline">\(k \geq 1\)</span>（或在<span
+class="math inline">\(t\)</span>分钟内至少<span class="math inline">\(k
+\geq 6\)</span>个块）</p>
+<blockquote>
+<ol type="1">
+<li>现在反过要求概率<span class="math inline">\(Pr(k \geq 1, t) =
+0.5\)</span>来求时间<span class="math inline">\(t\)</span>
+<ul>
+<li>即: <span class="math inline">\(1 - Pr(k=0, (0.1t)) =
+\frac{(0.1t)^0e^{-0.1t}}{0!} = 0.5 \\ t = 0.693147 * 0.1 \\ t \approx
+6.9\)</span></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i=1-PDF%5BPoissonDistribution%5Bt%5D%2C+0%5D+%3D+0.5">Wolframalpha</a>:
+<code>1-PDF[PoissonDistribution[t], 0] = 0.5</code></li>
+</ul></li>
+<li>同样的要求概率<span class="math inline">\(Pr(k \geq 6, t) =
+0.5\)</span>来求时间<span class="math inline">\(t\)</span>
+<ul>
+<li>即: <span class="math inline">\(1 - \sum_{k=0}^{5}Pr(k, (0.1t)) =
+\frac{(0.1t)^ke^{-0.1t}}{k!} = 0.5 \\ t = 5.67016 * 0.1 \\ t \approx
+56.7\)</span></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i=1-Sum%5BPDF%5BPoissonDistribution%5Bt%5D%2C+k%5D%2C%7Bk%2C0%2C5%7D%5D+%3D+0.5">Wolframalpha</a>:
+<code>1-Sum[PDF[PoissonDistribution[t], k],&#123;k,0,5&#125;] = 0.5</code></li>
+</ul></li>
+</ol>
+</blockquote>
+<h2 id="soft-hard-forks-软硬分叉">11.Soft &amp; Hard forks 软硬分叉</h2>
+<p>下哪些更改需要软分叉? 那些需要硬分叉?</p>
+<p><strong>11.a</strong>:
+要求每个区块都包含政府颁发的证书，声称它是使用可再生能源开采的</p>
+<blockquote>
+<p>软分叉: 旧的客户端可以户忽略新的证书, 依然可以正常验证区块。</p>
+</blockquote>
+<p><strong>11.b</strong>: 将区块奖励计划更改为永远固定在 6.25 BTC</p>
+<blockquote>
+<p>硬分叉:
+"中本聪规定:比特币每产生210,000个区块后奖励将减半一次，直至2140年出块奖励为0",
+旧客户端会按照规定进行减半, 如果新的区块不进行减半保留6.25的BTC奖励,
+那么其他按照规定的区块(奖励不是6.25BTC)不会同意获得⼀个6.25的BTC奖励。
+届时将需要硬分叉。</p>
+</blockquote>
+<p><strong>11.c</strong>: 要求每个矿工在每个区块中向比特币发展基金捐赠 1
+个比特币</p>
+<blockquote>
+<p>软分叉: 只是增加了一笔额外强制的交易(Tx),
+新旧区块都可以正常处理它。</p>
+</blockquote>
+<p><strong>11.d</strong>: 禁止除了 coinbase 之外没有交易的“空”块</p>
+<blockquote>
+<p>软分叉: 禁止无交易(Tx)区块, 对⽼区块⼉不会有不影响。</p>
+</blockquote>
+<p><strong>11.e</strong>: 在脚本中添加对 SHA-3
+哈希函数的支持（替换未使用的操作码）</p>
+<blockquote>
+<p>硬分叉: 如果 SHA-3 将某些值推送到堆栈上，导致脚本(Bitcoin
+Script)的执行行为不同，那么新旧客户端之间可能会出现分歧,
+届时将需要进行硬分叉。</p>
+</blockquote>
+<p><strong>11.f</strong>: 取消每个区块 20,000 个签名的限制</p>
+<blockquote>
+<p>硬分叉: 如果新的区块有超过<span
+class="math inline">\(20,000\)</span>个签名,
+那么久的客户端由于签名上限的限制而无法接受新区块,
+届时需要发起硬分叉。</p>
+</blockquote>
+<p><strong>11.g</strong>: 将块频率更改为每 5 分钟一次</p>
+<blockquote>
+<p>硬分叉: 由于<strong>难度参数</strong>是根据产出<span
+class="math inline">\(2016\)</span>个区块所需的时间(<span
+class="math inline">\(过去难度 *
+\frac{14天}{本次找到2016个区块耗时}\)</span>)计算的，所以新客户端&amp;老客户端所产生的<strong>难度参数</strong>将不同。所以会发生分歧,
+互不兼容, 届时需要发起硬分叉。</p>
+</blockquote>
+<h2 id="mining-pool-sabotage-蓄意破坏矿池">12.Mining Pool Sabotage
+蓄意破坏矿池</h2>
+<p>回想一下，矿池使个体矿工能够分担风险和回报，降低他们收益的差异，同时保持相同的预期价值。参与者可以通过反复提交
+<u>Shares</u>（有效但<strong>难度</strong>较低的块）以证明他们正在做多少工作。每当矿池找到一个区块时，该区块的
+coinbase
+就会根据提交的<u>Shares</u>数量在参与者之间分配。一种风险是<strong>Sabotage
+蓄意破坏</strong>，其中参与者提交<u>Shares</u>，但如果自己找到了新区块，则拒绝提供完整的解决方案(自己独吞出块奖励)。</p>
+<!--${\color{red}{P_1}}$-->
+<!--${\color{red}{\alpha_1}}$-->
+<!--${\color{red}{\beta_1}}$-->
+<!--${\color{green}{P_2}}$-->
+<!--${\color{green}{\alpha_2}}$-->
+<p><strong>12.a</strong>: 考虑两个矿池:<span
+class="math inline">\({\color{red}{P_1}}\)</span>&amp;<span
+class="math inline">\({\color{green}{P_2}}\)</span>,分别具有算力<span
+class="math inline">\({\color{red}{\alpha_1}}\)</span>和<span
+class="math inline">\({\color{green}{\alpha_2}}\)</span>。</p>
+<p>如果<span class="math inline">\({\color{red}{P_1}}\)</span>将<span
+class="math inline">\({\color{red}{\beta_1}} \lt
+{\color{red}{\alpha_1}}\)</span>的力量用于<strong>Sabotage
+蓄意破坏</strong><span
+class="math inline">\({\color{green}{P_2}}\)</span>, 那么从长远来看,
+<span
+class="math inline">\({\color{red}{P_1}}\)</span>在总收益中的<u>预期份额</u>是多少？
+请注意，当<span
+class="math inline">\({\color{red}{P_1}}\)</span>找到一个块时，它会获得整个<strong>Coinbase
+铸币交易</strong>。当<span
+class="math inline">\({\color{green}{P_2}}\)</span>找到一个区块时, <span
+class="math inline">\({\color{red}{P_1}}\)</span>会收到与<span
+class="math inline">\({\color{red}{P_1}}\)</span>为<span
+class="math inline">\({\color{green}{P_2}}\)</span>挖矿时产生的<u>Shares
+分红</u>数量成正比的一部分<strong>Coinbase 铸币交易</strong>。</p>
+<blockquote>
+<p>简单来说就是:</p>
+<ol type="1">
+<li>如果<span class="math inline">\({\color{red}{P_1}}\)</span>找到区块,
+<span
+class="math inline">\({\color{red}{P_1}}\)</span>将自己独吞出块儿奖励(<strong>Coinbase
+铸币交易</strong>)。</li>
+<li><span class="math inline">\({\color{green}{P_2}}\)</span>找到区块,
+<span
+class="math inline">\({\color{red}{P_1}}\)</span>将从中抽成(因为<span
+class="math inline">\({\color{red}{P_1}}\)</span>拿出了一小部分<span
+class="math inline">\({\color{red}{\beta_1}}\)</span>算力用于获得在<span
+class="math inline">\({\color{green}{P_2}}\)</span>中的<u>Shares
+分红</u>)。</li>
+</ol>
+<p>那么可以看出<span
+class="math inline">\({\color{green}{P_2}}\)</span>现在的总算里是: <span
+class="math inline">\({\color{green}{\alpha_2}} +
+{\color{red}{\beta_1}}\)</span>, 但是显然<span
+class="math inline">\({\color{red}{P_1}}\)</span>并不会真的使用<span
+class="math inline">\({\color{red}{\beta_1}}\)</span>的算力帮助<span
+class="math inline">\({\color{green}{P_2}}\)</span>挖矿, 所以其实<span
+class="math inline">\({\color{green}{P_2}}\)</span>的算力还是只有<span
+class="math inline">\({\color{green}{\alpha_2}}\)</span>那么多而已。</p>
+<p>所以我们可以说, 其实<span
+class="math inline">\({\color{red}{\beta_1}}\)</span>这部分算力是不作为的,
+所以整个网络中真实会被用来挖矿的算力就只有<span class="math inline">\(1
+- {\color{red}{\beta_1}}\)</span>这么多。</p>
+<p><em>放张简图方便理解</em>:</p>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206020048691.svg" alt="mining_pool_sabotage" style="zoom:120%;" /></p>
+<p>那么对于整个网络来说:</p>
+<p>那么对于整个网络来说:</p>
+<ol type="1">
+<li>$ { }$的真实挖矿算力为 <span class="math inline">\(\frac{
+{\color{red}{\alpha_1} }-{ {\color{red}{\beta_1} } } }{
+1-{\color{red}{\beta_1} } }\)</span></li>
+<li>$ { }$的真实挖矿算力为 <span class="math inline">\(\frac{
+{\color{green}{\alpha_2} } }{ 1-{\color{red}{\beta_1} } }\)</span></li>
+<li>$ { }<span class="math inline">\(通过\)</span> {
+}$Sabotage获得的<u>Shares 分红</u>占比: <span
+class="math inline">\(\frac{ {\color{red}{\beta_1} } }{
+{\color{green}{\alpha_2} }+ {\color{red}{\beta_1} } }\)</span></li>
+</ol>
+<p>那么我们可以得出$ { }<span
+class="math inline">\(在总收益中的&lt;u&gt;预期份额&lt;/u&gt;是:
+在整个网络中\)</span> { }<span class="math inline">\(自己的真实挖矿算力,
+加上\)</span> { }<span class="math inline">\(通过\)</span> { }<span
+class="math inline">\(Sabotage从\)</span> { }$中获得的<u>Shares
+分红</u>: <span class="math inline">\(\frac{ {\color{red}{\beta_1} } }{
+{\color{green}{\alpha_2} }+ {\color{red}{\beta_1} } } * \frac{
+{\color{green}{\alpha_2} } }{ 1-{\color{red}{\beta_1} } }\)</span>:</p>
+<ul>
+<li><span class="math inline">\({ {\frac{ {\color{red}{\alpha_1} }-
+{\color{red}{\beta_1} } }{ 1-{\color{red}{\beta_1} } } } \choose
+{\color{red}{P_1 挖矿收益} } } + { {\frac{ {\color{red}{\beta_1} } }{
+{\color{green}{\alpha_2} }+ {\color{red}{\beta_1} } } }\choose
+{\color{red}{Sabotage\%} } } * { {\frac{ {\color{green}{\alpha_2} } }{
+1-{\color{red}{\beta_1} } } }\choose {\color{green}{P_2 挖矿收益} }
+}\)</span></li>
+</ul>
+<p>如果$ { }<span class="math inline">\(实施**Sabotage
+蓄意破坏**的总收益大于正常使用\)</span> { }$的收益那么,
+我们就可以判定这个<strong>Sabotage
+蓄意破坏</strong>策略是有效且有意义的。</p>
+<ul>
+<li><span class="math inline">\({ {\frac{ {\color{red}{\alpha_1} }-
+{\color{red}{\beta_1} } }{ 1-{\color{red}{\beta_1} } } } \choose
+{\color{red}{P_1 挖矿收益} } } + { {\frac{ {\color{red}{\beta_1} } }{
+{\color{green}{\alpha_2} }+ {\color{red}{\beta_1} } } }\choose
+{\color{red}{Sabotage\%} } } * { {\frac{ {\color{green}{\alpha_2} } }{
+1-{\color{red}{\beta_1} } } }\choose {\color{green}{P_2 挖矿收益} } }
+\gt { { {\color{red}{\alpha_{1} } } }\choose{ {\color{red}{P_1
+原本的总算力} } } }\)</span></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i2d=true&amp;i=Divide%5Ba_1+-+b%2C1-b%5D+%2BDivide%5Bb%2Ca_2+%2B+b%5D+Divide%5Ba_2%2C1-b%5D+%3E+a_1%5C%2844%29+b%3Ca_1">wolframalpha</a>:
+<code>Divide[a_1 - b,1-b] +Divide[b,a_2 + b] Divide[a_2,1-b] &gt; a_1, b&lt;a_1</code></li>
+<li>得到: <span class="math inline">\(0&lt;\beta_1&lt;1,
+\alpha_1&gt;\beta_1 , { {\color{green}{\alpha_2} } \gt
+{\color{darkred}\frac{(\beta_1 - \alpha_1 \beta_1)}{\alpha_1} }
+}\)</span></li>
+<li>所以$ { }<span class="math inline">\(只有在\)</span> { }<span
+class="math inline">\(大于\)</span> { }$的前提下,
+才能真正通过<strong>Sabotage 蓄意破坏</strong>获利</li>
+</ul>
 </blockquote>
 
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">6.5k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">26</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">8.4k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">34</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
@@ -1178,7 +1427,8 @@ minutes\)</span>。</p>
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
-Arrival Time 比特币区块到达时间</span></a></li></ol>
+Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
+蓄意破坏矿池</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
