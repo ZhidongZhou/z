@@ -16,8 +16,9 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205281541822.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205300945045.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205311452078.png">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206011814558.jpg">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-05-31T17:02:51.415Z">
+<meta property="article:modified_time" content="2022-06-01T10:48:05.287Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -123,10 +124,14 @@
     <div id="toc">
       <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-text">8.Bitcoin Difficulty
-比特币难度参数</span></a></li></ol> -->
+比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-text">9.Bitcoin Mining
+Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-text">10.Bitcoin Block
+Arrival Time 比特币区块到达时间</span></a></li></ol> -->
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
-比特币难度参数</span></a></li></ol>
+比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
+Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
+Arrival Time 比特币区块到达时间</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -192,7 +197,9 @@ Transaction 基于未花费的交易输出的交易</span></a></li><li class="to
     <hr>
     <!-- <div id='toc'><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
-比特币难度参数</span></a></li></ol></div> -->
+比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
+Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
+Arrival Time 比特币区块到达时间</span></a></li></ol></div> -->
     <!-- # COMP90088 COMP90088 Cryptocurrencies & decentralised ledgers 加密货币&去中央化的公共帐目 -- 题库 -->
 <h2 id="merkle-trees-默克尔树">1.Merkle Trees 默克尔树</h2>
 <p>蓝色代表 <u>Leaf Node 叶子结点</u>, 红色代表 <span
@@ -226,7 +233,7 @@ class="math inline">\(\color{blue}{g}\)</span> &amp; 原本的 Merkle Root
 </ul>
 </blockquote>
 <p><strong>1.b</strong>: 如果验证者知道树的<u>叶子结点</u>是有序的,
-如何证明<em>节点 3</em>不在这棵树提交的集合中？</p>
+如何证明<em>节点 3</em>不在这棵树提交的集合中?</p>
 <blockquote>
 <p><strong>Non-inclusion Proof 不包含证明</strong></p>
 <blockquote>
@@ -435,7 +442,7 @@ class="math inline">\({N \choose 3} \frac{1}{365^2} = 1\)</span>。</p>
 <li><code>3HHZfn1wo93snzEf5kDmkSx1vPmyCxYAxm</code> [长度只有34位]</li>
 </ul>
 <p><strong>4.a</strong>: 如果比特币地址是使用 56 个字符的字母格式化的
-160 位哈希(二进制), 那么它有多少个字符？其中56个字符包括:
+160 位哈希(二进制), 那么它有多少个字符? 其中56个字符包括:
 <code>23456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz</code></p>
 <blockquote>
 <p>设需要<span class="math inline">\(n\)</span>个base56来表示需要<span
@@ -454,7 +461,7 @@ class="math inline">\(2^{160}\)</span>位长度组合的字符串。
 </blockquote>
 <p><strong>4.c</strong>: 为什么将<strong>Publick Key Hash
 公钥的哈希值</strong>作为地址而不是<strong>Public Key 公钥 (<span
-class="math inline">\(pk\)</span>)</strong>本身进行分发是<u>安全的</u>？</p>
+class="math inline">\(pk\)</span>)</strong>本身进行分发是<u>安全的</u>?</p>
 <blockquote>
 <p>只要哈希函数<span
 class="math inline">\(H()\)</span>是<strong>Collision Resistant
@@ -483,10 +490,10 @@ class="math inline">\(\color{red}{X}=H(pk_{Mallory})\)</span>).
 对于哈希函数<span class="math inline">\(H()\)</span>输出长度为<span
 class="math inline">\(t\)</span>的结果, 仅需<span
 class="math inline">\(O(2^{t/2})\)</span>位的难度以找到<strong>Collision
-碰撞</strong>。 生日攻击对<strong>4.d</strong>:
-适用吗？为什么或者为什么不？如果不是, Mallory
+碰撞</strong>。 生日攻击对<strong>4.d</strong>: 适用吗?
+为什么或者为什么不? 如果不是, Mallory
 必须<u>期望</u>花费多少工作才能找到这样的<strong>Publick Key
-公钥</strong>？</p>
+公钥</strong>?</p>
 <blockquote>
 <p>不适用: 因为<strong>4.d</strong>:
 中<u>生日攻击</u>被用来在已知输入中找到一对儿或一组输入找到<strong>Collision
@@ -619,7 +626,7 @@ E:7\}\)</span>:</p>
 </ul>
 </blockquote>
 <p><strong>5.b</strong>: 交易<em>Tx-5</em>之后的 UTXO
-集合的状态是什么？</p>
+集合的状态是什么?</p>
 <blockquote>
 <p>排除掉在其他交易中被再次作为Inputs的<span
 class="math inline">\(\color{red}{Outputs}\)</span>,
@@ -628,7 +635,7 @@ class="math inline">\(\color{red}{Outputs}\)</span>,
 4[1], 4[3], 4[4], 5[0], 5[1], 5[2]\}\)</span></p>
 </blockquote>
 <p><strong>5.c</strong>: 从交易Tx-1 到 <em>Tx-5</em>,
-所花费的交易手续费是多少？</p>
+所花费的交易手续费是多少?</p>
 <blockquote>
 <p>合计所有<strong>未花费的交易输出(UTXO)</strong>: <span
 class="math inline">\(10+1+2+2+2+4+11+5+5+1+1+2 = 46\)</span></p>
@@ -641,8 +648,8 @@ class="math inline">\(10+1+2+2+2+4+11+5+5+1+1+2 = 46\)</span></p>
 <blockquote>
 <p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205311452078.png" alt="utxo_chart" style="zoom:22%;" /></p>
 </blockquote>
-<p><strong>5.d</strong>: 以下哪一项可能是有效的交易 6？对于无效的可能性,
-为什么它们是无效的？</p>
+<p><strong>5.d</strong>: 以下哪一项可能是有效的<em>Tx-6</em>?
+对于无效的可能性, 为什么它们是无效的?</p>
 <table>
 <colgroup>
 <col style="width: 6%" />
@@ -692,11 +699,11 @@ class="math inline">\(10+1+2+2+2+4+11+5+5+1+1+2 = 46\)</span></p>
 </tr>
 </tbody>
 </table>
-<p><strong>5.e</strong>: 如果您想<u>激励</u>保持 UTXO
-集大小<u>最小</u>，您是否希望费用基于交易的输入数量、输出数量或两者兼而有之？</p>
+<p><strong>5.e</strong>: 如果您想<u>激励</u>保持 UTXO 集大小<u>最小</u>,
+您是否希望费用基于交易的输入数量、输出数量或两者兼而有之?</p>
 <blockquote>
 <p>给定的交易使用<strong>未花费的交易输出(UTXO)</strong>作为<u>Input
-输入</u>，并为每个<em>Output 输出</em>生成一个新的UTXO。</p>
+输入</u>, 并为每个<em>Output 输出</em>生成一个新的UTXO。</p>
 <p>那么如果, <u>Input 输入</u>少于<em>Output 输出</em>,
 将生成更多的<strong>未花费的交易输出(UTXO)</strong> (UTXO集更大)。</p>
 <p>反之, 如果更少的<em>Output 输出</em>,
@@ -741,8 +748,8 @@ class="math inline">\(10+1+2+2+2+4+11+5+5+1+1+2 = 46\)</span></p>
 </tr>
 </tbody>
 </table>
-<p><strong>6.a</strong>:
-对于这些内容，它们在实践中从一个块到另一个块的变化频率如何？</p>
+<p><strong>6.a</strong>: 对于这些内容,
+它们在实践中从一个块到另一个块的变化频率如何?</p>
 <blockquote>
 <ul>
 <li>首先Version 版本号(<code>#</code>), 很少改变,
@@ -778,7 +785,7 @@ $年。</li>
 <li>在<code>2147483648</code>:<code>echo "obase=2; 2147483648" |bc</code>:<code>10000000000000000000000000000000</code>
 - <a target="_blank" rel="noopener" href="https://www.unixtimestamp.com/">(GMT+
 0000)2038年1月19日03时14分08秒</a>: 溢出<span class="math inline">\(32 \
-bytes\)</span>，届时Unix时间戳将停止工作。</li>
+bytes\)</span>, 届时Unix时间戳将停止工作。</li>
 <li>由于每个区块平均间隔为600秒, 如果只保留秒(<span
 class="math inline">\(600*2=1200\)</span>),
 <code>echo "obase=2;(120)" |bc</code>:<code>10010110000</code>(11 bits),
@@ -841,15 +848,15 @@ bytes = 8 bits\)</span>,
 class="math inline">\((4 * 8) - (1 * 8) = 24 \ bits\)</span>。 相比<span
 class="math inline">\(257 - (160+24) = 73 \ bits\)</span>,
 <code>P2PKH</code>仍然节省了<span class="math inline">\(73 \
-bits\)</span>。
-那么<code>P2PK2</code>将有更小的UTXO集合。因此，当目标是最小化 UTXO
-集的大小时，首选<code>P2PKH</code>。这也意味着发件人只需知道公钥的 <span
+bits\)</span>。 那么<code>P2PK2</code>将有更小的UTXO集合。因此,
+当目标是最小化 UTXO 集的大小时,
+首选<code>P2PKH</code>。这也意味着发件人只需知道公钥的 <span
 class="math inline">\(160 \ bits\)</span>
-的<strong>公钥哈希</strong>即可进行汇款，因此更容易通过 QR
+的<strong>公钥哈希</strong>即可进行汇款, 因此更容易通过 QR
 码等方式将这些地址发布在网站上。</p>
 <p><strong>安全优势</strong>: 公钥哈希,
 可以保证在<code>P2PKH</code>的<code>UTXO</code>没有被使用完之前公钥不易被揭露。
-并且攻击者只很少的时间尝试（例如使用量子计算机）获得公钥。通常在一笔交易被确认钱(6个区块,
+并且攻击者只很少的时间尝试(例如使用量子计算机)获得公钥。通常在一笔交易被确认钱(6个区块,
 1小时)的时间窗口内, 攻击者无法破解<strong>公钥哈希</strong>。</p>
 </blockquote>
 <h2 id="bitcoin-difficulty-比特币难度参数">8.Bitcoin Difficulty
@@ -877,21 +884,212 @@ class="math inline">\(2^{75.5}\)</span>, 网络的<strong>Hash Rate
 <p><strong>8.3</strong>: 比特币难度参数每两周调整一次, 假设当前难度为
 <span class="math inline">\(2^{74.02}\)</span> 并且在<span
 class="math inline">\(12.5\)</span>天内发现了 <span
-class="math inline">\(2016\)</span>个区块。那么重新计算后会难度参数是多少？</p>
+class="math inline">\(2016\)</span>个区块。那么重新计算后会难度参数是多少?</p>
 <blockquote>
-<p>首先每2016块更新一次难度, 那么根据公式: <span
+<p>首先每2016块更新一次难度(平均2周), 那么根据公式: <span
 class="math inline">\(过去难度 * \frac{14天}{过去耗时}\)</span></p>
 <p>我们可以计算: <span class="math inline">\(2^{74.02} * \frac{14}{12.5}
 \approx 2.15(10^{22}) \\ \approx \log_2({2.15(10)^{22})} \\ \approx
 2^{74.18}\)</span></p>
+</blockquote>
+<h2 id="bitcoin-mining-economics-比特币开采经济学">9.Bitcoin Mining
+Economics 比特币开采经济学</h2>
+<p>假设您正在考虑使用新的 <a
+target="_blank" rel="noopener" href="https://canaan.io/product/avalonminer-1166-pro">Canaan Avalon
+A1166 Pro</a> 开采比特币。该设备的额定执行速度为 <span
+class="math inline">\(81 \ TH/s\)</span>(每秒 <span
+class="math inline">\(81×10^{12}\)</span> 次哈希), 需要 <span
+class="math inline">\(3.4 \ kW\)</span> 的功率才能运行。
+假设您的电力公司的账单为 <span class="math inline">\(0.10 \
+USD/kWh\)</span>, 当前难度为 <span
+class="math inline">\(2^{76.3}\)</span>, 找到一个区块的平均奖励为 <span
+class="math inline">\(420,000\)</span> 美元(这些值在 2021 年 11
+月开始时是准确的, 当时采矿奖励处于峰值)。</p>
+<p><strong>9.a</strong>:
+根据以上已知条件需要多长时间才能找到一个区块？</p>
+<blockquote>
+<ul>
+<li><strong>难度参数</strong>: 整个网络需要平均<span
+class="math inline">\(2^{76.3}\)</span>次哈希计算出Mining Puzzle,
+那么每个矿工平均也需要<span
+class="math inline">\(2^{76.3}\)</span>次哈希计算才能计算出Puzzle</li>
+<li><strong>算力</strong>: 每秒<span
+class="math inline">\(81(10^{12})\)</span>次哈希</li>
+<li>那么需要<span
+class="math inline">\(\frac{2^{76.3}}{81(10^{12})}=1148427676.67204
+\approx 1148427677 \ seconds\)</span></li>
+<li>我们知道根据<strong>Unix时间</strong>, 一个月有<span
+class="math inline">\(2629743 \ seconds\)</span></li>
+<li>那么将需要<span class="math inline">\(\frac{1148427677}{2629743} =
+436.707 \approx 437 \ month\)</span>才能开采出一个区块</li>
+</ul>
+</blockquote>
+<p><strong>9.b</strong>:
+使用您对<strong>9.1</strong>的答案，计算月收入是多少？</p>
+<blockquote>
+<ul>
+<li>一个<strong>区块奖励</strong>为: <span class="math inline">\(420,000
+\ USD\)</span></li>
+<li>那么挖矿一个月收益为: <span
+class="math inline">\(\frac{420,000}{437} \approx 961 \
+USD\)</span></li>
+</ul>
+</blockquote>
+<p><strong>9.c</strong>: 计算每个月销好的电费是多少</p>
+<blockquote>
+<ul>
+<li>矿机需要<span class="math inline">\(3.4 \
+kW\)</span>的电才能运行</li>
+<li>每小时电费需要: <span class="math inline">\(0.1 \
+USD/kWh\)</span></li>
+<li>每个月电费为: <span class="math inline">\(0.1 * 24 \ hours*
+(\frac{365}{12})\ day = 73 \ USD/ kWm\)</span></li>
+<li>那么矿机运行一个月需要: <span class="math inline">\(3.4 \ kW * 73 \
+USD/kWm \approx 248 \ USD\)</span></li>
+</ul>
+</blockquote>
+<p><strong>9.d</strong>:
+网络<strong>难度参数</strong>为多少时，该矿机能够达到收支平衡(月电费 =
+预期月收入)?</p>
+<blockquote>
+<ul>
+<li>已知挖矿奖励为<span class="math inline">\(420,000 \
+USD\)</span></li>
+<li>每月电费约为<span class="math inline">\(248 \ USD\)</span></li>
+<li>矿机算力为固定每秒<span
+class="math inline">\(81(10^{12})\)</span>次哈希</li>
+<li>我们设<strong>难度参数</strong>为:<span
+class="math inline">\(d\)</span>, 则开采出一个区块需要: <span
+class="math inline">\(\frac{d}{81(10^{12})} \ seconds\)</span></li>
+<li>那么我们需要保证每个月用平摊所得的挖矿收益<span
+class="math inline">\(\frac{420,000}{出块时间 \
+month}\)</span>至少等于平均耗电量<span class="math inline">\(248 \
+USD\)</span>以达到收支平衡: <span
+class="math inline">\(\frac{420,\:000}{\frac{\left(\frac{d}{81\left(10^{12}\right)}\right)}{2629743}}=
+248 \ USD/month\)</span>
+<ul>
+<li><span class="math inline">\(d ={\color{green}{
+2^{78.25}}}\)</span></li>
+</ul></li>
+<li>所以需要<strong>难度参数</strong>为<span
+class="math inline">\({\color{green}{
+2^{78.25}}}\)</span>才能达到每月的收支平衡 (收支平衡点),
+也就是说只有在难度参数低于收支平衡点的时候(例如<span
+class="math inline">\(2^{78} &lt; 2^{78.25}\)</span>),
+使用该矿机挖矿才能达到收支平衡。</li>
+</ul>
+</blockquote>
+<p><strong>9.e</strong>: 假设除<strong>难度参数</strong>每月增加<span
+class="math inline">\(5.5\%\)</span>以外, 其他所有因素保持不变,
+多久后该的矿机将无法实现盈利?</p>
+<blockquote>
+<ul>
+<li>每月增长率为<span class="math inline">\(1+1(5.5\%) =
+1.055\)</span></li>
+<li>当前<strong>难度参数</strong>为: <span
+class="math inline">\({\color{orange}{2^{76.3}}}\)</span></li>
+<li><strong>难度参数</strong>在: <span
+class="math inline">\({\color{green}{ 2^{78.25}}}\)</span>
+时达到收支平衡点</li>
+<li>那么设需要经过的月份数为:<span class="math inline">\(m\)</span>,
+那么需要经过<span class="math inline">\(1.055^{m} = 2^{78.25-76.3}
+\approx 25.25 \ month\)</span> 达到收支平衡点。</li>
+</ul>
+</blockquote>
+<p><strong>9.f</strong>:
+考虑到该矿机的收入将持续下降，矿机在关闭之前的生命周期内的期望利润是多少？</p>
+<blockquote>
+<ul>
+<li>根据<strong>9.b</strong>已知该矿机当前月收益为: <span
+class="math inline">\(961 \ USD\)</span></li>
+<li>根据<strong>9.c</strong>已知该矿机每月耗电量为: <span
+class="math inline">\(248 \ USD\)</span></li>
+<li>根据<strong>9.e</strong>已知该矿机当前距收支平衡点还有: <span
+class="math inline">\(25.3 \ month\)</span></li>
+<li>并且我们已知难度逐月递增<span class="math inline">\(105.5
+\%\)</span>, 那么相对收益也会以逐月衰减<span class="math inline">\(105.5
+\%\)</span>的。</li>
+<li>那么我们需要计算从当前 <span class="math inline">\(961 \
+USD\)</span> 每月经过<span class="math inline">\(25.3 \ month\)</span>
+的时间内每月收益以<span class="math inline">\(105.5
+\%\)</span>的递减后的总和, 并每月需要减去<span class="math inline">\(248
+\ USD\)</span>的电费成本。</li>
+<li><span class="math inline">\(\int_0^{25.3}\left(961\cdot
+1.055^{-t}-248\right) = 7042.715\)</span>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i=integral_0%5E25.3+%28961%C3%971.055%5E%28-t%29+-+248%29">wolframalpha</a>:
+<code>integral_0^25.3 (961×1.055^(-t) - 248)(metric decitons)</code></li>
+<li><a
+target="_blank" rel="noopener" href="https://zs.symbolab.com/solver/step-by-step/%5Cint_%7B0%7D%5E%7B25.3%7D%5Cleft(961%5Ccdot%201.055%5E%7B-t%7D-248%5Cright)?or=input">symbolab</a>:
+<code>\int _0^&#123;25.3&#125;\left(961\cdot 1.055^&#123;-t&#125;-248\right)</code></li>
+</ul></li>
+</ul>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206011814558.jpg" alt="mining_profit_25.3" style="zoom:30%;" /></p>
+<ul>
+<li>所以该矿机在剩下的25.3个月内期望利润为: <span
+class="math inline">\(7043 \ USD\)</span></li>
+</ul>
+</blockquote>
+<p><strong>9.g</strong>: 假设您能够投资每月复合回报率为 <span
+class="math inline">\(0.8\%\)</span> 的<strong>Wide-Market Index
+广泛市场指数</strong>
+ETF，那么以什么价格购买采矿设备，它不再是一项好的投资？将此与该矿机
+<span class="math inline">\(10,000 \ USD\)</span>
+的市场价格进行比较。</p>
+<blockquote>
+<ul>
+<li>回报率为<span class="math inline">\(0.8%\)</span>,
+那么<strong>Present Value 现值 (PV)</strong>乘以月回报率<span
+class="math inline">\(0.8\%\)</span>等于<strong>Future Value 未来值
+(FV)</strong>: <span class="math inline">\(FV = PV *
+1.008^{-t}\)</span></li>
+<li>那么反之: <span class="math inline">\(PV = FV *
+1.008^{-t}\)</span></li>
+<li>计算最高可接受的购买价格为: <span
+class="math inline">\(\int_0^{25.3} 1.008^{-t}\left(961\cdot
+1.055^{-t}-248\right) = {\color{green}{6645.757}}\)</span></li>
+<li>那么相比<span class="math inline">\(10,000 \
+USD\)</span>的价格是过高的, 并不是一个好的投资(只有在低于<span
+class="math inline">\(6,646 \
+USD\)</span>以下的价格购买才是一笔好的投资)。</li>
+</ul>
+</blockquote>
+<p><strong>9.h</strong>:
+这是一项好的投资吗？该分析忽略了哪些其他因素？</p>
+<blockquote>
+<p>很显然不是一笔好的投资。</p>
+<p><strong>忽略因素</strong>: 首先<span class="math inline">\(10,000 \
+USD\)</span>的矿机(<a
+target="_blank" rel="noopener" href="https://canaan.io/product/avalonminer-1166-pro">Canaan Avalon
+A1166 Pro</a>)是被高估的, 并且<span class="math inline">\(420,000 \
+USD\)</span>的挖矿奖励对标的是比特币兑换美元的一个峰值<strong>汇率</strong>。
+另外<strong>挖矿奖励</strong>将在每21万区块(大约4年)减半一次。
+同样的<strong>交易费</strong>并没有被考虑。还有,
+<strong>电力成本</strong>的变化、<strong>挖矿差异</strong>、潜在的<strong>矿池费用</strong>、潜在的未来法律法规以及作为矿工的道德成本是需要考虑的一些事情。</p>
+<p>(截至2022年3月，区块奖励为 <span class="math inline">\(250000 \
+USD\)</span>，难度参数为: <span
+class="math inline">\(2^{76.6}\)</span>。</p>
+</blockquote>
+<h2 id="bitcoin-block-arrival-time-比特币区块到达时间">10.Bitcoin Block
+Arrival Time 比特币区块到达时间</h2>
+<p>回想一下，比特币区块的到达是一个<strong>Poission Process
+泊松过程</strong>，<u>Rate 速率</u>: <span class="math inline">\(r=0.1 \
+minutes^{-1}\)</span>。这意味着无论距离上一个区块被发现已经过去了多长时间,
+在任何时刻找到一个区块的平均时间是 <span class="math inline">\(10 \
+minutes\)</span>。</p>
+<p><strong>10.1</strong>: 在接下来的 10
+分钟内至少找到一个区块的概率是多少？</p>
+<blockquote>
+
 </blockquote>
 
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">5k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">20</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">6.5k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">26</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
@@ -978,7 +1176,9 @@ class="math inline">\(过去难度 * \frac{14天}{过去耗时}\)</span></p>
     <div id="toc-footer" style="display: none">
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
-比特币难度参数</span></a></li></ol>
+比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
+Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
+Arrival Time 比特币区块到达时间</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
