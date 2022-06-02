@@ -441,9 +441,11 @@ table tr:hover {
 /* Light & Dark Mode Toggle Button */
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
 .btn {
-  /* align-self: center; */
+  align-self: center;
   /* margin: 15px 0; */
-  /* text-align: center; */
+  margin-left: 90%;
+  margin-right: 10%;
+  text-align: center;
   /* float: right; */
 }
 .box {
