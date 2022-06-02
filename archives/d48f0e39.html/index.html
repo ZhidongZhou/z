@@ -18,8 +18,10 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205311452078.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206011814558.jpg">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206020204330.svg">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022247727.svg">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022307297.svg">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-02T10:24:18.316Z">
+<meta property="article:modified_time" content="2022-06-02T15:43:53.277Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -128,13 +130,15 @@ Transaction 基于未花费的交易输出的交易</span></a></li><li class="to
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-text">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-text">12.Mining Pool Sabotage
-蓄意破坏矿池</span></a></li></ol> -->
+蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-text">14.Atomic swaps
+不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-text">16.Contract Call 合约调用</span></a></li></ol> -->
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
-蓄意破坏矿池</span></a></li></ol>
+蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
+不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -336,7 +340,8 @@ Transaction 基于未花费的交易输出的交易</span></a></li><li class="to
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
-蓄意破坏矿池</span></a></li></ol></div> -->
+蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
+不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li></ol></div> -->
     <!-- # COMP90088 COMP90088 Cryptocurrencies & decentralised ledgers 加密货币&去中央化的公共帐目 -- 题库 -->
 <h2 id="merkle-trees-默克尔树">1.Merkle Trees 默克尔树</h2>
 <p>蓝色代表 <u>Leaf Node 叶子结点</u>, 红色代表 <span
@@ -1485,7 +1490,7 @@ class="math inline">\({\color{red}{\frac{(\beta_1 - \alpha_1
 蓄意破坏</strong>获利。</p></li>
 <li><p>假设: <span
 class="math inline">\({\color{red}{P_1}}\)</span>拥有<span
-class="math inline">\({\color{red}{\alpha_1}} = 31 \%\)</span>的算力,
+class="math inline">\({\color{red}{\alpha_1}} = 30 \%\)</span>的算力,
 并拿出<span class="math inline">\({\color{red}{\beta_1}} =
 1\%\)</span>的算力 <strong>Sabotage</strong> <span
 class="math inline">\({\color{green}{P_2}}\)</span>,
@@ -1559,14 +1564,238 @@ class="math inline">\(\frac{ {\color{green}{\beta_2}} }{
 </ul>
 <p>由于互相 <strong>Sabotage</strong> 所以 <u>Shares 分红</u>
 将会相互抵消。</p>
+<p>最极端的情况是<span
+class="math inline">\({\color{red}{P_1}}\)</span>&amp;<span
+class="math inline">\({\color{green}{P_2}}\)</span>平分全网的算力, <span
+class="math inline">\({\color{red}{\alpha_1}} =
+{\color{green}{\alpha_2}} = 50 \%\)</span></p>
+<p>那么这种情况下:</p>
+<ol type="1">
+<li><span class="math inline">\({\color{red}{P_1}}\)</span>在<span
+class="math inline">\(\frac{ {\color{red}{\alpha_1} }-{
+{\color{red}{\beta_1}} } }{ 1- {\color{orange}{2 \beta} } } \lt
+{\color{red}{\alpha_1}}\)</span>的情况下不会获利</li>
+<li><span class="math inline">\({\color{green}{P_2}}\)</span>在<span
+class="math inline">\(\frac{ {\color{green}{\alpha_2} }-{
+{\color{green}{\beta_2}} } }{ 1- {\color{orange}{2 \beta} } } \lt
+{\color{green}{\alpha_2}}\)</span>的情况下不会中获利 (相同的)</li>
+</ol>
+<p>那么我们只需要求解: <span class="math inline">\(\frac{
+{\color{red}{\alpha_1} }-{ {\color{red}{\beta_1}} } }{ 1-
+{\color{orange}{2 \beta} } } \lt {\color{red}{\alpha_1}},
+({\color{red}{\alpha_1}} &lt; 50 \%)\)</span></p>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i2d=true&amp;i=Divide%5Ba-b%2C1-2b%5D+%3C+a%5C%2844%29+a+%3C%3D0.5%5C%2844%29+b+%3C+a">Wolframalpha</a>:
+<code>Divide[a-b,1-2b] &lt; a, a &lt;=0.5, b &lt; a</code></li>
+<li>我们得到: 在<span class="math inline">\({\color{red}{\beta_1}} \lt
+{\color{red}{\alpha_1}} \lt 50\%\)</span>的条件下, 永远无法获利。</li>
+</ul>
+<p>也就是说<span
+class="math inline">\({\color{red}{P_1}}\)</span>和<span
+class="math inline">\({\color{green}{P_2}}\)</span>互相
+<strong>Sabotage</strong> 双方都不会获利, 反而会两败俱伤。</p>
+<p>我们带入真实的数值来看一下结果:</p>
+<ul>
+<li><span class="math inline">\({\color{red}{\alpha_1}} =
+{\color{green}{\alpha_2}} = 30\%\)</span></li>
+<li><span
+class="math inline">\({\color{red}{\beta_1}}={\color{green}{\beta_2}}={\color{orange}{\beta}}
+= 10 \%\)</span></li>
+<li><span class="math inline">\(\frac{ {\color{red}{30 \%} }-{
+{\color{red}{10 \%}} } }{ 1- {\color{orange}{20 \%} } } \\ = 25
+\%\)</span></li>
+</ul>
+<p>所以很明<span
+class="math inline">\({\color{red}{P_1}}\)</span>和<span
+class="math inline">\({\color{green}{P_2}}\)</span>本来可以安分守己获取<span
+class="math inline">\(30 \%\)</span>的收益, 但互相攻击后只能获得<span
+class="math inline">\(25 \%\)</span>的奖励。</p>
 </blockquote>
+<h2 id="per-mines-预开采">13.Per-mines 预开采</h2>
+<p>大多数<strong>Altcoin 另类币</strong>对<u>Pre-mined tokens
+预开采代币</u>采取<u>Lockup Period
+锁定期</u>策略，即在一段时间内预开采代币不能被交易(并且通常在制定好<u>Vesting
+Schedule
+兑现计划</u>后逐渐允许可交易)。请记住，预挖硬币通常分配给创始人和基金会以支持代币的发展：</p>
+<p><strong>13.a</strong>: 锁定期有什么好处？</p>
+<blockquote>
+<p>锁定期旨在防止创始人出售所有代币并在代币发布后立即放弃（<strong>Pump-and-Dump
+拉高抛售</strong>）。他们将有动力保持项目的价值，直到他们的所有代币都有所<u>Vest
+归属</u>。</p>
+</blockquote>
+<p><strong>13.b</strong>: 锁定期太⻓或太短，会导致什么问题？</p>
+<blockquote>
+<p>太短的锁定期可能无法防止<strong>Pump-and-Dump
+拉高抛售</strong>，或者可能无法让创始人和开发人员支持该项目足够长的时间以使其发展。</p>
+<p>过长的锁定期可能同样会令创始人灰心：如果创始人认为他们永远不会获利，他们可能会放弃。</p>
+</blockquote>
+<h2 id="atomic-swaps-不可分割跨链交换">14.Atomic swaps
+不可分割跨链交换</h2>
+<p>假设有两条链, <code>PancakeChain</code> 和 <code>WaffleChain</code>。
+Alice 和 Bob 想要在链之间进行<strong>Atomic
+swaps</strong>。考虑描述的对称原子交换函数的更简单变体的伪代码。(注意!
+不同的是, 简化的伪代码只考虑在每条链上进行一次交易)。</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Transaction 1 (<code>PancakeCoin</code>)</th>
+<th>Transaction 2 (<code>WaffleCoin</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Before time <span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>:<br>*
+Signature by <span class="math inline">\(K_A\)</span><br>* <span
+class="math inline">\(x\)</span> such that <span
+class="math inline">\(H(x) = y\)</span><br>After time {}:<br>* Signature
+by <span class="math inline">\(K_B\)</span></td>
+<td>Before time <span
+class="math inline">\({\color{green}{T_{2}}}\)</span>:<br>* Signature by
+<span class="math inline">\(K_B\)</span><br>* <span
+class="math inline">\(x\)</span> such that <span
+class="math inline">\(H(x) = y\)</span><br>After time <span
+class="math inline">\({\color{green}{T_{2}}}\)</span>:<br>* Signature by
+<span class="math inline">\(K_A\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>14.a</strong>:
+原本<code>Bitcoin Script</code>机制无法实现此版本。添加了什么功能使这个更简单的版本成为可能?</p>
+<blockquote>
+<p>添加了<u>时间戳 Timestamp</u>:
+伪代码中的<code>if</code>分支需要进行<code>CHECKLOCKTIME_VERIFY</code>
+(<u>CLTV</u>)。</p>
+<p><u>CLTV</u>: 是在 2015 年由 BIP65 通过软分叉添加的。</p>
+</blockquote>
+<p><strong>14.b</strong>: 根据上述脚本, Alice 最初持有
+<code>PancakeCoins</code> 还是 <code>WaffleCoins</code>?</p>
+<blockquote>
+<p>观察, <code>PancakeCoin</code>的交易1需要, Alice 在<span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>截止前提供签名<span
+class="math inline">\(K_{Alice}\)</span>, 以及Secret <span
+class="math inline">\(x\)</span>。 那么显然这比交易是由 Bob 发起的,
+因为如果 Alice 在<span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>截止前没有进行兑换
+Bob 可以在<span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>截止后赎回自己的币。</p>
+<p>反之, <code>WaffleCoins</code> 允许 Alice 在<span
+class="math inline">\({\color{green}{T_{2}}}\)</span>截止后赎回自己的币,
+所以 Alice 最初持有的就是 <code>PancakeCoin</code>。</p>
+</blockquote>
+<p><strong>14.c</strong>: 哪笔交易应该先被处理帐?
+如果反过来处理会发生什么?</p>
+<blockquote>
+<p>取决于哪一方选择 Secret <span class="math inline">\(x\)</span>。</p>
+<p>如果 Bob 决定 <span class="math inline">\(x\)</span>, 那么需要 Alice
+先发布交易1。否则, Bob 可以立即花费交易2并拒绝发布交易1,
+同时保留两个硬币。</p>
+<p>反之如果 Alice 选择 <span class="math inline">\(x\)</span>, 那么需要
+Bob 先发布交易2。</p>
+<p>最后一定要保证先发起的交易在另一笔交易发起之前被确认。</p>
+</blockquote>
+<p><strong>14.d</strong>: <span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>和<span
+class="math inline">\({\color{green}{T_{2}}}\)</span>应该如何选择?</p>
+<blockquote>
+<p>这同样取决于谁决定 <span class="math inline">\(x\)</span>。</p>
+<p>如下图所示, 如果 Bob 选择 <span class="math inline">\(x\)</span>,
+那么我们想要 <span class="math inline">\({\color{CornflowerBlue}{T_{1}}}
+\gt {\color{green}{T_{2}}}\)</span>, <span
+class="math inline">\({\color{CornflowerBlue}{因为如果\)</span>T_{1}}}
+$, Bob 又知道 <span class="math inline">\(x\)</span> (有优势),
+那么Bob可以在 <span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>
+结束后再揭露自己的<span class="math inline">\(x\)</span>这样, Bob
+可以获得 Alice 的币但是, <span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>
+现在已经超时, Alice 不能获得 Bob 的币, 那么 Bob 可以赎回自己的币。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022247727.svg" alt="cc_atomic_swap" style="zoom:150%;" /></p>
+<p>如此 Alice 竹篮打水一场空。</p>
+</blockquote>
+<p><strong>14.e</strong>: 在实践中, Alice 和 Bob 应该如何选择 <span
+class="math inline">\(|{\color{CornflowerBlue}{T_{1}}} -
+{\color{green}{T_{2}}}|\)</span> 差值 的大小?
+如果这个值太小会出什么问题? 如果这个值太大会出什么问题?</p>
+<blockquote>
+<p>在交换交易发起者交易超时时间大于参与交换者交易时间的前提下, <span
+class="math inline">\(|{\color{CornflowerBlue}{T_{1}}} -
+{\color{green}{T_{2}}}|\)</span>
+的差值至少需要留出足够的<u>交易确认时间</u>。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022307297.svg" alt="cc_atomic_swap_time_slot" style="zoom:150%;" /></p>
+<p>例: 如上图所示, Bob 选择 <span
+class="math inline">\({\color{orange}{x}}\)</span> 并且 <span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}} \lt
+{\color{green}{T_{2}}}\)</span>。 Bob 可能会在非常接近截止日期 <span
+class="math inline">\({\color{green}{T_{2}}}\)</span> 时（通过揭示 <span
+class="math inline">\({\color{orange}{x}}\)</span>）认领
+<code>WaffleCoins</code>。 为了确保 Alice 得到
+<code>PancakeCoins</code>, Alice 需要查看 Bob 在 <code>WaffleCoin</code>
+链上的交易（学习 <span
+class="math inline">\({\color{orange}{x}}\)</span>）, 并使用 <span
+class="math inline">\({\color{orange}{x}}\)</span> 在
+<code>PancakeCoin</code> 链上确认交易以获取 <code>PancakeCoin</code>。
+因此, 时间差应该至少是<span
+class="math inline">\({\color{purple}{确认交易的预期时间长度}}\)</span>,
+加上 Alice 准备交易的一些合理反应时间, 再加上一些安全边际。 对于比特币,
+这意味着时间差应该至少是几个小时(<span
+class="math inline">\(6\)</span>个区块确认需要<span
+class="math inline">\(1\)</span>个小时)以保证交易在最长链上。</p>
+<p>如果时间窗口太小，Bob（或选择 <span
+class="math inline">\({\color{orange}{x}}\)</span>
+的一方）可能会抢在另一方之前在两条链上获得交易，从而违反协议的安全性。</p>
+<p>如果时间窗口太长，则在协议失败的情况下对方等待变得不方便。</p>
+</blockquote>
+<p><strong>14.f</strong>: 如果同一个 Secret ${} $
+被多次使用会怎么样?</p>
+<blockquote>
+<p>这意味着协议完全不安全，因为双方都知道 <span
+class="math inline">\({\color{orange}{x}}\)</span>。所以无论哪一方发起交换,
+另一方都可以立即通过 <span
+class="math inline">\({\color{orange}{x}}\)</span> 拿走金币。</p>
+</blockquote>
+<h2 id="solidity-modifiers">15.Solidity Modifiers</h2>
+<p>观察以下 Solidity 函数:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">address owner; </span><br><span class="line">function withdraw() public owner_only &#123;</span><br><span class="line">    payable(msg.sender).transfer(this.value); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>15.a</strong>:
+<code>withdraw</code>功能是否需要标注<code>payable</code>？</p>
+<blockquote>
+<p>不,
+因为不需要向提现(<code>withdraw</code>)此功能发送资金。提现功能只需要向外发送汇款。</p>
+</blockquote>
+<p><strong>15.b</strong>:
+<code>withdraw</code>功能可以标记为<code>view</code> &amp;/OR
+<code>pure</code>吗？</p>
+<blockquote>
+<p>不，<code>view</code>/<code>pure</code>会阻止向外汇款(这会修改合约的状态)</p>
+</blockquote>
+<p><strong>15.c</strong>: 成员变量 <code>owner</code>
+的可见性级别应该是以下哪个:
+<code>public</code>/<code>private</code>/<code>internal</code>/<code>extrenal</code>）？</p>
+<blockquote>
+<p>都可以, 但<code>internal</code>/<code>private</code>可能更合适。
+使用<code>public</code>和<code>external</code>也不会引发安全问题,
+只要没有<code>public</code>函数的实现,
+<code>public</code>&amp;<code>external</code>都不会被直接<u>Overwrite
+覆盖</u>。</p>
+</blockquote>
+<p><strong>15.d</strong>: 考虑一下对 <code>owner_only</code> <u>modifier
+修饰符</u>的实现。那些是安全的？哪个是最佳做法？</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// i [最安全的]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    require(msg.sender == owner_address); </span><br><span class="line">    _;</span><br><span class="line">&#125;</span><br><span class="line">// ii [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if (msg.sender != owner_address) return;</span><br><span class="line">    _; // 没用 ← required</span><br><span class="line">&#125;</span><br><span class="line">/** iii </span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return;</span><br><span class="line">&#125;</span><br><span class="line">// iv [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    require (msg.sender == owner_address)</span><br><span class="line">&#125;</span><br><span class="line">/** v</span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">* - [重复发了两次]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return; </span><br><span class="line">    _; // ← 重复发了两次</span><br><span class="line">&#125;</span><br><span class="line">// vi [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if(msg.sender == owner_address) </span><br><span class="line">        _; // 没用 ← required</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="contract-call-合约调用">16.Contract Call 合约调用</h2>
+<p>考虑以下两个合约</p>
 
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">9k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">37</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">11k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">45</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
@@ -1656,7 +1885,8 @@ Transaction 基于未花费的交易输出的交易</span></a></li><li class="to
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
-蓄意破坏矿池</span></a></li></ol>
+蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
+不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
