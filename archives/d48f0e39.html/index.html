@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022247727.svg">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022307297.svg">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-02T15:43:53.277Z">
+<meta property="article:modified_time" content="2022-06-02T16:04:03.162Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -131,14 +131,16 @@ Transaction 基于未花费的交易输出的交易</span></a></li><li class="to
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-text">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-text">14.Atomic swaps
-不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-text">16.Contract Call 合约调用</span></a></li></ol> -->
+不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-text">17.Cross-Function
+Re-Entrancy 跨函数重入攻击</span></a></li></ol> -->
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
-不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li></ol>
+不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
+Re-Entrancy 跨函数重入攻击</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -341,7 +343,8 @@ Transaction 基于未花费的交易输出的交易</span></a></li><li class="to
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
-不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li></ol></div> -->
+不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
+Re-Entrancy 跨函数重入攻击</span></a></li></ol></div> -->
     <!-- # COMP90088 COMP90088 Cryptocurrencies & decentralised ledgers 加密货币&去中央化的公共帐目 -- 题库 -->
 <h2 id="merkle-trees-默克尔树">1.Merkle Trees 默克尔树</h2>
 <p>蓝色代表 <u>Leaf Node 叶子结点</u>, 红色代表 <span
@@ -1760,19 +1763,28 @@ class="math inline">\({\color{orange}{x}}\)</span>。所以无论哪一方发起
 class="math inline">\({\color{orange}{x}}\)</span> 拿走金币。</p>
 </blockquote>
 <h2 id="solidity-modifiers">15.Solidity Modifiers</h2>
-<p>观察以下 Solidity 函数:</p>
+<p>观察以下 Solidity 函数, 并参考<a
+target="_blank" rel="noopener" href="https://docs.soliditylang.org/en/v0.8.13/cheatsheet.html">Solidity
+Cheatsheet v0.8.13</a>:</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">address owner; </span><br><span class="line">function withdraw() public owner_only &#123;</span><br><span class="line">    payable(msg.sender).transfer(this.value); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>15.a</strong>:
 <code>withdraw</code>功能是否需要标注<code>payable</code>？</p>
 <blockquote>
 <p>不,
 因为不需要向提现(<code>withdraw</code>)此功能发送资金。提现功能只需要向外发送汇款。</p>
+<ul>
+<li><code>payable</code>: 允许他们在被调用的同时接收以太币</li>
+</ul>
 </blockquote>
 <p><strong>15.b</strong>:
 <code>withdraw</code>功能可以标记为<code>view</code> &amp;/OR
 <code>pure</code>吗？</p>
 <blockquote>
 <p>不，<code>view</code>/<code>pure</code>会阻止向外汇款(这会修改合约的状态)</p>
+<ul>
+<li><code>pure</code>: 不允许函数修改或访问状态。</li>
+<li><code>view</code>: 不允许函数修改状态。</li>
+</ul>
 </blockquote>
 <p><strong>15.c</strong>: 成员变量 <code>owner</code>
 的可见性级别应该是以下哪个:
@@ -1783,19 +1795,50 @@ class="math inline">\({\color{orange}{x}}\)</span> 拿走金币。</p>
 只要没有<code>public</code>函数的实现,
 <code>public</code>&amp;<code>external</code>都不会被直接<u>Overwrite
 覆盖</u>。</p>
+<ul>
+<li><code>public</code>: 函数对外部和内部可见(为存储/状态变量创建一个
+getter 函数)。</li>
+<li><code>private</code>: 函数仅对当前合约可见。</li>
+<li><code>external</code>: 函数仅对外部可见(仅适用于函数),
+即只能被消息调用(通过 <code>this.func</code>)。</li>
+<li><code>internal</code>: 函数仅对内部可见。</li>
+</ul>
 </blockquote>
 <p><strong>15.d</strong>: 考虑一下对 <code>owner_only</code> <u>modifier
 修饰符</u>的实现。那些是安全的？哪个是最佳做法？</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// i [最安全的]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    require(msg.sender == owner_address); </span><br><span class="line">    _;</span><br><span class="line">&#125;</span><br><span class="line">// ii [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if (msg.sender != owner_address) return;</span><br><span class="line">    _; // 没用 ← required</span><br><span class="line">&#125;</span><br><span class="line">/** iii </span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return;</span><br><span class="line">&#125;</span><br><span class="line">// iv [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    require (msg.sender == owner_address)</span><br><span class="line">&#125;</span><br><span class="line">/** v</span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">* - [重复发了两次]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return; </span><br><span class="line">    _; // ← 重复发了两次</span><br><span class="line">&#125;</span><br><span class="line">// vi [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if(msg.sender == owner_address) </span><br><span class="line">        _; // 没用 ← required</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="contract-call-合约调用">16.Contract Call 合约调用</h2>
-<p>考虑以下两个合约</p>
+<p>考虑以下两个合约:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">contract A &#123;</span><br><span class="line">    uint x;</span><br><span class="line">    address other;</span><br><span class="line">    function foo(uint y) public&#123;</span><br><span class="line">        x += (y * 2);</span><br><span class="line">        (bool result, bytes memory newZ) = other.__空白行__(abi.encodeWithSignature(&quot;bar(uint)&quot;, x+1));</span><br><span class="line">        x -= abi.decode(newZ, (uint));</span><br><span class="line">    &#125;</span><br><span class="line">    function bar(uint y) public returns (uint z)&#123;</span><br><span class="line">        x += (y * 3);</span><br><span class="line">        (bool result, ) = other.call(abi.encodeWithSignature(&quot;baz(uint)&quot;, x+2));</span><br><span class="line">        z = x - 10;</span><br><span class="line">    &#125;</span><br><span class="line">    function baz(uint y) public&#123;</span><br><span class="line">        x += y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设已经使用此代码创建了两个合约 A1 和 A2, 并进行了初始化, 使得
+<code>A1.other = A2</code> &amp; <code>A2.other = A1</code>，并且
+<code>A1.x = 2</code> 和 <code>A2.x = 3</code>。</p>
+<p><strong>16.a</strong>: 如果 <code>foo()</code> 中的空白行用
+<code>call</code> 填充，那么在调用 <code>A1.foo(7)</code> 之后
+<code>A1.x</code> 和 <code>A2.x</code> 会是什么？</p>
+<blockquote>
+
+</blockquote>
+<p><strong>16.b</strong>: 如果 <code>foo()</code> 中的空白行用
+<code>delegatecall</code> 填充，那么调用 <code>A1.foo(7)</code> 之后
+<code>A1.x</code> 和 <code>A2.x</code> 会是什么？</p>
+<blockquote>
+
+</blockquote>
+<p><strong>16.c</strong>: 如果 <code>foo()</code> 中的空白行用
+<code>staticcall</code> 填充会发生什么？</p>
+<blockquote>
+
+</blockquote>
+<h2 id="cross-function-re-entrancy-跨函数重入攻击">17.Cross-Function
+Re-Entrancy 跨函数重入攻击</h2>
 
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">11k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">45</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">11.3k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">46</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
@@ -1886,7 +1929,8 @@ Transaction 基于未花费的交易输出的交易</span></a></li><li class="to
 Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-arrival-time-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4"><span class="toc-number">10.</span> <span class="toc-text">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
-不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li></ol>
+不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
+Re-Entrancy 跨函数重入攻击</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
