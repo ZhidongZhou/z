@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022247727.svg">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022307297.svg">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-03T15:38:51.257Z">
+<meta property="article:modified_time" content="2022-06-03T19:01:49.001Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -50,8 +50,7 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- <link rel="stylesheet" href="/css/zdz_light.css" media="screen" type="text/css"> -->
-    <link rel="stylesheet" href="/css/zdz_dark.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="/css/zdz.css" media="screen" type="text/css">
     <!-- persian styles -->
     
       
@@ -67,7 +66,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ZDZ" type="application/atom+xml">
 </head>
-
 
 <body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
@@ -1840,9 +1838,9 @@ of Addresses — Solidity 0.8.15</a>:</p>
 <li><code>abi.encodeWithSignatur</code>函数是用于对结构化数据进行编码。</li>
 </ul>
 </blockquote>
-<p><strong>16.a</strong>: 如果 <code>foo()</code> 中的空白处用
-<code>call</code> 普通调用, 那么在调用 <code>A1.foo(7)</code> 之后
-<code>A1.x</code> &amp; <code>A2.x</code> 会是什么？</p>
+<p><strong>16.a</strong>:
+如果<code>foo()</code>中的空白处用<code>call</code>普通调用,
+那么在调用<code>A1.foo(7)</code>之后<code>A1.x</code>&amp;<code>A2.x</code>会是什么？</p>
 <blockquote>
 <p>如果使用 <code>call</code>普通调用, 那么有:
 <code>(bool result, bytes memory newZ) = other.call(abi.encodeWithSignature("bar(uint)", x+1));</code></p>
@@ -2204,6 +2202,9 @@ Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2
         }
       </script>
     
+
+    <!-- 添加代码高亮自定义 highlight.js -->
+    <!--  -->
   </div>
   <div class="footer-left">
     Copyright &copy;
@@ -2233,32 +2234,24 @@ Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2
   </div>
 </footer>
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
-</html>
-<!-- styles -->
+    <!-- styles -->
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
-
-
-<!-- jquery -->
+  
+   
+    <link
+      rel="preload"
+      href="/lib/font-awesome/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="/lib/font-awesome/css/all.min.css"
+    /></noscript>
+  
+  
+    <!-- jquery -->
  
   
 <script src="/lib/jquery/jquery.min.js"></script>
@@ -2301,10 +2294,19 @@ Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2
 
 <!-- Google Analytics -->
 
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-173231869-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
 <!-- Baidu Analytics -->
 
 
-
+    
     <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
     <script>AV.initialize("tPqQzJulKGGdtnC1z2YQUn1W-gzGzoHsz", "F7c8R6ipy1FgLulcivI5BU0e");</script>
     <script>
@@ -2410,3 +2412,20 @@ Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2
     </script>
   
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

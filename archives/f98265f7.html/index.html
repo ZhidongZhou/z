@@ -44,8 +44,7 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- <link rel="stylesheet" href="/css/zdz_light.css" media="screen" type="text/css"> -->
-    <link rel="stylesheet" href="/css/zdz_dark.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="/css/zdz.css" media="screen" type="text/css">
     <!-- persian styles -->
     
       
@@ -61,7 +60,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ZDZ" type="application/atom+xml">
 </head>
-
 
 <body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
@@ -349,14 +347,14 @@
 <blockquote>
 <p>深复制: 将原有数据 完整的再复制 , 产生一个 全新独立 的个体。</p>
 </blockquote>
-<p><br> <figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> <span class="keyword">copy</span> <span class="keyword">import</span> deepcopy</span><br><span class="line"><span class="keyword">copy</span>.deepcopy()</span><br></pre></td></tr></table></figure> <br></p>
+<p><br> <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">from copy import deepcopy</span><br><span class="line">copy.deepcopy()</span><br></pre></td></tr></table></figure> <br></p>
 <h4 id="浅拷贝-shallowcopy">浅拷贝: shallowcopy</h4>
 <blockquote>
 <p>浅拷贝: 在原有数据上 打上一个标签， 当标签被数据被修改，
 原有数据会被改变， 其他的标签也会被改变。</p>
 </blockquote>
 <p><br></p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="built_in">copy</span></span><br><span class="line"><span class="built_in">copy</span>.<span class="built_in">copy</span>()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import copy</span><br><span class="line">copy.copy()</span><br></pre></td></tr></table></figure>
 <p><br></p>
 <h4 id="深-v-浅">深 v 浅</h4>
 <p>两者到底有什么不同？ 这里简单 <udl><代码></udl> 演示一下:</p>
@@ -364,7 +362,7 @@
 <code>&#123; 1:'ONE' &#125;</code></h5>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="comment"># 原始字典 dict 1</span></span><br><span class="line">d1 = &#123;<span class="number">1</span>:<span class="string">&#x27;ONE&#x27;</span>&#125;</span><br><span class="line"><span class="comment"># 普通拷贝</span></span><br><span class="line">d2 = d1</span><br><span class="line"><span class="comment"># 浅拷贝</span></span><br><span class="line">d3 = copy.copy(d1)</span><br><span class="line"><span class="comment"># 深拷贝</span></span><br><span class="line">d4 = copy.deepcopy(d1)</span><br><span class="line"><span class="comment"># 篡改原始数据 &#x27;ONE&#x27; ⇢ &#x27;Null&#x27;</span></span><br><span class="line">d2[<span class="number">1</span>] = <span class="string">&#x27;Null&#x27;</span></span><br><span class="line"><span class="comment"># 篡改后进行结果打印</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;原始字典: &quot;</span> + <span class="built_in">str</span>(d1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;普通拷贝: &quot;</span> + <span class="built_in">str</span>(d2))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;浅拷贝: &quot;</span> + <span class="built_in">str</span>(d3))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;深拷贝: &quot;</span> +  <span class="built_in">str</span>(d4))</span><br></pre></td></tr></table></figure>
 <p><em>输出:</em></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">原始字典: &#123;<span class="number">1</span>: <span class="string">&#x27;Null&#x27;</span>&#125;  </span><br><span class="line">普通拷贝: &#123;<span class="number">1</span>: <span class="string">&#x27;Null&#x27;</span>&#125; 👈🏻 随原始数据进行变化</span><br><span class="line">浅拷贝: &#123;<span class="number">1</span>: <span class="string">&#x27;ONE&#x27;</span>&#125; 👈🏻 没有被原始数据影响</span><br><span class="line">深拷贝: &#123;<span class="number">1</span>: <span class="string">&#x27;ONE&#x27;</span>&#125; 👈🏻 没有被原始数据影响</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">原始字典: &#123;1: &#x27;Null&#x27;&#125;  </span><br><span class="line">普通拷贝: &#123;1: &#x27;Null&#x27;&#125; 👈🏻 随原始数据进行变化</span><br><span class="line">浅拷贝: &#123;1: &#x27;ONE&#x27;&#125; 👈🏻 没有被原始数据影响</span><br><span class="line">深拷贝: &#123;1: &#x27;ONE&#x27;&#125; 👈🏻 没有被原始数据影响</span><br></pre></td></tr></table></figure>
 <p>从上可以看出， 普通拷贝 <code>d2 = d1</code> 与 <code>copy()</code>
 是有区别的， 普通拷贝在任何情况下都会被原始字典中的变化所改变，
 而浅拷贝可以应对简单的字典数据， 然而不足以应对复杂的字典数据。</p>
@@ -552,6 +550,9 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/u010852680/article/de
         }
       </script>
     
+
+    <!-- 添加代码高亮自定义 highlight.js -->
+    <!--  -->
   </div>
   <div class="footer-left">
     Copyright &copy;
@@ -581,32 +582,24 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/u010852680/article/de
   </div>
 </footer>
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
-</html>
-<!-- styles -->
+    <!-- styles -->
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
-
-
-<!-- jquery -->
+  
+   
+    <link
+      rel="preload"
+      href="/lib/font-awesome/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="/lib/font-awesome/css/all.min.css"
+    /></noscript>
+  
+  
+    <!-- jquery -->
  
   
 <script src="/lib/jquery/jquery.min.js"></script>
@@ -649,10 +642,19 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/u010852680/article/de
 
 <!-- Google Analytics -->
 
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-173231869-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
 <!-- Baidu Analytics -->
 
 
-
+    
     <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
     <script>AV.initialize("tPqQzJulKGGdtnC1z2YQUn1W-gzGzoHsz", "F7c8R6ipy1FgLulcivI5BU0e");</script>
     <script>
@@ -758,3 +760,20 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/u010852680/article/de
     </script>
   
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

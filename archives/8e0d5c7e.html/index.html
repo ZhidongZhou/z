@@ -45,8 +45,7 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <!-- <link rel="stylesheet" href="/css/zdz_light.css" media="screen" type="text/css"> -->
-    <link rel="stylesheet" href="/css/zdz_dark.css" media="screen" type="text/css">
+    <link rel="stylesheet" href="/css/zdz.css" media="screen" type="text/css">
     <!-- persian styles -->
     
       
@@ -62,7 +61,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ZDZ" type="application/atom+xml">
 </head>
-
 
 <body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
@@ -448,13 +446,13 @@ hostname)</li>
 <blockquote>
 <ol start="2" type="1">
 <li>Windows: 对比修改 <code>/etc/hosts</code> , 将开通为 127.0.0.1
-改为： <figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line"># path:/etc/hosts</span><br><span class="line"></span><br><span class="line"><span class="number">127.0.0.1</span> localhost.localdomain localhost</span><br></pre></td></tr></table></figure></li>
+改为： <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># path:/etc/hosts</span><br><span class="line"></span><br><span class="line">127.0.0.1 localhost.localdomain localhost</span><br></pre></td></tr></table></figure></li>
 </ol>
 </blockquote>
 <p><br></p>
 <h2 id="dtspm">554 DT:SPM</h2>
 <blockquote>
-<p>554 DT:SPM - 垃圾邮件 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">常见错误： <span class="number">554</span> DT:SPM <span class="number">163</span> smtp4,HNxpCgBX5yrd6LxemSLDBA--.<span class="number">113</span>S6 <span class="number">1589439356</span>,please see http:<span class="regexp">//m</span>ail.<span class="number">163</span>.com<span class="regexp">/help/</span>help\_spam\_16.htm?ip=<span class="number">124.188</span>.<span class="number">99.158</span>&amp;hostid=smtp4&amp;time=<span class="number">1589439356</span></span><br></pre></td></tr></table></figure> 554 DT:SPM
+<p>554 DT:SPM - 垃圾邮件 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">常见错误： 554 DT:SPM 163 smtp4,HNxpCgBX5yrd6LxemSLDBA--.113S6 1589439356,please see http://mail.163.com/help/help\_spam\_16.htm?ip=124.188.99.158&amp;hostid=smtp4&amp;time=1589439356</span><br></pre></td></tr></table></figure> 554 DT:SPM
 发送的邮件内容包含了未被许可的信息，或被系统识别为垃圾邮件。请检查是否有用户发送病毒或者垃圾邮件；</p>
 </blockquote>
 <p>错误原因：网易反垃圾邮件级别： * “低级”为：不做用户级过滤； *
@@ -657,6 +655,9 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41789943/artic
         }
       </script>
     
+
+    <!-- 添加代码高亮自定义 highlight.js -->
+    <!--  -->
   </div>
   <div class="footer-left">
     Copyright &copy;
@@ -686,32 +687,24 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41789943/artic
   </div>
 </footer>
     </div>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-</body>
-</html>
-<!-- styles -->
+    <!-- styles -->
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
-
-
-<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
-
-
-<!-- jquery -->
+  
+   
+    <link
+      rel="preload"
+      href="/lib/font-awesome/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="/lib/font-awesome/css/all.min.css"
+    /></noscript>
+  
+  
+    <!-- jquery -->
  
   
 <script src="/lib/jquery/jquery.min.js"></script>
@@ -754,10 +747,19 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41789943/artic
 
 <!-- Google Analytics -->
 
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-173231869-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
 <!-- Baidu Analytics -->
 
 
-
+    
     <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
     <script>AV.initialize("tPqQzJulKGGdtnC1z2YQUn1W-gzGzoHsz", "F7c8R6ipy1FgLulcivI5BU0e");</script>
     <script>
@@ -863,3 +865,20 @@ target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_41789943/artic
     </script>
   
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

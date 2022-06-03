@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/archives/99feb3ce.html/</loc>
+    <loc>https://yumtaro.com/archives/5e5dab33.html/</loc>
     
     <lastmod>2022-05-31</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/archives/5e5dab33.html/</loc>
+    <loc>https://yumtaro.com/archives/99feb3ce.html/</loc>
     
     <lastmod>2022-05-31</lastmod>
     
@@ -207,14 +207,14 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/MacOS/</loc>
+    <loc>https://yumtaro.com/tags/PTE/</loc>
     <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/PTE/</loc>
+    <loc>https://yumtaro.com/tags/MacOS/</loc>
     <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -244,13 +244,6 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/categories/IT/</loc>
-    <lastmod>2022-06-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/RMIT/</loc>
     <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -265,14 +258,14 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/</loc>
+    <loc>https://yumtaro.com/categories/IT/</loc>
     <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yumtaro.com/categories/IT/Software/</loc>
+    <loc>https://yumtaro.com/categories/IT/Terminal/</loc>
     <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -286,6 +279,13 @@
   </url>
   
   <url>
+    <loc>https://yumtaro.com/categories/IT/Software/</loc>
+    <lastmod>2022-06-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://yumtaro.com/categories/IT/Python/</loc>
     <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -293,7 +293,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/categories/IT/Terminal/</loc>
+    <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/</loc>
     <lastmod>2022-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
