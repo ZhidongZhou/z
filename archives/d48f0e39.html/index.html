@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022247727.svg">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022307297.svg">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-02T16:04:03.162Z">
+<meta property="article:modified_time" content="2022-06-03T15:38:51.257Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -132,7 +132,7 @@ Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-text">14.Atomic swaps
 不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-text">17.Cross-Function
-Re-Entrancy 跨函数重入攻击</span></a></li></ol> -->
+Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-text">19.Idioms of Use 惯用法则</span></a></li></ol> -->
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
@@ -140,7 +140,7 @@ Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
 不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
-Re-Entrancy 跨函数重入攻击</span></a></li></ol>
+Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -344,7 +344,7 @@ Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
 不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
-Re-Entrancy 跨函数重入攻击</span></a></li></ol></div> -->
+Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li></ol></div> -->
     <!-- # COMP90088 COMP90088 Cryptocurrencies & decentralised ledgers 加密货币&去中央化的公共帐目 -- 题库 -->
 <h2 id="merkle-trees-默克尔树">1.Merkle Trees 默克尔树</h2>
 <p>蓝色代表 <u>Leaf Node 叶子结点</u>, 红色代表 <span
@@ -1682,8 +1682,8 @@ class="math inline">\({\color{green}{T_{2}}}\)</span>:<br>* Signature by
 <p>观察, <code>PancakeCoin</code>的交易1需要, Alice 在<span
 class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>截止前提供签名<span
 class="math inline">\(K_{Alice}\)</span>, 以及Secret <span
-class="math inline">\(x\)</span>。 那么显然这比交易是由 Bob 发起的,
-因为如果 Alice 在<span
+class="math inline">\({\color{orange}{x}}\)</span>。
+那么显然这比交易是由 Bob 发起的, 因为如果 Alice 在<span
 class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>截止前没有进行兑换
 Bob 可以在<span
 class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>截止后赎回自己的币。</p>
@@ -1694,28 +1694,34 @@ class="math inline">\({\color{green}{T_{2}}}\)</span>截止后赎回自己的币
 <p><strong>14.c</strong>: 哪笔交易应该先被处理帐?
 如果反过来处理会发生什么?</p>
 <blockquote>
-<p>取决于哪一方选择 Secret <span class="math inline">\(x\)</span>。</p>
-<p>如果 Bob 决定 <span class="math inline">\(x\)</span>, 那么需要 Alice
+<p>取决于哪一方选择 Secret <span
+class="math inline">\({\color{orange}{x}}\)</span>。</p>
+<p>如果 Bob 决定 <span
+class="math inline">\({\color{orange}{x}}\)</span>, 那么需要 Alice
 先发布交易1。否则, Bob 可以立即花费交易2并拒绝发布交易1,
 同时保留两个硬币。</p>
-<p>反之如果 Alice 选择 <span class="math inline">\(x\)</span>, 那么需要
-Bob 先发布交易2。</p>
+<p>反之如果 Alice 选择 <span
+class="math inline">\({\color{orange}{x}}\)</span>, 那么需要 Bob
+先发布交易2。</p>
 <p>最后一定要保证先发起的交易在另一笔交易发起之前被确认。</p>
 </blockquote>
 <p><strong>14.d</strong>: <span
 class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>和<span
 class="math inline">\({\color{green}{T_{2}}}\)</span>应该如何选择?</p>
 <blockquote>
-<p>这同样取决于谁决定 <span class="math inline">\(x\)</span>。</p>
+<p>这同样取决于谁决定 <span
+class="math inline">\({\color{orange}{x}}\)</span>。</p>
 <p>如下图所示, 如果 Bob 选择 <span class="math inline">\(x\)</span>,
 那么我们想要 <span class="math inline">\({\color{CornflowerBlue}{T_{1}}}
-\gt {\color{green}{T_{2}}}\)</span>, <span
-class="math inline">\({\color{CornflowerBlue}{因为如果\)</span>T_{1}}}
-$, Bob 又知道 <span class="math inline">\(x\)</span> (有优势),
+\gt {\color{green}{T_{2}}}\)</span>, 因为如果: <span
+class="math inline">\({\color{CornflowerBlue}{T_{1}}} \lt
+{\color{green}{T_{2}}}\)</span> 并且Bob 又知道 <span
+class="math inline">\({\color{orange}{x}}\)</span> (有优势),
 那么Bob可以在 <span
 class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>
-结束后再揭露自己的<span class="math inline">\(x\)</span>这样, Bob
-可以获得 Alice 的币但是, <span
+结束后再揭露自己的 <span
+class="math inline">\({\color{orange}{x}}\)</span> 这样, Bob 可以获得
+Alice 的币但是, <span
 class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>
 现在已经超时, Alice 不能获得 Bob 的币, 那么 Bob 可以赎回自己的币。</p>
 <p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022247727.svg" alt="cc_atomic_swap" style="zoom:150%;" /></p>
@@ -1808,37 +1814,259 @@ getter 函数)。</li>
 修饰符</u>的实现。那些是安全的？哪个是最佳做法？</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// i [最安全的]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    require(msg.sender == owner_address); </span><br><span class="line">    _;</span><br><span class="line">&#125;</span><br><span class="line">// ii [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if (msg.sender != owner_address) return;</span><br><span class="line">    _; // 没用 ← required</span><br><span class="line">&#125;</span><br><span class="line">/** iii </span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return;</span><br><span class="line">&#125;</span><br><span class="line">// iv [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    require (msg.sender == owner_address)</span><br><span class="line">&#125;</span><br><span class="line">/** v</span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">* - [重复发了两次]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return; </span><br><span class="line">    _; // ← 重复发了两次</span><br><span class="line">&#125;</span><br><span class="line">// vi [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if(msg.sender == owner_address) </span><br><span class="line">        _; // 没用 ← required</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="contract-call-合约调用">16.Contract Call 合约调用</h2>
-<p>考虑以下两个合约:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">contract A &#123;</span><br><span class="line">    uint x;</span><br><span class="line">    address other;</span><br><span class="line">    function foo(uint y) public&#123;</span><br><span class="line">        x += (y * 2);</span><br><span class="line">        (bool result, bytes memory newZ) = other.__空白行__(abi.encodeWithSignature(&quot;bar(uint)&quot;, x+1));</span><br><span class="line">        x -= abi.decode(newZ, (uint));</span><br><span class="line">    &#125;</span><br><span class="line">    function bar(uint y) public returns (uint z)&#123;</span><br><span class="line">        x += (y * 3);</span><br><span class="line">        (bool result, ) = other.call(abi.encodeWithSignature(&quot;baz(uint)&quot;, x+2));</span><br><span class="line">        z = x - 10;</span><br><span class="line">    &#125;</span><br><span class="line">    function baz(uint y) public&#123;</span><br><span class="line">        x += y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>假设已经使用此代码创建了两个合约 A1 和 A2, 并进行了初始化, 使得
-<code>A1.other = A2</code> &amp; <code>A2.other = A1</code>，并且
-<code>A1.x = 2</code> 和 <code>A2.x = 3</code>。</p>
-<p><strong>16.a</strong>: 如果 <code>foo()</code> 中的空白行用
-<code>call</code> 填充，那么在调用 <code>A1.foo(7)</code> 之后
-<code>A1.x</code> 和 <code>A2.x</code> 会是什么？</p>
+<p>考虑以下两个合约, 并参考<a
+target="_blank" rel="noopener" href="https://docs.soliditylang.org/en/latest/types.html#members-of-addresses">Members
+of Addresses — Solidity 0.8.15</a>:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">contract A &#123;</span><br><span class="line">    uint x;</span><br><span class="line">    address other;</span><br><span class="line">    function foo(uint y) public&#123;</span><br><span class="line">        x += (y * 2);</span><br><span class="line">        (bool result, bytes memory newZ) = other.__空白行__(abi.encodeWithSignature(&quot;bar(uint)&quot;, x+1));</span><br><span class="line">        x -= abi.decode(newZ, (uint));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function bar(uint y) public returns (uint z)&#123;</span><br><span class="line">        x += (y * 3);</span><br><span class="line">        (bool result, ) = other.call(abi.encodeWithSignature(&quot;baz(uint)&quot;, x+2));</span><br><span class="line">        z = x - 10;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function baz(uint y) public&#123;</span><br><span class="line">        x += y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>已知 <span class="math inline">\({\color{green}{A1}}\)</span> 和
+<span class="math inline">\({\color{CornflowerBlue}{A2}}\)</span>
+两个合约基于上述代码, 并进行了初始化:</p>
+<ol type="1">
+<li><code>A1.other = A2</code> &amp; <code>A2.other = A1</code></li>
+<li><code>A1.x = 2</code> 和 <code>A2.x = 3</code></li>
+</ol>
 <blockquote>
-
+<p>下面a,b,c三道题主要帮助理解: <code>call</code>,
+<code>delegatecall</code> &amp; <code>staticcall</code>的区别。
+这三个函数都是非常<u>lov-level 底层</u>的,
+他们会打破<code>Solidity</code>代码的<strong>Type-Safety
+型别安全</strong>。三个函数均采用<u>single bytes memory parameter
+单字节内存参数</u>,
+并返回成功条件(<code>boolean</code>)和返回的数据(<code>bytes memory</code>)。</p>
+<ul>
+<li>将<code>call</code>, <code>delegatecall</code>,
+<code>staticcall</code> 分别填入合约中的这段代码的<u>{空白处}</u>:
+<code>(bool result, bytes memory newZ) = other.</code><u>{空白处}</u><code>(abi.encodeWithSignature("bar(uint)", x+1));</code></li>
+<li><code>abi.encodeWithSignatur</code>函数是用于对结构化数据进行编码。</li>
+</ul>
 </blockquote>
-<p><strong>16.b</strong>: 如果 <code>foo()</code> 中的空白行用
-<code>delegatecall</code> 填充，那么调用 <code>A1.foo(7)</code> 之后
-<code>A1.x</code> 和 <code>A2.x</code> 会是什么？</p>
+<p><strong>16.a</strong>: 如果 <code>foo()</code> 中的空白处用
+<code>call</code> 普通调用, 那么在调用 <code>A1.foo(7)</code> 之后
+<code>A1.x</code> &amp; <code>A2.x</code> 会是什么？</p>
 <blockquote>
-
+<p>如果使用 <code>call</code>普通调用, 那么有:
+<code>(bool result, bytes memory newZ) = other.call(abi.encodeWithSignature("bar(uint)", x+1));</code></p>
+<p><code>call</code>函数: 使用<u>给定地址的代码</u>,
+以及所有包括存储，余额, etc, 都取自<u>给定地址</u>的合约。</p>
+<ol type="1">
+<li><code>A1.foo(7)</code>:
+首先<code>A1</code>通过<code>call</code>普通调用<code>foo()</code>函数,
+并传入参数<code>7</code>, 即<span
+class="math inline">\({\color{orange}{y = 7}}\)</span>
+<ol type="1">
+<li>那么<code>foo</code>函数将被<code>A1</code>运行:
+<code>function foo(uint 7) public</code></li>
+<li>我们已知<code>A1.x=2</code>, 那么: <code>x += (y*2)</code> 就等于:
+<span class="math inline">\({\color{green}{A1.x}}= 2 + (7 * 2) \\
+{\color{green}{A1.x=16}}\)</span></li>
+</ol></li>
+<li>然后由于我们用<code>other.call</code>普通调用,
+由于已知<code>A1.other = A2</code>,
+那么普通调用将使用<code>A2</code>的合约代码以及存储&amp;余额, etc.
+<ol type="1">
+<li>那么<code>bar</code>函数将被<code>A2</code>运行: 首先调用了
+<code>function bar(uint y) public returns (uint z)</code></li>
+<li>并且<span class="math inline">\({\color{green}{A1.x}} + 1 =
+17\)</span>作为<code>A2.bar(uint y)</code>的输入, 也就是说<span
+class="math inline">\({\color{orange}{y = 17}}\)</span></li>
+<li>我们已知 <span
+class="math inline">\({\color{CornflowerBlue}{A2.x=3}} \And
+{\color{orange}{y = 17}}\)</span>, 那么: <code>x += (y*3)</code> 就等于:
+<span class="math inline">\({\color{CornflowerBlue}{A2.x}} = 3 + (17*3)
+\\ {\color{CornflowerBlue}{A2.x = 54}}\)</span></li>
+</ol></li>
+<li>然后<code>A2</code>的<code>bar</code>函数再次<code>call</code>普通调用<code>A1</code>的存储运行:
+<code>A1.baz()</code> 函数
+<ol type="1">
+<li>并且<span
+class="math inline">\({\color{CornflowerBlue}{A2.x}}+2\)</span>作为<code>A1.baz(unit y)</code>的输入,
+也就是说: <span class="math inline">\({\color{orange}{y}} = 54 + 2 \\
+{\color{orange}{y = 56}}\)</span></li>
+<li>我们已知 <span
+class="math inline">\({\color{green}{A1.x=16}}\)</span>, 那么
+<code>x += y</code> 则等于 ${} = {} + {} \ {} = {} + {} \ {} $</li>
+</ol></li>
+<li><code>A2.bar()</code>的最后一步是计算: <code>z = x - 10</code>,
+并作为<code>abi.decode</code>的结果返回给<code>A1.foo()</code>
+<ol type="1">
+<li><span class="math inline">\(z =
+{\color{CornflowerBlue}{A2.x}}-10\)</span></li>
+<li><span class="math inline">\(z = {\color{CornflowerBlue}{54}} - 10 \\
+z = 44\)</span></li>
+<li><code>A2.bar()</code> 会返回 $ {}$ 给 <code>A1.foo()</code></li>
+</ol></li>
+<li>最后: <code>A1.foo()</code> 的最后一步是: ${} = {} - {} \ {} $</li>
+</ol>
+<p>所以: <span class="math inline">\({\color{green}{A1.x = 28}} \And
+{\color{CornflowerBlue}{A2.x = 54}}\)</span></p>
 </blockquote>
-<p><strong>16.c</strong>: 如果 <code>foo()</code> 中的空白行用
-<code>staticcall</code> 填充会发生什么？</p>
+<p><strong>16.b</strong>: 如果 <code>foo()</code> 中的空白处用
+<code>delegatecall</code> 委托调用, 那么在调用 <code>A1.foo(7)</code>
+之后 <code>A1.x</code> 和 <code>A2.x</code> 会是什么?</p>
 <blockquote>
-
+<p>如果使用 <code>delegatecall</code>委托调用, 那么有:
+<code>(bool result, bytes memory newZ) = other.delegatecall(abi.encodeWithSignature("bar(uint)", x+1));</code></p>
+<p><code>delegatecall</code>函数的不同之处在于只使用<u>给定地址的代码</u>,
+所有其他的包括: 存储，余额, etc, 都取自当前合约。</p>
+<ol type="1">
+<li>同样的<code>A1.foo()</code>:
+<ul>
+<li><span class="math inline">\({\color{orange}{y = 7}}\)</span></li>
+<li><span class="math inline">\({\color{green}{A1.x=16}}\)</span></li>
+</ul></li>
+<li><code>A1.other.delegatecall()</code>:
+<ul>
+<li><span class="math inline">\({\color{orange}{y = 17}}\)</span></li>
+<li><span class="math inline">\({\color{green}{A1.x}} =
+{\color{green}{16}} + {\color{orange}{3 * 17}} \\ {\color{green}{A1.x =
+67}}\)</span></li>
+</ul></li>
+<li><code>A1.other.call()</code>:
+<ul>
+<li><span class="math inline">\({\color{orange}{y = 69}}\)</span></li>
+<li><span class="math inline">\({\color{CornflowerBlue}{A2.x = 3}} + 69
+\\ {\color{CornflowerBlue}{A2.x = 72}}\)</span></li>
+</ul></li>
+<li><code>A1.z = x - 10;</code>:
+<ul>
+<li><span class="math inline">\(z = {\color{green}{A1.x}} - 10 \\ z =
+57\)</span></li>
+</ul></li>
+<li><code>A1.x -= abi.decode(newZ, (uint));</code>:
+<ul>
+<li><span class="math inline">\({\color{green}{A1.x}} =
+{\color{green}{67}} - z \\ {\color{green}{A1.x=10}}\)</span></li>
+</ul></li>
+</ol>
+<p>所以根据计算: <span class="math inline">\({\color{green}{A1.x = 10}}
+\And {\color{CornflowerBlue}{A2.x = 72}}\)</span></p>
+</blockquote>
+<p><strong>16.c</strong>: 如果 <code>foo()</code> 中的空白处用
+<code>staticcall</code> 静态调用会生什么？</p>
+<blockquote>
+<p>如果使用 <code>delegatecall</code>委托调用, 那么有:
+<code>(bool result, bytes memory newZ) = other.staticcall(abi.encodeWithSignature("bar(uint)", x+1));</code></p>
+<p>Byzantium 拜占庭 <code>staticcall</code>静态调用,
+如果被调用函数的状态被修改, 那么<code>staticcall</code>将 <u>revert
+恢复</u>。</p>
+<ol type="1">
+<li><code>A1.other.staticcall()</code>:
+<ul>
+<li>调用<code>A2.bar</code></li>
+</ul></li>
+<li><code>A2.x += (y*3)</code>:
+<ul>
+<li>发现被调用的函数<code>A2.bar</code>中的函数状态被修改</li>
+<li><u>Revert 恢复</u></li>
+</ul></li>
+<li>最后无事发生。</li>
+</ol>
 </blockquote>
 <h2 id="cross-function-re-entrancy-跨函数重入攻击">17.Cross-Function
 Re-Entrancy 跨函数重入攻击</h2>
+<p>考虑合约A具有以下功能:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bool transferLock; </span><br><span class="line">bool withdrawLock;</span><br><span class="line"></span><br><span class="line">function transfer(address to, uint amount) external &#123;</span><br><span class="line">    if(!transferLock) &#123;</span><br><span class="line">        transferLock = True;</span><br><span class="line">        if (balances[msg.sender] &gt;= amount) &#123;</span><br><span class="line">            balances[to] += amount;</span><br><span class="line">            balances[msg.sender] -= amount;</span><br><span class="line">        &#125;</span><br><span class="line">        transferLock = False;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function withdraw() external &#123;</span><br><span class="line">    if(!withdrawLock) &#123;</span><br><span class="line">        withdrawLock = True;</span><br><span class="line">        uint256 amount = balances[msg.sender];</span><br><span class="line">        (bool result, ) = payable(msg.sender).call&#123;value: amount&#125;();</span><br><span class="line">        require(result);</span><br><span class="line">        balances[msg.sender] = 0;</span><br><span class="line">        withdrawLock = False;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+<p>假设攻击者拥有该合约的账户，且余额为 100 eth。参考: <a
+target="_blank" rel="noopener" href="https://consensys.github.io/smart-contract-best-practices/attacks/reentrancy/">重入攻击
+- 以太坊智能合约最佳实践</a></p>
+<p><strong>17.a</strong>: 尽管使用了锁, 该合约仍然可以被重入攻击,
+解释为什么。并为攻击者用来攻击该合约的<u>fallback
+回退函数</u>编写伪代码, 攻击者可以在<strong>Re-entrancy Attack
+重入攻击</strong>中窃取多少？</p>
+<blockquote>
+<p>该函数需要仅对外部可见 (所以需要: <code>external</code>)</p>
+<p>该函数需要在被调用的同时接收以太币 (所以需要:
+<code>payable</code>)</p>
+<p>fallback 回退函数是三无得: 没有名字、没有参数、没有返回值</p>
+<ol type="1">
+<li>首先攻击合约B可以通过调用<code>withdraw</code></li>
+<li>在上述 <code>withdraw</code> 函数中
+<code>payable(msg.sender).call&#123;value: amount&#125;();</code> 会调用下面的
+<code>fallback</code> 回退函数,
+届时<code>transfer</code>函数中的<code>transferLock</code>并没用被设置,
+所以我们可以执行<code>transfer</code>函数并转账给指定的<code>fridendlyAddress</code>;
+从而得到攻击者通过合约B得到100
+Eth的转账(transfer)。并且攻击者的合约B也会成功withdraw 100 Eth。</li>
+</ol>
+<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Contract B &#123; </span><br><span class="line">    function() external payable &#123;</span><br><span class="line">        A.transfer(&lt;friendlyAddress&gt;, 100 ether);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>17.b</strong>:
+仅通过修改<code>transfer</code>函数修复该问题</p>
+<blockquote>
+<p>参考: <a
+target="_blank" rel="noopener" href="https://medium.com/coinmonks/protect-your-solidity-smart-contracts-from-reentrancy-attacks-9972c3af7c21">Protect
+Your Solidity Smart Contracts From Reentrancy Attacks</a></p>
+<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function transfer(address to, uint amount) external &#123;</span><br><span class="line">    if(!transferLock &amp;&amp; !withdrawLock) &#123; // ←确定没有同时在取钱</span><br><span class="line">        transferLock = True;</span><br><span class="line">        if (balances[msg.sender] &gt;= amount) &#123;</span><br><span class="line">            balances[to] += amount;</span><br><span class="line">            balances[msg.sender] -= amount;</span><br><span class="line">        &#125;</span><br><span class="line">        transferLock = False;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>17.c</strong>:
+仅通过修改<code>withdraw</code>函数修复该问题</p>
+<blockquote>
+<p>参考: <a
+target="_blank" rel="noopener" href="https://docs.soliditylang.org/en/develop/security-considerations.html#use-the-checks-effects-interactions-pattern">安全注意事项:
+使用检查-效果-交互模式 — Solidity 0.8.15 文档 (soliditylang.org)</a></p>
+<ol type="1">
+<li>大多数函数将首先执行一些检查,
+检查谁调用了函数，参数范围，是否发送了足够的以太币，该人是否有token等。</li>
+<li>通过检查后应该, 该状态的<u>effect
+影响</u>(取钱操作)应该先被执行(先将取出的钱从余额中扣除)。</li>
+<li>保证前两步之后, 最后一步再与其他合约/函数进行交互。</li>
+</ol>
+<p>所以<code>withdraw</code>中的余额应该提前到<code>call</code>调用交互执行<code>send</code>之前完成</p>
+<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function withdraw() external &#123;</span><br><span class="line">    if(!withdrawLock) &#123;</span><br><span class="line">        withdrawLock = True;</span><br><span class="line">        uint256 amount = balances[msg.sender];</span><br><span class="line">        balances[msg.sender] = 0; // &lt;- 先扣钱再转账</span><br><span class="line">        (bool result, ) = payable(msg.sender).call&#123;value: amount&#125;();</span><br><span class="line">        require(result);</span><br><span class="line">        // balances[msg.sender] = 0;</span><br><span class="line">        withdrawLock = False;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="parity-bug-错误">18.Parity bug 错误</h2>
+<p>回顾 <strong>Parity bug</strong>, 大多数合约依赖 Parity MultiSig
+Wallet 奇偶多签钱包通过<code>delegatecall</code>委托调用, 来实现功能</p>
+<blockquote>
+<p><code>delegatecall</code>会使用Parity Contract的代码,
+但是使用自己的存储，余额, etc.</p>
+</blockquote>
+<p><strong>18.a</strong>:
+一种解决方法是不适用<code>delegatecall</code>，并只需将所有相关代码复制到自己的合同中。这种方法的缺点是什么？</p>
+<blockquote>
+<p>合约的代码会变的很大,
+存储也会随之变昂贵。因此合约的部署也会需要消耗更多的gas。</p>
+</blockquote>
+<p><strong>18.b</strong>: 另一个解决方法是将 Parity Contract
+的地址存储为可以更新的变量。这种方法的缺点是什么？如何解决？</p>
+<blockquote>
+<p>合约代码原本是不可变的, 那么通过调用library, 并以修改library
+库的方法实现代码的可变性, 这有悖于合约代码不可变更的性的期望。</p>
+<p>那么这个library 需要是足够可信的,
+并需要足够值得信任的机制来实现合约变量的更新。 需要特别防范不轨的library
+持有者恶意修改library内容以欺骗library 的调用者。</p>
+<p>一些此类机制可能包括:</p>
+<ul>
+<li>在采用新合约变量之前要求<u>On-chain Announcement Period
+链上公告期</u></li>
+<li>要求某些governance token持有者进行<u>On-Chain Vote
+链上投票</u>。</li>
+</ul>
+</blockquote>
+<h2 id="idioms-of-use-惯用法则">19.Idioms of Use 惯用法则</h2>
+<blockquote>
+<p><strong>Change Address 找零地址</strong>: 如果<span
+class="math inline">\(A\)</span>有两个账户 <span
+class="math inline">\(\{A_1 \And A_2\}\)</span>, <span
+class="math inline">\(A_1\)</span>有6个BTC, <span
+class="math inline">\(A_2\)</span>有3个BTC,
+但是现在有一笔交易需要8.5个BTC, 那么我们需要通过 <span
+class="math inline">\(A_1 \and A_2\)</span> 两个账户同时进行付款 <span
+class="math inline">\((6+3) - 8.5 = 0.5\)</span>, 那么我们需要将 0.5 个
+BTC 退回给 $A $ 即<strong>Change找零</strong>。 但是这个<strong>Change
+Address 找零地址</strong>, 通常会因为比特币钱包等软件的惯用找零模式
+(<em>idioms of use "惯用法则"</em>) 而导致攻击者将<strong>Change Address
+找零地址</strong>与身份关联起来 (例如:
+2013年研究人员发现多数钱包软件会在需要找零时生成全新的地址,
+那么只要通过地址的新旧就可以分辨出找零和非找零地址)。</p>
+</blockquote>
 
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">11.3k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">46</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">13.3k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">55</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
@@ -1930,7 +2158,7 @@ Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
 不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
-Re-Entrancy 跨函数重入攻击</span></a></li></ol>
+Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
