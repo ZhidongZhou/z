@@ -1,70 +1,9 @@
-/* code,
+code,
 .md-fences,
 tt {
   font-family: "mononoki", "Lato", "Source Han Serif";
   font-size: 1rem;
-} */
-
-code {
-  /* color:rgba(234, 199, 128, 1); */
-  color: #d05c41;
-  /* font-size: 0.9em; */
-  font-size: 11px;
-  border: 1px solid #e6ecf1;
-  border-radius: 0.25rem;
-  padding: 1px 0.15rem 1px 0.15rem;
-  margin-left: 2px;
-  margin-right: 2px;
-  background: #f5f7f9;
 }
-
-input:disabled {
-  color: green
-}
-
-
-article .content blockquote {
-  position: relative;
-  margin: 1rem 0 1rem 2rem;
-  font-family: "mononoki", "Lato", "Source Han Serif";
-  /* color: #888e9c; */
-  font-size: 12px;
-  color: #ABB2BF;
-}
-
-article .content blockquote:hover {
-  background: #21252B;
-  color: #C9CACC;
-}
-
-
-article .content blockquote::before {
-  content: "";
-  position: absolute;
-  left: -1rem;
-  height: 100%;
-  width: 0.05rem;
-  background: #70879b87;
-}
-
-article .content blockquote:hover::before {
-  content: "";
-  position: absolute;
-  left: -1rem;
-  height: 100%;
-  width: 0.15rem;
-  background: #428bca;
-}
-
-/* 引用块儿悬停增大字体 */
-/* article .content blockquote:hover{
-  font-size: 14px;
-}
-
-.light-theme article .content blockquote:hover{
-  font-size: 14px;
-} */
-
 
 strong {
   color: #C162DE;
@@ -75,9 +14,8 @@ em {
 }
 
 u {
-  /* color: #00AFFF; */
-  color: CornflowerBlue;
-  text-decoration-style: unset;  
+  color: #00AFFF;
+  text-decoration-style: dashed;
 }
 
 a {
@@ -85,10 +23,11 @@ a {
   color: #C9CACC;
 }
 
-/* 打赏功能加背景 */
-#dashang {
-  background: #292C33;
-}
+/* a:hover { */
+/* text-decoration: underline; */
+/* text-decoration-color: blue; */
+/* -webkit-text-decoration-color: blue; */
+/* } */
 
 article header .meta * a {
   color: #c9cacc;
@@ -141,7 +80,6 @@ text {
   fill: #fff
 }
 
-
 /* .mermaid { */
 /* width: 100%; 表格宽度 */
 /* max-width: 65rem; */
@@ -185,14 +123,144 @@ tspan {
   fill: #fff
 }
 
+/* 按钮 */
+
+@function hsb($h-hsb, $s-hsb, $b-hsb, $a: 1) {
+  @if $b-hsb==0 {
+    @return hsla(0, 0, 0, $a);
+  }
+
+  @else {
+    $l-hsl: ($b-hsb/2) * (2 - ($s-hsb/100));
+    $s-hsl: ($b-hsb * $s-hsb) / if($l-hsl < 50, $l-hsl * 2, 200 - $l-hsl * 2);
+    @return hsla($h-hsb, $s-hsl, $l-hsl, $a);
+  }
+}
+
+@function hsb-saturate($s, $a) {
+  @if $s==0 {
+    @return 0;
+  }
+
+  @else {
+    @return $s+$a;
+  }
+}
+
+@mixin buttonize($h, $s, $b, $light: 0) {
+
+  $color : hsb($h, $s, $b);
+  $color-dark : hsb($h, hsb-saturate($s, 10), $b);
+  $inset-top : inset 0 1px 0 hsb($h, $s - 20, $b + 10);
+  $inset-bottom: inset 0 -1px 0 hsb($h, hsb-saturate($s, 10), $b - 10);
+  $inset : inset 0 0 0 1px hsb($h, hsb-saturate($s, - 10), $b);
+
+  background-color: $color;
+  background-image: linear-gradient(to bottom, $color, $color-dark);
+  border: 1px solid hsb($h, hsb-saturate($s, 20), $b - 20);
+  box-shadow: $inset-top,
+    $inset-bottom,
+    $inset,
+    0 2px 4px rgba(black, 0.2);
+
+  @if $light==1 {
+    color: hsb($h, hsb-saturate($s, 40), $b - 40);
+    text-shadow: 0 1px 0 rgba(white, 0.5);
+  }
+
+  @else {
+    color: white;
+    text-shadow: 0 1px 2px rgba(black, 0.3);
+  }
+
+  &:hover,
+  &:focus {
+    background: $color-dark;
+    border-color: hsb($h, hsb-saturate($s, 40), $b - 40);
+    box-shadow: $inset-top,
+      $inset-bottom,
+      $inset;
+  }
+
+  &:active {
+    background: $color-dark;
+    box-shadow: inset 0 2px 3px rgba(black, 0.2);
+  }
+
+  .fa {
+    color: hsb($h, hsb-saturate($s, 20), $b - 20);
+    text-shadow: 0 1px 0 rgba(white, 0.3);
+  }
+
+}
+
+strong {
+  font-weight: bold;
+}
+
+.button {
+  @include buttonize(0, 0, 95, 1);
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Verdana, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 9px 16px 9px;
+  margin: 16px 0 0 16px;
+  transition: all 20ms ease-out;
+  vertical-align: top;
+}
+
+.button .fa {
+  float: left;
+  font-size: 12px;
+  line-height: 20px;
+  margin: -1px 8px 0 -4px;
+  vertical-align: top;
+}
+
+input:disabled {
+  color: green
+}
+
+
+article .content blockquote {
+  position: relative;
+  margin: 1rem 0 1rem 2rem;
+  font-family: "mononoki", "Lato", "Source Han Serif";
+  /* color: #888e9c; */
+  font-size: 12px;
+  color: #ABB2BF;
+}
+
+article .content blockquote::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  height: 100%;
+  width: 0.25rem;
+  background: #428bca;
+}
+
+
 /* TOC Text Align Right */
 
 #header-post #toc {
   text-align: left;
 }
 
+code {
+  /* color:rgba(234, 199, 128, 1); */
+  color: #d05c41;
+  font-size: 0.9em;
+  border: 1px solid #e6ecf1;
+  border-radius: 0.25rem;
+  padding: 1px 0.25rem;
+  background: #f5f7f9;
+}
 
-/* Table */
 /* New Table v2: Left & Right Border Blue Hover */
 table {
   /* max-width: 65em; 表格最大宽度，避免表格过宽 */
@@ -242,9 +310,9 @@ table th {
 
 
 table tr:hover {
-  background: #21252B;
-  border-left: 0.1rem solid #428bca;
-  border-right: 0.1rem solid #428bca;
+  /* background: #80b7e7; */
+  border-left: 0.25rem solid #428bca;
+  border-right: 0.25rem solid #428bca;
   border-color: transparent #428bca transparent #428bca;
   /* outline: 2px solid #00AFFF; */
 }
@@ -295,6 +363,17 @@ table tr:hover {
 /* light theme */
 body.light-theme {
   background: #ffffff;
+  /* color-footer-mobile-2: darken(#e2e0de, 10%);
+  color-background-code: darken(#e2e0de, 2%);
+  color-border: #666;
+  color-meta: #666;
+  color-meta-code: lighten(#666, 10%);
+  color-link: rgba(43, 188, 138, 1);
+  color-text: #363533;
+  color-accent-3: #666666;
+  color-accent-2: #111111;
+  color-accent-1: #d44375;
+  color-quote: #ab2251; */
   color: #000;
 }
 
@@ -307,6 +386,7 @@ body.light-theme {
   position: relative;
   margin: 1rem 0 1rem 2rem;
   font-family: "mononoki", "Lato", "Source Han Serif";
+  /* color: #888e9c; */
   font-size: 12px;
   color: #6f6f6f;
 }
@@ -327,26 +407,10 @@ body.light-theme {
   /*表格宽度*/
   text-align: center;
   background-color: #fff;
+  /* max-height   : 300px; */
 }
 
 .light-theme .highlight {
-  background: #f6f6f6;
-  color: #22272a;
-}
-
-.light-theme table th {
-  /* color: #73c991; */
-  color: #22272a;
-  text-align: center !important;
-  font-weight: bold;
-}
-
-.light-theme table tr:hover {
-  background: #eaf6ff48;
-  /* outline: 2px solid #00AFFF; */
-}
-
-.light-theme article .content blockquote:hover {
-  background: #eaf6ff48;
+  background: #e2e0de;
   color: #22272a;
 }

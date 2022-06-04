@@ -20,8 +20,13 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206020204330.svg">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022247727.svg">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206022307297.svg">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041240356.png">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041400229.png">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041419807.png">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041805546.svg">
+<meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041946019.svg">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-03T19:01:49.001Z">
+<meta property="article:modified_time" content="2022-06-04T11:49:28.568Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -67,7 +72,8 @@
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ZDZ" type="application/atom+xml">
 </head>
 
-<body class="max-width mx-auto px3 ltr">    
+<body class="max-width mx-auto px3 ltr">
+    
       <div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
@@ -130,7 +136,12 @@ Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-text">14.Atomic swaps
 不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-text">17.Cross-Function
-Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-text">19.Idioms of Use 惯用法则</span></a></li></ol> -->
+Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-text">19.Idioms of Use 惯用法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#confidential-transactions-%E4%BF%9D%E5%AF%86%E4%BA%A4%E6%98%93"><span class="toc-text">20.Confidential Transactions
+保密交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pseudorandom-committee-selection-%E4%BC%AA%E9%9A%8F%E6%9C%BA%E7%9A%84%E5%A7%94%E5%91%98%E4%BC%9A%E9%80%89%E6%8B%A9"><span class="toc-text">21.Pseudorandom
+Committee Selection 伪随机的委员会选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alternate-puzzles-%E5%85%B6%E4%BB%96%E8%B0%9C%E9%A2%98"><span class="toc-text">22.Alternate Puzzles 其他谜题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#address-compaction-%E5%9C%B0%E5%9D%80%E5%8E%8B%E7%BC%A9"><span class="toc-text">23.Address Compaction 地址压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aggregate-bls-signature-%E8%81%9A%E5%90%88%E7%AD%BE%E5%90%8D"><span class="toc-text">24.Aggregate BLS Signature
+聚合签名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#off-chain-payment-networks-%E9%93%BE%E4%B8%8B%E6%94%AF%E4%BB%98%E7%BD%91%E7%BB%9C"><span class="toc-text">25.Off-Chain Payment
+Networks 链下支付网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ethereum-micropayments-%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%B0%8F%E9%A2%9D%E6%94%AF%E4%BB%98"><span class="toc-text">26.Ethereum Micropayments
+以太坊小额支付</span></a></li></ol> -->
       <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#merkle-trees-%E9%BB%98%E5%85%8B%E5%B0%94%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">1.Merkle Trees 默克尔树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signature-schemes-%E7%AD%BE%E5%90%8D%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">2.Signature Schemes 签名方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#birthday-paradox-%E7%94%9F%E6%97%A5%E6%82%96%E8%AE%BA"><span class="toc-number">3.</span> <span class="toc-text">3.Birthday Paradox 生日悖论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-address-%E6%AF%94%E7%89%B9%E5%B8%81%E5%9C%B0%E5%9D%80"><span class="toc-number">4.</span> <span class="toc-text">4.Bitcoin Address 比特币地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#utxo-based-transaction-%E5%9F%BA%E4%BA%8E%E6%9C%AA%E8%8A%B1%E8%B4%B9%E7%9A%84%E4%BA%A4%E6%98%93%E8%BE%93%E5%87%BA%E7%9A%84%E4%BA%A4%E6%98%93"><span class="toc-number">5.</span> <span class="toc-text">5.UTXO-based
 Transaction 基于未花费的交易输出的交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-block-%E6%AF%94%E7%89%B9%E5%B8%81%E5%8C%BA%E5%9D%97"><span class="toc-number">6.</span> <span class="toc-text">6.Bitcoin Block 比特币区块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcion-script-%E6%AF%94%E7%89%B9%E5%B8%81%E8%84%9A%E6%9C%AC"><span class="toc-number">7.</span> <span class="toc-text">7.Bitcion Script 比特币脚本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-difficulty-%E6%AF%94%E7%89%B9%E5%B8%81%E9%9A%BE%E5%BA%A6%E5%8F%82%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text">8.Bitcoin Difficulty
 比特币难度参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bitcoin-mining-economics-%E6%AF%94%E7%89%B9%E5%B8%81%E5%BC%80%E9%87%87%E7%BB%8F%E6%B5%8E%E5%AD%A6"><span class="toc-number">9.</span> <span class="toc-text">9.Bitcoin Mining
@@ -138,7 +149,12 @@ Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
 不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
-Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li></ol>
+Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#confidential-transactions-%E4%BF%9D%E5%AF%86%E4%BA%A4%E6%98%93"><span class="toc-number">20.</span> <span class="toc-text">20.Confidential Transactions
+保密交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pseudorandom-committee-selection-%E4%BC%AA%E9%9A%8F%E6%9C%BA%E7%9A%84%E5%A7%94%E5%91%98%E4%BC%9A%E9%80%89%E6%8B%A9"><span class="toc-number">21.</span> <span class="toc-text">21.Pseudorandom
+Committee Selection 伪随机的委员会选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alternate-puzzles-%E5%85%B6%E4%BB%96%E8%B0%9C%E9%A2%98"><span class="toc-number">22.</span> <span class="toc-text">22.Alternate Puzzles 其他谜题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#address-compaction-%E5%9C%B0%E5%9D%80%E5%8E%8B%E7%BC%A9"><span class="toc-number">23.</span> <span class="toc-text">23.Address Compaction 地址压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aggregate-bls-signature-%E8%81%9A%E5%90%88%E7%AD%BE%E5%90%8D"><span class="toc-number">24.</span> <span class="toc-text">24.Aggregate BLS Signature
+聚合签名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#off-chain-payment-networks-%E9%93%BE%E4%B8%8B%E6%94%AF%E4%BB%98%E7%BD%91%E7%BB%9C"><span class="toc-number">25.</span> <span class="toc-text">25.Off-Chain Payment
+Networks 链下支付网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ethereum-micropayments-%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%B0%8F%E9%A2%9D%E6%94%AF%E4%BB%98"><span class="toc-number">26.</span> <span class="toc-text">26.Ethereum Micropayments
+以太坊小额支付</span></a></li></ol>
     </div>
   </span>
 </div>
@@ -342,11 +358,16 @@ Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
 不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
-Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li></ol></div> -->
+Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#confidential-transactions-%E4%BF%9D%E5%AF%86%E4%BA%A4%E6%98%93"><span class="toc-number">20.</span> <span class="toc-text">20.Confidential Transactions
+保密交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pseudorandom-committee-selection-%E4%BC%AA%E9%9A%8F%E6%9C%BA%E7%9A%84%E5%A7%94%E5%91%98%E4%BC%9A%E9%80%89%E6%8B%A9"><span class="toc-number">21.</span> <span class="toc-text">21.Pseudorandom
+Committee Selection 伪随机的委员会选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alternate-puzzles-%E5%85%B6%E4%BB%96%E8%B0%9C%E9%A2%98"><span class="toc-number">22.</span> <span class="toc-text">22.Alternate Puzzles 其他谜题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#address-compaction-%E5%9C%B0%E5%9D%80%E5%8E%8B%E7%BC%A9"><span class="toc-number">23.</span> <span class="toc-text">23.Address Compaction 地址压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aggregate-bls-signature-%E8%81%9A%E5%90%88%E7%AD%BE%E5%90%8D"><span class="toc-number">24.</span> <span class="toc-text">24.Aggregate BLS Signature
+聚合签名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#off-chain-payment-networks-%E9%93%BE%E4%B8%8B%E6%94%AF%E4%BB%98%E7%BD%91%E7%BB%9C"><span class="toc-number">25.</span> <span class="toc-text">25.Off-Chain Payment
+Networks 链下支付网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ethereum-micropayments-%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%B0%8F%E9%A2%9D%E6%94%AF%E4%BB%98"><span class="toc-number">26.</span> <span class="toc-text">26.Ethereum Micropayments
+以太坊小额支付</span></a></li></ol></div> -->
     <!-- # COMP90088 COMP90088 Cryptocurrencies & decentralised ledgers 加密货币&去中央化的公共帐目 -- 题库 -->
 <h2 id="merkle-trees-默克尔树">1.Merkle Trees 默克尔树</h2>
 <p>蓝色代表 <u>Leaf Node 叶子结点</u>, 红色代表 <span
-style="color:red">Internal Node 内部节点</span></p>
+style="color:#EC5F5D">Internal Node 内部节点</span></p>
 <p><strong>1.a</strong>: 需要通过哪些节点证明<em>节点 7 (Node
 7)</em>是包含在集合中的? 证明过程中需要重新计算哪些节点?</p>
 <p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205281541822.png" alt="tut1_merkletree" style="zoom:50%;" /></p>
@@ -2058,13 +2079,464 @@ Address 找零地址</strong>, 通常会因为比特币钱包等软件的惯用�
 2013年研究人员发现多数钱包软件会在需要找零时生成全新的地址,
 那么只要通过地址的新旧就可以分辨出找零和非找零地址)。</p>
 </blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041240356.png" style="zoom:23%;" /></p>
+<p><strong>19.a</strong>: 讨论“<em>Join-Control
+联合控制</em>”启发式及其可能不准确的情况。上图中是否存在可以<u>排除联合控制启发式</u>的交易？</p>
+<blockquote>
+<p><strong>CoinJoin</strong> 作为去中心化混合的一个例子,
+理想情况下每个币对应的输入应该由单独的实体控制。这可以很好的解释什么是<u>失败的
+join-control 启发式</u>。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041400229.png" alt="sol19a" style="zoom:32%;" /></p>
+<p>上图中，可以<u>排除</u><code>3-to-3</code>三进三出的混合的交易。通过跟踪更改输出，顶部输入来自
+Alice 控制的地址，底部两个来自 Bob
+控制的地址。那么这个<code>3-to-3</code>的混合交易两个输入都来自于Bob但另一个输入来自Alice,
+那么这笔混合交易是不能通过 <u>join-control
+启发式</u>推断出控制者身份的(正确情况应该是3个交易都来自同一个人)。</p>
+</blockquote>
+<p><strong>19.b</strong>: 观察者能否确定 Bob 在标记为 (1)
+的交易中向谁付款？解释如何或解释为什么不能确定地识别它们。如果无法识别
+Bob 支付的实体，请描述此付款人拥有的匿名集。</p>
+<blockquote>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041419807.png" alt="sol19b" style="zoom:38%;" /></p>
+<p>首先我们知道上图中被标记为<span
+class="math inline">\({\color{orange}(2)}\)</span>的交易由Alice控制。</p>
+<p>那么交易<span
+class="math inline">\({\color{CornflowerBlue}(3)}\)</span>的一个输入,
+来自于一笔指向由Alice控制的交易<span
+class="math inline">\({\color{orange}(2)}\)</span>的找零; 那么显然<span
+class="math inline">\({\color{CornflowerBlue}(3)}\)</span>也由Alice控制。</p>
+<p>如此因为交易<span
+class="math inline">\({\color{CornflowerBlue}(3)}\)</span>由Alice控制,
+那么交易<span
+class="math inline">\({\color{CornflowerBlue}(3)}\)</span>输入的找零交易一定也是找零给Alice自己。</p>
+<p>我们知道交易的输入应该来自同一个人, 那么显然由Bob控制交易<span
+class="math inline">\((1)\)</span>支付了一笔钱给Alice,
+并且获得一部分找零退回给了Bob自己。</p>
+</blockquote>
+<p><strong>19.c</strong>: 观察者能否确定谁支付了Carol <span
+class="math inline">\((C)\)</span>？解释如何或解释为什么不能确定地确定她的身份。如果无法识别,
+请描述该支付者拥有的匿名集。</p>
+<blockquote>
+<p>目前还完全不明确是谁控制了<code>3-to-3</code>的混合交易的输入,
+我们只知道输入分别来自于Alice &amp;
+Bob。并且我们也不知道<code>3-to-3</code>混合交易的输出是支付给Bob, Alice
+或是其他人 (Unknown)。</p>
+<p>所以我们根本无法得知向Carlo <span
+class="math inline">\((C)\)</span>支付了费用的那笔交易的控制者是谁。</p>
+<p>所以, 该付款人的匿名集为: <span class="math inline">\(\{Alice, Bob,
+unknown\}\)</span>。</p>
+</blockquote>
+<h2 id="confidential-transactions-保密交易">20.Confidential Transactions
+保密交易</h2>
+<p>回想一下，在机密交易中，每个输入/输出值 <span
+class="math inline">\(({\color{cornflowerblue}{x_i}})\)</span> 都使用
+<strong>Pedersen Commitment 佩德森承诺</strong> 表示: <span
+class="math inline">\(C_{i} = g^{ {\color{cornflowerblue}{x_i}}
+}h^{r_i}\)</span>。 其中<span class="math inline">\(c_i, g \ \And \
+h\)</span> 都是<strong>Finite Cyclic group 有限循环群</strong>: <span
+class="math inline">\(\mathbb{G}\)</span>中的元素 (例如整数群 mod
+一些素数<span class="math inline">\((q)\)</span>, 或者<u>Elliptic Curve
+Points 椭圆曲线上的点</u>)。 假设<span
+class="math inline">\(\mathbb{G}\)</span>: 是已知顺序的 <u>prime
+质数</u> (<span class="math inline">\(q\)</span>), 并且<span
+class="math inline">\(g, h\)</span>都是<span
+class="math inline">\(\mathbb{G}\)</span>的生成器。
+该方案的安全性依赖于<span class="math inline">\(\log_{g}(h)\)</span>,
+即以<span class="math inline">\(h\)</span>的以<span
+class="math inline">\(g\)</span>为底数的<u>discrete logarithm
+离散对数</u>是未知的。 需要注意，在<strong>Finite Cyclic group
+有限循环群</strong>中知道: <span
+class="math inline">\(\log_{g}(h)\)</span>等同于知道了<span
+class="math inline">\(\log_{h}(g)\)</span> 回想一下, 该方案的<u>Binding
+Property 绑定属性</u>表明，给定一个值 <span
+class="math inline">\(c_i\)</span> ，应该至多有一个已知的开口
+(例如，一个满足上述方程的<span class="math inline">\(x_i\)</span>或<span
+class="math inline">\(r_i\)</span>的值)。</p>
+<p><strong>20.a</strong>: 证明, 给定的Pedersen Commitment: <span
+class="math inline">\(c = g^{x}h^{r}\)</span>, 如果能够找到其他的<span
+class="math inline">\({ {x}{\prime{}}, {r}{\prime}}\)</span> 使得: <span
+class="math inline">\(c = g^{ {x}{\prime{}}} h^{ {r}{\prime{}}
+}\)</span>, 就同样可以计算出 <span
+class="math inline">\(\log_{g}{h}\)</span></p>
+<blockquote>
+<p>首先<span class="math inline">\(Commitment = H(x || r)\)</span>,
+其中<span class="math inline">\(r\)</span>为<u>nonce
+随机数</u>并具有高<em>Entropy 墒</em>, 所以保证了<span
+class="math inline">\(x\)</span>的<em>blinding 不可判断性</em>。</p>
+<p>如上文提到的<span
+class="math inline">\(\mathbb{G}\)</span>包含一组prime素数<span
+class="math inline">\(q\)</span>: <span
+class="math inline">\(\mathbb{G}=\{0,1,...q-1\}\)</span></p>
+<p><span class="math inline">\(\mathbb{G}\)</span>群中的所有的素数<span
+class="math inline">\((q)\)</span>都是已知顺序的, 并可以通过<span
+class="math inline">\(g, h\)</span>生成, 所以我们有:</p>
+<ol type="1">
+<li><span class="math inline">\(\{g, g^{2}, g^{3}, \dots,
+g^{q}\}\)</span></li>
+<li><span class="math inline">\(\{h, h^2, h^3, \dots,
+h^{p}\}\)</span></li>
+</ol>
+<p>我们知道<span
+class="math inline">\(\mathbb{G}\)</span>群中的元素需要mod素数<span
+class="math inline">\(q\)</span>那么我们有:</p>
+<ol type="1">
+<li><span class="math inline">\(\mathbb{G} = \{(g\mod{q}), (g^{2}
+\mod{q}), (g^{3}\mod{q}), \dots, (g^{q}\mod{q})\}\)</span></li>
+<li><span class="math inline">\(\mathbb{G} = \{(h\mod{q}), (g^{2}
+\mod{q}), (g^{3}\mod{q}), \dots, (g^{q}\mod{q})\}\)</span></li>
+</ol>
+<p>如下图所示: 由于我们知道<strong>Finite Cyclic group
+有限循环群</strong>按照<span
+class="math inline">\(\mathbb{G}=\{0,1,...q-1\}\)</span>的顺序,
+并且最终<span class="math inline">\(q = 0\)</span>。</p>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041805546.svg" alt="cc_Finite_Cyclic_Group_sol" style="zoom:50%;" /></p>
+<p>因为<span class="math inline">\(\{g, (g*g), (g*g*g), \dots,
+g^{q}\}\)</span>所以我们只需要考虑<span class="math inline">\((幂
+\mod{q})\)</span>:</p>
+<ul>
+<li><span class="math inline">\(\{1 \mod{q}, 2^ \mod{q}, 3 \mod{q},
+\dots, q\mod{q}\}\)</span></li>
+</ul>
+<p>另外基于一些常识:</p>
+<ul>
+<li><span class="math inline">\((g^a)^m = g^{am}\)</span></li>
+<li><span class="math inline">\(g^{-a} = (g^{-1})^a =
+(g^{a})^{-1}\)</span></li>
+<li><span class="math inline">\(g^{\frac{1}{a}} = g^{(a^{-1})}\)</span>
+<ul>
+<li>同上我们只考虑<span class="math inline">\((幂
+\mod{q})\)</span>:</li>
+<li><span class="math inline">\(({a^{-1}}\mod{q}) = (a*a^{-1} \mod{q})
+\\ = \frac{a}{1}*\frac{1}{a} \mod{q} \\ = \ {1}\mod{q}\)</span></li>
+<li>由于 <span class="math inline">\(q\)</span> 是素数, 所以只有在<span
+class="math inline">\(a \neq 0\)</span>的前提下, <span
+class="math inline">\(a\mod{q} \neq 0\)</span></li>
+</ul></li>
+<li><strong>Extended Euclidean Algorithm 扩展欧几里得算法
+(辗转相除法)</strong>
+<ul>
+<li>即找到<span class="math inline">\(x,y\)</span>使得: <span
+class="math inline">\(ax + by = \gcd{(a,b)}\)</span></li>
+</ul></li>
+</ul>
+<p>那么回答本题: 如果找到$ {x}{}, {r}{} $使得: <span
+class="math inline">\(c = g^{x}h^{r} = g^{ {x}{\prime{}}}h^{
+{r}{\prime{}} }\)</span>, 那么通过:</p>
+<ul>
+<li><span class="math inline">\(c = g^{x}h^{r} = g^{ {x}{\prime{}}}h^{
+{r}{\prime{}} } \\ h^{r- {r}{\prime{}} } = g^{ {x}{\prime{}}-x} \\ h =
+g^{( {x}{\prime{}}-x)(r- {r}{\prime{}} )^{ {\color{red}{-1}}
+}}\)</span></li>
+</ul>
+<p>我们可以得到:</p>
+<ul>
+<li><span class="math inline">\(\log_{g}(h) =
+({x}{\prime{}}-x)(r-{r}\prime) \in \mathbb{F}_q\)</span>
+<ul>
+<li><span class="math inline">\(\mathbb{F}_q\)</span>: <u>Finite Field
+of <span class="math inline">\(q\)</span> Element</u>表示乘法, 除法,
+减法都要执行<span class="math inline">\(\mod{q}\)</span></li>
+</ul></li>
+</ul>
+</blockquote>
+<p>实际<strong>保密交易</strong>依赖于稍微不同的属性。回顾一下,
+证明<span class="math inline">\(SUM(Input_{committed}) =
+SUM(Output_{committed})\)</span>需要一个额外的条件</p>
+<p>例如一笔<code>2-to-2</code>两进两出的混合的交易, 给定:</p>
+<ul>
+<li>输入: <span class="math inline">\(c_{1}c_{2}\)</span></li>
+<li>输出: <span class="math inline">\(c_{3}c_{4}\)</span></li>
+<li>需要额外提供随机的<em>blinding factor 致盲因子</em>: <span
+class="math inline">\(r_5\)</span>, 使得<span
+class="math inline">\(c_{1}c_{2} = c_{3}c_{4}
+{\color{red}{h^{r_{5}}}}\)</span>
+<ul>
+<li>这样才能证明: <span class="math inline">\(x_{1}+x_{2} = x_{3}+x_{4}
+\ [\mod{q}]\)</span></li>
+<li>该值可以通过: <span class="math inline">\(r^{5}=
+(r_{1}+r_{2})-(r_{3}+r_{4}) \ [\mod{q}]\)</span></li>
+</ul></li>
+</ul>
+<p><strong>20.b</strong>: 假设攻击者知道对于<span
+class="math inline">\(z\)</span>值的<span
+class="math inline">\(h=g^{z}\)</span>. 攻击者在知道任意<span
+class="math inline">\(c_{1},c_{2},c_{3},c_{4}\)</span>以及所有<span
+class="math inline">\(x,r\)</span>值的情况下, 可以计算出满足等式的<span
+class="math inline">\(r_5\)</span>。
+这样攻击者可以创界一笔交易来增加或减少货币供应量。</p>
+<blockquote>
+<p>根据: <span
+class="math inline">\(C_{i}=g^{x_{i}}h^{r_{i}}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(c_{1}c_{2} = c_{3}c_{4}
+{\color{red}{h^{r_{5}}}}\)</span> 可以写作:</li>
+<li><span class="math inline">\(g^{x_1}h^{r_1} \ g^{x_2}h^{r_2} =
+g^{x_2}h^{r_2} \ g^{x_4}h^{r_4} \ {\color{red}{h^{r_{5}}}}\)</span></li>
+</ul>
+<p>根据<span class="math inline">\(h=g^{z}\)</span>我们可以推导出:</p>
+<ul>
+<li><span class="math inline">\(g^{x_1+x_2}h^{r_1+r_2} =
+g^{x_3+x_4}h^{r_3+r_4+{\color{red}{r_5}}}\)</span></li>
+<li><span class="math inline">\(g^{x_1 + x_2 + z(r_1+r_2)} =
+g^{x_3+x_4+z(r_3+r_4+{\color{red}{r_5}})}\)</span></li>
+<li><span class="math inline">\(g^{z \ {\color{red}{r_5}}} =
+g^{x_1+x_2-x_3-x_4+z^{-1}(r_1+r_2+r_3+r_4)}\)</span></li>
+<li><span class="math inline">\(g^{ {\color{red}{r_5}} } =
+g^{r_1+r_2-r_3-r_4+z^{-1}(x_1+x_2-x_3-x_4)}\)</span></li>
+<li><span class="math inline">\({\color{red}{r_5}} =
+r_1+r_2-r_3-r_4+z^{-1}(x_1+x_2-x_3-x_4) \in \mathbb{F}_q\)</span></li>
+</ul>
+</blockquote>
+<p><strong>20.c</strong>: 假设有一笔交易即使在: <span
+class="math inline">\(x_{1}+x_{2} {\color{red}\neq} x_{3}+x_{4} \
+[\mod{q}]\)</span> 的前提下, 仍然可以满足: <span
+class="math inline">\(c_{1}c_{2} = c_{3}c_{4}
+{\color{red}{h^{r_{5}}}}\)</span>。 那么同上在知道所有 <span
+class="math inline">\(x, r\)</span> 值的条件下, 证明您可以计算出: <span
+class="math inline">\(\log_{g} (h)\)</span></p>
+<blockquote>
+<ul>
+<li><span class="math inline">\(g^{x_1+x_2}h^{r_1+r_2} = g^{x_3+x_4}
+h^{r_3+r_4+{\color{red}{r_5}}}\)</span></li>
+<li><span class="math inline">\(h^{r_1+r_2-r_3-r_4-{\color{red}{r_5}}} =
+g^{x_3+x_4-x_1-x_2}\)</span></li>
+<li><span class="math inline">\(h =
+g^{(x_3+x_4-x_1-x_2)(r_1+r_2-r_3-r_4-{\color{red}{r_5}})^{
+{\color{red}-1}} }\)</span></li>
+</ul>
+<p>所以我们可以得到: <span class="math inline">\(\log_{g}(h) =
+(x_3+x_4-x_1-x_2)(r_1+r_2-r_3-r_4-{\color{red}{r_5}})^{ {\color{red}-1}
+} \in \mathbb{F}_q\)</span></p>
+</blockquote>
+<p>最后我们回顾上述<strong>20.b</strong>&amp;<strong>20.c</strong>可以得出结论:
+保密交易的安全性相当于<u>Discrete Logarithm Problem 离散对数问题
+(DLP)</u></p>
+<p>通过<strong>20.b</strong>我们总结: 如果知道 DLP 的解,
+攻击者能够使总输出值不等于总输入值 (<span
+class="math inline">\(SUM(Input_{committed}) {\color{red}\neq}
+SUM(Output_{committed})\)</span>) 的交易合法化。</p>
+<p>通过<strong>20.c</strong>我们总结: 与<strong>20.b</strong>相反的情况,
+攻击者能够利用无效交易的有效证明允许我们找到DLP问题的解。
+所以保密交易的安全性问题等同于DLP问题。</p>
+<h2
+id="pseudorandom-committee-selection-伪随机的委员会选择">21.Pseudorandom
+Committee Selection 伪随机的委员会选择</h2>
+<p>许多有效的分布式共识协议依赖于抽样少数用户成为某一轮或一组轮（称为一个Epoch时期）的委员会成员。一个重要的安全目标是，对手不太可能控制足够多数的选定委员会在任何
+round 轮次/ epoch 时代进行攻击。</p>
+<p>假设:</p>
+<ul>
+<li>(<span class="math inline">\(N\)</span>) 名参与者组成</li>
+<li>corrupt node 腐败节点 (<span class="math inline">\(f\)</span>)
+不超过 【可以容忍度】</li>
+<li>系统中所有用户中有 (<span class="math inline">\(h\)</span>)
+是诚实的（不腐败）</li>
+<li>选择具有超过 (<span class="math inline">\(f\)</span>)
+个损坏节点的委员会的概率最多为 <span
+class="math inline">\(2^{-\lambda}\)</span></li>
+</ul>
+<p><strong>21.a</strong>: 写出一个数学方程,</p>
+<blockquote>
+<p>需要<strong>Binomial Distribution二项分布</strong></p>
+<p><span class="math inline">\(f(k,n,p) = \\ Pr(X=k) = \\ n\choose{k} \\
+= \frac{n!}{k!(n-k)!}\)</span></p>
+<p>这里<span class="math inline">\(k\)</span>为诚实用户的个数, <span
+class="math inline">\(n\)</span>为委员会成员的总数(<span
+class="math inline">\(N\)</span>), <span
+class="math inline">\(p\)</span>每个成员为诚实的概率(<span
+class="math inline">\(h\)</span>)</p>
+<p>所以通过二项分布公式可以计算出, 每一个用户是诚实的的概率。</p>
+<p><span class="math inline">\(P_r (k; N, h) = {N \choose k} h^k
+(1-h)^{N-k}\)</span></p>
+<p>即: $Pr(诚实用户数; 总用户数, 用户为诚实的概率) = {总用户数
+诚实用户数}用户为诚实的概率<sup>{诚实用户数}(用户不诚实的概率)</sup>{不诚实用户数}
+$</p>
+<p>通过总参与者节点(<span
+class="math inline">\(N\)</span>)减去可承受腐败节点(<span
+class="math inline">\(f\)</span>)的个数,
+得到非腐败节点的个数那么再减去1得到<u>不可承受的腐败数量</u>,
+然后这个数量需要小于<span
+class="math inline">\(2^{-\lambda}\)</span></p>
+<p><span class="math inline">\(\sum^{N-f-1}_{k=0} P_r(k; N, h) =
+2^{-\lambda}\)</span></p>
+<p>即: <span
+class="math inline">\(\sum_{0个诚实的用户}^{能接受的不诚实用户数的上限(总用户数-可接受不诚实用户数阈值-1)}
+为诚实用户的概率 = 2^{-\lambda}\)</span></p>
+</blockquote>
+<p><strong>21.b</strong>:
+创建一个简单的电子表格（或计算机程序或脚本），让您可以试验上述值</p>
+<blockquote>
+<p>Calculate in Python</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Binomial | Cumulative distribution function (CDF) 累积分布函数 </span></span><br><span class="line"><span class="comment"># 通过 CDF 计算: 不可承受的不诚实用户的数量上限</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> scipy.stats</span><br><span class="line">N = <span class="number">185</span></span><br><span class="line">f = <span class="number">92</span></span><br><span class="line">h = <span class="number">0.8</span></span><br><span class="line">-np.log2(scipy.stats.binom.cdf(N - f - <span class="number">1</span>, N, h))</span><br><span class="line"><span class="comment"># Result</span></span><br><span class="line"><span class="number">64.25226432110163</span></span><br></pre></td></tr></table></figure>
+<p><a
+target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i2d=true&amp;i=Sum%5BPDF%5C%2891%29BinomialDistribution%5C%2891%29185%5C%2844%29+0.8%5C%2893%29%5C%2844%29+k%5C%2893%29%2C%7Bk%2C0%2C185-%5C%2840%2992%5C%2841%29-1%7D%5D+%3D+Power%5B2%2C-%5Clambda%5D">Wolframalpha</a></p>
+<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Sum</span><span class="punctuation">[</span><span class="built_in">PDF</span><span class="punctuation">[</span><span class="built_in">BinomialDistribution</span><span class="punctuation">[</span><span class="number">185</span><span class="operator">,</span> <span class="number">0.8</span><span class="punctuation">]</span><span class="operator">,</span> <span class="variable">k</span><span class="punctuation">]</span><span class="operator">,</span><span class="punctuation">&#123;</span><span class="variable">k</span><span class="operator">,</span><span class="number">0</span><span class="operator">,</span><span class="number">185</span><span class="operator">-</span><span class="punctuation">(</span><span class="number">92</span><span class="punctuation">)</span><span class="operator">-</span><span class="number">1</span><span class="punctuation">&#125;</span><span class="punctuation">]</span> <span class="operator">=</span> <span class="number">2</span><span class="operator">^-</span>\<span class="variable">lambda</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p><strong>21.c</strong>: 如果, 用户诚实度: <span
+class="math inline">\(h = 0.8\)</span></p>
+<p>每个Epoch只要求诚实的用户占主导(50% = <span
+class="math inline">\(\frac{N}{2}\)</span>), 即要求腐败率<span
+class="math inline">\(f &lt; N/2\)</span></p>
+<p>如果安全参数<span class="math inline">\(\lambda = 64\)</span>,
+那么需要有多少参与者才能满足 腐败率<span class="math inline">\(f &lt;
+N/2\)</span> 的条件?</p>
+<blockquote>
+<p>计算N需要通过一点一点(暴力算法,
+或者更快的使用二分法)的尝试去找到正确的N值</p>
+<p><span class="math inline">\(h = 0.8\)</span></p>
+<p><span class="math inline">\(f \lt \frac{N}{2} \lt 92\)</span></p>
+<p><span class="math inline">\(\lambda = 64\)</span></p>
+<p><span class="math inline">\(不可承受的不诚实用户的数量上限 =
+\sum_{0}^{N-\frac{N}{2}-1}Pr(k; N, 0.8) = 2^{-64} \\ N \approx 185
+\  \And \lfloor f \rfloor \approx 92\)</span></p>
+<p>至少需要<span
+class="math inline">\(N=185\)</span>个委员会成员才能满足在容错率为<span
+class="math inline">\(2^{-64}\)</span>时只有一半一下<span
+class="math inline">\(f \lt \frac{N}{2}\)</span>的参与者是不诚实的</p>
+</blockquote>
+<p><strong>21.d</strong>: 已知安全参数为<span
+class="math inline">\(64\)</span>和容错率为<span
+class="math inline">\(N/3\)</span>, 求<span
+class="math inline">\(N\)</span></p>
+<blockquote>
+<p><span class="math inline">\(h = 0.8\)</span></p>
+<p><span class="math inline">\(f \lt \frac{N}{3}\)</span></p>
+<p><span class="math inline">\(\lambda = 64\)</span></p>
+<p>$不可承受的不诚实用户的数量上限 = _{0}^{N--1}Pr(k; N, 0.8) = 2^{-64}
+\ N f $</p>
+<p>可以看出容错率约底, 则需要更多的委员会人数,
+来保证能选举出足够的诚实成员, 和不超标的恶意成员。</p>
+<p>但是过高的委员会成员(<span class="math inline">\(N\)</span>),
+会需要消耗更多的带宽 (下一题: 1.e)</p>
+</blockquote>
+<p><strong>21.e</strong>:
+Algorand中确认委员会在进行confirmatory确认选举区块的阶段,
+每个成员需要广播自己的确认签名, 如果参与者 (<span
+class="math inline">\(N\)</span>) 太多会有什么不好的影响?</p>
+<blockquote>
+<p>如果<strong>Confirmer 确认者</strong>委员会中的成员(<span
+class="math inline">\(N\)</span>)太多了, 那么由于每个成员(<span
+class="math inline">\(i\)</span>)都需要广播自己的区块确认以及签名给其他成员,
+会造成过大的<strong>Communication Overhead 通信开销</strong>,
+从而会消耗大量的带宽。</p>
+</blockquote>
+<p><strong>21.f</strong>: 在 <strong>round-based proof-of-stake (PoS)
+基于轮次的股权证明协议</strong>中选择更大的 (<span
+class="math inline">\(N\)</span>)
+有什么缺点，在该协议中，每个委员会成员都被分配在一个时期的 N
+个<strong>Slot插槽</strong>中的一个中产生一个块？</p>
+<blockquote>
+<p>由于在一个Epoch中每个成员会被分配一个Slot去广播一个区块,
+这样不再有<strong>Communication Overhead 通信开销</strong>的问题,
+也就不再消耗<strong>Bandwidth 带宽</strong>。 但是Epoch中的链太长了,
+会增加发生<strong>Adaptive Attack 自适应攻击</strong>的可能性,
+因为<strong>Attacker 攻击者</strong>将有更多的时间,
+在当前Epoch的选举结束之前去攻击(控制)被选举成为下一个Epoch成员中的最后一个成员。
+另外如果选举链太长(选举时间太长)选举过程中候选人可以通过长时间持有(不操作)自己的币,
+去保证一个更大的权益, 以提高自己被选中成为下一个epoch委员会的成员。</p>
+</blockquote>
+<h2 id="alternate-puzzles-其他谜题">22.Alternate Puzzles 其他谜题</h2>
+<p><span class="math inline">\(H(c,n_1) = H(c, n_2)
+(\mod{d})\)</span></p>
+<p>哈希函数: <span class="math inline">\(H: \{0,1\}^* \rarr \{1, \dots,
+2^{256} \}\)</span></p>
+<p>难题: (<span class="math inline">\(c\)</span>)</p>
+<p>难度: (<span class="math inline">\(d\)</span>)</p>
+<p>找到 nonces: $n_1 n_2 $</p>
+<p><strong>22.a</strong>: 对于给定的难度(<span
+class="math inline">\(d\)</span>)，大约需要多少次调用哈希函数(<span
+class="math inline">\(H\)</span>)才能生成 (<span
+class="math inline">\(n_1 = n_2\)</span>) 的<strong>冲突
+Collision</strong>? 这个标准哈希表需要多少内存？</p>
+<blockquote>
+<p>Hash Table: <span class="math inline">\((d \ {slots})\)</span></p>
+<p>Key: <span class="math inline">\(H(c,n) \mod{d}\)</span></p>
+<p>Value: <span class="math inline">\(n\)</span></p>
+<p>Refer to Week2 Solution → Birthday Problem: <span
+class="math inline">\(\frac{N(N-1)}{2 * 365} = 1\)</span>.</p>
+<p>已知<strong>Number of Invocation 调用次数</strong>: (<span
+class="math inline">\(N\)</span>) &amp; 难度: (<span
+class="math inline">\(d\)</span>)</p>
+<p>我们得到: <span class="math inline">\(\frac{N(N-1)}{2 * d} = 1 \\ N
+\approx \sqrt{2d}\)</span></p>
+<p>Hash Table 内存需要: <span class="math inline">\(N \in
+\Theta(\sqrt{d})\)</span></p>
+</blockquote>
+<p>22.b: 考虑一个内存有限的简单算法，它选择一个随机 nonce <span
+class="math inline">\(n_1\)</span>，然后重复选择一个随机 nonce <span
+class="math inline">\(n_2\)</span> ，直到找到一个与 <span
+class="math inline">\(n_1\)</span> 冲突的 <span
+class="math inline">\(n_2\)</span> 。该算法在预期中将使用多少次 <span
+class="math inline">\(H\)</span> 调用？</p>
+<p>备注：有一个聪明的常数记忆算法，可以在与 (A)
+部分相同的渐近时间内找到解决方案，但只使用常数记忆。</p>
+<blockquote>
+<p>Merkle Patricia Tree (MPT) 使用Hash Pointer, 不需要Fully
+Authenticated Data Structure, 所以只需要使用 <strong>Patricia Trie/Radix
+Trie 基数树</strong></p>
+<p>求调用哈希函数的次数: (<span class="math inline">\(E\)</span>)</p>
+<p>保持<span class="math inline">\(n_1\)</span>不变,
+Burte-force搜索<span class="math inline">\(n_2\)</span></p>
+<p>$P_{success} = d^{-1} $</p>
+<p>找到<span class="math inline">\(n_2\)</span>的概率 <span
+class="math inline">\(P(1)\)</span></p>
+<p>没找到<span class="math inline">\(n_2\)</span>的概率 <span
+class="math inline">\(1-P\)</span></p>
+<p><span class="math inline">\(E = P(1) + (1-p)(1+E)d \\ E = \frac{1}{P}
+= \frac{1}{d^{-1}} = d\)</span></p>
+<p>另外一个更快的方法是<a
+target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd&#39;s_tortoise_and_hare">Floyd's
+tortoise and hare algorithm 弗洛伊德的龟兔赛跑算法</a>,
+快慢指针用于检测集合中是否存在环路, 因为兔子的速度是乌龟的2倍，
+如果存在闭环则快指针会与慢指针重合, 需要<span
+class="math inline">\(\sqrt{d}\)</span>次调用。</p>
+<p>使用Radix Trie, 使用更少的内存, 但是需要<span
+class="math inline">\(d\)</span>次调用哈希函数去找到<span
+class="math inline">\(n_1 = n_2\)</span></p>
+</blockquote>
+<p><strong>22.c</strong>: 如果对于所有 <span
+class="math inline">\(h,k\)</span>（其中 <span class="math inline">\(h*k
+\lt B\)</span> 对于某个大边界 <span
+class="math inline">\(B\)</span>），在计算 <span class="math inline">\(h
+* k\)</span> 哈希后找到解决方案的概率是在计算后找到解决方案的概率的<span
+class="math inline">\(k\)</span>倍，则Puzzle是无进度的<span
+class="math inline">\(h\)</span>哈希。这个Puzzle 谜题 时 progress-free
+无进展的么？</p>
+<blockquote>
+<p>如果使用2.a中的哈希函数, 那么随着投入时间的增加, 找到的概率提高,
+所以不是无进展的</p>
+<p>It is not progress-free, Probability ↑ with amount of time ↑</p>
+<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041946019.svg" alt="Birthday_Paradox" style="zoom:30%;" /></p>
+</blockquote>
+<h2 id="address-compaction-地址压缩">23.Address Compaction 地址压缩</h2>
+<blockquote>
+<p>sig: 528</p>
+<p>1 byte for each OP_CODE</p>
+<p>pubKey 33 byte</p>
+<p>PubKeyHash is 20 byte</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sig&gt;</span><br><span class="line">&lt;pubKey&gt;</span><br><span class="line">----</span><br><span class="line">&lt;keyIndex&gt;</span><br><span class="line">OP_LOOKUP_KEY</span><br><span class="line">OP_CHECKSIG</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sig&gt; </span><br><span class="line">---</span><br><span class="line">OP_DUP</span><br><span class="line">OP_HASH160</span><br><span class="line">&lt;pubKeyHash&gt;</span><br><span class="line">OP_EQUALVERIFY</span><br><span class="line">OP_CHECKSIG</span><br></pre></td></tr></table></figure>
+<p><strong>23.e</strong>:</p>
+<blockquote>
+<p>Not Really, 以太坊是基于账户的, 已经存储过一次了。redirve pubKey from
+signature.</p>
+</blockquote>
+<h2 id="aggregate-bls-signature-聚合签名">24.Aggregate BLS Signature
+聚合签名</h2>
+<blockquote>
+<p>聚合签名, 只需要一个签名, 而不是多个签名, 使用pairing函数,</p>
+</blockquote>
+<h2 id="off-chain-payment-networks-链下支付网络">25.Off-Chain Payment
+Networks 链下支付网络</h2>
+<h2 id="ethereum-micropayments-以太坊小额支付">26.Ethereum Micropayments
+以太坊小额支付</h2>
 
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">13.3k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">55</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">17.2k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">72</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
@@ -2156,7 +2628,12 @@ Economics 比特币开采经济学</span></a></li><li class="toc-item toc-level-
 Arrival Time 比特币区块到达时间</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#soft-hard-forks-%E8%BD%AF%E7%A1%AC%E5%88%86%E5%8F%89"><span class="toc-number">11.</span> <span class="toc-text">11.Soft &amp; Hard forks 软硬分叉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mining-pool-sabotage-%E8%93%84%E6%84%8F%E7%A0%B4%E5%9D%8F%E7%9F%BF%E6%B1%A0"><span class="toc-number">12.</span> <span class="toc-text">12.Mining Pool Sabotage
 蓄意破坏矿池</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#per-mines-%E9%A2%84%E5%BC%80%E9%87%87"><span class="toc-number">13.</span> <span class="toc-text">13.Per-mines 预开采</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#atomic-swaps-%E4%B8%8D%E5%8F%AF%E5%88%86%E5%89%B2%E8%B7%A8%E9%93%BE%E4%BA%A4%E6%8D%A2"><span class="toc-number">14.</span> <span class="toc-text">14.Atomic swaps
 不可分割跨链交换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#solidity-modifiers"><span class="toc-number">15.</span> <span class="toc-text">15.Solidity Modifiers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#contract-call-%E5%90%88%E7%BA%A6%E8%B0%83%E7%94%A8"><span class="toc-number">16.</span> <span class="toc-text">16.Contract Call 合约调用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cross-function-re-entrancy-%E8%B7%A8%E5%87%BD%E6%95%B0%E9%87%8D%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-number">17.</span> <span class="toc-text">17.Cross-Function
-Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li></ol>
+Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#parity-bug-%E9%94%99%E8%AF%AF"><span class="toc-number">18.</span> <span class="toc-text">18.Parity bug 错误</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#idioms-of-use-%E6%83%AF%E7%94%A8%E6%B3%95%E5%88%99"><span class="toc-number">19.</span> <span class="toc-text">19.Idioms of Use 惯用法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#confidential-transactions-%E4%BF%9D%E5%AF%86%E4%BA%A4%E6%98%93"><span class="toc-number">20.</span> <span class="toc-text">20.Confidential Transactions
+保密交易</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pseudorandom-committee-selection-%E4%BC%AA%E9%9A%8F%E6%9C%BA%E7%9A%84%E5%A7%94%E5%91%98%E4%BC%9A%E9%80%89%E6%8B%A9"><span class="toc-number">21.</span> <span class="toc-text">21.Pseudorandom
+Committee Selection 伪随机的委员会选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alternate-puzzles-%E5%85%B6%E4%BB%96%E8%B0%9C%E9%A2%98"><span class="toc-number">22.</span> <span class="toc-text">22.Alternate Puzzles 其他谜题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#address-compaction-%E5%9C%B0%E5%9D%80%E5%8E%8B%E7%BC%A9"><span class="toc-number">23.</span> <span class="toc-text">23.Address Compaction 地址压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#aggregate-bls-signature-%E8%81%9A%E5%90%88%E7%AD%BE%E5%90%8D"><span class="toc-number">24.</span> <span class="toc-text">24.Aggregate BLS Signature
+聚合签名</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#off-chain-payment-networks-%E9%93%BE%E4%B8%8B%E6%94%AF%E4%BB%98%E7%BD%91%E7%BB%9C"><span class="toc-number">25.</span> <span class="toc-text">25.Off-Chain Payment
+Networks 链下支付网络</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ethereum-micropayments-%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%B0%8F%E9%A2%9D%E6%94%AF%E4%BB%98"><span class="toc-number">26.</span> <span class="toc-text">26.Ethereum Micropayments
+以太坊小额支付</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
@@ -2412,20 +2889,5 @@ Re-Entrancy 跨函数重入攻击</span></a></li><li class="toc-item toc-level-2
     </script>
   
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
