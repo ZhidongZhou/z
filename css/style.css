@@ -449,10 +449,7 @@ body td {
   height: 82px;
   margin-left: auto;
   margin-right: auto;
-  background: url("/images/btn-reward.gif") no-repeat;
-}
-.donate_bar a.btn_donate:hover {
-  background: url("/images/btn-reward.gif") no-repeat 0 -82px !important;
+  background: sno-repeat;
 }
 .donate_bar .donate_txt {
   display: block;

@@ -118,29 +118,31 @@ $(document).ready(function () {
 var check = document.querySelector('#check')
 var ball = document.querySelector('.ball')
 // Adding an eventListener function to change color everytime var check is changed.(checked & unchecked)
-check.addEventListener('change', function () {
-  //   conditions to apply when checkbox is checked
-  if (this.checked == true) {
-    ball.setAttribute('style', 'transform:translatex(100%);')
-    document.body.classList.toggle('light-theme');
-    if (document.body.classList.contains('light-theme')) { document.cookie = 'theme=light'; }
-    else { document.cookie = 'theme=dark'; }
-    if (document.cookie.split(';').filter((item) => {
-      return item.includes('theme=dark')
-    }).length) {
-      document.body.classList.remove('light-theme');
+if (check) {
+  check.addEventListener('change', function () {
+    //   conditions to apply when checkbox is checked
+    if (this.checked == true) {
+      ball.setAttribute('style', 'transform:translatex(100%);')
+      document.body.classList.toggle('light-theme');
+      if (document.body.classList.contains('light-theme')) { document.cookie = 'theme=light'; }
+      else { document.cookie = 'theme=dark'; }
+      if (document.cookie.split(';').filter((item) => {
+        return item.includes('theme=dark')
+      }).length) {
+        document.body.classList.remove('light-theme');
+      }
     }
-  }
-  //   conditions to apply when checkbox is unchecked
-  if (this.checked == false) {
-    ball.setAttribute('style', 'transform:translatex(0%);')
-    document.body.classList.toggle('light-theme');
-    if (document.body.classList.contains('light-theme')) { document.cookie = 'theme=light'; }
-    else { document.cookie = 'theme=dark'; }
-    if (document.cookie.split(';').filter((item) => {
-      return item.includes('theme=dark')
-    }).length) {
-      document.body.classList.remove('light-theme');
+    //   conditions to apply when checkbox is unchecked
+    if (this.checked == false) {
+      ball.setAttribute('style', 'transform:translatex(0%);')
+      document.body.classList.toggle('light-theme');
+      if (document.body.classList.contains('light-theme')) { document.cookie = 'theme=light'; }
+      else { document.cookie = 'theme=dark'; }
+      if (document.cookie.split(';').filter((item) => {
+        return item.includes('theme=dark')
+      }).length) {
+        document.body.classList.remove('light-theme');
+      }
     }
-  }
-})
+  })
+}
