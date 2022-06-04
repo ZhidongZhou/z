@@ -974,6 +974,15 @@
   </url>
   
   <url>
+    <loc>https://yumtaro.com/archives/c4142ca.html/</loc>
+    
+    <lastmod>2022-04-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yumtaro.com/archives/c1aa3985.html/</loc>
     
     <lastmod>2022-04-24</lastmod>
@@ -984,15 +993,6 @@
   
   <url>
     <loc>https://yumtaro.com/archives/d9201850.html/</loc>
-    
-    <lastmod>2022-04-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/archives/c4142ca.html/</loc>
     
     <lastmod>2022-04-24</lastmod>
     
@@ -1038,15 +1038,6 @@
   
   <url>
     <loc>https://yumtaro.com/archives/25d3e22e.html/</loc>
-    
-    <lastmod>2022-04-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/archives/8b3d62a7.html/</loc>
     
     <lastmod>2022-04-24</lastmod>
     
@@ -1101,6 +1092,15 @@
   
   <url>
     <loc>https://yumtaro.com/archives/cb0886c4.html/</loc>
+    
+    <lastmod>2022-04-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/archives/8b3d62a7.html/</loc>
     
     <lastmod>2022-04-24</lastmod>
     
@@ -1532,7 +1532,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/archives/4b2ce80.html/</loc>
+    <loc>https://yumtaro.com/archives/6fe264d8.html/</loc>
     
     <lastmod>2020-06-07</lastmod>
     
@@ -1541,7 +1541,7 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/archives/6fe264d8.html/</loc>
+    <loc>https://yumtaro.com/archives/4b2ce80.html/</loc>
     
     <lastmod>2020-06-07</lastmod>
     
@@ -1695,14 +1695,14 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/Python/</loc>
+    <loc>https://yumtaro.com/tags/unimelb/</loc>
     <lastmod>2022-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://yumtaro.com/tags/unimelb/</loc>
+    <loc>https://yumtaro.com/tags/Python/</loc>
     <lastmod>2022-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1774,20 +1774,6 @@
   </url>
   
   <url>
-    <loc>https://yumtaro.com/categories/IT/Software/</loc>
-    <lastmod>2022-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://yumtaro.com/categories/IT/Python/</loc>
-    <lastmod>2022-06-04</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/</loc>
     <lastmod>2022-06-04</lastmod>
     <changefreq>weekly</changefreq>
@@ -1796,6 +1782,20 @@
   
   <url>
     <loc>https://yumtaro.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/unimelb/MIT/</loc>
+    <lastmod>2022-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/categories/IT/Software/</loc>
+    <lastmod>2022-06-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://yumtaro.com/categories/IT/Python/</loc>
     <lastmod>2022-06-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -449,7 +449,11 @@ body td {
   height: 82px;
   margin-left: auto;
   margin-right: auto;
+  background: no-repeat;
   background: sno-repeat;
+}
+.donate_bar a.btn_donate:hover {
+  background: no-repeat 0 -82px !important;
 }
 .donate_bar .donate_txt {
   display: block;
