@@ -3,6 +3,9 @@ Allow: /
 Allow: /home/
 Allow: /posts/
 Allow: /about/
+Allow: /search/
+Allow: /tags/
+Allow: /categories/
 Disallow: /vendors/
 Disallow: /js/
 Disallow: /css/

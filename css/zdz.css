@@ -5,6 +5,7 @@ tt {
   font-size: 1rem;
 } */
 
+
 code {
   /* color:rgba(234, 199, 128, 1); */
   color: #d05c41;
@@ -30,6 +31,11 @@ article .content blockquote {
   /* color: #888e9c; */
   font-size: 12px;
   color: #ABB2BF;
+}
+
+/* Dark Mode Image Add Background Color on Hove */
+article .content img:hover {
+  background: #fff;
 }
 
 article .content blockquote:hover {
@@ -190,7 +196,6 @@ tspan {
 #header-post #toc {
   text-align: left;
 }
-
 
 /* Table */
 /* New Table v2: Left & Right Border Blue Hover */
