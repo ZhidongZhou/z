@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-04T16:53:26.437Z">
+<meta property="article:modified_time" content="2022-06-05T05:52:20.110Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -68,9 +68,9 @@
     
     
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ZDZ" type="application/atom+xml">
 </head>
 
@@ -2348,16 +2348,16 @@ class="math inline">\(h\)</span>)</p>
 <p>所以通过二项分布公式可以计算出, 每一个用户是诚实的的概率。</p>
 <p><span class="math inline">\(Pr(k; N, h) = {N \choose k} h^k
 (1-h)^{N-k}\)</span></p>
-<p>即: $Pr(诚实用户数; 总用户数, 用户为诚实的概率) = { {总用户数}
-}用户为诚实的概率<sup>{诚实用户数}(用户不诚实的概率)</sup>{不诚实用户数}
-$</p>
+<p>即: <span class="math inline">\(Pr(诚实用户数; 总用户数,
+用户为诚实的概率) = { {总用户数} \choose {诚实用户数} }
+用户为诚实的概率^{诚实用户数}
+(用户不诚实的概率)^{不诚实用户数}\)</span></p>
 <p>通过总参与者节点(<span
 class="math inline">\(N\)</span>)减去可承受腐败节点(<span
 class="math inline">\(f\)</span>)的个数,
 得到非腐败节点的个数那么再减去1得到<u>不可承受的腐败数量</u>,
-然后这个数量需要小于<span
-class="math inline">\(2^{-\lambda}\)</span></p>
-<p><span class="math inline">\(\sum^{N-f-1}_{k=0} Pr(k; N, h) =
+然后这个数量需要小于<span class="math inline">\(2^{-\lambda}\)</span> F
+<span class="math inline">\(\sum^{N-f-1}_{k=0} Pr(k; N, h) =
 2^{-\lambda}\)</span></p>
 <p>即: <span
 class="math inline">\(\sum_{0个诚实的用户}^{能接受的不诚实用户数的上限(总用户数-可接受不诚实用户数阈值-1)}
@@ -2509,6 +2509,21 @@ class="math inline">\(h\)</span>哈希。这个Puzzle 谜题 时 progress-free
 <p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206041946019.svg" alt="Birthday_Paradox" style="zoom:30%;" /></p>
 </blockquote>
 <h2 id="address-compaction-地址压缩">23.Address Compaction 地址压缩</h2>
+<p><strong>23.a</strong>: 比特币中的<u>Public Key
+公钥</u>严重消耗系统带宽。目前 <strong>Pay-to-Pubkey-Hash
+(P2PKH)</strong> 是最常见的类型,
+并且在每个使用P2PK2的赎回交易中都包含<u>Public Key
+公钥</u>。计算机科学家讨厌重复数据, 倾向于喜欢<u>Layers of
+Indirection</u>。
+因此提出了以下建议：为什么不在列表中存储所有比特币公钥，并通过公钥第一次被使用的顺序为每个公钥分配一个序列号？这将通过仅指定公钥的序列号而不是整个公钥,
+来缩短交易长度。 这种(可选的)新格式将注册一个新公钥, 如下所示：
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;pubKey&gt;</span><br><span class="line">OP_REGISTER_KEY</span><br></pre></td></tr></table></figure> 新的 OP_REGISTER_KEY
+操作码将获取堆栈上的顶部值并将其存储在全局键查找表中（也将其留在堆栈中）。后续交易可以使用相同的公钥，例如：
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;keyIndex&gt;</span><br><span class="line">OP_LOOKUP_KEY</span><br></pre></td></tr></table></figure> 新的 <code>OP_LOOKUP_KEY</code> 操作码将弹出栈顶的值,
+并在全局键表中查找它, 并将结果压入栈中。 假设键查找索引为 6 bytes.</p>
+<p><strong>23.a</strong>:
+对于标准的<code>P2PKH</code>交易输出，将资金发送到以前使用过的公钥的交易将节省多少字节？
+&gt; 因为只使用 6 bytes 的索引, 而非 33 bytes 的公钥。</p>
 <blockquote>
 <p>sig: 528</p>
 <p>1 byte for each OP_CODE</p>
@@ -2541,8 +2556,8 @@ Networks 链下支付网络</h2>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">17.2k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">72</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">17.6k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">73</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
