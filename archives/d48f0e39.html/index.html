@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-05T05:52:20.110Z">
+<meta property="article:modified_time" content="2022-06-07T07:29:26.241Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -1661,8 +1661,8 @@ swaps</strong>。考虑描述的对称原子交换函数的更简单变体的伪
 不同的是, 简化的伪代码只考虑在每条链上进行一次交易)。</p>
 <table>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 52%" />
+<col style="width: 47%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -2024,6 +2024,8 @@ Your Solidity Smart Contracts From Reentrancy Attacks</a></p>
 <p>参考: <a
 target="_blank" rel="noopener" href="https://docs.soliditylang.org/en/develop/security-considerations.html#use-the-checks-effects-interactions-pattern">安全注意事项:
 使用检查-效果-交互模式 — Solidity 0.8.15 文档 (soliditylang.org)</a></p>
+<p>简单来说就是: 注意交易&amp;扣款的顺序, 在执行交易前需要先扣款,
+再转账。</p>
 <ol type="1">
 <li>大多数函数将首先执行一些检查,
 检查谁调用了函数，参数范围，是否发送了足够的以太币，该人是否有token等。</li>
@@ -2521,43 +2523,564 @@ Indirection</u>。
 操作码将获取堆栈上的顶部值并将其存储在全局键查找表中（也将其留在堆栈中）。后续交易可以使用相同的公钥，例如：
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;keyIndex&gt;</span><br><span class="line">OP_LOOKUP_KEY</span><br></pre></td></tr></table></figure> 新的 <code>OP_LOOKUP_KEY</code> 操作码将弹出栈顶的值,
 并在全局键表中查找它, 并将结果压入栈中。 假设键查找索引为 6 bytes.</p>
-<p><strong>23.a</strong>:
-对于标准的<code>P2PKH</code>交易输出，将资金发送到以前使用过的公钥的交易将节省多少字节？
-&gt; 因为只使用 6 bytes 的索引, 而非 33 bytes 的公钥。</p>
+<p><strong>23.a</strong>: 对于标准的<code>P2PKH</code>交易<u>输出</u>,
+将资金发送到以前使用过的<u>Public Key
+公钥</u>的交易将节省多少字节？对于标准的<code>P2PKH</code>交易<u>输入</u>,
+使用以前使用过的公<u>Public Key
+公钥</u>进行花钱的交易将节省多少字节？</p>
 <blockquote>
-<p>sig: 528</p>
-<p>1 byte for each OP_CODE</p>
-<p>pubKey 33 byte</p>
-<p>PubKeyHash is 20 byte</p>
+<p>首先回顾标准的<code>P2PKH</code>的输入脚本(<code>scriptSig</code>),
+以及输出脚本 (<code>scriptPubKey</code>):</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&gt;--- 输入脚本 scriptSig: </span><br><span class="line">&gt;&lt;sig&gt; </span><br><span class="line">&gt;&lt;pubKey&gt;</span><br><span class="line">&gt;--- 输出脚本 scriptPubKey: </span><br><span class="line">&gt;OP_DUP</span><br><span class="line">&gt;OP_HASH160</span><br><span class="line">&gt;&lt;pubKeyHash&gt;</span><br><span class="line">&gt;OP_EQUALVERIFY</span><br><span class="line">&gt;OP_CHECKSIG</span><br></pre></td></tr></table></figure>
+<p>其次回顾`P2PKH中各个元素所占空间大小:</p>
+<table>
+<thead>
+<tr class="header">
+<th>scriptSig</th>
+<th>107 bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;sig&gt;</code></td>
+<td>72 bytes</td>
+</tr>
+<tr class="even">
+<td><code>&lt;pubKey&gt;</code></td>
+<td>33 bytes</td>
+</tr>
+<tr class="odd">
+<td>encode操作符(压栈)</td>
+<td>2 bytes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>scriptPubKey</th>
+<th>25 bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>OP_DUP</code></td>
+<td>1 bytes</td>
+</tr>
+<tr class="even">
+<td><code>OP_HASH160</code></td>
+<td>1 bytes</td>
+</tr>
+<tr class="odd">
+<td><code>&lt;pubKeyHash&gt;</code></td>
+<td>20 bytes</td>
+</tr>
+<tr class="even">
+<td><code>OP_EQUALVERIFY</code></td>
+<td>1 bytes</td>
+</tr>
+<tr class="odd">
+<td><code>OP_CHECKSIG</code></td>
+<td>1 bytes</td>
+</tr>
+<tr class="even">
+<td>encode操作符(压栈)</td>
+<td>1 bytes</td>
+</tr>
+</tbody>
+</table>
+<p>然后采用全局键索引表的新脚本: <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&gt;--- 输入脚本 scriptSig: </span><br><span class="line">&gt;&lt;sig&gt;</span><br><span class="line">&gt;&lt;pubKey&gt;</span><br><span class="line">&gt;--- 输出脚本 scriptPubKey: </span><br><span class="line">&gt;&lt;keyIndex&gt;</span><br><span class="line">&gt;OP_LOOKUP_KEY</span><br><span class="line">&gt;OP_CHECKSIG</span><br></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr class="header">
+<th>scriptSig</th>
+<th>107 bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;sig&gt;</code></td>
+<td>72 bytes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>scriptPubKey</th>
+<th>25 bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;keyIndex&gt;</code></td>
+<td>6 bytes</td>
+</tr>
+<tr class="even">
+<td><code>OP_LOOKUP_KEY</code></td>
+<td>1 bytes</td>
+</tr>
+<tr class="odd">
+<td><code>OP_CHECKSIG</code></td>
+<td>1 bytes</td>
+</tr>
+</tbody>
+</table>
+<p>对于<u>输入脚本</u>: 使用键索引后, 兑换交易不再需要提供<u>Public Key
+公钥</u>, 所以节省了33 bytes。</p>
+<p>对于<u>输出脚本</u>: 使用键索引后, 用 6 bytes 的索引替代了 20 bytes
+的<u>Public Key 公钥</u>,
+并且减少了两个<code>OP_CODE</code>操作符(<code>OP_CODE</code>均为1
+bytes), 那么总共节省了16 bytes。</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sig&gt;</span><br><span class="line">&lt;pubKey&gt;</span><br><span class="line">----</span><br><span class="line">&lt;keyIndex&gt;</span><br><span class="line">OP_LOOKUP_KEY</span><br><span class="line">OP_CHECKSIG</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;sig&gt; </span><br><span class="line">---</span><br><span class="line">OP_DUP</span><br><span class="line">OP_HASH160</span><br><span class="line">&lt;pubKeyHash&gt;</span><br><span class="line">OP_EQUALVERIFY</span><br><span class="line">OP_CHECKSIG</span><br></pre></td></tr></table></figure>
-<p><strong>23.e</strong>:</p>
+<p><strong>23.b</strong>: 一个 6 bytes 的键索引足够么?
+鉴于在第一个10年中创建了大约 5M 个独特的比特币地址,
+您预计在当前趋势下这种 6 bytes 的键索引能坚持多久?
+你认为它在未来会安全吗?</p>
 <blockquote>
-<p>Not Really, 以太坊是基于账户的, 已经存储过一次了。redirve pubKey from
-signature.</p>
+<p>已知键索引长度为 <span class="math inline">\(6 \ bytes = 48 \
+bits\)</span>, 那么将有 <span class="math inline">\(2^{48}\)</span>
+个键索引可用。
+我们又知道个目前的被索引占有速度是10年消耗5亿个比特币地址,
+也就是20年消耗10亿个比特币, 也就是大概 <span
+class="math inline">\(2^{30}\)</span>个键索引将在20年内耗尽。
+那么我们可以计算 <span class="math inline">\(2^{48}\)</span>
+个键索引将在: <span class="math inline">\(\frac{2^{48}}{2^{30}}*20 =
+20(2^{48-30}) \\ = 5242880\)</span> 也就是大概需要, 5百多万年才能耗尽。
+虽然从结果来看, <span class="math inline">\(2^{48}\)</span> 确实足够了。
+但这其实并不准确, 因为我们还要考虑到真实情况的上限。 目前全球有 <span
+class="math inline">\(2^{33}\)</span> 个人,
+如果我们假设每个人每天都生成1个地址, 那么需要: <span
+class="math inline">\(\frac{2^{48}}{2^{33}} / 365 = 89.775\)</span>,
+也就是大概在 <span class="math inline">\(90\)</span> 年内就会耗尽。
+所以有必要将键索引长增加到 <span class="math inline">\(8 \
+bytes\)</span> 或以上。</p>
+</blockquote>
+<p><strong>23.c</strong>: 解释这种方法可能的缺点。
+量化这种方法对验证者的额外成本, 并解释可能对系统进行的新攻击。 &gt;
+<strong>缺点</strong>: 如果<u>Public Key 公钥</u>不被重复使用,
+那么索引并无法发挥作用,
+起到节省交易空间的作用。并且这个方案的本质就是生成一个<u>全局键表</u>,
+那么这个表将会一直保留所有矿工的<u>Public Key 公钥</u>,
+除非增加内置的过期更新机制。 &gt; <strong>攻击</strong>:
+攻击者可以注册大量密钥并且从不使用它们，从而填满表格。</p>
+<p><strong>23.d</strong>:
+类似的方法对以太坊有意义吗？为什么或者为什么不？</p>
+<blockquote>
+<p>以太坊是一个基于账户的分类账，所以关键的信息只被存储一次。
+此外，由于以太坊在密钥恢复模式下的 ECDSA 验证期间重新获取它们的方式,
+<u>Public Key 公钥</u>永远不会存储在链上(Ethereum
+通过Signature重新推算出<u>Public Key 公钥</u>)。
+所以这个想法是行不通的。 但是以太坊仍然可以切换到按顺序分配地址的模型,
+而不是作为哈希值, 这将使得与 <strong>23.a</strong>
+部分的答案相当的节省。</p>
 </blockquote>
 <h2 id="aggregate-bls-signature-聚合签名">24.Aggregate BLS Signature
 聚合签名</h2>
 <blockquote>
-<p>聚合签名, 只需要一个签名, 而不是多个签名, 使用pairing函数,</p>
+<p>聚合签名, 只需要一个签名, 而不是多个签名, 使用<strong>Bilinear
+Pairing 双线性映射</strong>函数。 这基于 <strong>Boneh–Lynn–Shacham
+(BLS)</strong> 数字签名: 1. <span class="math inline">\(GenKey() \rarr
+x, g^{x}\)</span> - 椭圆曲线上的点，有时写为 <span
+class="math inline">\(x\)</span>, <span
+class="math inline">\(xG\)</span> - 与ECDSA类似 - <span
+class="math inline">\(Secret = x\)</span> (理解为私钥<span
+class="math inline">\(x\)</span>) - pk=<span
+class="math inline">\(g^{x}\)</span> (那么公钥就是<span
+class="math inline">\(g^{x}\)</span>) 2. <span
+class="math inline">\(Sign(x,m) \rarr H(m)^{x}\)</span> - 用Secret <span
+class="math inline">\(x\)</span> 对消息 <span
+class="math inline">\(m\)</span> 进行加密 -
+哈希函数必须产生<em>pseudrandom 伪随机</em>曲线点<span
+class="math inline">\(H(m)^x\)</span> 3. <span
+class="math inline">\(aggVerify(g^x, m_{1} \dots m_{m},
+\sigma_{*})\)</span> 1. <span class="math inline">\(aggVerify(y = g^x,
+m, \sigma=H(m)^x) \rarr e(g,\sigma) \overset{?}{=} e(g^x, H(m)) \\
+e(g,H(m)^x) \overset{?}{=} e(g^x, H(m)) \\ e(g, H(m))^{\color{red}x}
+\overset{?}{=} e(g, H(m))^{\color{red}x}\)</span> 2.
+双线性映射(曲线配对)函数: <span class="math inline">\(e\)</span> 3. 对
+<u>generator 生成器</u>: <span class="math inline">\(g\)</span> &amp;
+<u>signature 签名</u>: <span class="math inline">\(\sigma\)</span>
+进行双线性映射 - (<span class="math inline">\(g^{x}\)</span>
+理解为每个公钥) 4. 再对 <u>public key 公钥</u>: <span
+class="math inline">\(g^{x}\)</span> &amp; <u>pseudrandom
+伪随机曲线点</u>: <span class="math inline">\(H(m)^x\)</span>
+进行双线性映射 5. 对比 2 &amp; 3 的映射结果是否相等,
+如果相等证明<u>signature 签名</u>是就是有效的 6. 由于<span
+class="math inline">\(e\)</span>是<strong>Bilinear Pairing
+双线性映射</strong>, 即: <span class="math inline">\(e(g^a, h^b) = e(g,
+h)^{ab}\)</span> - 所以: <span class="math inline">\(e(g,\sigma)
+\overset{?}{=} e(g^x, H(m))\)</span> 可以写作: <span
+class="math inline">\(e(g, H(m))^{\color{red}x} \overset{?}{=} e(g,
+H(m))^{\color{red}x}\)</span> - 所以可以保证签名验证的正确性</p>
+<p>注意:
+BLS复杂度要比ECDSA高上一个数量级。在验证区块中1000笔交易的聚合签名时，仍需要进行1000次配对计算，这可能比使用ECDSA时对1000个单独签名进行验证还要慢。唯一的好处在于，可以在区块中放更多笔的交易，毕竟聚合签名只占32字节。
+BLS可聚合签名，<u>节省区块时间</u>，但对于<span
+class="math inline">\((m,n)\)</span>多重签名，需要通信进行初始化过程,
+并且采用双线性映射会导致<u>配对效率低下</u>。</p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 29%" />
+<col style="width: 30%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>椭圆曲线数字签名算法 ECDSA</th>
+<th>schnorr</th>
+<th>BLS</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>验证多重签名</td>
+<td>每个签名和公钥</td>
+<td>每笔交易的合并签名和公钥[1]</td>
+<td>每个区块的合并签名和公钥</td>
+</tr>
+<tr class="even">
+<td>随机数生成器</td>
+<td>指定随机点</td>
+<td>依赖随机数生成器</td>
+<td>不需要随机数生成器</td>
+</tr>
+<tr class="odd">
+<td>签名者通信</td>
+<td></td>
+<td>需要</td>
+<td>不需要</td>
+</tr>
+<tr class="even">
+<td>签名长度</td>
+<td>320 bits</td>
+<td>320 bits</td>
+<td>160 bits</td>
+</tr>
+</tbody>
+</table>
+<p align="center">
+Table: ECDSA、schnorr和BLS签名算法对比
+</p>
+</blockquote>
+<p><strong>24.a</strong>: 证明, 如果每个独立的签名能被验证,
+那么聚合签眼可以通过验证。 &gt; 首先根据上述聚合签名(<span
+class="math inline">\(\sigma_{*}\)</span>)的定义,
+基于双线性映射(曲线配对)函数 (<span class="math inline">\(e\)</span>):
+&gt; 对于每个<span class="math inline">\(i\)</span>: <span
+class="math inline">\(e(g, \sigma_{i}) = e(g^{x_{i}}, H(m_{i}))\)</span>
+&gt; 那么聚合签名可以被验证: <span class="math inline">\(e(g,
+\sigma_{*}) = \prod_{i} e(g^{x_{i}}, H(m_{i}))\)</span> &gt; 即: <span
+class="math inline">\(e(g, \sigma_{*}) = e(g, \prod_{i} \sigma{i}
+)\)</span> &gt; 根据<strong>Pairing corollary 映射推论</strong>,
+我们可以将指数(<span class="math inline">\(\prod_{i}\)</span> 乘积)提出,
+并得到: <span class="math inline">\(e(g, \sigma_{*}) = \prod_{i} e(g,
+\sigma{i} )\)</span> &gt; 那么我们可以得到: <span
+class="math inline">\(e(g, \sigma_{*}) = \prod_{i} e(g, H(m_{i})
+)\)</span> &gt; 即如果任意一个独立签名可以通过验证,
+那么聚合签名也可以通过验证。</p>
+<p><strong>24.b</strong>:
+聚合签名通过验证并不意味着所有个人签名都是有效的。如果对一个相同的消息(<span
+class="math inline">\(m\)</span>)进行聚合签名。 假设Alice有一个公钥<span
+class="math inline">\(K_1\)</span>,
+假设一个攻击者正尝试通过Alice的签名伪造一个对于相同消息(<span
+class="math inline">\(m\)</span>)的聚合签名。
+攻击者首先随机生成一个随机值(<span class="math inline">\(y\)</span>),
+并计算出<span class="math inline">\(g^{y}\)</span>。 随后攻击者将<span
+class="math inline">\(g^{y}/K_{1}\)</span>当作其公钥<span
+class="math inline">\(K_{2}\)</span>。即: <span
+class="math inline">\(K_{2} = g^{y}K_{1}^{-1}\)</span>。
+那么乘积(会撤销掉<span class="math inline">\(K_{1}^{-1}\)</span>): <span
+class="math inline">\(K_{1}K_{2} = g^{y}\)</span>。
+攻击者可以控制输入消息<span class="math inline">\(m\)</span>,
+并基于<span
+class="math inline">\(y\)</span>对消息进行哈希以得到聚合签名: <span
+class="math inline">\(\sigma_{*} = H(m)^{y}\)</span>
+请证明这个伪造的聚合签名可以通过验证: <span class="math inline">\(e(g,
+\sigma_{*}) = \prod_{i=1}^{2} e(K_{i}, H(m))\)</span> 注意:
+攻击者并不知道所生成的公钥<span
+class="math inline">\(K_{2}\)</span>对应的私钥。</p>
+<blockquote>
+<p>那么在本题需要证明: <span class="math inline">\(e(g, \sigma_{*}) =
+e(K_{1}, H(m)) e(K_{2}, H(m))\)</span> 是否成立。 根据聚合签: <span
+class="math inline">\(e(g, \sigma_{*}) = e(g, H(m)^{ {\color{red}y}
+})\)</span> 根据<strong>Bilinearity 双线性</strong>: <span
+class="math inline">\(e(g, \sigma_{*}) = e(g^{ {\color{red}y} },
+H(m))\)</span> 攻击者选择的<span class="math inline">\(K_{2}\)</span>:
+<span class="math inline">\(K_{1}K_{2} = g^{ {\color{red}y} }\)</span>,
+即: <span class="math inline">\(e(g, \sigma_{*}) = e(K_{1}K_{2},
+H(m))\)</span> 最后根据<strong>Pairing corollary 映射推论</strong>:
+<span class="math inline">\(e(K_{1}, H(m)) e(K_{2}, H(m))\)</span> 那么,
+这证明攻击者可以通过Alice的公钥<span
+class="math inline">\(K_{1}\)</span>, 以及攻击者选择的<span
+class="math inline">\(K_{2}\)</span>, 和消息(<span
+class="math inline">\(m\)</span>)伪造一个Alice 和 Attacker
+共同的聚合签名。</p>
+</blockquote>
+<p><strong>24.c</strong>:
+为了防止<strong>24.b</strong>中提到的这种伪造的发生,
+需要保证每个消息(<span class="math inline">\(m\)</span>)都是唯一的,
+即计算聚合签名(<span
+class="math inline">\(\sigma_{*}\)</span>)需要知道每个单独消息(<span
+class="math inline">\(m_{i}\)</span>)的签名(<span
+class="math inline">\(\sigma_{i}\)</span>),
+这在加密货币环境中执行是否合理?</p>
+<blockquote>
+<p>是的，这是合理的。因为对单个消息(<span
+class="math inline">\(m_{i}\)</span>)进行签名已经包含一个<strong>随机数
+nonce</strong>, 保证每个密钥 <span class="math inline">\(x_{i}\)</span>
+对每个独立的 (<span class="math inline">\(K_{i}\)</span>) 都是唯一的。
+<strong>随机数 nonce</strong>: <span class="math inline">\((x ||
+r)\)</span>, 如果nonce有32bytes的长度就足够保证不易发生冲突 (<span
+class="math inline">\(r = 256 bits\)</span>) 这样保证: <span
+class="math inline">\(GenKey() \rarr g^{x_{i}}\)</span>, 每个公钥 <span
+class="math inline">\(g^{x_i}\)</span> doushi 都是唯一的,
+并被用来对每一个消息(<span class="math inline">\(m_i\)</span>)进行签名:
+<span class="math inline">\(Sign(g^{x_{i}}, m_{i}) \rarr
+H(m_{i})^{x_{i}}\)</span> 这样只要发现: <span
+class="math inline">\(e(K_{1}, H(m))\)</span> 与 <span
+class="math inline">\(e(K_{2}, H(m))\)</span> 中的 (<span
+class="math inline">\(m\)</span>) 相同, 就可以阻止生成伪造聚合签名。
+另外一种思路是: 直接将<u>Private Key
+私钥</u>添加到每条正在签名的消息中。 即: 相比使用椭圆曲线上的点 <span
+class="math inline">\(g^{x}\)</span>, 另外加入(<span
+class="math inline">\(sk\)</span>): <span
+class="math inline">\(Sign(g^{x}, m, sk)\)</span></p>
 </blockquote>
 <h2 id="off-chain-payment-networks-链下支付网络">25.Off-Chain Payment
 Networks 链下支付网络</h2>
+<p>我们知道可以通过<strong>支付渠道网络</strong>来改善比特币的<strong>Scalability
+可扩展性</strong> 假设有 <span class="math inline">\(N\)</span> 个用户,
+并考虑两种<strong>支付渠道网络</strong>场景 (如下图所示)。</p>
 <p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png" alt="24soloff_chain" style="zoom:50%;" /></p>
+<ul>
+<li><strong>Distributed Model 分布式模型</strong>:
+每个用户之间都有一条通道</li>
+<li><strong>Hub-and-spoke Model 轴辐式模型</strong>:
+所有用户与中央枢纽之间都有一条通道</li>
+</ul>
+<p>假设所有支付渠道都是双向的。每个通道都有一个初始容量,
+余额可以在0与最大值之间双向偏离。
+如果执行的支付交易将通道余额增加到最大容量，则重置通道。
+我们将考虑一个简单的模型, 即随机一个用户每秒向不同的随机用户发送 <span
+class="math inline">\(1\)</span> 个比特币。 假设总共有 <span
+class="math inline">\(N\)</span> 个用户，每个用户愿意存入 <span
+class="math inline">\(M\)</span> 个比特币(每个人有 <span
+class="math inline">\(M\)</span> 个比特币)。</p>
+<p><strong>25.a</strong>: 对于以上2种<strong>支付渠道网络模型</strong>,
+<span class="math inline">\(N\)</span> 个用户一共需要多少条通道?</p>
+<blockquote>
+<ul>
+<li><strong>Hub-and-spoke Model 轴辐式模型</strong>: <span
+class="math inline">\(N\)</span> &gt; - <strong>Distributed Model
+分布式模型</strong>: <span class="math inline">\({ {N}\choose{2}} =
+N(N−1)/2\)</span></li>
+</ul>
+</blockquote>
+<p><strong>25.b</strong>: 对于以上2种<strong>支付渠道网络模型</strong>,
+假设用户将他们的总硬币数 <span class="math inline">\(M\)</span> 平分,
+每个通道的双向容量将是多少？注意：如果双向通道的容量为<span
+class="math inline">\(X\)</span>, 那么存入的币则为<span
+class="math inline">\(2X\)</span>。 &gt; 已知每个人有 <span
+class="math inline">\(M\)</span> 个比特币, 那么整个网络的比特币总数为:
+<span class="math inline">\(MN\)</span> &gt; 所以每条通道的容量 <span
+class="math inline">\(X\)</span> 为: &gt; - <strong>Hub-and-spoke Model
+轴辐式模型</strong>: &gt; - 总币数(<span
+class="math inline">\(MN\)</span>) ÷ 总人数<span
+class="math inline">\(N\)</span> ÷ 双向通道容量(<span
+class="math inline">\(2\)</span>) &gt; - <span
+class="math inline">\(M\frac{\frac{N}{N}}{2} = \frac{M}{2}\)</span> &gt;
+- <strong>Distributed Model 分布式模型</strong>: <span
+class="math inline">\(\frac{M/{ {N}\choose{2}}}{2}\)</span> &gt; -
+总币数(<span class="math inline">\(MN\)</span>) ÷ 总人数 <span
+class="math inline">\({ {N}\choose{2}}\)</span> ÷ 双向通道容量(<span
+class="math inline">\(2\)</span>) &gt; - <span
+class="math inline">\(N\frac{\frac{M}{\left(N\frac{\left(N-1\right)}{2}\right)}}{2}
+= \frac{M}{N-1}\)</span></p>
+<p><strong>25.c</strong>: 随机一笔交易被,
+某一段交易通道处理的概率为多少? &gt; - <strong>Hub-and-spoke Model
+轴辐式模型</strong>: &gt; - 首先, 总共有多少种独特的双向交易? &gt; -
+以图为例: <span class="math inline">\(\{ A \rarr B, A \rarr C, A \rarr
+D, B \rarr C, B \rarr D, C \rarr D \}: 共6种\)</span> &gt; -
+所以其实也是: <span class="math inline">\({N \choose 2} =
+N(N-1)/2\)</span> &gt; - 其次, 每种独特的双向交易用到的的交易类型有几种?
+&gt; - 以 <span class="math inline">\(A \rarr Hub\)</span> 为例: <span
+class="math inline">\(\{ A \rarr B, A \rarr C, A \rarr D \}\)</span>
+&gt; - 其他以此类推每种独特的双向交易可以处理: <span
+class="math inline">\(N-1\)</span> 3种交易 &gt; - 所以我们总共有 <span
+class="math inline">\(N(N-1)/2\)</span> 种不同的交易通道,
+对于每个用户都有 <span class="math inline">\(N-1\)</span>
+种不同的交易类型。 &gt; - 那么随机一笔交易被,
+某一段交易通道处理的概率为: <span
+class="math inline">\(\frac{N-1}{N(N-1)/2} =
+{\color{green}\frac{2}{N}}\)</span> &gt; - <strong>Distributed Model
+分布式模型</strong>: &gt; - 首先, 总共有多少种独特的双向交易?:
+与<strong>Hub-and-spoke Model 轴辐式模型</strong>相同为: <span
+class="math inline">\(N(N-1)/2\)</span> &gt; - 其次,
+每种独特的双向交易用到的的交易类型有几种? &gt; - 以 <span
+class="math inline">\(A \rarr B\)</span> 为例: 只有 <span
+class="math inline">\(\{ A \rarr B \}\)</span> 这一种交易类型 &gt; -
+其他以此类推每种独特的双向交易可以处理: 1 种交易 &gt; - 所以我们总共有
+<span class="math inline">\(N(N-1)/2\)</span> 种不同的交易通道,
+对于每个用户都有 <span class="math inline">\(1\)</span>
+种不同的交易类型。 &gt; - 那么随机一笔交易被,
+某一段交易通道处理的概率为: <span
+class="math inline">\(\frac{1}{N(N-1)/2} =
+{\color{green}\frac{2}{N(N-1)}}\)</span></p>
+<p><strong>25.d</strong>: 对于以上2种<strong>支付渠道网络模型</strong>,
+计算对于处理所有链上支付的长期<u>ScalabilityImprovement
+可扩展性改进</u>。 简单来说就是,
+计算所有支付都出现在链上时所需的<u>链上交易数量</u>与支付渠道模型中所需<u>链上交易数量</u>的比率。
+注意: 重置通道需要两个事务。 提示: <u>Theory of Random Walks
+随机游走理论</u>的一个有用事实是: <span
+class="math inline">\(nm\)</span> 是 "完成时间"(从 0 开始)的上下边界
+<span class="math inline">\((n, -m)\)</span></p>
 <h2 id="ethereum-micropayments-以太坊小额支付">26.Ethereum Micropayments
 以太坊小额支付</h2>
-<p><strong>26.e</strong>:</p>
-<blockquote>
-<p><img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png" alt="26eEthMicrosol" style="zoom:40%;" /></p>
-</blockquote>
+<p><u>Protocol for Serial Micropayments in Bitcoin
+比特币序列微支付协议</u>: Alice 想向 Bob 发起一系列付款，因此她将 <span
+class="math inline">\(n\)</span> 个单位的货币存入一个 <strong>ESCROW
+Account 托管账户</strong>, 该账户是 Alice 和 Bob 共享的多
+<strong>MutiSig Account 重签名账户</strong>。</p>
+<p>然后Alice反复对多笔交易进行签名:</p>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>Alice 返还</th>
+<th>Bob 收到</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tx-1</td>
+<td>n-1</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>Tx-2</td>
+<td>n-2</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>依此类推。 Alice可以随时停止发送交易, 而 Bob 签名&amp;公布:
+收到的最后一笔交易。 <code>time-locked</code> 时间锁的退款交易, 保证
+Alice 可以收已发起转账, 如果 Bob 超时未答复 (Bob 离线)。</p>
+<p>让我们考虑在以太坊中解决这个问题。实现上述逻辑非常容易。我们实际上可以添加一个功能使:
+每个小额支付只需要Hash, 而不是签名。
+这对于轻量级客户端来说是完美的(尽管初始化仍需要对消息签名)。
+该方案的工作原理如下: 1. Alice 选择一个随机数 <span
+class="math inline">\(X\)</span>, 然后计算 <span class="math inline">\(Y
+= H^{n}(X)\)</span> - 从(<span
+class="math inline">\(X\)</span>)开始重复执行(<span
+class="math inline">\(n\)</span>)次哈希函数(<span
+class="math inline">\(H\)</span>) - 例如: <span class="math inline">\(n
+= 2\)</span>, 那么重复执行 <span class="math inline">\(2\)</span> 次:
+<span class="math inline">\(Y = H(H(X))\)</span> 2. Alice 创建一个包含
+<span class="math inline">\(n\)</span> 个币的合约, 并将 <span
+class="math inline">\(Y\)</span> 值嵌入到合约中 - 同时将 <span
+class="math inline">\(Y\)</span> 发送给 Bob 3. Alice 将 <span
+class="math inline">\(Z\)</span> 值发送给 Bob - (<span
+class="math inline">\(Z = H^{n-k}(X)\)</span>), 以将 <span
+class="math inline">\(k\)</span> 个币 (<span class="math inline">\(k
+&lt; n\)</span>) 支付给 Bob。 - n-k, 因为例如: n = 10, k = 3, 那么 Alice
+转账3给 Bob 直到还剩(10-3=7)的时候会停止扣款。</p>
+<p><strong>26.a</strong>: 通过伪代码描述, 合约如何决定向 Alice 或 Bob
+发送多少币? 最后以调用 <code>SELFDESTRUCT</code> 函数来结束。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">首先 Bob 将 Alice 给他的 Z 值发送给合约</span><br><span class="line">合约收到 Z 开始执行: </span><br><span class="line"></span><br><span class="line">    current = Z</span><br><span class="line">    count = 0</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * 如果提交格式不正确的Z, 可能导致无限循环, 最后耗尽GAS;</span><br><span class="line">    * 更好的版本应该保证如果计算超过 n 个哈希, 则 break。</span><br><span class="line">    */</span><br><span class="line">    while True:</span><br><span class="line">        if current == Y:         // &lt;- 到达规定次数, 此处可能一直找不到Y, 导致Massive Loop</span><br><span class="line">            break</span><br><span class="line">        else: </span><br><span class="line">            current = H(current) // &lt;- 没达到规定次数, 继续执行(类似洋葱剥皮)</span><br><span class="line">            count += 1           // &lt;- 计数器 +1</span><br><span class="line">    // 根据计数器结果执行转账 </span><br><span class="line">    Bob.transfer(count)          </span><br><span class="line">    Alice.transfer(n - count)</span><br></pre></td></tr></table></figure>
+<p><strong>26.b</strong>: 描述Alice 如何实现一个 <strong>Front-running
+Attack 抢先攻击</strong>,
+试图让合约支付给鲍勃的费用低于她实际授权的金额。
+又该如何设计合约来防止这种攻击? &gt; <strong>攻击</strong>: 由于Y值是由
+Alice 计算的, 那么 Alice 可以直接将 Y 值当作 Z 发送给合约,
+那么合约将直接终止, 这样 Bob 无法获得任何转账。 &gt;
+<strong>防范</strong>: &gt; 1. 规定 Z 值只能由 Bob 提供,
+<code>require(msg.sender = Bob)</code> &gt; 2. 或如果任何人都可以提供 Z
+值, 那么可以增加 <u>Challenge Period 挑战期</u> 来选出在到达 Y
+值之前需要哈嘻次数最多的 Z 值。</p>
+<p><strong>26.c</strong>: 哈希函数应该满足什么安全属性来确保 Bob
+不能窃取比 Alice 打算给他的钱更多的钱？ &gt;
+需要<strong>原像防御(Pre-Image resistance)</strong>:
+就是任意给一个hash值<span
+class="math inline">\({\color{green}{Z}}\)</span>,
+你很难破解出它的原像<span
+class="math inline">\({\color{green}{X}}\)</span>, 使得<span
+class="math inline">\(H{\color{red}{^{n-k}(X_{Bob})}}\)</span>=(<span
+class="math inline">\({\color{green}{Z}}\)</span>),
+这个难度一般是NP难度的, 也就是所谓的单向函数。 &gt; -
+<strong>强碰撞防御(Collision resistance)</strong> 比
+<strong>原像防御(Pre-Image resistance)</strong> 的安全性更高: &gt; -
+<strong>强碰撞防御(Collision resistance)</strong>:
+就是你很难找到<u>两个不同的</u><span
+class="math inline">\({\color{green}{X_{Alice}}}\)</span> 和 <span
+class="math inline">\({\color{red}{X_{Bob}}}\)</span>, 使得<span
+class="math inline">\(H{\color{red}{^{n-k}(X_{Bob})}}=H^{n-k}({\color{green}{X_{Alice}}})\)</span>。
+&gt; - 但由于 <span class="math inline">\(X\)</span> 已经是一个由 Alice
+选择的 nonce 随机数, 已经做到了强防碰撞;
+所以主要需要考虑<strong>原像防御</strong>。</p>
+<p><strong>26.d</strong>: 对于给定的 <span
+class="math inline">\(n\)</span> 和 <span
+class="math inline">\(k\)</span>, 这个协议有多昂贵: 在分配资金之前,
+合约需要计算多少哈希? Alice 和 Bob 需要存储多少数据? &gt; Alice 和 Bob
+都只需要存储一个值 &gt; Alice
+也可能会选择存储更多以限制她每次支付计算的哈希数,
+并存在一个线性的时间复杂度&amp;空间复杂度之间的权衡 &gt; 合约只需要存储
+Y 值, 所以空间复杂度只有: <span class="math inline">\(O(1)\)</span>,
+但合约需要执行 <span class="math inline">\(k\)</span> 次哈希函数,
+所以时间复杂度为: <span class="math inline">\(O(n)\)</span>。</p>
+<p><strong>26.e</strong>:
+在实践中，我们希望最大限度地减少合约消耗的资源，因为 gas
+价格昂贵。由于上述方案是一个线性链，可以使用树结构进行改进。
+描述这个树结构; 并就 <span class="math inline">\(n\)</span> 和 <span
+class="math inline">\(k\)</span> 而言, 给出对于Alice, Bob &amp; Contrac
+来说这个树结构的存储空间和计算时间的成本分别是多少? &gt; 这个树结构就是:
+Melkle Patricia Trie (MPT) &gt; 为简单起见, 假设<span
+class="math inline">\(n\)</span>的最大容量是<span
+class="math inline">\(2\)</span>的偶数次幂 (例如: <span
+class="math inline">\(2^{2}, 2^{4}, 2^{8}, \dots\)</span>) &gt; Alice
+对一棵深度为 <span class="math inline">\(\log(n)\)</span>, 叶子节点为
+<span class="math inline">\(y_{i}=H(x_{i})\)</span> [<span
+class="math inline">\(x_{i}\)</span>是随机值] 的MPT树进行计算。 &gt;
+为了节省空间，Alice 可以伪随机地生成这些 <span
+class="math inline">\(x_{i}\)</span> 值; 例如: 通过 <span
+class="math inline">\(PRG(i, key)\)</span> 函数生成 Alice 所需的所有
+<u>Secret Key 密钥</u>。 随后 Alice 可以计算这棵树的 <strong>Merkle Root
+默克尔根</strong> <span class="math inline">\(r\)</span>
+并将其发布到链上。 &gt; 那么 Alice 可以通过将 <span
+class="math inline">\(x_{k}\)</span> 发送给 Bob (<span
+class="math inline">\(k\)</span>: 为需要转账的金额) 并且包含对应的
+<strong>Merkle Inclusion Proof 默克尔包含证明</strong>, 那么总计为发送了
+<span class="math inline">\(1 + \log(n)\)</span> 个值给 Bob (<span
+class="math inline">\(\log(n)\)</span>: 为默克尔树的深度,
+同样也是默克尔包含证明的所需步数)。 &gt; 对于 Bob 他只需将收到的
+<strong>Merkle Inclusion Proof 默克尔包含证明</strong> (<span
+class="math inline">\(\log(n)\)</span>) 发送给contract, 并进行 <span
+class="math inline">\(O(\log(n))\)</span> 次哈希计算。 &gt;
+<img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png" alt="26eEthMicrosol" style="zoom:40%;" />
+&gt; 如上图所示: 注意, Alice 生成的 <span
+class="math inline">\(x_i\)</span> 值不能直接存放在 MPT 的叶子结点,
+因为这样会导致 <span class="math inline">\(x_{i}\)</span> 值的不安全。
+例如: 如果将 <span class="math inline">\(x_{6}, x_{7}\)</span>
+直接存放在 <span class="math inline">\(y_{6}, y_{7}\)</span> 的位置,
+那么攻击者可以利用已知的 <span class="math inline">\(x_{6}\)</span>
+的包含证明去揭露 <span class="math inline">\(x_{7}\)</span> 的值。
+所以需要像比特币中 MPT 存储交易一样, 将每一个 <span
+class="math inline">\(x_{i}\)</span> 对应到一个叶子结点 <span
+class="math inline">\(y_{i}\)</span> 上。</p>
 
   </div>
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">17.6k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">73</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">22.5k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">93</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
