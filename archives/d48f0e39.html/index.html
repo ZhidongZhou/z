@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-07T07:29:26.241Z">
+<meta property="article:modified_time" content="2022-06-07T09:01:24.008Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -68,9 +68,9 @@
     
     
 <!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
-<link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
 <!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="ZDZ" type="application/atom+xml">
 </head>
 
@@ -2873,9 +2873,9 @@ class="math inline">\(M\)</span> 个比特币)。</p>
 <blockquote>
 <ul>
 <li><strong>Hub-and-spoke Model 轴辐式模型</strong>: <span
-class="math inline">\(N\)</span> &gt; - <strong>Distributed Model
-分布式模型</strong>: <span class="math inline">\({ {N}\choose{2}} =
-N(N−1)/2\)</span></li>
+class="math inline">\(N\)</span></li>
+<li><strong>Distributed Model 分布式模型</strong>: <span
+class="math inline">\({ {N}\choose{2}} = N(N−1)/2\)</span></li>
 </ul>
 </blockquote>
 <p><strong>25.b</strong>: 对于以上2种<strong>支付渠道网络模型</strong>,
@@ -2914,7 +2914,7 @@ class="math inline">\(N(N-1)/2\)</span> 种不同的交易通道,
 种不同的交易类型。 &gt; - 那么随机一笔交易被,
 某一段交易通道处理的概率为: <span
 class="math inline">\(\frac{N-1}{N(N-1)/2} =
-{\color{green}\frac{2}{N}}\)</span> &gt; - <strong>Distributed Model
+{\color{green}{\frac{2}{N}}}\)</span> &gt; - <strong>Distributed Model
 分布式模型</strong>: &gt; - 首先, 总共有多少种独特的双向交易?:
 与<strong>Hub-and-spoke Model 轴辐式模型</strong>相同为: <span
 class="math inline">\(N(N-1)/2\)</span> &gt; - 其次,
@@ -2927,15 +2927,18 @@ class="math inline">\(\{ A \rarr B \}\)</span> 这一种交易类型 &gt; -
 种不同的交易类型。 &gt; - 那么随机一笔交易被,
 某一段交易通道处理的概率为: <span
 class="math inline">\(\frac{1}{N(N-1)/2} =
-{\color{green}\frac{2}{N(N-1)}}\)</span></p>
+{\color{green}{\frac{2}{N(N-1)}}}\)</span></p>
 <p><strong>25.d</strong>: 对于以上2种<strong>支付渠道网络模型</strong>,
 计算对于处理所有链上支付的长期<u>ScalabilityImprovement
-可扩展性改进</u>。 简单来说就是,
-计算所有支付都出现在链上时所需的<u>链上交易数量</u>与支付渠道模型中所需<u>链上交易数量</u>的比率。
-注意: 重置通道需要两个事务。 提示: <u>Theory of Random Walks
-随机游走理论</u>的一个有用事实是: <span
-class="math inline">\(nm\)</span> 是 "完成时间"(从 0 开始)的上下边界
-<span class="math inline">\((n, -m)\)</span></p>
+可扩展性改进</u>。简单来说就是,
+计算所有支付都出现在链上时所需的<u>链上交易数量</u>与支付渠道模型中所需<u>链上交易数量</u>的比率。</p>
+<p>注意: 重置通道需要两个事务。</p>
+<p>提示: <u>Theory of Random Walks 随机游走理论</u>的一个有用事实是:
+<span class="math inline">\(nm\)</span> 是 "完成时间"(从 0
+开始)的上下边界 <span class="math inline">\((n, -m)\)</span></p>
+<blockquote>
+<p>TBD</p>
+</blockquote>
 <h2 id="ethereum-micropayments-以太坊小额支付">26.Ethereum Micropayments
 以太坊小额支付</h2>
 <p><u>Protocol for Serial Micropayments in Bitcoin
@@ -3029,51 +3032,52 @@ class="math inline">\(H{\color{red}{^{n-k}(X_{Bob})}}=H^{n-k}({\color{green}{X_{
 class="math inline">\(n\)</span> 和 <span
 class="math inline">\(k\)</span>, 这个协议有多昂贵: 在分配资金之前,
 合约需要计算多少哈希? Alice 和 Bob 需要存储多少数据? &gt; Alice 和 Bob
-都只需要存储一个值 &gt; Alice
+都只需要存储一个值 &gt; &gt; Alice
 也可能会选择存储更多以限制她每次支付计算的哈希数,
-并存在一个线性的时间复杂度&amp;空间复杂度之间的权衡 &gt; 合约只需要存储
-Y 值, 所以空间复杂度只有: <span class="math inline">\(O(1)\)</span>,
-但合约需要执行 <span class="math inline">\(k\)</span> 次哈希函数,
-所以时间复杂度为: <span class="math inline">\(O(n)\)</span>。</p>
+并存在一个线性的时间复杂度&amp;空间复杂度之间的权衡 &gt; &gt;
+合约只需要存储 Y 值, 所以空间复杂度只有: <span
+class="math inline">\(O(1)\)</span>, 但合约需要执行 <span
+class="math inline">\(k\)</span> 次哈希函数, 所以时间复杂度为: <span
+class="math inline">\(O(n)\)</span>。</p>
 <p><strong>26.e</strong>:
 在实践中，我们希望最大限度地减少合约消耗的资源，因为 gas
 价格昂贵。由于上述方案是一个线性链，可以使用树结构进行改进。
 描述这个树结构; 并就 <span class="math inline">\(n\)</span> 和 <span
 class="math inline">\(k\)</span> 而言, 给出对于Alice, Bob &amp; Contrac
 来说这个树结构的存储空间和计算时间的成本分别是多少? &gt; 这个树结构就是:
-Melkle Patricia Trie (MPT) &gt; 为简单起见, 假设<span
+Melkle Patricia Trie (MPT) &gt; &gt; 为简单起见, 假设<span
 class="math inline">\(n\)</span>的最大容量是<span
 class="math inline">\(2\)</span>的偶数次幂 (例如: <span
-class="math inline">\(2^{2}, 2^{4}, 2^{8}, \dots\)</span>) &gt; Alice
-对一棵深度为 <span class="math inline">\(\log(n)\)</span>, 叶子节点为
-<span class="math inline">\(y_{i}=H(x_{i})\)</span> [<span
+class="math inline">\(2^{2}, 2^{4}, 2^{8}, \dots\)</span>) &gt; &gt;
+Alice 对一棵深度为 <span class="math inline">\(\log(n)\)</span>,
+叶子节点为 <span class="math inline">\(y_{i}=H(x_{i})\)</span> [<span
 class="math inline">\(x_{i}\)</span>是随机值] 的MPT树进行计算。 &gt;
-为了节省空间，Alice 可以伪随机地生成这些 <span
+&gt; 为了节省空间，Alice 可以伪随机地生成这些 <span
 class="math inline">\(x_{i}\)</span> 值; 例如: 通过 <span
 class="math inline">\(PRG(i, key)\)</span> 函数生成 Alice 所需的所有
-<u>Secret Key 密钥</u>。 随后 Alice 可以计算这棵树的 <strong>Merkle Root
-默克尔根</strong> <span class="math inline">\(r\)</span>
-并将其发布到链上。 &gt; 那么 Alice 可以通过将 <span
-class="math inline">\(x_{k}\)</span> 发送给 Bob (<span
+<u>Secret Key 密钥</u>。 随后 Alice 可以计算这棵树 &gt; &gt;
+<strong>Merkle Root 默克尔根</strong> <span
+class="math inline">\(r\)</span> 并将其发布到链上。 &gt; &gt; 那么 Alice
+可以通过将 <span class="math inline">\(x_{k}\)</span> 发送给 Bob (<span
 class="math inline">\(k\)</span>: 为需要转账的金额) 并且包含对应的
 <strong>Merkle Inclusion Proof 默克尔包含证明</strong>, 那么总计为发送了
 <span class="math inline">\(1 + \log(n)\)</span> 个值给 Bob (<span
 class="math inline">\(\log(n)\)</span>: 为默克尔树的深度,
-同样也是默克尔包含证明的所需步数)。 &gt; 对于 Bob 他只需将收到的
+同样也是默克尔包含证明的所需步数)。 &gt; &gt; 对于 Bob 他只需将收到的
 <strong>Merkle Inclusion Proof 默克尔包含证明</strong> (<span
 class="math inline">\(\log(n)\)</span>) 发送给contract, 并进行 <span
-class="math inline">\(O(\log(n))\)</span> 次哈希计算。 &gt;
+class="math inline">\(O(\log(n))\)</span> 次哈希计算。 &gt; &gt;
 <img src="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png" alt="26eEthMicrosol" style="zoom:40%;" />
-&gt; 如上图所示: 注意, Alice 生成的 <span
+&gt; &gt; 如上图所示: 注意, Alice 生成的 <span
 class="math inline">\(x_i\)</span> 值不能直接存放在 MPT 的叶子结点,
-因为这样会导致 <span class="math inline">\(x_{i}\)</span> 值的不安全。
-例如: 如果将 <span class="math inline">\(x_{6}, x_{7}\)</span>
-直接存放在 <span class="math inline">\(y_{6}, y_{7}\)</span> 的位置,
-那么攻击者可以利用已知的 <span class="math inline">\(x_{6}\)</span>
-的包含证明去揭露 <span class="math inline">\(x_{7}\)</span> 的值。
-所以需要像比特币中 MPT 存储交易一样, 将每一个 <span
-class="math inline">\(x_{i}\)</span> 对应到一个叶子结点 <span
-class="math inline">\(y_{i}\)</span> 上。</p>
+因为这样会导致 <span class="math inline">\(x_{i}\)</span>
+值的不安全。例如: 如果将 <span class="math inline">\(x_{6},
+x_{7}\)</span> 直接存放在 <span class="math inline">\(y_{6},
+y_{7}\)</span> 的位置, 那么攻击者可以利用已知的 <span
+class="math inline">\(x_{6}\)</span> 的包含证明去揭露 <span
+class="math inline">\(x_{7}\)</span> 的值。所以需要像比特币中 MPT
+存储交易一样, 将每一个 <span class="math inline">\(x_{i}\)</span>
+对应到一个叶子结点 <span class="math inline">\(y_{i}\)</span> 上。</p>
 
   </div>
     <hr>
