@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="1.Merkle Trees 默克尔树 蓝色代表 Leaf Node 叶子结点, 红色代表 Internal Node 内部节点 1.a: 需要通过哪些节点证明节点 7 (Node 7)是包含在集合中的? 证明过程中需要重新计算哪些节点?   Inclusion Proof 包含证明  首先证明节点 7被包含在集合中需要通过 Merkle Proof 默克尔证明: 通过节点 7自己 &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="COMP90088 题库">
+<meta property="og:title" content="COMP90088 研讨题">
 <meta property="og:url" content="https://yumtaro.com/archives/d48f0e39.html/index.html">
 <meta property="og:site_name" content="ZDZ">
 <meta property="og:description" content="1.Merkle Trees 默克尔树 蓝色代表 Leaf Node 叶子结点, 红色代表 Internal Node 内部节点 1.a: 需要通过哪些节点证明节点 7 (Node 7)是包含在集合中的? 证明过程中需要重新计算哪些节点?   Inclusion Proof 包含证明  首先证明节点 7被包含在集合中需要通过 Merkle Proof 默克尔证明: 通过节点 7自己 &amp;">
@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-07T15:37:26.750Z">
+<meta property="article:modified_time" content="2022-06-08T09:16:59.485Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -52,7 +52,7 @@
         
     
     <!-- title -->
-    <title>COMP90088 题库</title>
+    <title>COMP90088 研讨题</title>
     <!-- styles -->
     
 <link rel="stylesheet" href="/css/style.css">
@@ -116,16 +116,16 @@
     <div id="share" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/archives/d48f0e39.html/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://yumtaro.com/archives/d48f0e39.html/&text=COMP90088 题库"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/d48f0e39.html/&is_video=false&description=COMP90088 题库"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=COMP90088 题库&body=Check out this article: https://yumtaro.com/archives/d48f0e39.html/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/d48f0e39.html/&name=COMP90088 题库&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/d48f0e39.html/&t=COMP90088 题库"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://yumtaro.com/archives/d48f0e39.html/&text=COMP90088 研讨题"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/d48f0e39.html/&is_video=false&description=COMP90088 研讨题"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=COMP90088 研讨题&body=Check out this article: https://yumtaro.com/archives/d48f0e39.html/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/d48f0e39.html/&name=COMP90088 研讨题&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/d48f0e39.html/&t=COMP90088 研讨题"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -167,7 +167,7 @@ Networks 链下支付网络</span></a></li><li class="toc-item toc-level-2"><a c
   <header>
     
     <h1 class="posttitle" itemprop="name headline">
-        COMP90088 题库
+        COMP90088 研讨题
     </h1>
 
     <div class="meta">
@@ -186,7 +186,7 @@ Networks 链下支付网络</span></a></li><li class="toc-item toc-level-2"><a c
       <!-- 访问计算 -->
       
     <div class="article-tag">
-        <span id="/archives/d48f0e39.html/" class="leancloud_visitors" data-flag-title="COMP90088 题库">                    
+        <span id="/archives/d48f0e39.html/" class="leancloud_visitors" data-flag-title="COMP90088 研讨题">                    
             <span class="post-meta-item-icon">
             <i class="fa fa-eye"></i>
             </span>
@@ -2869,7 +2869,7 @@ Networks 链下支付网络</h2>
 <p>我们知道可以通过<strong>链下支付渠道网络</strong>来改善比特币的<strong>Scalability
 可扩展性</strong>: - 在链下使用微支付通道网络处理大部分交易,
 从而解决比特币交易<u>Throughput 吞吐量</u>过小的问题; -
-并且由于交易都是在支付通道里处理的，那么每笔链下无需等待多次区块确认,
+并且由于交易都是在支付通道里处理的, 那么每笔链下无需等待多次区块确认,
 从而解决了比特币交易<u>Latency 延迟</u>的问题</p>
 <p>那么假设有 <span class="math inline">\(N\)</span> 个用户,
 考虑两种<strong>联系支付渠道网络</strong>场景 (如下图所示)。</p>
@@ -2980,8 +2980,9 @@ class="math inline">\(\frac{1}{N(N-1)/2} =
 最后只有在一个余额到达 <span class="math inline">\(\pm{n}\)</span> 之后,
 通道才会被重置。</p>
 <p>注意: 在任何情况下无论通道的数量是多少,
-每次支付都只会随机选择一个通道处理支付。在稳定状态下，每一笔交易都处在生命周期中的某个随机点;
-每处理一笔额外的支付, 可能导致发生重置的概率在任何时候都是保持恒定的。
+每次支付都只会随机选择一个通道处理支付。在稳定状态下,
+每一笔交易都处在生命周期中的某个随机点; 每处理一笔额外的支付,
+可能导致发生重置的概率在任何时候都是保持恒定的。
 也就是说每个新的支付导致发生重置概率是恒定的: <span
 class="math inline">\(\frac{1}{交易通过某条通道的概率}\)</span></p>
 <blockquote>
@@ -2991,18 +2992,62 @@ class="math inline">\(1/ {\color{green}{\frac{2}{N}}} =
 {\color{green}{\frac{N}{2}}}\)</span>
 <ul>
 <li>已知初始通道容量为: <span
-class="math inline">\(\frac{M}{2}\)</span></li>
-<li>预期在通道执行 <span class="math inline">\(\frac{M^{2}}{4}\)</span>
-次支付后, 通道会被重置。</li>
+class="math inline">\(\frac{M}{2}\)</span>, 即通道的上下边界为 <span
+class="math inline">\(\pm{\frac{M}{2}}\)</span></li>
+<li>并且, 对于上下边界 <span class="math inline">\((n, -n)\)</span>,
+在发生重置之前需要经历: <span class="math inline">\(N^{2}\)</span>
+的时间</li>
+<li>所以预期在通道执行 <span class="math inline">\((\frac{M}{2})^{2} =
+\frac{M^{2}}{4}\)</span> 次支付后, 通道会被重置</li>
+<li>由于在轴辐式模型中每笔次往返支付需要经历<span
+class="math inline">\(2\)</span>条通道, 所以预计 <span
+class="math inline">\(\frac{M^{2}}{4} / 2 = \frac{M^{2}}{8}\)</span>
+次支付后, 通道会被重置</li>
+<li>最后因为每笔往返支付需要<span
+class="math inline">\(2\)</span>比交易, 所以预计: <span
+class="math inline">\(\frac{M^{2}}{8} / 2 =
+{\color{green}{\frac{M^{2}}{16}}}\)</span> 次交易后通道会被重置</li>
+<li>即在链下执行了: <span
+class="math inline">\({\color{green}{\frac{M^{2}}{16}}}\)</span> 次交易,
+再发不到链上, 从而改善了可扩展性。</li>
 </ul></li>
 <li><strong>Distributed Model 分布式模型</strong>: <span
-class="math inline">\(1 /
-{\color{green}{\frac{2}{N(N-1)}}}\)</span></li>
+class="math inline">\(1 / {\color{green}{\frac{2}{N(N-1)}}} =
+{\color{green}{\frac{N(N-1)}{2}}}\)</span>
+<ul>
+<li>已知初始通道容量为: <span
+class="math inline">\(\frac{M}{N-1}\)</span>, 即通道的上下边界为 <span
+class="math inline">\(\pm{\frac{M}{N-1}}\)</span></li>
+<li>所以预期在通道执行 <span class="math inline">\((\frac{M}{N-1})^{2} =
+\frac{M^2}{(N-1)^2}\)</span> 次支付后, 通道会被重置</li>
+<li>分布式模型中每笔次往返支付仅需经历<span
+class="math inline">\(1\)</span>条通道</li>
+<li>最后因为每笔往返支付需要<span
+class="math inline">\(2\)</span>比交易, 所以预计: <span
+class="math inline">\(\frac{M^2}{(N-1)^2} / 2 =
+{\color{green}{\frac{M^2}{2(N-1)^2}}}\)</span> 次交易后通道会被重置</li>
+<li>即在链下执行了: <span
+class="math inline">\({\color{green}{\frac{M^2}{2(N-1)^2}}}\)</span>
+次交易, 再发不到链上, 从而改善了可扩展性。</li>
+</ul></li>
 </ul>
 </blockquote>
+<p><strong>25.e</strong>: Hub-and-spoke Model 轴辐式模型有哪些缺点?</p>
 <blockquote>
-<p>TBD</p>
+<p>不难看出, 每笔支付都需要通过中心点。 对于这样一个过渡中心化的模型,
+一旦中心点出现故障, 所有交易都无法被处理。 所以该模型的可靠性偏差。
+并且中心点可以了解每个人的渠道使用模式。 由于没有中心点就无法处理支付,
+中心点可以审查或收取高额费用。</p>
 </blockquote>
+<p><strong>25.f</strong>:
+为什么这个问题中的随机支付模型是不现实的？简要描述如何通过利用更现实的付款分配来提高效率。
+&gt; 每一个用户,
+可能永远都不会向网络中绝大多数的其他用户发起支付。所以事实上,
+无法知道所有用户的空间。 所以现实中,
+一个用户只在第一次与另一个用户交易时开启一个支付通道,
+而不是提前向所有用户开放通道。 &gt;
+并且现实中用户对通道容量的分配很可能是不均匀的,
+用户会将更多容量放在常用的通道上。</p>
 <h2 id="ethereum-micropayments-以太坊小额支付">26.Ethereum Micropayments
 以太坊小额支付</h2>
 <p><u>Protocol for Serial Micropayments in Bitcoin
@@ -3157,8 +3202,8 @@ class="math inline">\(x_{7}\)</span> 的值。所以需要像比特币中 MPT
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">22.8k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">94</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">23.4k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">96</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
@@ -3265,16 +3310,16 @@ Networks 链下支付网络</span></a></li><li class="toc-item toc-level-2"><a c
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://yumtaro.com/archives/d48f0e39.html/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://yumtaro.com/archives/d48f0e39.html/&text=COMP90088 题库"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/d48f0e39.html/&is_video=false&description=COMP90088 题库"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=COMP90088 题库&body=Check out this article: https://yumtaro.com/archives/d48f0e39.html/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 题库"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/d48f0e39.html/&name=COMP90088 题库&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/d48f0e39.html/&t=COMP90088 题库"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://yumtaro.com/archives/d48f0e39.html/&text=COMP90088 研讨题"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://yumtaro.com/archives/d48f0e39.html/&is_video=false&description=COMP90088 研讨题"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=COMP90088 研讨题&body=Check out this article: https://yumtaro.com/archives/d48f0e39.html/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://yumtaro.com/archives/d48f0e39.html/&title=COMP90088 研讨题"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://yumtaro.com/archives/d48f0e39.html/&name=COMP90088 研讨题&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://yumtaro.com/archives/d48f0e39.html/&t=COMP90088 研讨题"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
@@ -3300,38 +3345,50 @@ Networks 链下支付网络</span></a></li><li class="toc-item toc-level-2"><a c
             theme: 'default',
             "flowchart": {
               curve: 'basis'
-          }
+            }
           });
         }
       </script>
-    
+      
 
-    <!-- 添加代码高亮自定义 highlight.js -->
-    <!--  -->
+        <!-- 添加代码高亮自定义 highlight.js -->
+        <!--  -->
   </div>
   <div class="footer-left">
     Copyright &copy;
-    
-    
-    2020-2022
-    Darren Z
+      
+        
+          2020-2022
+            Darren Z
   </div>
   <div class="footer-right">
     <nav>
       <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/archives/">Posts</a></li>
-         
-          <li><a href="/categories/">Categories</a></li>
-         
-          <li><a href="/tags/">Tags</a></li>
-         
-          <li><a href="/search/">Search</a></li>
         
+          <li><a href="/">
+              Home
+            </a></li>
+          
+          <li><a href="/about/">
+              About
+            </a></li>
+          
+          <li><a href="/archives/">
+              Posts
+            </a></li>
+          
+          <li><a href="/categories/">
+              Categories
+            </a></li>
+          
+          <li><a href="/tags/">
+              Tags
+            </a></li>
+          
+          <li><a href="/search/">
+              Search
+            </a></li>
+          
       </ul>
     </nav>
   </div>
