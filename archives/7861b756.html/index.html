@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205191820005.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205201146851.png">
 <meta property="article:published_time" content="2022-04-23T08:06:37.000Z">
-<meta property="article:modified_time" content="2022-06-08T09:54:54.737Z">
+<meta property="article:modified_time" content="2022-06-08T11:04:47.877Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -981,6 +981,8 @@ POST) ⽅法需要<strong>Pre-Flight 预检</strong>）</li>
 是正确的</li>
 <li>然后依次类推到第2位, 第三位。</li>
 </ol>
+<p>用Python 记录请求时间:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> multiprocessing <span class="keyword">as</span> mp</span><br><span class="line"></span><br><span class="line">usernames = [<span class="string">&quot;admin&quot;</span>, <span class="string">&quot;user1&quot;</span>, <span class="string">&quot;...&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login_time</span>(<span class="params">username</span>):</span></span><br><span class="line">    url = <span class="string">&quot;&#123;URL&#125;&quot;</span></span><br><span class="line">    data = &#123;<span class="string">&quot;username&quot;</span>: username, <span class="string">&quot;password&quot;</span>: pwd&#125;</span><br><span class="line">    start = time.time()</span><br><span class="line">    requests.post(url, data)</span><br><span class="line">    end = time.time()</span><br><span class="line">    <span class="built_in">print</span>(username, <span class="string">&quot;&quot;</span> <span class="keyword">if</span> end - start &gt; <span class="number">1</span> <span class="keyword">else</span> <span class="string">&quot;username not exists&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> end - start</span><br><span class="line"></span><br><span class="line">pool = mp.Pool()</span><br><span class="line">pool.<span class="built_in">map</span>(login_time, usernames)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="format-string-attack">Format String Attack</h2>
 <p><strong>定义</strong></p>
 <blockquote>
@@ -1374,7 +1376,8 @@ Digest方式使用加密的密码，这种方法更加安全，但是_技术还�
 - 认证字段: realm</p>
 <p><strong>用户名枚举</strong>:
 攻击者可以通过枚举用户名来检测账号是否存在;</p>
-<p>一般没有什么危害, 除非一些类似于 Ashley Madison 这种网站</p>
+<p>一般没有什么危害, 除非一些类似于 Ashley Madison 这种网站 (泄漏100G的:
+用户名, email, 信用卡信息等)</p>
 <p>预防措施: 无论用户名是否存在, 返回相同结果;
 限制尝试频率(例如找回密码中通过输入邮箱尝试; 应当限制为: 尝试达到3次;
 然后停用一天)。</p>
@@ -1422,7 +1425,7 @@ Rule出⼝规则</strong><br/><br/>禁⽤未使⽤的 URL
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">6.5k</span> Words</div>
+   <div>Posts Contains: <span class="post-count">6.6k</span> Words</div>
    <!-- <div>Reading Time: <span class="post-count">30</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
