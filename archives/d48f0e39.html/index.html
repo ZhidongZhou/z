@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-08T09:16:59.485Z">
+<meta property="article:modified_time" content="2022-06-08T10:31:49.523Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -783,7 +783,7 @@ E\)</span></td>
 <p><strong>5.a</strong>: 在交易<em>Tx-5</em>之后, <span
 class="math inline">\({A,B,C,E,E}\)</span> 5个键, 各控制多少钱?</p>
 <blockquote>
-<p>排除掉在其他交易中被再次作为Inputs的<span
+<p>排除掉在其他交易中被再发布为Inputs的<span
 class="math inline">\(\color{red}{Outputs}\)</span></p>
 <p><span class="math inline">\(\{A:16, B:13, C:1, D:9,
 E:7\}\)</span>:</p>
@@ -798,7 +798,7 @@ E:7\}\)</span>:</p>
 <p><strong>5.b</strong>: 交易<em>Tx-5</em>之后的 UTXO
 集合的状态是什么?</p>
 <blockquote>
-<p>排除掉在其他交易中被再次作为Inputs的<span
+<p>排除掉在其他交易中被再发布为Inputs的<span
 class="math inline">\(\color{red}{Outputs}\)</span>,
 剩下的<strong>未花费的交易输出(UTXO)</strong>:</p>
 <p><span class="math inline">\(\{2[0], 2[1], 3[0], 3[1], 3[3], 4[0],
@@ -1203,7 +1203,7 @@ class="math inline">\(7043 \ USD\)</span></li>
 <p><strong>9.g</strong>: 假设您能够投资每月复合回报率为 <span
 class="math inline">\(0.8\%\)</span> 的<strong>Wide-Market Index
 广泛市场指数</strong> ETF, 那么以什么价格购买采矿设备,
-它不再是一项好的投资? 将此与该矿机 <span class="math inline">\(10,000 \
+它不再发布项好的投资? 将此与该矿机 <span class="math inline">\(10,000 \
 USD\)</span> 的市场价格进行比较。</p>
 <blockquote>
 <ul>
@@ -1335,7 +1335,7 @@ target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i=1-Sum%
 <h2 id="soft-hard-forks-软硬分叉">11.Soft &amp; Hard forks 软硬分叉</h2>
 <p>下哪些更改需要软分叉? 那些需要硬分叉?</p>
 <p><strong>11.a</strong>: 要求每个区块都包含政府颁发的证书,
-声称它是使用可再生能源开采的</p>
+声称它是使用可再发布源开采的</p>
 <blockquote>
 <p>软分叉: 旧的客户端可以户忽略新的证书, 依然可以正常验证区块。</p>
 </blockquote>
@@ -1742,7 +1742,7 @@ class="math inline">\({\color{CornflowerBlue}{T_{1}}} \lt
 class="math inline">\({\color{orange}{x}}\)</span> (有优势),
 那么Bob可以在 <span
 class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>
-结束后再揭露自己的 <span
+结束后再发布自己的 <span
 class="math inline">\({\color{orange}{x}}\)</span> 这样, Bob 可以获得
 Alice 的币但是, <span
 class="math inline">\({\color{CornflowerBlue}{T_{1}}}\)</span>
@@ -1774,7 +1774,7 @@ class="math inline">\({\color{orange}{x}}\)</span> 在
 <code>PancakeCoin</code> 链上确认交易以获取 <code>PancakeCoin</code>。
 因此, 时间差应该至少是<span
 class="math inline">\({\color{purple}{确认交易的预期时间长度}}\)</span>,
-加上 Alice 准备交易的一些合理反应时间, 再加上一些安全边际。 对于比特币,
+加上 Alice 准备交易的一些合理反应时间, 再发布一些安全边际。 对于比特币,
 这意味着时间差应该至少是几个小时(<span
 class="math inline">\(6\)</span>个区块确认需要<span
 class="math inline">\(1\)</span>个小时)以保证交易在最长链上。</p>
@@ -1837,7 +1837,7 @@ getter 函数)。</li>
 </blockquote>
 <p><strong>15.d</strong>: 考虑一下对 <code>owner_only</code> <u>modifier
 修饰符</u>的实现。那些是安全的? 哪个是最佳做法?</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// i [最安全的]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    require(msg.sender == owner_address); </span><br><span class="line">    _;</span><br><span class="line">&#125;</span><br><span class="line">// ii [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if (msg.sender != owner_address) return;</span><br><span class="line">    _; // 没用 ← required</span><br><span class="line">&#125;</span><br><span class="line">/** iii </span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return;</span><br><span class="line">&#125;</span><br><span class="line">// iv [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    require (msg.sender == owner_address)</span><br><span class="line">&#125;</span><br><span class="line">/** v</span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再确认账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">* - [重复发了两次]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return; </span><br><span class="line">    _; // ← 重复发了两次</span><br><span class="line">&#125;</span><br><span class="line">// vi [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if(msg.sender == owner_address) </span><br><span class="line">        _; // 没用 ← required</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// i [最安全的]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    require(msg.sender == owner_address); </span><br><span class="line">    _;</span><br><span class="line">&#125;</span><br><span class="line">// ii [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if (msg.sender != owner_address) return;</span><br><span class="line">    _; // 没用 ← required</span><br><span class="line">&#125;</span><br><span class="line">/** iii </span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再发布账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return;</span><br><span class="line">&#125;</span><br><span class="line">// iv [先运行了 (_;) 等于先进行了转账, 再发布账户地址]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    require (msg.sender == owner_address)</span><br><span class="line">&#125;</span><br><span class="line">/** v</span><br><span class="line">* - [先运行了 (_;) 等于先进行了转账, 再发布账户地址]</span><br><span class="line">* - [并且没用 required]</span><br><span class="line">* - [重复发了两次]</span><br><span class="line">*/</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    _; // ← 不可在确认地址钱转账</span><br><span class="line">    if (msg.sender != owner_address) // 没用 ← required</span><br><span class="line">        return; </span><br><span class="line">    _; // ← 重复发了两次</span><br><span class="line">&#125;</span><br><span class="line">// vi [安全但是没有用 required]</span><br><span class="line">modifier owner_only &#123;</span><br><span class="line">    if(msg.sender == owner_address) </span><br><span class="line">        _; // 没用 ← required</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="contract-call-合约调用">16.Contract Call 合约调用</h2>
 <p>考虑以下两个合约, 并参考<a
 target="_blank" rel="noopener" href="https://docs.soliditylang.org/en/latest/types.html#members-of-addresses">Members
@@ -1900,17 +1900,9 @@ class="math inline">\({\color{CornflowerBlue}{A2.x=3}} \And
 <span class="math inline">\({\color{CornflowerBlue}{A2.x}} = 3 + (17*3)
 \\ {\color{CornflowerBlue}{A2.x = 54}}\)</span></li>
 </ol></li>
-<li>然后<code>A2</code>的<code>bar</code>函数再次<code>call</code>普通调用<code>A1</code>的存储运行:
-<code>A1.baz()</code> 函数
-<ol type="1">
-<li>并且<span
-class="math inline">\({\color{CornflowerBlue}{A2.x}}+2\)</span>作为<code>A1.baz(unit y)</code>的输入,
-也就是说: <span class="math inline">\({\color{orange}{y}} = 54 + 2 \\
-{\color{orange}{y = 56}}\)</span></li>
-<li>我们已知 <span
-class="math inline">\({\color{green}{A1.x=16}}\)</span>, 那么
-<code>x += y</code> 则等于 ${} = {} + {} \ {} = {} + {} \ {} $</li>
-</ol></li>
+<li>然后<code>A2</code>的<code>bar</code>函数再发布call<code>普通调用</code>A1<code>的存储运行:</code>A1.baz()<code>函数       1. 并且$&#123;\color&#123;CornflowerBlue&#125;&#123;A2.x&#125;&#125;+2$作为</code>A1.baz(unit
+y)<code>的输入, 也就是说: $&#123;\color&#123;orange&#125;&#123;y&#125;&#125; = 54 + 2 \\ &#123;\color&#123;orange&#125;&#123;y = 56&#125;&#125;$       2. 我们已知 $&#123;\color&#123;green&#125;&#123;A1.x=16&#125;&#125;$, 那么</code>x
++= y` 则等于 ${} = {} + {} \ {} = {} + {} \ {} $</li>
 <li><code>A2.bar()</code>的最后一步是计算: <code>z = x - 10</code>,
 并作为<code>abi.decode</code>的结果返回给<code>A1.foo()</code>
 <ol type="1">
@@ -2030,16 +2022,16 @@ Your Solidity Smart Contracts From Reentrancy Attacks</a></p>
 target="_blank" rel="noopener" href="https://docs.soliditylang.org/en/develop/security-considerations.html#use-the-checks-effects-interactions-pattern">安全注意事项:
 使用检查-效果-交互模式 — Solidity 0.8.15 文档 (soliditylang.org)</a></p>
 <p>简单来说就是: 注意交易&amp;扣款的顺序, 在执行交易前需要先扣款,
-再转账。</p>
+再发布。</p>
 <ol type="1">
 <li>大多数函数将首先执行一些检查, 检查谁调用了函数, 参数范围,
 是否发送了足够的以太币, 该人是否有token等。</li>
 <li>通过检查后应该, 该状态的<u>effect
 影响</u>(取钱操作)应该先被执行(先将取出的钱从余额中扣除)。</li>
-<li>保证前两步之后, 最后一步再与其他合约/函数进行交互。</li>
+<li>保证前两步之后, 最后一步再发布他合约/函数进行交互。</li>
 </ol>
 <p>所以<code>withdraw</code>中的余额应该提前到<code>call</code>调用交互执行<code>send</code>之前完成</p>
-<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function withdraw() external &#123;</span><br><span class="line">    if(!withdrawLock) &#123;</span><br><span class="line">        withdrawLock = True;</span><br><span class="line">        uint256 amount = balances[msg.sender];</span><br><span class="line">        balances[msg.sender] = 0; // &lt;- 先扣钱再转账</span><br><span class="line">        (bool result, ) = payable(msg.sender).call&#123;value: amount&#125;();</span><br><span class="line">        require(result);</span><br><span class="line">        // balances[msg.sender] = 0;</span><br><span class="line">        withdrawLock = False;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure></p>
+<p><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">function withdraw() external &#123;</span><br><span class="line">    if(!withdrawLock) &#123;</span><br><span class="line">        withdrawLock = True;</span><br><span class="line">        uint256 amount = balances[msg.sender];</span><br><span class="line">        balances[msg.sender] = 0; // &lt;- 先扣钱再发布</span><br><span class="line">        (bool result, ) = payable(msg.sender).call&#123;value: amount&#125;();</span><br><span class="line">        require(result);</span><br><span class="line">        // balances[msg.sender] = 0;</span><br><span class="line">        withdrawLock = False;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <h2 id="parity-bug-错误">18.Parity bug 错误</h2>
 <p>回顾 <strong>Parity bug</strong>, 大多数合约依赖 Parity MultiSig
@@ -2365,7 +2357,7 @@ class="math inline">\(h\)</span>)</p>
 <p>通过总参与者节点(<span
 class="math inline">\(N\)</span>)减去可承受腐败节点(<span
 class="math inline">\(f\)</span>)的个数,
-得到非腐败节点的个数那么再减去1得到<u>不可承受的腐败数量</u>,
+得到非腐败节点的个数那么再发布1得到<u>不可承受的腐败数量</u>,
 然后这个数量需要小于<span class="math inline">\(2^{-\lambda}\)</span> F
 <span class="math inline">\(\sum^{N-f-1}_{k=0} Pr(k; N, h) =
 2^{-\lambda}\)</span></p>
@@ -2437,10 +2429,10 @@ class="math inline">\(N\)</span>) 有什么缺点, 在该协议中,
 个<strong>Slot插槽</strong>中的一个中产生一个块?</p>
 <blockquote>
 <p>由于在一个Epoch中每个成员会被分配一个Slot去广播一个区块,
-这样不再有<strong>Communication Overhead 通信开销</strong>的问题,
-也就不再消耗<strong>Bandwidth 带宽</strong>。 但是Epoch中的链太长了,
-会增加发生<strong>Adaptive Attack 自适应攻击</strong>的可能性,
-因为<strong>Attacker 攻击者</strong>将有更多的时间,
+这样不再发布*Communication Overhead 通信开销<strong>的问题,
+也就不再发布</strong>Bandwidth 带宽<strong>。 但是Epoch中的链太长了,
+会增加发生</strong>Adaptive Attack 自适应攻击<strong>的可能性,
+因为</strong>Attacker 攻击者**将有更多的时间,
 在当前Epoch的选举结束之前去攻击(控制)被选举成为下一个Epoch成员中的最后一个成员。
 另外如果选举链太长(选举时间太长)选举过程中候选人可以通过长时间持有(不操作)自己的币,
 去保证一个更大的权益, 以提高自己被选中成为下一个epoch委员会的成员。</p>
@@ -2636,7 +2628,7 @@ Key 公钥</u>进行花钱的交易将节省多少字节?</p>
 </tr>
 </tbody>
 </table>
-<p>对于<u>输入脚本</u>: 使用键索引后, 兑换交易不再需要提供<u>Public Key
+<p>对于<u>输入脚本</u>: 使用键索引后, 兑换交易不再发布提供<u>Public Key
 公钥</u>, 所以节省了33 bytes。</p>
 <p>对于<u>输出脚本</u>: 使用键索引后, 用 6 bytes 的索引替代了 20 bytes
 的<u>Public Key 公钥</u>,
@@ -2713,7 +2705,7 @@ e(g,H(m)^x) \overset{?}{=} e(g^x, H(m)) \\ e(g, H(m))^{\color{red}x}
 <u>generator 生成器</u>: <span class="math inline">\(g\)</span> &amp;
 <u>signature 签名</u>: <span class="math inline">\(\sigma\)</span>
 进行双线性映射 - (<span class="math inline">\(g^{x}\)</span>
-理解为每个公钥) 4. 再对 <u>public key 公钥</u>: <span
+理解为每个公钥) 4. 再发布<u>public key 公钥</u>: <span
 class="math inline">\(g^{x}\)</span> &amp; <u>pseudrandom
 伪随机曲线点</u>: <span class="math inline">\(H(m)^x\)</span>
 进行双线性映射 5. 对比 2 &amp; 3 的映射结果是否相等,
@@ -3009,7 +3001,7 @@ class="math inline">\(\frac{M^{2}}{8} / 2 =
 {\color{green}{\frac{M^{2}}{16}}}\)</span> 次交易后通道会被重置</li>
 <li>即在链下执行了: <span
 class="math inline">\({\color{green}{\frac{M^{2}}{16}}}\)</span> 次交易,
-再发不到链上, 从而改善了可扩展性。</li>
+再发布到链上, 从而改善了可扩展性。</li>
 </ul></li>
 <li><strong>Distributed Model 分布式模型</strong>: <span
 class="math inline">\(1 / {\color{green}{\frac{2}{N(N-1)}}} =
@@ -3028,7 +3020,7 @@ class="math inline">\(\frac{M^2}{(N-1)^2} / 2 =
 {\color{green}{\frac{M^2}{2(N-1)^2}}}\)</span> 次交易后通道会被重置</li>
 <li>即在链下执行了: <span
 class="math inline">\({\color{green}{\frac{M^2}{2(N-1)^2}}}\)</span>
-次交易, 再发不到链上, 从而改善了可扩展性。</li>
+次交易, 再发布到链上, 从而改善了可扩展性。</li>
 </ul></li>
 </ul>
 </blockquote>
@@ -3040,14 +3032,16 @@ class="math inline">\({\color{green}{\frac{M^2}{2(N-1)^2}}}\)</span>
 中心点可以审查或收取高额费用。</p>
 </blockquote>
 <p><strong>25.f</strong>:
-为什么这个问题中的随机支付模型是不现实的？简要描述如何通过利用更现实的付款分配来提高效率。
-&gt; 每一个用户,
+为什么这个问题中的随机支付模型是不现实的？简要描述如何通过利用更现实的付款分配来提高效率。</p>
+<blockquote>
+<p>每一个用户,
 可能永远都不会向网络中绝大多数的其他用户发起支付。所以事实上,
 无法知道所有用户的空间。 所以现实中,
 一个用户只在第一次与另一个用户交易时开启一个支付通道,
-而不是提前向所有用户开放通道。 &gt;
+而不是提前向所有用户开放通道。
 并且现实中用户对通道容量的分配很可能是不均匀的,
 用户会将更多容量放在常用的通道上。</p>
+</blockquote>
 <h2 id="ethereum-micropayments-以太坊小额支付">26.Ethereum Micropayments
 以太坊小额支付</h2>
 <p><u>Protocol for Serial Micropayments in Bitcoin
