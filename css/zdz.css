@@ -260,11 +260,20 @@ table tr:hover {
 .btn {
   align-self: center;
   /* margin: 15px 0; */
-  margin-left: 90%;
-  margin-right: 10%;
+  margin-left: 80%;
+  margin-right: 20%;
   text-align: center;
   /* float: right; */
 }
+
+hr {
+  width: 87%;
+}
+
+/* #header-post {
+  width: 520px;
+} */
+
 .box {
   display: flex;
   flex-direction: column;
