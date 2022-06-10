@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-10T13:30:55.473Z">
+<meta property="article:modified_time" content="2022-06-10T16:55:07.160Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -2546,7 +2546,7 @@ Key 公钥</u>进行花钱的交易将节省多少字节?</p>
 <blockquote>
 <p>首先回顾标准的<code>P2PKH</code>的输入脚本(<code>scriptSig</code>),
 以及输出脚本 (<code>scriptPubKey</code>):</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&gt;--- 输入脚本 scriptSig: </span><br><span class="line">&gt;&lt;sig&gt; </span><br><span class="line">&gt;&lt;pubKey&gt;</span><br><span class="line">&gt;--- 输出脚本 scriptPubKey: </span><br><span class="line">&gt;OP_DUP</span><br><span class="line">&gt;OP_HASH160</span><br><span class="line">&gt;&lt;pubKeyHash&gt;</span><br><span class="line">&gt;OP_EQUALVERIFY</span><br><span class="line">&gt;OP_CHECKSIG</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">--- 输入脚本 scriptSig: </span><br><span class="line">&lt;sig&gt; </span><br><span class="line">&lt;pubKey&gt;</span><br><span class="line">--- 输出脚本 scriptPubKey: </span><br><span class="line">OP_DUP</span><br><span class="line">OP_HASH160</span><br><span class="line">&lt;pubKeyHash&gt;</span><br><span class="line">OP_EQUALVERIFY</span><br><span class="line">OP_CHECKSIG</span><br></pre></td></tr></table></figure>
 <p>其次回顾`P2PKH中各个元素所占空间大小:</p>
 <table>
 <thead>
@@ -2604,7 +2604,7 @@ Key 公钥</u>进行花钱的交易将节省多少字节?</p>
 </tr>
 </tbody>
 </table>
-<p>然后采用全局键索引表的新脚本: <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&gt;--- 输入脚本 scriptSig: </span><br><span class="line">&gt;&lt;sig&gt;</span><br><span class="line">&gt;&lt;pubKey&gt;</span><br><span class="line">&gt;--- 输出脚本 scriptPubKey: </span><br><span class="line">&gt;&lt;keyIndex&gt;</span><br><span class="line">&gt;OP_LOOKUP_KEY</span><br><span class="line">&gt;OP_CHECKSIG</span><br></pre></td></tr></table></figure></p>
+<p>然后采用全局键索引表的新脚本: <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">--- 输入脚本 scriptSig: </span><br><span class="line">&lt;sig&gt;</span><br><span class="line">&lt;pubKey&gt;</span><br><span class="line">--- 输出脚本 scriptPubKey: </span><br><span class="line">&lt;keyIndex&gt;</span><br><span class="line">OP_LOOKUP_KEY</span><br><span class="line">OP_CHECKSIG</span><br></pre></td></tr></table></figure></p>
 <table>
 <thead>
 <tr class="header">
