@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-13T04:43:45.046Z">
+<meta property="article:modified_time" content="2022-06-13T09:11:56.426Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -1277,7 +1277,7 @@ target="_blank" rel="noopener" href="https://www.wolframalpha.com/input?i2d=true
 <blockquote>
 <ul>
 <li><span class="math inline">\(t = 60 \ minutes\)</span></li>
-<li><span class="math inline">\(Pr(k=6, t = 60 minutes) =
+<li><span class="math inline">\(1-Pr(k=6, t = 60 minutes) =
 \frac{(0.1*60)^{6}e^{-0.1*60}}{6!} \\ =0.160623 \\ \approx
 0.16\)</span></li>
 <li><a
@@ -1790,7 +1790,7 @@ class="math inline">\({\color{orange}{x}}\)</span>
 <p>这意味着协议完全不安全, 因为双方都知道 <span
 class="math inline">\({\color{orange}{x}}\)</span>。所以无论哪一方发起交换,
 另一方都可以立即通过 <span
-class="math inline">\({\color{orange}{x}}\)</span> 拿走金币。</p>
+class="math inline">\({\color{orange}{x}}\)</span> 拿走对方的币。</p>
 </blockquote>
 <h2 id="solidity-modifiers">15.Solidity Modifiers</h2>
 <p>观察以下 Solidity 函数, 并参考<a
@@ -2244,29 +2244,37 @@ of <span class="math inline">\(q\)</span> Element</u>表示乘法, 除法,
 <p>实际<strong>保密交易</strong>依赖于稍微不同的属性。回顾一下,
 证明<span class="math inline">\(SUM(Input_{committed}) =
 SUM(Output_{committed})\)</span>需要一个额外的条件
-例如一笔<code>2-to-2</code>两进两出的混合的交易, 给定: - 输入: <span
-class="math inline">\(c_{1}c_{2}\)</span> - 输出: <span
-class="math inline">\(c_{3}c_{4}\)</span> -
-需要额外提供随机的<em>blinding factor 致盲因子</em>: <span
+例如一笔<code>2-to-2</code>两进两出的混合的交易, 给定:</p>
+<ul>
+<li>输入: <span class="math inline">\(c_{1}c_{2}\)</span></li>
+<li>输出: <span class="math inline">\(c_{3}c_{4}\)</span></li>
+<li>需要额外提供随机的<em>blinding factor 致盲因子</em>: <span
 class="math inline">\(r_5\)</span>, 使得<span
 class="math inline">\(c_{1}c_{2} = c_{3}c_{4}
-{\color{red}{h^{r_{5}}}}\)</span> - 这样才能证明: <span
-class="math inline">\(x_{1}+x_{2} = x_{3}+x_{4} \ [\mod{q}]\)</span>,
-由于需要证明交易是Square: - 需要提供<strong>Zero-Knowledge Range Proofs
+{\color{red}{h^{r_{5}}}}\)</span>
+<ul>
+<li>这样才能证明: <span class="math inline">\(x_{1}+x_{2} = x_{3}+x_{4}
+\ [\mod{q}]\)</span>, 由于需要证明交易是Square:
+<ul>
+<li>需要提供<strong>Zero-Knowledge Range Proofs
 零知识范围证明</strong>以证明: 对于某个 <span
 class="math inline">\(x\)</span> 允许的最大值: (<span
 class="math inline">\(x_{max}\)</span>) 而言, 每个 <span
 class="math inline">\(x_i\)</span> 都远小于其对应的素数(<span
 class="math inline">\(q\)</span>): <span class="math inline">\(0 \leq
-x_i \leq x_{max} \ll q\)</span> - 这个允许的最大值的例子可以是: (<span
-class="math inline">\(x_{max} = 全部货币供应量\)</span>) - 这将可以保证:
-<span class="math inline">\(x_i\)</span>经过 <span
+x_i \leq x_{max} \ll q\)</span></li>
+<li>这个允许的最大值的例子可以是: (<span class="math inline">\(x_{max} =
+全部货币供应量\)</span>)</li>
+<li>这将可以保证: <span class="math inline">\(x_i\)</span>经过 <span
 class="math inline">\(\mod{q}\)</span> 后都不会超过溢出<span
-class="math inline">\(m_{max}\)</span> - 添加这个 ZKRP
-主要是对输出进行防溢出, 因为是环状的,
-所以要防止通过溢出的值使得输等于输入的等式成立。 - 该值可以通过: <span
-class="math inline">\(r^{5}= (r_{1}+r_{2})-(r_{3}+r_{4}) \
-[\mod{q}]\)</span></p>
+class="math inline">\(m_{max}\)</span></li>
+<li>添加这个 ZKRP 主要是对输出进行防溢出, 因为是环状的,
+所以要防止通过溢出的值使得输等于输入的等式成立。</li>
+</ul></li>
+<li>该值可以通过: <span class="math inline">\(r^{5}=
+(r_{1}+r_{2})-(r_{3}+r_{4}) \ [\mod{q}]\)</span></li>
+</ul></li>
+</ul>
 <p><strong>20.b</strong>: 假设攻击者知道对于<span
 class="math inline">\(z\)</span>值的<span
 class="math inline">\(h=g^{z}\)</span>. 攻击者在知道任意<span
@@ -2352,14 +2360,14 @@ class="math inline">\(2^{-\lambda}\)</span></li>
 </ul>
 <p><strong>21.a</strong>: 写出一个数学方程,</p>
 <blockquote>
-<p>需要<strong>Binomial Distribution二项分布</strong></p>
-<p><span class="math inline">\(f(k,n,p) = \\ Pr(X=k) = \\ n\choose{k} \\
-= \frac{n!}{k!(n-k)!}\)</span></p>
+<p>需要<strong>Binomial Distribution 二项分布</strong>:</p>
+<p><span class="math inline">\(f(k,n,p) = Pr(X=k) \\ {n\choose{k}} =
+\frac{n!}{k!(n-k)!}\)</span></p>
 <p>这里<span class="math inline">\(k\)</span>为诚实用户的个数, <span
-class="math inline">\(n\)</span>为委员会成员的总数(<span
+class="math inline">\(n\)</span>为委员会成员的总数 (<span
 class="math inline">\(N\)</span>), <span
-class="math inline">\(p\)</span>每个成员为诚实的概率(<span
-class="math inline">\(h\)</span>)</p>
+class="math inline">\(p\)</span>为每个成员为诚实的概率(<span
+class="math inline">\(p = h\)</span>)</p>
 <p>所以通过二项分布公式可以计算出, 每一个用户是诚实的的概率。</p>
 <p><span class="math inline">\(Pr(k; N, h) = {N \choose k} h^k
 (1-h)^{N-k}\)</span></p>
@@ -2536,9 +2544,10 @@ Indirection</u>。
 这种(可选的)新格式将注册一个新公钥, 如下所示： <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;pubKey&gt;</span><br><span class="line">OP_REGISTER_KEY</span><br></pre></td></tr></table></figure> 新的
 OP_REGISTER_KEY
 操作码将获取堆栈上的顶部值并将其存储在全局键查找表中（也将其留在堆栈中）。后续交易可以使用相同的公钥,
-例如： <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;keyIndex&gt;</span><br><span class="line">OP_LOOKUP_KEY</span><br></pre></td></tr></table></figure> 新的 <code>OP_LOOKUP_KEY</code>
-操作码将弹出栈顶的值, 并在全局键表中查找它, 并将结果压入栈中。
-假设键查找索引为 6 bytes.</p>
+例如： <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;keyIndex&gt;</span><br><span class="line">OP_LOOKUP_KEY</span><br></pre></td></tr></table></figure></p>
+<p>新的 <code>OP_LOOKUP_KEY</code> 操作码将弹出栈顶的值,
+并在全局键表中查找它, 并将结果压入栈中。 假设键查找索引为 <span
+class="math inline">\(6\)</span> bytes。</p>
 <p><strong>23.a</strong>: 对于标准的<code>P2PKH</code>交易<u>输出</u>,
 将资金发送到以前使用过的<u>Public Key 公钥</u>的交易将节省多少字节?
 对于标准的<code>P2PKH</code>交易<u>输入</u>, 使用以前使用过的公<u>Public
@@ -2661,7 +2670,7 @@ bits\)</span>, 那么将有 <span class="math inline">\(2^{48}\)</span>
 class="math inline">\(2^{30}\)</span>个键索引将在20年内耗尽。
 那么我们可以计算 <span class="math inline">\(2^{48}\)</span>
 个键索引将在: <span class="math inline">\(\frac{2^{48}}{2^{30}}*20 =
-20(2^{48-30}) \\ = 5242880\)</span> 也就是大概需要, 5百多万年才能耗尽。
+20(2^{48-30}) = 5,242,880\)</span> 也就是大概需要, 5百多万年才能耗尽。
 虽然从结果来看, <span class="math inline">\(2^{48}\)</span> 确实足够了。
 但这其实并不准确, 因为我们还要考虑到真实情况的上限。 目前全球有 <span
 class="math inline">\(2^{33}\)</span> 个人,
@@ -2696,39 +2705,58 @@ Key 公钥</u>)。 所以这个想法是行不通的。
 <blockquote>
 <p>聚合签名, 只需要一个签名, 而不是多个签名, 使用<strong>Bilinear
 Pairing 双线性映射</strong>函数。 这基于 <strong>Boneh–Lynn–Shacham
-(BLS)</strong> 数字签名: 1. <span class="math inline">\(GenKey() → x,
-g^{x}\)</span> - 椭圆曲线上的点, 有时写为 <span
-class="math inline">\(x\)</span>, <span
-class="math inline">\(xG\)</span> - 与ECDSA类似 - <span
-class="math inline">\(Secret = x\)</span> (理解为私钥<span
-class="math inline">\(x\)</span>) - pk=<span
-class="math inline">\(g^{x}\)</span> (那么公钥就是<span
-class="math inline">\(g^{x}\)</span>) 2. <span
-class="math inline">\(Sign(x,m) → H(m)^{x}\)</span> - 用Secret <span
-class="math inline">\(x\)</span> 对消息 <span
-class="math inline">\(m\)</span> 进行加密 -
-哈希函数必须产生<em>pseudrandom 伪随机</em>曲线点<span
-class="math inline">\(H(m)^x\)</span> 3. <span
-class="math inline">\(aggVerify(g^x, m_{1} \dots m_{m},
-\sigma_{*})\)</span> 1. <span class="math inline">\(aggVerify(y = g^x,
-m, \sigma=H(m)^x) → e(g,\sigma) \overset{?}{=} e(g^x, H(m)) \\
-e(g,H(m)^x) \overset{?}{=} e(g^x, H(m)) \\ e(g, H(m))^{\color{red}x}
-\overset{?}{=} e(g, H(m))^{\color{red}x}\)</span> 2.
-双线性映射(曲线配对)函数: <span class="math inline">\(e\)</span> 3. 对
-<u>generator 生成器</u>: <span class="math inline">\(g\)</span> &amp;
-<u>signature 签名</u>: <span class="math inline">\(\sigma\)</span>
-进行双线性映射 - (<span class="math inline">\(g^{x}\)</span>
-理解为每个公钥) 4. 再发布<u>public key 公钥</u>: <span
+(BLS)</strong> 数字签名:</p>
+<ol type="1">
+<li><span class="math inline">\(GenKey() → x, g^{x}\)</span>
+<ul>
+<li>椭圆曲线上的点, 有时写为 <span class="math inline">\(x\)</span>,
+<span class="math inline">\(xG\)</span></li>
+<li>与ECDSA类似</li>
+<li><span class="math inline">\(Secret = x\)</span> (理解为私钥<span
+class="math inline">\(x\)</span>)</li>
+<li>pk=<span class="math inline">\(g^{x}\)</span> (那么公钥就是<span
+class="math inline">\(g^{x}\)</span>)</li>
+</ul></li>
+<li><span class="math inline">\(Sign(x,m) → H(m)^{x}\)</span>
+<ul>
+<li>用Secret <span class="math inline">\(x\)</span> 对消息 <span
+class="math inline">\(m\)</span> 进行加密</li>
+<li>哈希函数必须产生<em>pseudrandom 伪随机</em>曲线点<span
+class="math inline">\(H(m)^x\)</span></li>
+</ul></li>
+<li><span class="math inline">\(aggVerify(g^x, m_{1} \dots m_{m},
+\sigma_{*})\)</span>
+<ol type="1">
+<li><span class="math inline">\(aggVerify(y = g^x, m, \sigma=H(m)^x) →
+e(g,\sigma) \overset{?}{=} e(g^x, H(m)) \\ e(g,H(m)^x) \overset{?}{=}
+e(g^x, H(m)) \\ e(g, H(m))^{\color{red}x} \overset{?}{=} e(g,
+H(m))^{\color{red}x}\)</span></li>
+<li>双线性映射(曲线配对)函数: <span
+class="math inline">\(e\)</span></li>
+<li>对 <u>generator 生成器</u>: <span class="math inline">\(g\)</span>
+&amp; <u>signature 签名</u>: <span class="math inline">\(\sigma\)</span>
+进行双线性映射
+<ul>
+<li>(<span class="math inline">\(g^{x}\)</span> 理解为每个公钥)</li>
+</ul></li>
+<li>再发布<u>public key 公钥</u>: <span
 class="math inline">\(g^{x}\)</span> &amp; <u>pseudrandom
 伪随机曲线点</u>: <span class="math inline">\(H(m)^x\)</span>
-进行双线性映射 5. 对比 2 &amp; 3 的映射结果是否相等,
-如果相等证明<u>signature 签名</u>是就是有效的 6. 由于<span
-class="math inline">\(e\)</span>是<strong>Bilinear Pairing
+进行双线性映射</li>
+<li>对比 2 &amp; 3 的映射结果是否相等, 如果相等证明<u>signature
+签名</u>是就是有效的</li>
+<li>由于<span class="math inline">\(e\)</span>是<strong>Bilinear Pairing
 双线性映射</strong>, 即: <span class="math inline">\(e(g^a, h^b) = e(g,
-h)^{ab}\)</span> - 所以: <span class="math inline">\(e(g,\sigma)
-\overset{?}{=} e(g^x, H(m))\)</span> 可以写作: <span
-class="math inline">\(e(g, H(m))^{\color{red}x} \overset{?}{=} e(g,
-H(m))^{\color{red}x}\)</span> - 所以可以保证签名验证的正确性</p>
+h)^{ab}\)</span>
+<ul>
+<li>所以: <span class="math inline">\(e(g,\sigma) \overset{?}{=} e(g^x,
+H(m))\)</span> 可以写作: <span class="math inline">\(e(g,
+H(m))^{\color{red}x} \overset{?}{=} e(g,
+H(m))^{\color{red}x}\)</span></li>
+<li>所以可以保证签名验证的正确性</li>
+</ul></li>
+</ol></li>
+</ol>
 <p>注意:
 BLS复杂度要比ECDSA高上一个数量级。在验证区块中1000笔交易的聚合签名时,
 仍需要进行1000次配对计算,
@@ -2788,18 +2816,22 @@ Table: ECDSA、schnorr和BLS签名算法对比
 <blockquote>
 <p>首先根据上述聚合签名(<span
 class="math inline">\(\sigma_{*}\)</span>)的定义,
-基于双线性映射(曲线配对)函数 (<span class="math inline">\(e\)</span>):
-对于每个<span class="math inline">\(i\)</span>: <span
-class="math inline">\(e(g, \sigma_{i}) = e(g^{x_{i}}, H(m_{i}))\)</span>
-那么聚合签名可以被验证: <span class="math inline">\(e(g, \sigma_{*}) =
-\prod_{i} e(g^{x_{i}}, H(m_{i}))\)</span> 即: <span
-class="math inline">\(e(g, \sigma_{*}) = e(g, \prod_{i} \sigma{i}
-)\)</span> 根据<strong>Pairing corollary 映射推论</strong>,
-我们可以将指数(<span class="math inline">\(\prod_{i}\)</span> 乘积)提出,
-并得到: <span class="math inline">\(e(g, \sigma_{*}) = \prod_{i} e(g,
-\sigma{i} )\)</span> 那么我们可以得到: <span class="math inline">\(e(g,
-\sigma_{*}) = \prod_{i} e(g, H(m_{i}) )\)</span>
-即如果任意一个独立签名可以通过验证, 那么聚合签名也可以通过验证。</p>
+基于双线性映射(曲线配对)函数 (<span
+class="math inline">\(e\)</span>):</p>
+<p>对于每个<span class="math inline">\(i\)</span>: <span
+class="math inline">\(e(g, \sigma_{i}) = e(g^{x_{i}},
+H(m_{i}))\)</span></p>
+<p>那么聚合签名可以被验证: <span class="math inline">\(e(g, \sigma_{*})
+= \prod_{i} e(g^{x_{i}}, H(m_{i}))\)</span></p>
+<p>即: <span class="math inline">\(e(g, \sigma_{*}) = e(g, \prod_{i}
+\sigma{i} )\)</span></p>
+<p>根据<strong>Pairing corollary 映射推论</strong>, 我们可以将指数(<span
+class="math inline">\(\prod_{i}\)</span> 乘积)提出, 并得到: <span
+class="math inline">\(e(g, \sigma_{*}) = \prod_{i} e(g, \sigma{i}
+)\)</span></p>
+<p>那么我们可以得到: <span class="math inline">\(e(g, \sigma_{*}) =
+\prod_{i} e(g, H(m_{i}) )\)</span></p>
+<p>即如果任意一个独立签名可以通过验证, 那么聚合签名也可以通过验证。</p>
 </blockquote>
 <p><strong>24.b</strong>:
 聚合签名通过验证并不意味着所有个人签名都是有效的。如果对一个相同的消息(<span
@@ -2851,20 +2883,22 @@ class="math inline">\(\sigma_{i}\)</span>),
 <p>是的, 这是合理的。因为对单个消息(<span
 class="math inline">\(m_{i}\)</span>)进行签名已经包含一个<strong>随机数
 nonce</strong>, 保证每个密钥 <span class="math inline">\(x_{i}\)</span>
-对每个独立的 (<span class="math inline">\(K_{i}\)</span>) 都是唯一的。
-<strong>随机数 nonce</strong>: <span class="math inline">\((x ||
+对每个独立的 (<span class="math inline">\(K_{i}\)</span>)
+都是唯一的。</p>
+<p><strong>随机数 nonce</strong>: <span class="math inline">\((x ||
 r)\)</span>, 如果nonce有32bytes的长度就足够保证不易发生冲突 (<span
-class="math inline">\(r = 256 bits\)</span>) 这样保证: <span
-class="math inline">\(GenKey() → g^{x_{i}}\)</span>, 每个公钥 <span
-class="math inline">\(g^{x_i}\)</span> doushi 都是唯一的,
+class="math inline">\(r = 256 bits\)</span>)</p>
+<p>这样保证: <span class="math inline">\(GenKey() → g^{x_{i}}\)</span>,
+每个公钥 <span class="math inline">\(g^{x_i}\)</span> doushi 都是唯一的,
 并被用来对每一个消息(<span class="math inline">\(m_i\)</span>)进行签名:
 <span class="math inline">\(Sign(g^{x_{i}}, m_{i}) →
-H(m_{i})^{x_{i}}\)</span> 这样只要发现: <span
-class="math inline">\(e(K_{1}, H(m))\)</span> 与 <span
-class="math inline">\(e(K_{2}, H(m))\)</span> 中的 (<span
+H(m_{i})^{x_{i}}\)</span></p>
+<p>这样只要发现: <span class="math inline">\(e(K_{1}, H(m))\)</span> 与
+<span class="math inline">\(e(K_{2}, H(m))\)</span> 中的 (<span
 class="math inline">\(m\)</span>) 相同, 就可以阻止生成伪造聚合签名。
 另外一种思路是: 直接将<u>Private Key
-私钥</u>添加到每条正在签名的消息中。 即: 相比使用椭圆曲线上的点 <span
+私钥</u>添加到每条正在签名的消息中。</p>
+<p>即: 相比使用椭圆曲线上的点 <span
 class="math inline">\(g^{x}\)</span>, 另外加入(<span
 class="math inline">\(sk\)</span>): <span
 class="math inline">\(Sign(g^{x}, m, sk)\)</span></p>
@@ -3040,18 +3074,19 @@ class="math inline">\({\color{green}{\frac{M^2}{2(N-1)^2}}}\)</span>
 <p><strong>25.e</strong>: Hub-and-spoke Model 轴辐式模型有哪些缺点?</p>
 <blockquote>
 <p>不难看出, 每笔支付都需要通过中心点。 对于这样一个过渡中心化的模型,
-一旦中心点出现故障, 所有交易都无法被处理。 所以该模型的可靠性偏差。
-并且中心点可以了解每个人的渠道使用模式。 由于没有中心点就无法处理支付,
-中心点可以审查或收取高额费用。 F <strong>25.f</strong>:
-为什么这个问题中的随机支付模型是不现实的？简要描述如何通过利用更现实的付款分配来提高效率。</p>
+一旦中心点出现故障, 所有交易都无法被处理。 所以该模型的可靠性偏差。</p>
+<p>并且中心点可以了解每个人的渠道使用模式。</p>
+<p>由于没有中心点就无法处理支付, 中心点可以审查或收取高额费用。</p>
 </blockquote>
+<p><strong>25.f</strong>:
+为什么这个问题中的随机支付模型是不现实的？简要描述如何通过利用更现实的付款分配来提高效率。</p>
 <blockquote>
 <p>每一个用户,
 可能永远都不会向网络中绝大多数的其他用户发起支付。所以事实上,
 无法知道所有用户的空间。 所以现实中,
 一个用户只在第一次与另一个用户交易时开启一个支付通道,
-而不是提前向所有用户开放通道。
-并且现实中用户对通道容量的分配很可能是不均匀的,
+而不是提前向所有用户开放通道。</p>
+<p>并且现实中用户对通道容量的分配很可能是不均匀的,
 用户会将更多容量放在常用的通道上。</p>
 </blockquote>
 <h2 id="ethereum-micropayments-以太坊小额支付">26.Ethereum Micropayments
@@ -3128,34 +3163,42 @@ Attack 抢先攻击</strong>,
 试图让合约支付给鲍勃的费用低于她实际授权的金额。
 又该如何设计合约来防止这种攻击?</p>
 <blockquote>
-<p><strong>攻击</strong>: 由于Y值是由 Alice 计算的, 那么 Alice
-可以直接将 Y 值当作 Z 发送给合约, 那么合约将直接终止, 这样 Bob
-无法获得任何转账。 <strong>防范</strong>: 1. 规定 Z 值只能由 Bob 提供,
-<code>require(msg.sender = Bob)</code> 2. 或如果任何人都可以提供 Z 值,
-那么可以增加 <u>Challenge Period 挑战期</u> 来选出在到达 Y
-值之前需要哈嘻次数最多的 Z 值。</p>
+<p><strong>攻击</strong>: 由于 <span class="math inline">\(Y\)</span>
+值是由 Alice 计算的, 那么 Alice 可以直接将 <span
+class="math inline">\(Y\)</span> 值当作 <span
+class="math inline">\(Z\)</span> 发送给合约, 那么合约将直接终止, 这样
+Bob 无法获得任何转账。</p>
+<p><strong>防范</strong>:</p>
+<ol type="1">
+<li>规定 Z 值只能由 Bob 提供,
+<code>require(msg.sender = Bob)</code></li>
+<li>或如果任何人都可以提供 Z 值, 那么可以增加 <u>Challenge Period
+挑战期</u> 来选出在到达 Y 值之前需要哈嘻次数最多的 Z 值。</li>
+</ol>
 </blockquote>
 <p><strong>26.c</strong>: 哈希函数应该满足什么安全属性来确保 Bob
 不能窃取比 Alice 打算给他的钱更多的钱?</p>
 <blockquote>
 <p>需要<strong>原像防御(Pre-Image resistance)</strong>:
-就是任意给一个hash值<span
-class="math inline">\({\color{green}{Z}}\)</span>,
-你很难破解出它的原像<span
-class="math inline">\({\color{green}{X}}\)</span>, 使得<span
-class="math inline">\(H{\color{red}{^{n-k}(X_{Bob})}}\)</span>=(<span
-class="math inline">\({\color{green}{Z}}\)</span>),
-这个难度一般是NP难度的, 也就是所谓的单向函数。 -
-<strong>强碰撞防御(Collision resistance)</strong> 比
-<strong>原像防御(Pre-Image resistance)</strong> 的安全性更高: -
-<strong>强碰撞防御(Collision resistance)</strong>:
+就是任意给一个hash值 <span
+class="math inline">\({\color{green}{Z}}\)</span>, 你很难破解出它的原像
+<span class="math inline">\({\color{green}{X}}\)</span>, 使得 <span
+class="math inline">\(H{\color{red}{^{n-k}(X_{Bob})}}=({\color{green}{Z}})\)</span>,
+这个难度一般是NP难度的, 也就是所谓的单向函数。</p>
+<ul>
+<li><strong>强碰撞防御(Collision resistance)</strong> 比
+<strong>原像防御(Pre-Image resistance)</strong> 的安全性更高:
+<ul>
+<li><p><strong>强碰撞防御(Collision resistance)</strong>:
 就是你很难找到<u>两个不同的</u><span
 class="math inline">\({\color{green}{X_{Alice}}}\)</span> 和 <span
 class="math inline">\({\color{red}{X_{Bob}}}\)</span>, 使得<span
-class="math inline">\(H{\color{red}{^{n-k}(X_{Bob})}}=H^{n-k}({\color{green}{X_{Alice}}})\)</span>。
-- 但由于 <span class="math inline">\(X\)</span> 已经是一个由 Alice
+class="math inline">\(H{\color{red}{^{n-k}(X_{Bob})}}=H^{n-k}({\color{green}{X_{Alice}}})\)</span>。</p></li>
+<li><p>但由于 <span class="math inline">\(X\)</span> 已经是一个由 Alice
 选择的 nonce 随机数, 已经做到了强防碰撞;
-所以主要需要考虑<strong>原像防御</strong>。</p>
+所以主要需要考虑<strong>原像防御</strong>。</p></li>
+</ul></li>
+</ul>
 </blockquote>
 <p><strong>26.d</strong>: 对于给定的 <span
 class="math inline">\(n\)</span> 和 <span
