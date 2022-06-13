@@ -364,3 +364,8 @@ body.light-theme {
   background: #eaf6ff48;
   color: #22272a;
 }
+
+/* Dark Mode Image Add Background Color on Hove */
+.light-theme article .content img:hover {
+  background: #282C34;
+}
