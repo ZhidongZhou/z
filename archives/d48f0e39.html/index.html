@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042100592.png">
 <meta property="og:image" content="https://fastly.jsdelivr.net/gh/ZhidongZhou/gallery@master/img/202206042101839.png">
 <meta property="article:published_time" content="2022-05-31T07:42:00.000Z">
-<meta property="article:modified_time" content="2022-06-13T09:32:20.035Z">
+<meta property="article:modified_time" content="2022-06-14T04:01:40.088Z">
 <meta property="article:author" content="Darren Z">
 <meta property="article:tag" content="unimelb">
 <meta name="twitter:card" content="summary">
@@ -1236,8 +1236,8 @@ USD\)</span>的挖矿奖励对标的是比特币兑换美元的一个峰值<stro
 同样的<strong>交易费</strong>并没有被考虑。还有,
 <strong>电力成本</strong>的变化、<strong>挖矿差异</strong>、潜在的<strong>矿池费用</strong>、潜在的未来法律法规以及作为矿工的道德成本是需要考虑的一些事情。</p>
 <p>(截至2022年3月, 区块奖励为 <span class="math inline">\(250000 \
-USD\)</span>, 难度参数为: <span
-class="math inline">\(2^{76.6}\)</span>。</p>
+USD\)</span>, 难度参数为: <span class="math inline">\(2^{76.6}\)</span>
+)。</p>
 </blockquote>
 <h2 id="bitcoin-block-arrival-time-比特币区块到达时间">10.Bitcoin Block
 Arrival Time 比特币区块到达时间</h2>
@@ -1900,19 +1900,35 @@ class="math inline">\({\color{CornflowerBlue}{A2.x=3}} \And
 <span class="math inline">\({\color{CornflowerBlue}{A2.x}} = 3 + (17*3)
 \\ {\color{CornflowerBlue}{A2.x = 54}}\)</span></li>
 </ol></li>
-<li>然后<code>A2</code>的<code>bar</code>函数再发布call<code>普通调用</code>A1<code>的存储运行:</code>A1.baz()<code>函数       1. 并且$&#123;\color&#123;CornflowerBlue&#125;&#123;A2.x&#125;&#125;+2$作为</code>A1.baz(unit
-y)<code>的输入, 也就是说: $&#123;\color&#123;orange&#125;&#123;y&#125;&#125; = 54 + 2 \\ &#123;\color&#123;orange&#125;&#123;y = 56&#125;&#125;$       2. 我们已知 $&#123;\color&#123;green&#125;&#123;A1.x=16&#125;&#125;$, 那么</code>x
-+= y` 则等于 ${} = {} + {} \ {} = {} + {} \ {} $</li>
+<li>然后<code>A2</code>的 <code>bar</code> 函数再发布 <code>call</code>
+普通调用 <code>A1</code> 的存储运行: <code>A1.baz()</code> 函数
+<ol type="1">
+<li>并且 <span
+class="math inline">\({\color{CornflowerBlue}{A2.x}}+2\)</span> 作为
+<code>A1.baz(unit y)</code> 的输入, 也就是说: <span
+class="math inline">\({\color{orange}{y}} = 54 + 2 \\ {\color{orange}{y
+= 56}}\)</span></li>
+<li>我们已知 <span
+class="math inline">\({\color{green}{A1.x=16}}\)</span>, 那么
+<code>x += y</code> 则等于 ${} = {} + {} \ {} = {} + {} \ {} $</li>
+</ol></li>
 <li><code>A2.bar()</code>的最后一步是计算: <code>z = x - 10</code>,
 并作为<code>abi.decode</code>的结果返回给<code>A1.foo()</code>
 <ol type="1">
 <li><span class="math inline">\(z =
 {\color{CornflowerBlue}{A2.x}}-10\)</span></li>
-<li><span class="math inline">\(z = {\color{CornflowerBlue}{54}} - 10 \\
-z = 44\)</span></li>
-<li><code>A2.bar()</code> 会返回 $ {}$ 给 <code>A1.foo()</code></li>
+<li><span class="math inline">\(z = {\color{CornflowerBlue}{54}}-10 \\ z
+= 44\)</span></li>
+<li><code>A2.bar()</code> 会返回 <span
+class="math inline">\({\color{CornflowerBlue}{44}}\)</span> 给
+<code>A1.foo()</code></li>
 </ol></li>
-<li>最后: <code>A1.foo()</code> 的最后一步是: ${} = {} - {} \ {} $</li>
+<li>最后: <code>A1.foo()</code> 的最后一步是:
+<ul>
+<li><span class="math inline">\({\color{green}{A1.x}} =
+{\color{green}{A1.x}} - {\color{CornflowerBlue}{44}}\)</span></li>
+<li><span class="math inline">\({\color{green}{A1.x = 28}}\)</span></li>
+</ul></li>
 </ol>
 <p>所以: <span class="math inline">\({\color{green}{A1.x = 28}} \And
 {\color{CornflowerBlue}{A2.x = 54}}\)</span></p>
